@@ -1,31 +1,32 @@
-# Screen wireframes — Gleem (v1)
+# 屏幕线框 — Gleem（v1）
 
-ASCII = structure only. **Minimal chrome.** English UI.  
-No tab bar. No manual list-update button.
-
----
-
-## Visual density (all screens)
-
-- Large breathing room; few elements above the fold  
-- Prefer **one** primary button when action is required; zero when healthy  
-- Secondary actions: text buttons or More  
-- Typography-led; icon only when it earns its place  
+ASCII 仅表示结构。**极简 chrome。界面英文。**  
+无 Tab bar。无手动更新名单按钮。  
+说明语言：中文。
 
 ---
 
-## Welcome (3 pages) — visual-first
+## 视觉密度（全屏通用）
 
-Canonical design doc: **[`docs/design/welcome.md`](../design/welcome.md)**.
+- 大留白；首屏元素少  
+- 需要操作时优先 **一个** 主按钮；健康态为零  
+- 次要操作：文字按钮或 More  
+- 字体主导；图标仅在有用时出现  
 
-First launch only. **3 pages.** Illustration / motion carries meaning; **one headline per page**.
+---
 
-| Page | Visual | Headline | CTA |
-|------|--------|----------|-----|
-| W1 | Ads/noise dissolve on a page | Without the noise. | Continue |
-| W2 | Safari + app grid | Safari & Apps. | Continue |
-| | | Optional micro: One purchase. No subscription. | |
-| W3 | Data stays on device | Stays on your device. | Get Started |
+## Welcome（3 页）— 视觉优先
+
+权威设计文档：**[`docs/design/welcome.md`](../design/welcome.md)**。
+
+仅首次启动。**3 页。** 插画/动效承载含义；**每页一句标题（英文）**。
+
+| 页 | 视觉 | 标题（EN） | CTA（EN） |
+|----|------|------------|-----------|
+| W1 | 页面上广告/噪音消散 | Without the noise. | Continue |
+| W2 | Safari + App 格子 | Safari & Apps. | Continue |
+| | | 可选 micro: One purchase. No subscription. | |
+| W3 | 数据留在设备 | Stays on your device. | Get Started |
 
 ```
 ┌─────────────────────────────────┐
@@ -41,13 +42,13 @@ First launch only. **3 pages.** Illustration / motion carries meaning; **one hea
 └─────────────────────────────────┘
 ```
 
-Notes: Welcome ≠ setup ≠ About. Skip optional. Reduce Motion → static calm frame. Full rules in `welcome.md`.
+备注：Welcome ≠ 设置 ≠ About。Skip 可选。Reduce Motion → 静态平静帧。完整规则见 `welcome.md`。
 
 ---
 
-## Home (root — no tabs)
+## Home（根 — 无 Tab）
 
-### Shared chrome
+### 共用 chrome
 
 ```
 ┌─────────────────────────────────┐
@@ -58,7 +59,7 @@ Notes: Welcome ≠ setup ≠ About. Skip optional. Reduce Motion → static calm
 └─────────────────────────────────┘
 ```
 
-### H1 — Protected (ideal default)
+### H1 — Protected（理想默认）
 
 ```
 ┌─────────────────────────────────┐
@@ -79,10 +80,10 @@ Notes: Welcome ≠ setup ≠ About. Skip optional. Reduce Motion → static calm
 └─────────────────────────────────┘
 ```
 
-**No** “Update now”. **No** list age unless we later need a single soft diagnostic line (prefer silence).  
-**No** primary button when healthy. Pause lives under More → Pause & Allowances (or long-press/menu if we add later—not required on H1).
+**无** “Update now”。**无**名单年龄，除非日后需要单行软诊断（优先沉默）。  
+健康态**无**主按钮。暂停在 More → Pause & Allowances（或日后 long-press/menu — H1 不强制）。
 
-Optional even quieter: drop “Safari · Apps” when both on; only show when partial.
+更安静可选：两端都开时去掉 “Safari · Apps”；仅部分开启时显示。
 
 ### H2 — Needs setup
 
@@ -101,7 +102,7 @@ Optional even quieter: drop “Safari · Apps” when both on; only show when pa
 └─────────────────────────────────┘
 ```
 
-If both Safari and Apps off: one sentence that covers both, or prioritize Safari first then Apps on next visit—**one CTA at a time**.
+若 Safari 与 Apps 都关：一句覆盖两者，或优先 Safari、下次再 Apps — **一次一个 CTA**。
 
 ### H3 — Locked
 
@@ -138,21 +139,21 @@ If both Safari and Apps off: one sentence that covers both, or prioritize Safari
 └─────────────────────────────────┘
 ```
 
-### Home status copy (single sentence)
+### Home 状态文案（单句，英文）
 
-| State | Line |
-|-------|------|
-| All good | You’re protected. |
-| Safari off | Safari blocking is off. |
-| Apps off | App blocking is off. |
-| Both off | Gleem isn’t enabled yet. |
-| Paused | Protection paused. |
-| Locked | Unlock to protect this device. |
-| Rare: lists stuck | Protection on. Lists will refresh soon. *(no button)* |
+| 状态 | 文案 |
+|------|------|
+| 一切正常 | You’re protected. |
+| Safari 关 | Safari blocking is off. |
+| Apps 关 | App blocking is off. |
+| 都关 | Gleem isn’t enabled yet. |
+| 已暂停 | Protection paused. |
+| 未解锁 | Unlock to protect this device. |
+| 少见：名单卡住 | Protection on. Lists will refresh soon. *（无按钮）* |
 
 ---
 
-## O4 — Unlock (sheet or full screen)
+## O4 — Unlock（sheet 或全屏）
 
 ```
 ┌─────────────────────────────────┐
@@ -176,7 +177,7 @@ If both Safari and Apps off: one sentence that covers both, or prioritize Safari
 
 ---
 
-## O2 — Enable Safari (minimal steps)
+## O2 — Enable Safari（最少步骤）
 
 ```
 ┌─────────────────────────────────┐
@@ -196,7 +197,7 @@ If both Safari and Apps off: one sentence that covers both, or prioritize Safari
 └─────────────────────────────────┘
 ```
 
-Collapse multi-step into one short instruction block + Open Settings.
+多步收成一段短说明 + Open Settings。
 
 ---
 
@@ -223,7 +224,7 @@ Collapse multi-step into one short instruction block + Open Settings.
 
 ---
 
-## M0 — More (list only)
+## M0 — More（仅列表）
 
 ```
 ┌─────────────────────────────────┐
@@ -242,7 +243,7 @@ Collapse multi-step into one short instruction block + Open Settings.
 └─────────────────────────────────┘
 ```
 
-Grouped with one quiet separator. No icons required in v1 wireframe.
+安静分隔分组。v1 线框不要求图标。
 
 ---
 
@@ -298,7 +299,7 @@ Grouped with one quiet separator. No icons required in v1 wireframe.
 └─────────────────────────────────┘
 ```
 
-Keep duration options minimal (one default is enough for v1 if we want even less UI).
+时长选项保持最少（v1 一个默认即可）。
 
 ---
 
@@ -339,7 +340,7 @@ Keep duration options minimal (one default is enough for v1 if we want even less
 └─────────────────────────────────┘
 ```
 
-Short list; each row opens a sparse step page (same style as O2/O3).
+短列表；每行打开稀疏步骤页（风格同 O2/O3）。
 
 ---
 
@@ -384,6 +385,6 @@ Short list; each row opens a sparse step page (same style as O2/O3).
 
 ## Mac
 
-- Same root Home + More (menu bar or toolbar trailing).  
-- No multi-tab utility window.  
-- Welcome can be a simple multi-step panel once.
+- 同样 Home + More（菜单栏或工具栏 trailing）。  
+- 无多 Tab 工具窗口。  
+- Welcome 可为一次多步面板。  

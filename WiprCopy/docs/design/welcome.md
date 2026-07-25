@@ -1,140 +1,141 @@
-# Welcome design — Gleem
+# Welcome 设计 — Gleem
 
-Status: **aligned (design direction)**  
-Scope: first-launch Welcome only (not Home, not Enable setup, not App Store listing).  
-UI language: **English**. Audience: overseas privacy-conscious users (`AGENTS.md` rules 1–2).
+状态：**已对齐（设计方向）**  
+范围：仅首次启动 Welcome（非 Home、非 Enable 设置、非 App Store listing）。  
+界面语言：**英文**。受众：海外重视隐私用户（`AGENTS.md` 规则 0–2）。  
+说明语言：**中文**。
 
-Related: [wireframes/screens.md](../wireframes/screens.md) · [hi-fi.html](hi-fi.html) · [tokens.md](tokens.md)
-
----
-
-## 1. Purpose
-
-Welcome answers one question in ~30 seconds:
-
-> **What is this, and is it worth continuing?**
-
-It must establish:
-
-1. **Category** — ad / tracker blocking (web feels quieter)  
-2. **Scope / wedge** — Safari **and** other apps (primary differentiator vs Safari-only tools)  
-3. **Trust** — browsing stays on device (required before system permissions and purchase)
-
-It must **not**:
-
-- Tell the full brand story  
-- Teach full Settings paths  
-- Explain rule packs, list pipelines, or URL Filter / PIR jargon  
-- Open with a hard paywall before any value is understood  
+相关：[wireframes/screens.md](../wireframes/screens.md) · [hi-fi.html](hi-fi.html) · [tokens.md](tokens.md)
 
 ---
 
-## 2. Conclusions (best practice for Gleem)
+## 1. 目的
 
-| Conclusion | Rationale |
-|------------|-----------|
-| **3 pages is enough** | More pages usually restate “we’re good people” with low new information; 3 pages can cover category + scope + trust without fatigue. |
-| **Visual-first, one line of copy** | Utility apps convert on glanceable metaphor, not essays. Matches minimal product tone (Wipr-class calm). |
-| **Welcome ≠ setup wizard** | Enable Safari / URL Filter belongs in dedicated Enable screens after intent (and usually after unlock). Device-specific Settings copy changes by OS. |
-| **Welcome ≠ About** | Independence, “no acceptable ads,” long privacy policy → About / store description. At most *implied* by art on the trust page. |
-| **Slightly more than Wipr’s silence** | We are not the incumbent; we need one clear **Safari & apps** signal. We do **not** need three slogan pages. |
-| **Skip allowed** | Reinstall / Family Sharing second device should not force a full pitch. |
-| **Shown once** (until reset) | Ongoing state lives on Home (“You’re protected.” / “Safari blocking is off.”). |
-| **Motion is supportive** | Slow loops that show state change; respect **Reduce Motion** (final calm frame only). |
+Welcome 在约 30 秒内回答一个问题：
 
-### Success criteria (what users should leave knowing)
+> **这是什么，值不值得继续？**
 
-After Welcome, a user should be able to say:
+必须建立：
 
-1. It blocks ads / trackers so the web is quieter.  
-2. It works in Safari **and** in apps.  
-3. It doesn’t collect where they browse.  
+1. **品类** — 广告/追踪拦截（网页更安静）  
+2. **范围 / 楔子** — Safari **以及** 其他 App（相对纯 Safari 工具的主差异）  
+3. **信任** — 浏览留在设备（在系统权限与购买之前必需）  
 
-Not required at this stage: pricing math, pack names, how to toggle extensions.
+必须**不要**：
+
+- 讲完整品牌故事  
+- 教完整 Settings 路径  
+- 解释规则包、名单管线或 URL Filter / PIR 黑话  
+- 在理解价值前就硬付费墙  
 
 ---
 
-## 3. Design principles
+## 2. 结论（Gleem 最佳实践）
 
-1. **One idea per page** — no overlapping “trust” monologues across pages.  
-2. **Hero visual / light animation carries meaning; headline confirms it.**  
-3. **Headline ≤ ~5 words** (English). Prefer **no** body paragraph. Optional micro-line on W2 only, if needed.  
-4. **Primary CTA only at the end** of the flow (`Get Started`). Intermediate pages: `Continue`.  
-5. **No feature bullet lists** on Welcome.  
-6. **No manual list-update messaging** (lists are automatic product-wide).  
-7. **Paywall after Welcome** (Unlock sheet / Home locked) — not page 1 of Welcome.  
-8. **Calm aesthetic** — warm paper canvas, accent green, no security-theater red, no VPN neon ([tokens.md](tokens.md)).
+| 结论 | 理由 |
+|------|------|
+| **3 页足够** | 更多页往往重复「我们人很好」而信息增量低；3 页可覆盖品类 + 范围 + 信任而不疲劳。 |
+| **视觉优先，一行文案** | 工具类靠可一眼读懂的隐喻转化，不是长文。契合极简产品语气（Wipr 级冷静）。 |
+| **Welcome ≠ 设置向导** | 启用 Safari / URL Filter 放在意图明确后的独立 Enable 页（通常也在解锁后）。设备相关 Settings 文案随系统变。 |
+| **Welcome ≠ About** | 独立、无可接受广告、长隐私政策 → About / 商店描述。最多由信任页插画**暗示**。 |
+| **比 Wipr 的沉默略多一点** | 我们不是 incumbent；需要一次清晰的 **Safari & apps** 信号。不需要三页口号。 |
+| **允许 Skip** | 重装 / Family Sharing 第二台设备不应强制完整推销。 |
+| **只展示一次**（直到重置） | 持续状态在 Home（`You're protected.` / `Safari blocking is off.`）。 |
+| **动效辅助** | 慢循环展示状态变化；尊重 **Reduce Motion**（仅最终平静帧）。 |
 
----
+### 成功标准（用户离开时应知道）
 
-## 4. Recommended scheme: 3 pages
+Welcome 结束后，用户应能说出：
 
-### Overview
+1. 它拦截广告/追踪，让网页更安静。  
+2. 它在 Safari **和** App 里都工作。  
+3. 它不收集他们去哪浏览。  
 
-| Page | Job | Visual intent | Headline (EN) | CTA |
-|------|-----|---------------|---------------|-----|
-| **W1** | Category / benefit | Page calms; ad/noise tiles dissolve | **Without the noise.** | Continue |
-| **W2** | Scope / wedge | Safari (or browser) mark + app grid, quietly linked | **Safari & Apps.** | Continue |
-| **W3** | Trust + next step | Data stays inside device; cloud rejected / no upload | **Stays on your device.** | **Get Started** |
-
-Optional micro under W2 (only if needed): `One purchase. No subscription.` — makes clear one purchase covers Safari **and** apps, with no extra charge.
-
-Page control: dots `● ○ ○` style; optional **Skip** on W1–W2 (lands on Home locked or last page — product choice; default recommendation: Skip → Home / unlock path without re-animating all pages).
-
-### Why this order
-
-1. **Noise first** — universal, emotional, category-clear.  
-2. **Safari & apps second** — differentiator while attention is still high; not buried after three philosophy slides.  
-3. **Privacy last before action** — sets trust immediately before unlock + system permissions; pairs with `Get Started`.
-
-### What we explicitly dropped from earlier 4-page ideology
-
-| Dropped as own page | Where it goes instead |
-|--------------------|------------------------|
-| Long “built for you / not advertisers” essay | About, store description; optional art detail on W3 |
-| “No acceptable ads” lecture | About / listing |
-| Feature bullets (packs, auto lists, not a VPN) | W2 visual implies apps; “not a VPN” on **Enable apps** screen; packs in More |
-| Full setup steps | O2 / O3 Enable flows |
+此阶段不要求：价格算术、包名、如何开关扩展。
 
 ---
 
-## 5. Page specs
+## 3. 设计原则
+
+1. **每页一个主意** — 不要跨页重复「信任」长独白。  
+2. **主视觉 / 轻动效承载含义；标题确认它。**  
+3. **标题 ≤ 约 5 个英文词**。优先**没有**正文段。W2 仅在需要时可选 micro 行。  
+4. **主 CTA 仅在流程末尾**（`Get Started`）。中间页：`Continue`。  
+5. Welcome **无**功能 bullet 列表。  
+6. **无**手动更新名单相关文案（产品全局自动）。  
+7. **付费墙在 Welcome 之后**（Unlock sheet / Home locked）— 不是 Welcome 第 1 页。  
+8. **冷静审美** — 暖纸画布、 accent 绿、无杀毒红、无 VPN 霓虹（[tokens.md](tokens.md)）。  
+
+---
+
+## 4. 推荐方案：3 页
+
+### 总览
+
+| 页 | 任务 | 视觉意图 | 标题（EN） | CTA（EN） |
+|----|------|----------|------------|-----------|
+| **W1** | 品类 / 收益 | 页面变安静；广告/噪音块缓慢消散 | **Without the noise.** | Continue |
+| **W2** | 范围 / 楔子 | Safari（或浏览器）标记 + App 格子，安静相连 | **Safari & Apps.** | Continue |
+| **W3** | 信任 + 下一步 | 数据留在设备内；云被弱化/拒绝上传 | **Stays on your device.** | **Get Started** |
+
+W2 下可选 micro（仅在需要时）：`One purchase. No subscription.` — 明确一次购买覆盖 Safari **和** apps，无额外收费。
+
+页指示：圆点 `● ○ ○` 风格；W1–W2 可选 **Skip**（落到 Home locked 或末页 — 产品选择；默认建议：Skip → Home / 解锁路径，不再播完全部动画）。
+
+### 为何此顺序
+
+1. **噪音优先** — 通用、情绪化、品类清晰。  
+2. **Safari & apps 第二** — 注意力仍高时抛出差异点；不埋在三页哲学之后。  
+3. **隐私在行动前最后** — 解锁 + 系统权限前建立信任；与 `Get Started` 配对。  
+
+### 相对早期 4 页理念明确删掉的
+
+| 不再单独成页 | 改放何处 |
+|--------------|----------|
+| 长「为你而建 / 不为广告商」essay | About、商店描述；W3 可选插画细节 |
+| 「无可接受广告」说教 | About / listing |
+| 功能 bullet（包、自动名单、非 VPN） | W2 视觉暗示 apps；「非 VPN」在 **Enable apps**；包在 More |
+| 完整设置步骤 | O2 / O3 Enable 流程 |
+
+---
+
+## 5. 分页规格
 
 ### W1 — Without the noise.
 
-| Item | Spec |
-|------|------|
-| **User takeaway** | This makes browsing calmer by removing ads/noise. |
-| **Visual** | Stylized content page; ad/noise blocks fade or shrink away in a slow loop. Content lines remain. |
-| **Motion** | 2.5–3.5s loop; ease-in-out; no jarring flashes. |
-| **Copy** | Title only: `Without the noise.` |
-| **Not on page** | Tracker jargon, battery claims, competitor names. |
+| 项 | 规格 |
+|----|------|
+| **用户带走** | 这通过去掉广告/噪音让浏览更安静。 |
+| **视觉** | 风格化内容页；广告/噪音块在慢循环中淡出或缩小。内容行保留。 |
+| **动效** | 2.5–3.5s 循环；ease-in-out；无刺眼闪烁。 |
+| **文案** | 仅标题：`Without the noise.` |
+| **不出现** | Tracker 黑话、续航声称、竞品名。 |
 
 ### W2 — Safari & Apps.
 
-| Item | Spec |
-|------|------|
-| **User takeaway** | Protection is not Safari-only; apps are included. |
-| **Visual** | Two clear poles: browser/Safari metaphor + app icons grid; subtle link or shared “protected” cue between them. |
-| **Motion** | Soft float or gentle link emphasis; avoid busy icon spam (4 app tiles max in mock). |
-| **Copy** | Title: `Safari & Apps.` · Optional micro: `One purchase. No subscription.` |
-| **Not on page** | URL Filter, VPN comparison paragraph, system version requirements (those belong in Help / Enable). |
+| 项 | 规格 |
+|----|------|
+| **用户带走** | 保护不限于 Safari；App 也包含。 |
+| **视觉** | 两极清晰：浏览器/Safari 隐喻 + App 图标格；两者间有细微「受保护」连接。 |
+| **动效** | 轻浮或连接强调；避免图标轰炸（mock 最多 4 个 App 块）。 |
+| **文案** | 标题：`Safari & Apps.` · 可选 micro：`One purchase. No subscription.` |
+| **不出现** | URL Filter、VPN 对比长文、系统版本要求（放 Help / Enable）。 |
 
 ### W3 — Stays on your device.
 
-| Item | Spec |
-|------|------|
-| **User takeaway** | Gleem doesn’t harvest browsing; data stays local. |
-| **Visual** | Device frame; activity dots stay inside; cloud muted or struck through. |
-| **Motion** | Dots pulse in-place; no stream of particles leaving the device. |
-| **Copy** | Title only: `Stays on your device.` |
-| **CTA** | `Get Started` → Unlock (O4) or deferred Home locked (H3) per commerce flow. |
-| **Footer** | Quiet `Privacy Policy` text link OK. |
-| **Not on page** | PIR, Bloom filter, legal wall of text (link out only). |
+| 项 | 规格 |
+|----|------|
+| **用户带走** | Gleem 不收割浏览；数据留本地。 |
+| **视觉** | 设备框；活动点留在内部；云弱化或划掉。 |
+| **动效** | 点在原处脉冲；无粒子流离开设备。 |
+| **文案** | 仅标题：`Stays on your device.` |
+| **CTA** | `Get Started` → Unlock（O4）或延后 Home locked（H3），按商业流程。 |
+| **页脚** | 安静 `Privacy Policy` 文字链可。 |
+| **不出现** | PIR、Bloom filter、法律长墙（仅链出）。 |
 
 ---
 
-## 6. Flow
+## 6. 流程
 
 ```
 First launch
@@ -146,65 +147,66 @@ First launch
   → Home                               ←┘
 ```
 
-Rules:
+规则：
 
-- Welcome **does not** embed full Enable tutorials.  
-- Returning users: do not show Welcome again (unless debug / reset).  
-- Purchase restore available from Unlock and More — not required on Welcome.
-
----
-
-## 7. Content that must not appear on Welcome
-
-- Rule pack names and toggles (Core / Annoyances / Strict)  
-- Manual “update blocklist”  
-- Multi-paragraph independence manifesto  
-- Settings breadcrumb tutorials (`Settings → Apps → Safari → …`)  
-- Pricing comparisons to Wipr in UI  
-- Block counts / fake stats  
-- Account signup  
+- Welcome **不**内嵌完整 Enable 教程。  
+- 回访用户：不再展示 Welcome（除非 debug / 重置）。  
+- 购买恢复在 Unlock 与 More — Welcome 上不强制。  
 
 ---
 
-## 8. Accessibility & platform
+## 7. Welcome 上不得出现的内容
 
-| Topic | Requirement |
-|-------|-------------|
-| **Reduce Motion** | No looping animation; show final “calm / protected / local” state. |
-| **VoiceOver** | Each page: meaningful accessibility label combining title + short image description (e.g. “Illustration: ads fading from a webpage. Without the noise.”). |
-| **Dynamic Type** | Title remains one short line; avoid multi-line essays that break layout. |
-| **iPad / Mac** | Same 3 ideas and order; larger hero art, same copy. No extra Welcome pages for Mac. |
-
----
-
-## 9. Implementation notes (product / eng)
-
-- Prefer **vector / Lottie / SwiftUI canvas** over heavy video for size and Reduce Motion.  
-- Art should feel **custom and calm**, not stock “shield VPN” clichés.  
-- Keep illustration system consistent with [tokens.md](tokens.md) (warm paper, accent green).  
-- Copy is **EN-first**; no CN-market onboarding patterns.
+- 规则包名与开关（Core / Annoyances / Strict）  
+- 手动 “update blocklist”  
+- 多段独立宣言  
+- Settings 面包屑教程（`Settings → Apps → Safari → …`）  
+- UI 内与 Wipr 比价  
+- 拦截次数 / 假数据  
+- 账号注册  
 
 ---
 
-## 10. Open choices (minor)
+## 8. 无障碍与平台
 
-| Topic | Default recommendation | Alternate |
-|-------|------------------------|-----------|
-| Skip control | Show Skip on W1–W2 | No Skip (force 3 pages once) |
-| Micro line on W2 | `One purchase. No subscription.` | Omit; rely on Unlock sheet |
-| Get Started target | Unlock sheet first | Home locked with Unlock CTA |
-| Brand mark on W1 | Optional small Gleem wordmark above art | Title-only, no wordmark |
-
-Resolve during hi-fi polish; none change the **3-page information architecture**.
+| 主题 | 要求 |
+|------|------|
+| **Reduce Motion** | 无循环动画；展示最终「平静 / 受保护 / 本地」状态。 |
+| **VoiceOver** | 每页：有意义的无障碍标签 = 标题 + 短图像描述（如 “Illustration: ads fading from a webpage. Without the noise.”）。 |
+| **Dynamic Type** | 标题保持短一行；避免打乱布局的长文。 |
+| **iPad / Mac** | 同样 3 个主意与顺序；更大 hero，同样英文文案。不为 Mac 加额外 Welcome 页。 |
 
 ---
 
-## 11. Revision history
+## 9. 实现备注（产品 / 工程）
 
-| Date | Change |
-|------|--------|
-| 2026-07-24 | Initial doc: 3-page visual-first Welcome; conclusions from design discussion; supersedes 4-page text-heavy ideology welcome as product direction. |
-| 2026-07-24 | hi-fi.html synced to this spec: dropped the “Built for you.” page, reordered to noise → Safari & apps → on-device, moved `Get Started` / `One purchase. No subscription.` / Privacy Policy to W3, added Skip on W1–W2, pill-style page dots, and reworked hero art + choreographed motion (ads dissolve → content brightens; compass–app grid linked signal; in-device pulse with nothing leaving). Reduced-motion shows the final calm frame. |
-| 2026-07-24 | Review fixes in hi-fi: page titles no longer forced uppercase (section-header selector scoped); W1 noise redrawn as a labeled popup + AD banners; W3 shows a dashed upload path into a struck cloud with the dot dissolving en route; W3 micro line renamed `One unlock.` → `One purchase. No subscription.` |
-| 2026-07-24 | Copy per review: headline is `Safari & Apps.` (capital A); micro line `One purchase. No subscription.` moved from W3 to W2 — one purchase covers Safari **and** apps, no extra charge. W3 back to title only. |
-| 2026-07-24 | Motion review (review-animations skill) fixes in hi-fi: deleted W2 ambient float (link endpoints detached from the floating poles); signal travel matched to the 24px link; W3 rise dot visible window widened (~26–68% of loop); buttons gained `:active` press feedback (`scale(0.97)`, 160ms ease-out). |
+- 优先 **矢量 / Lottie / SwiftUI canvas**，而非重视频（体积 + Reduce Motion）。  
+- 艺术应 **定制且冷静**，非库存「盾牌 VPN」陈词滥调。  
+- 插画体系与 [tokens.md](tokens.md) 一致（暖纸、 accent 绿）。  
+- 界面文案 **EN-first**；无中文市场 onboarding 模式。  
+
+---
+
+## 10. 未决小选择
+
+| 主题 | 默认建议 | 备选 |
+|------|----------|------|
+| Skip 控件 | W1–W2 显示 Skip | 无 Skip（强制看完 3 页一次） |
+| W2 micro 行 | `One purchase. No subscription.` | 省略；依赖 Unlock sheet |
+| Get Started 目标 | 先 Unlock sheet | Home locked + Unlock CTA |
+| W1 品牌标 | 插画上可选小 Gleem wordmark | 仅标题，无 wordmark |
+
+高保真打磨时解决；均不改变 **3 页信息架构**。
+
+---
+
+## 11. 修订历史
+
+| 日期 | 变更 |
+|------|------|
+| 2026-07-24 | 初稿：3 页视觉优先 Welcome；来自设计讨论的结论；取代 4 页偏文案的理念向。 |
+| 2026-07-24 | hi-fi.html 同步：去掉 “Built for you.” 页，顺序改为噪音 → Safari & apps → on-device；Get Started / One purchase / Privacy Policy 等到位；Skip；pill 圆点；hero 与编排动效；Reduce Motion 最终帧。 |
+| 2026-07-24 | 评审修复：标题不再强制大写；W1 噪音改为带标签弹窗 + AD 横幅；W3 虚线上传路径与划掉的云；micro 文案调整。 |
+| 2026-07-24 | 文案：标题 `Safari & Apps.`；micro `One purchase. No subscription.` 移到 W2。 |
+| 2026-07-24 | 动效评审：删 W2 环境漂浮；信号路径对齐 24px 链接；W3 上升点可见窗口加宽；按钮 `:active` 反馈。 |
+| 2026-07-25 | 说明改中文；用户可见文案仍为英文（语言约定 `AGENTS.md` 规则 0）。 |

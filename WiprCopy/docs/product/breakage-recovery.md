@@ -1,34 +1,36 @@
-# Breakage recovery (v1)
+# 破站自救（v1）
 
-Status: **aligned** — tier B.
+状态：**已对齐** — 档位 B。  
+上级：[prd.md](prd.md) · Agent 规则：[`AGENTS.md`](../../AGENTS.md)。  
+文档语言：中文 · 界面文案：**英文**。
 
-## Goal
+## 目标
 
-Zero-config by default, but users must **self-rescue** when something breaks—without custom filter rules.
+默认零配置，但站点/App 出问题时用户必须能**自救**——且不依赖自定义过滤规则。
 
-## In v1
+## v1 内
 
-| Capability | Notes |
-|------------|--------|
-| **Global pause** | Temporarily disable blocking (Safari lists and/or system-wide filter as implemented) with clear “you’re unprotected” state |
-| **Per-site allow (Safari)** | Temporary and/or permanent allow for a site that is broken |
-| **System-wide guidance** | Status / help explains how to disable URL Filter if an app breaks; be honest if per-app allow isn’t available via API |
-| **Optional report** | User-initiated only; minimal fields; anonymous OK; if a URL is included, only the one the user confirms |
+| 能力 | 说明 |
+|------|------|
+| **全局暂停** | 临时关闭拦截（Safari 名单和/或系统级 Filter，按实现），状态清晰标「当前未受保护」 |
+| **按站放行（Safari）** | 对破站站点临时和/或永久允许 |
+| **系统级指引** | 状态/帮助说明如何关闭 URL Filter（某 App 坏时）；若 API 无法按 App 放行则如实说明 |
+| **可选报错** | 仅用户主动；字段最少；可匿名；若含 URL，仅用户确认的那一条 |
 
-## Privacy
+## 隐私
 
-- No silent upload of browse history or “sites you visited.”
-- Report payload minimized; not tied to background telemetry.
-- Aligns with `AGENTS.md` rule 2.
+- 无静默上传浏览历史或「你访问过的站」。  
+- 报错载荷最小化；不绑定后台遥测。  
+- 对齐 `AGENTS.md` 规则 2 与 [prd.md](prd.md) §3。  
 
-## Out of v1 (candidate later)
+## v1 外（后续候选）
 
-- Live Help / remote “known issues” CMS (tier C)
-- Element picker, custom rules
-- Rich per-app allowlist if OS doesn’t support it cleanly
+- Live Help / 远程「已知问题」CMS（档位 C）  
+- 元素选择器、自定义规则  
+- 若系统不干净支持，则不做复杂的按 App 白名单  
 
-## UX principles (EN product)
+## UX 原则（界面英文）
 
-- Recovery actions obvious from the main status surface within one or two taps.
-- Prefer plain language: “Pause protection,” “Allow this website,” “Report a problem.”
-- Never require an account to report.
+- 主状态面 1–2 次点按即可到自救操作。  
+- 平实用语，例如：`Pause protection`、`Allow this website`、`Report a problem`。  
+- 报错**不要求**账号。  

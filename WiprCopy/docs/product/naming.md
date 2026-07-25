@@ -1,106 +1,107 @@
-# Naming
+# 命名
 
-Status: **locked** — name + subtitle.
+状态：**已锁定** — 名称 + 副标题。  
+文档语言：中文 · 用户可见字符串：**英文**。
 
-## Locked
+## 已锁定
 
-| Field | Value | Limit |
-|-------|--------|--------|
-| **Name** | **Gleem** | ≤30 characters (App Store) |
-| **Subtitle** | **Block Ads & Trackers** | 20 characters (≤30) |
-| Feel | Short brand + short indie/tool subtitle (not long descriptive title) |
-| Idealism / manifesto | **Not** in subtitle — use description first line, screenshots, in-app About |
-| Market | English-first, overseas |
+| 字段 | 值 | 限制 |
+|------|-----|------|
+| **名称** | **Gleem** | ≤30 字符（App Store） |
+| **副标题** | **Block Ads & Trackers** | 20 字符（≤30） |
+| 感觉 | 短品牌 + 短 indie/工具副标题（非长描述型标题） |
+| 理想/立场 | **不**放副标题 — 用描述首行、截图、应用内 About |
+| 市场 | 界面英文优先、海外 |
 
-### Subtitle principles (this product)
+### 副标题原则（本产品）
 
-- **Short** — aim ~15–22 characters; leave room to breathe next to **Gleem**
-- **Indie voice** — plain English, no enterprise stack (“suite”, “VPN”, “AI-powered”)
-- **Category or benefit** — one clear job; don’t cram Safari + apps + privacy + price
-- **Scope (system-wide)** lives in description / screenshots / first sentence of promo text, not forced into a long subtitle
-- App Store norms: no name repeat in subtitle, no “#1/best”, no misleading claims, accurate to what we ship
+- **短** — 目标约 15–22 字符；与 **Gleem** 并排时留白  
+- **Indie 语气** — 平实英文，无企业堆砌（suite、VPN、AI-powered）  
+- **一个品类或收益** — 一件事说清；不要塞满 Safari + apps + 隐私 + 价格  
+- **系统级范围**放描述 / 截图 / 宣传文第一句，不硬塞进长副标题  
+- App Store 规范：副标题不重复应用名、无「#1/best」、不误导、与实际上线一致  
 
-### Why **Block Ads & Trackers** (recommended)
+### 为何选 **Block Ads & Trackers**
 
-| Check | |
-|-------|--|
-| Length | 20 characters — short, not “long descriptive” |
-| Pattern | Same family as Purify-style *Block Ads and Tracking*, tightened for indie |
-| Keywords | Naturally includes **ads** + **trackers** (search-relevant, not stuffed) |
-| Tone | Direct tool speak — personal-dev, not AdGuard-length title |
-| Trust | Doesn’t say VPN, doesn’t claim we see your data |
-| Honesty | True for Safari + system-wide; “everywhere” details go in the listing body |
+| 检查 | |
+|------|--|
+| 长度 | 20 字符 — 短，非「长描述」 |
+| 模式 | 接近 Purify 式 *Block Ads and Tracking*，收紧为 indie 风格 |
+| 关键词 | 自然含 **ads** + **trackers**（可搜，不堆砌） |
+| 语气 | 直接工具话 — 个人开发者，非 AdGuard 式长标题 |
+| 信任 | 不说 VPN，不暗示我们能看到你的数据 |
+| 诚实 | 对 Safari + 系统级成立；「everywhere」细节放 listing 正文 |
 
-Store row reads:
+商店行展示：
 
 > **Gleem**  
 > Block Ads & Trackers
 
-### Shortlist (all ≤30; pick one)
+### 副标题候选短名单（均 ≤30；已定其一）
 
-| Subtitle | Chars | Voice | Best if you want… |
-|----------|------:|-------|-------------------|
-| **Block Ads & Trackers** | 20 | Clear tool | **Default pick** — category + benefit |
-| **No Ads. No Trackers.** | 19 | Punchier indie | More manifesto, slightly less “utility SEO” |
-| **Ad & Tracker Blocker** | 19 | Category noun | Maximum “this is an ad blocker” |
-| **Block Ads Everywhere** | 20 | Benefit + scope hint | Soft nod to apps without long platform list |
-| **Cleaner Web, Locally** | 20 | Privacy-forward | Differentiates trust; weaker category keywords |
-| ~~Block Ads in Safari & Apps~~ | 26 | Longer descriptive | Dropped as primary — you asked to avoid this length |
+| 副标题 | 字符 | 语气 | 适合… |
+|--------|------:|------|--------|
+| **Block Ads & Trackers** | 20 | 清晰工具 | **默认选定** — 品类 + 收益 |
+| **No Ads. No Trackers.** | 19 | 更冲的 indie | 更立场，品类 SEO 略弱 |
+| **Ad & Tracker Blocker** | 19 | 品类名词 | 最大化「这是广告拦截」 |
+| **Block Ads Everywhere** | 20 | 收益 + 范围暗示 | 软点到 apps，不列平台 |
+| **Cleaner Web, Locally** | 20 | 隐私向 | 信任差异化；品类词弱 |
+| ~~Block Ads in Safari & Apps~~ | 26 | 较长描述 | 已弃作主选 — 过长 |
 
-## Direction (history)
+## 方向（历史）
 
-| Rule | Detail |
-|------|--------|
-| Feel | **A** — short, tool-like |
-| Form | Variant of familiar English (*gleam* → **Gleem**) |
-| Avoid | Wipr/Filtr clones; antivirus theater; “we see your traffic” |
+| 规则 | 细节 |
+|------|------|
+| 感觉 | **A** — 短、工具感 |
+| 形态 | 熟悉英文词变体（*gleam* → **Gleem**） |
+| 避免 | Wipr/Filtr 仿名；杀毒腔；「我们看到你的流量」 |
 
-## Competitor subtitle patterns (App Store, US search)
+## 竞品副标题模式（App Store，美区搜索）
 
-API returns full `trackName` (name + positioning often combined). Patterns among blockers / privacy tools:
+API 常返回完整 `trackName`（名称与定位常叠在一起）。拦截 / 隐私工具常见模式：
 
-| App (as listed) | Pattern |
-|-----------------|--------|
-| **Wipr 2** | Name only — almost no descriptive subtitle in title |
-| **1Blocker: Ad Blocker** | `Name: Category` |
-| **AdGuard Pro: Safari Ad Blocker** | `Name: Platform + category` |
-| **AdGuard Ad Blocker for Safari** | Long descriptive title |
-| **Ad blocker by Magic Lasso** | Category + brand |
-| **Purify: Block Ads and Tracking** | `Name: Benefit / action` |
-| **Hush Nag Blocker** | Name encodes niche (nags) |
-| **Vinegar - Tube Cleaner** | `Name - witty niche` |
-| **Crystal Adblock – Block unwanted ads!** | Name + marketing claim |
-| **Firefox Focus: Privacy browser** | `Name: Category` |
-| **Lockdown Privacy: AdBlock VPN** | Features stacked (VPN — we **won’t** copy) |
-| **Roadblock - Content Blocker** | `Name - technical category` |
+| 应用（列出时） | 模式 |
+|----------------|------|
+| **Wipr 2** | 几乎只有名称 — 标题里几乎无描述副标题 |
+| **1Blocker: Ad Blocker** | `名称: 品类` |
+| **AdGuard Pro: Safari Ad Blocker** | `名称: 平台 + 品类` |
+| **AdGuard Ad Blocker for Safari** | 长描述标题 |
+| **Ad blocker by Magic Lasso** | 品类 + 品牌 |
+| **Purify: Block Ads and Tracking** | `名称: 收益 / 动作` |
+| **Hush Nag Blocker** | 名称编码细分（nags） |
+| **Vinegar - Tube Cleaner** | `名称 - 俏皮细分` |
+| **Crystal Adblock – Block unwanted ads!** | 名称 + 营销主张 |
+| **Firefox Focus: Privacy browser** | `名称: 品类` |
+| **Lockdown Privacy: AdBlock VPN** | 功能堆叠（VPN — 我们**不**学） |
+| **Roadblock - Content Blocker** | `名称 - 技术品类` |
 
-**Takeaways for Gleem**
+**对 Gleem 的结论**
 
-1. Category leaders either stay **ultra-minimal** (Wipr) or put **Ad Blocker / Safari** in the title line.  
-2. Keep **Name = Gleem** only; put the line in the **Subtitle** field (30 chars)—don’t turn the app name into a long descriptive title.  
-3. Short indie subtitles beat keyword essays; put Safari/apps/system-wide proof in **description + screenshots**.  
-4. Avoid “VPN” / security-suite stacking (wrong architecture + wrong trust story).
+1. 品类头部要么**极简**（Wipr），要么把 **Ad Blocker / Safari** 放进标题行。  
+2. **名称只保留 Gleem**；说明放 **Subtitle**（30 字符）— 勿把应用名做成超长描述标题。  
+3. 短 indie 副标题优于关键词作文；Safari/apps/系统级证明放在 **description + screenshots**。  
+4. 避免 VPN / 安全套件堆叠（架构与信任叙事都不对）。
 
-## One-liner (marketing / website)
+## One-liner（营销 / 网站，英文）
 
 **Gleem** — Block ads and trackers in Safari and across apps. One purchase. Privacy stays on your device.
 
-## Still to do before ship
+## 上架前仍待办
 
-- [ ] Confirm App Store search + trademark comfort for “Gleem” + full subtitle  
-- [ ] Domain / social handle check  
-- [ ] Bundle ID (e.g. reverse-DNS with Gleem)
+- [ ] 确认 App Store 搜索与「Gleem」+ 完整副标题的商标舒适度  
+- [ ] 域名 / 社交账号检查  
+- [ ] Bundle ID（如 reverse-DNS 含 Gleem）
 
-## Brand voice (not subtitle)
+## 品牌语气（不是副标题）
 
-Idealistic / independent lines belong in listing body, screenshots, and About — e.g.:
+理想/独立表述放 listing 正文、截图与 About — 例如（英文）：
 
 - *Independent. On-device. No one pays to be unblocked.*
 - *Your browsing stays on your device.*
 
-Subtitle stays utilitarian: **Block Ads & Trackers** (grill choice **A**).
+副标题保持实用：**Block Ads & Trackers**（grill 选项 **A**）。
 
-## Grill status
+## Grill 状态
 
-- Display name **Gleem**: locked  
-- Subtitle **Block Ads & Trackers**: locked (A)  
+- 显示名 **Gleem**：已锁定  
+- 副标题 **Block Ads & Trackers**：已锁定（A）  

@@ -1,14 +1,17 @@
 # design
 
-高保真视觉、UI 标注与品牌相关资产。**Gleem** · 英文 · 极简。
+高保真视觉、UI 标注与品牌相关资产。**Gleem** · 界面英文 · 极简。  
+对齐 [`../product/prd.md`](../product/prd.md) 与 [`../../AGENTS.md`](../../AGENTS.md)。
+
+**说明/标注用中文；用户可见界面字符串用英文**（`AGENTS.md` 规则 0）。
 
 ## 索引
 
 | 文件 / 链接 | 说明 | 更新日期 |
 |-------------|------|----------|
-| [welcome.md](welcome.md) | **Welcome 设计文档**（3 页、结论与方案） | 2026-07-24 |
+| [welcome.md](welcome.md) | **Welcome 设计文档**（3 页、结论与方案） | 2026-07-25 |
 | [hi-fi.html](hi-fi.html) | 高保真界面集（浏览器打开；Welcome 已按 welcome.md 收成 3 页并精修动效） | 2026-07-24 |
-| [tokens.md](tokens.md) | 颜色、字体、圆角等 design tokens | 2026-07-24 |
+| [tokens.md](tokens.md) | 颜色、字体、圆角等 design tokens | 2026-07-25 |
 
 ## 如何预览
 
@@ -27,8 +30,8 @@ open docs/design/hi-fi.html
 
 ## Welcome（权威说明见 [welcome.md](welcome.md)）
 
-| 页 | 视觉 | 文案 |
-|----|------|------|
+| 页 | 视觉 | 文案（EN） |
+|----|------|------------|
 | W1 | 广告/噪音消散 | Without the noise. |
 | W2 | Safari + App 格子 | Safari & Apps. · One purchase. No subscription. |
 | W3 | 数据留在设备 | Stays on your device. → Get Started |

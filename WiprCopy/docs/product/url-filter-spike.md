@@ -1,39 +1,40 @@
-# URL Filter spike checklist
+# URL Filter spike 清单
 
-Status: **planned** (decision: spike before locking launch; default target self-hosted PIR).
+状态：**已规划**（决策：上架锁定前先 spike；默认目标自建 PIR）。  
+文档语言：中文。
 
-## Goal
+## 目标
 
-Prove system-wide blocking (Apple URL Filters) is shippable under our privacy bar, on iPhone and Mac.
+在隐私红线内，证明系统级拦截（Apple URL Filters）在 iPhone 与 Mac 上可上架。
 
-## Out of scope for spike
+## Spike 范围外
 
-- Polished UI, rule packs, App Store copy  
-- Full production blocklist size  
-- Web Extension (Extra)
+- 打磨 UI、规则包、App Store 文案  
+- 完整生产级名单体量  
+- Web Extension（Extra）  
 
-## In scope
+## 范围内
 
-- [ ] Apple sample / docs: `NEURLFilterManager`, `NEURLFilterControlProvider`, Bloom prefilter, PIR server  
-- [ ] App + extension targets on **iOS** and **macOS**  
-- [ ] Enable / disable filter from app; persist configuration  
-- [ ] Prefilter fetch interval  
-- [ ] Block a small fixed set of test URLs system-wide (not only Safari)  
-- [ ] Confirm coexistence with VPN and iCloud Private Relay (primary path)  
-- [ ] Document what the app process can and cannot observe  
-- [ ] Rough ops notes: hosting PIR, tokens, update failure behavior (fail open vs closed)
+- [ ] Apple 示例 / 文档：`NEURLFilterManager`、`NEURLFilterControlProvider`、Bloom 预过滤、PIR 服务  
+- [ ] iOS 与 macOS 上的 App + 扩展 target  
+- [ ] 从 App 启用/关闭 Filter；配置持久化  
+- [ ] 预过滤拉取间隔  
+- [ ] 系统级拦截一小套固定测试 URL（不限于 Safari）  
+- [ ] 确认与 VPN、iCloud Private Relay 主路径可并存  
+- [ ] 记录 App 进程能/不能观察到什么  
+- [ ] 粗运维笔记：托管 PIR、token、更新失败行为（fail open vs closed）  
 
-## Success → next
+## 成功 → 下一步
 
-Default: productionize self-hosted PIR + list pipeline; v1 includes system-wide in base purchase.
+默认：生产化自建 PIR + 名单管线；v1 系统级含在基础购买内。
 
-## Fail / too heavy → fallback
+## 失败 / 过重 → 回退
 
-Keep system-wide in v1 with smaller list and/or lower refresh rate; do **not** drop the primary wedge or relegate it to a core IAP.
+v1 仍保留系统级，缩小名单和/或降低刷新频率；**不**砍主楔子，也**不**降为单独核心 IAP。
 
-## References
+## 参考
 
 - [URL filters](https://developer.apple.com/documentation/networkextension/url-filters)  
 - [Filtering traffic by URL](https://developer.apple.com/documentation/networkextension/filtering-traffic-by-url)  
 - WWDC25: Filter and tunnel network traffic with NetworkExtension  
-- Product decisions: `AGENTS.md`, [overview.md](overview.md)
+- 产品决策：[prd.md](prd.md) · Agent 规则：[`AGENTS.md`](../../AGENTS.md)  

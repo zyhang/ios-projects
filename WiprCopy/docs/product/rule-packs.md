@@ -1,31 +1,33 @@
-# Rule packs (v1)
+# 规则包（v1）
 
-Status: **aligned** (grilling: structure B).
+状态：**已对齐**（grilling：结构 B）。  
+上级：[prd.md](prd.md) §5.3 · Agent 规则：[`AGENTS.md`](../../AGENTS.md)。  
+文档语言：中文 · 界面相关文案方向：**英文**。
 
-## Principles
+## 原则
 
-- Default experience works with zero configuration.
-- Users choose among **curated packs** only — no custom rules, no list import, no regex UI.
-- Toggles are local preferences; never uploaded with browsing data.
-- Prefer one set of pack switches for **Safari** and **system-wide** URL Filter outputs.
+- 默认零配置即可用。  
+- 用户只能在**策展包**之间选择 — 无自定义规则、无名单导入、无正则 UI。  
+- 开关为本地偏好；永不与浏览数据一并上传。  
+- 尽量用**同一套**包开关驱动 **Safari** 与 **系统级** URL Filter 输出。  
 
-## Packs
+## 包定义
 
-| Pack | Purpose | Default | User can disable? |
-|------|---------|---------|-------------------|
-| **Core** | Ads, common trackers, crypto miners, baseline junk | On | No (use global pause if we offer it) |
-| **Annoyances** | Cookie nags, newsletter modals, app install banners, etc. (where list-level blocking works) | On | Yes |
-| **Strict** | More aggressive blocking; may break more sites/apps | Off | Yes (off by default) |
+| 包 | 用途 | 默认 | 用户可关？ |
+|----|------|------|------------|
+| **Core** | 广告、常见追踪、加密挖矿、基线垃圾 | 开 | 否（如有全局暂停则走暂停） |
+| **Annoyances** | Cookie 骚扰、订阅弹窗、装 App 横幅等（名单级有效处） | 开 | 是 |
+| **Strict** | 更激进拦截；可能破更多站/App | 关 | 是（默认关） |
 
-## Non-goals (v1)
+## v1 非目标
 
-- Per-site allow/block UI beyond what OS/Safari already forces us to support for breakage
-- EasyList file import / community subscription URLs in-app
-- Element picker / cosmetic editor
-- Separate “power user” rule language
+- 超出 OS/Safari 破站所必需的按站允许/拦截 UI  
+- EasyList 文件导入 / 应用内订阅社区列表 URL  
+- 元素选择器 / 修饰编辑器  
+- 单独的「高级用户」规则语言  
 
-## Copy direction (EN)
+## 文案方向（界面英文）
 
-- Core: always-on protection (explain, don’t present as a scary toggle).
-- Annoyances: “Fewer pop-ups and nags.”
-- Strict: “More blocking — may break some sites. You can turn it off anytime.”
+- Core：始终开启的保护（解释清楚，不要做成吓人开关）。  
+- Annoyances：`Fewer pop-ups and nags.`  
+- Strict：`More blocking — may break some sites. You can turn it off anytime.`  

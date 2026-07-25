@@ -1,6 +1,8 @@
-# Key flows — Gleem
+# 关键流程 — Gleem
 
-## F1 — First launch → Home
+说明语言：中文 · 界面节点文案：英文（与线框一致）。
+
+## F1 — 首次启动 → Home
 
 ```
 Launch
@@ -10,9 +12,9 @@ Launch
   → H1 or H2 or H3
 ```
 
-Welcome is **not** full technical setup. Spec: `docs/design/welcome.md`.
+Welcome **不是**完整技术设置。规格：`docs/design/welcome.md`。
 
-## F2 — Return launch (happy path)
+## F2 — 回访启动（开心路径）
 
 ```
 Launch → H1
@@ -20,7 +22,7 @@ Launch → H1
   (lists refresh in background — no UI control)
 ```
 
-## F3 — Misconfigured
+## F3 — 配置未就绪
 
 ```
 Launch → H2
@@ -28,9 +30,9 @@ Launch → H2
   one primary CTA → O2 or O3
 ```
 
-List staleness: only if diagnostics truly needs it — soft line under status, **auto-retry in background**, no button.
+名单过期：仅当诊断确实需要 — 状态下软文案，**后台自动重试**，无按钮。
 
-## F4 — Breakage
+## F4 — 破站
 
 ```
 More → Pause & Allowances
@@ -38,14 +40,14 @@ More → Pause & Allowances
 → Pause all  |  Allow website  |  Report
 ```
 
-## F5 — Purchase / restore
+## F5 — 购买 / 恢复
 
 ```
 H3 / O4 / end of Welcome → Unlock IAP
 More → Restore Purchase
 ```
 
-## F6 — Pack change
+## F6 — 改规则包
 
 ```
 More → Rule Packs → toggles → apply silently

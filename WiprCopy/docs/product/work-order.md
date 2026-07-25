@@ -1,26 +1,28 @@
-# Preferred work order
+# 推荐开工顺序
 
-Status: **aligned** with team habit.
+状态：**已对齐**团队习惯。  
+文档语言：中文。
 
-## Sequence
+## 顺序
 
-1. **Name / brand** — product name, one-liner, tone ✅ (Gleem / Block Ads & Trackers)  
-2. **Wireframes** — IA, key flows (`docs/wireframes/`) ✅ first pass  
-3. **Visual design** — high-fi, icon direction (`docs/design/`) ✅ hi-fi HTML + tokens (icon TBD)  
-4. **Engineering** — app shell, IAP, blockers, lists, URL Filter  
-5. **URL Filter spike** — may start in parallel with (2)–(3); **must pass before** marketing “system-wide” as shipped  
+1. **名称 / 品牌** — 产品名、one-liner、语气 ✅（Gleem / Block Ads & Trackers）  
+2. **线框** — IA、关键流程（`docs/wireframes/`）✅ 首轮  
+3. **视觉设计** — 高保真、图标方向（`docs/design/`）✅ hi-fi HTML + tokens（图标待定）  
+4. **工程** — App 壳、IAP、拦截器、名单、URL Filter  
+5. **URL Filter spike** — 可与 (2)–(3) 并行；营销宣称「system-wide」前**必须**通过  
 
-## Why this order
+## 为何如此
 
-- Matches how this team prefers to work (identity and UX first).  
-- Design still bound by locked product decisions in `AGENTS.md` / `overview.md` (privacy, packs, recovery, commerce).  
-- Technical risk on URL Filters is real: do not let polish replace the spike; run it alongside design so launch isn’t blocked at the end.
+- 符合本团队习惯（先身份与体验）。  
+- 设计仍受 [`prd.md`](prd.md) 已锁定决策与 [`AGENTS.md`](../../AGENTS.md) 约束（隐私、包、自救、商业）。  
+- URL Filters 技术风险真实：不能用打磨替代 spike；与设计并行，避免临近上架被卡。  
 
-## Design constraints (do not drift)
+## 设计约束（不得漂移）
 
-- English-first, overseas users (`AGENTS.md` rule 1)  
-- Privacy-local, no browse collection (`AGENTS.md` rule 2)  
-- Main status: protection on/off, list freshness, misconfig  
-- Rule packs: Core / Annoyances / Strict  
-- Recovery: pause, per-site allow, report  
-- Unlock: free app + one IAP for everything including system-wide  
+- 海外用户、**界面英文**（`AGENTS.md` 规则 0–1；[prd.md](prd.md) §2）  
+- 隐私本地、不采集浏览（`AGENTS.md` 规则 2；[prd.md](prd.md) §3）  
+- 主状态：保护开关、名单新鲜度、错误配置 — [prd.md](prd.md) §7  
+- 规则包：Core / Annoyances / Strict — [rule-packs.md](rule-packs.md)  
+- 自救：暂停、按站放行、报错 — [breakage-recovery.md](breakage-recovery.md)  
+- 解锁：免费 App + 一个含系统级在内的 IAP — [commerce.md](commerce.md)  
+- **文档中文 / 界面文案英文** — `AGENTS.md` 规则 0  

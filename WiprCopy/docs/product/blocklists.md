@@ -1,45 +1,47 @@
-# Blocklists (v1)
+# 名单（v1）
 
-Status: **aligned** — hybrid curated model (grilling option C).
+状态：**已对齐** — 混合策展模型（grilling 选项 C）。  
+上级：[prd.md](prd.md) §5.4 · Agent 规则：[`AGENTS.md`](../../AGENTS.md)。  
+文档语言：中文。
 
-## Strategy
+## 策略
 
-| Layer | Approach |
-|-------|----------|
-| Overall | **Curated hybrid**: reputable community lists + our selection, compiled and QA’d by us before ship/update |
-| Core | High-quality baseline sources (ads, common trackers, miners, etc.) |
-| Annoyances | Annoyance-oriented community sources where license allows |
-| Strict | More aggressive sources / rules; higher breakage tolerance |
-| Our layer | Exceptions, emergency fixes, product-specific patches on top of upstream |
+| 层 | 做法 |
+|----|------|
+| 总体 | **策展混合**：可信社区列表 + 自选，上架/更新前由我们编译并 QA |
+| Core | 高质量基线源（广告、常见追踪、挖矿等） |
+| Annoyances | 许可允许的骚扰类社区源 |
+| Strict | 更激进源/规则；更高破站容忍 |
+| 自有层 | 在上游之上的 exception、紧急修复、产品特定补丁 |
 
-Do **not** claim “million rules we invented.” Positioning: **carefully curated + continuously fixed**.
+**不要**宣称「我们发明了百万规则」。定位：**精心策展 + 持续修复**。
 
-## Privacy
+## 隐私
 
-- Updates **download rule data only**.
-- No upload of browsing history, visited apps, or which rules matched.
-- Aligns with `AGENTS.md` rule 2.
+- 更新**只下载规则数据**。  
+- 不上传浏览历史、访问过的 App、或哪些规则命中。  
+- 对齐 `AGENTS.md` 规则 2 与 [prd.md](prd.md) §3。  
 
-## Cadence (working assumption)
+## 节奏（工作假设）
 
-- Automatic refresh on the order of **1–2× per week** under normal conditions.
-- Hotfix path for severe breakage when needed.
-- Diagnostics should surface “lists are stale” without collecting browse data.
+- 正常情况约 **每周 1–2 次**自动刷新。  
+- 严重破站时走热修路径。  
+- 诊断应能提示「名单过期」，且不采集浏览数据。  
 
-## License & attribution
+## 许可证与致谢
 
-- Before shipping any upstream list: confirm license allows our distribution (in-app and/or remote update).
-- English **Acknowledgements** (and privacy policy as needed) list sources.
-- Keep a machine-readable manifest in-repo later (source URL, license, which pack).
+- 上架任何上游列表前：确认许可证允许我们分发（应用内和/或远程更新）。  
+- 英文 **Acknowledgements**（及必要时隐私政策）列出源。  
+- 之后在仓库维护机器可读 manifest（源 URL、许可证、所属包）。  
 
-## Pipeline (implementation intent)
+## 管线（实现意图）
 
-1. Fetch upstream → 2. Filter/transform per pack → 3. Merge our patches → 4. Compile to Safari Content Blocker JSON and URL Filter datasets (Bloom/PIR inputs) → 5. QA sample → 6. Publish update.
+1. 拉取上游 → 2. 按包过滤/转换 → 3. 合并自有补丁 → 4. 编译为 Safari Content Blocker JSON 与 URL Filter 数据集（Bloom/PIR 输入） → 5. 抽样 QA → 6. 发布更新。
 
-Safari and system-wide should stay **semantically aligned** with the same pack toggles where technically possible.
+Safari 与系统级在技术允许时应与同一套包开关**语义对齐**。
 
-## Non-goals (v1)
+## v1 非目标
 
-- In-app subscription to arbitrary list URLs
-- User-edited rules
-- Shipping unvetted full upstream dumps without compile/QA
+- 应用内订阅任意列表 URL  
+- 用户编辑规则  
+- 未编译/QA 的完整上游原样下发  
