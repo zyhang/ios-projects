@@ -11,9 +11,11 @@
 | [ia.md](ia.md) | 信息架构：无 Tab、Home + More push | 2026-07-25 |
 | [flows.md](flows.md) | 用户流程 | 2026-07-25 |
 | [screens.md](screens.md) | 线框（Welcome 3 页摘要；界面文案英文） | 2026-07-25 |
-| [../design/welcome.md](../design/welcome.md) | Welcome 完整设计文档 | 2026-07-25 |
 
-## 已定 UI 原则（本轮）
+**视觉 / 高保真**：当前工作区 [`../design/`](../design/)（重设计中）。  
+v1 对照（非权威）：[`../archive/design-v1-2026-07-25/`](../archive/design-v1-2026-07-25/)。
+
+## 已定 UI 原则（产品层，非视觉皮肤）
 
 | 原则 | 做法 |
 |------|------|
@@ -23,7 +25,9 @@
 | Welcome | **3 页视觉优先**（噪音 / Safari+Apps / 本地隐私）；设置细节留给 Enable 页 |
 | 调性 | 大留白、短**英文**文案、少控件 |
 
+视觉语言（色板、字体、组件样式）以 `docs/design/` 新稿为准，**不以** v1 归档 tokens 为准。
+
 ## 下一步
 
-1. 按 `docs/design/welcome.md` 把 `hi-fi.html` Welcome 收成 3 页（已基本同步）  
-2. 继续 Home 等高保真评审  
+1. 在 `docs/design/` 重建 tokens 与高保真  
+2. Welcome / Home 等与线框对齐后，回写 screens 中与视觉冲突的标注  

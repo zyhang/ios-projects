@@ -9,7 +9,8 @@
 | [`docs/product/prd.md`](docs/product/prd.md) | **PRD 权威源**：定位、MVP、商业、技术约束、范围外 |
 | [`docs/product/`](docs/product/) | 专题深挖（命名、商业、规则包、名单、破站、spike…） |
 | [`docs/wireframes/`](docs/wireframes/) | 信息架构与线框 |
-| [`docs/design/`](docs/design/) | 高保真、tokens、Welcome |
+| [`docs/design/`](docs/design/) | 高保真、tokens、Welcome（**视觉重设计中**） |
+| [`docs/archive/`](docs/archive/) | 已封存的旧设计稿（非权威） |
 
 实现代码、工程配置不放在 `docs/`（见 [`docs/README.md`](docs/README.md)）。
 
@@ -104,7 +105,8 @@
 | 系统级 URL Filter | [`docs/product/url-filter-spike.md`](docs/product/url-filter-spike.md) |
 | 命名与商店副标题 | [`docs/product/naming.md`](docs/product/naming.md) |
 | 开工顺序 | [`docs/product/work-order.md`](docs/product/work-order.md) |
-| Welcome / UI 视觉 | [`docs/design/`](docs/design/) · Welcome: [`docs/design/welcome.md`](docs/design/welcome.md) |
+| Welcome / UI 视觉 | [`docs/design/`](docs/design/)（重设计中；新稿落地后更新索引） |
+| 旧视觉对照（非权威） | [`docs/archive/design-v1-2026-07-25/`](docs/archive/design-v1-2026-07-25/) |
 | 信息架构 / 线框 | [`docs/wireframes/`](docs/wireframes/) |
 
 索引：[`docs/product/README.md`](docs/product/README.md)、[`docs/README.md`](docs/README.md)。

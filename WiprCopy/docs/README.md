@@ -21,7 +21,8 @@
 | [`product/prd.md`](product/prd.md) | **PRD 权威源**（定位、MVP、决策、范围外） |
 | [`product/`](product/) | 产品专题文档索引与深挖 |
 | [`wireframes/`](wireframes/) | 线框图、信息架构、流程草图（低保真） |
-| [`design/`](design/) | 高保真视觉、UI 标注、导出切图、品牌素材 |
+| [`design/`](design/) | 高保真视觉、UI 标注、导出切图、品牌素材（**重设计中**） |
+| [`archive/`](archive/) | 已封存设计稿；v1 见 [`archive/design-v1-2026-07-25/`](archive/design-v1-2026-07-25/) |
 
 ## 约定
 

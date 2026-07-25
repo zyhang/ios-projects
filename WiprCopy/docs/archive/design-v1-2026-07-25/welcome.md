@@ -1,11 +1,13 @@
 # Welcome 设计 — Gleem
 
-状态：**已对齐（设计方向）**  
+> **归档（design-v1-2026-07-25）**：非现行权威。重设计工作区见 [`docs/design/`](../../design/)。
+
+状态：**已封存（v1）**  
 范围：仅首次启动 Welcome（非 Home、非 Enable 设置、非 App Store listing）。  
 界面语言：**英文**。受众：海外重视隐私用户（`AGENTS.md` 规则 0–2）。  
 说明语言：**中文**。
 
-相关：[wireframes/screens.md](../wireframes/screens.md) · [hi-fi.html](hi-fi.html) · [tokens.md](tokens.md)
+相关：[wireframes/screens.md](../../wireframes/screens.md) · [hi-fi.html](hi-fi.html) · [tokens.md](tokens.md)
 
 ---
 

@@ -6,13 +6,13 @@
 
 ```
 Launch
-  → W1 → W2 → W3 Welcome (visual-first; see docs/design/welcome.md)
+  → W1 → W2 → W3 Welcome (visual-first; see wireframes/screens.md)
   → Get Started → O4 Unlock (Not now → H3)
   → optional O2 / O3 from Home CTAs when ready
   → H1 or H2 or H3
 ```
 
-Welcome **不是**完整技术设置。规格：`docs/design/welcome.md`。
+Welcome **不是**完整技术设置。结构见 [screens.md](screens.md)；v1 完整视觉稿见归档 `docs/archive/design-v1-2026-07-25/welcome.md`（非权威，重设计中）。
 
 ## F2 — 回访启动（开心路径）
 

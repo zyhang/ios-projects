@@ -17,7 +17,8 @@
 | [breakage-recovery.md](breakage-recovery.md) | 破站自救：暂停、按站放行、报错 |
 | [url-filter-spike.md](url-filter-spike.md) | 系统级 URL Filter 技术 spike 清单与成功标准 |
 | [work-order.md](work-order.md) | 开工顺序：名称 → 线框 → 视觉（spike 并行） |
-| [../design/welcome.md](../design/welcome.md) | Welcome 设计：3 页视觉优先方案 |
+| [../design/](../design/) | 视觉 / Welcome（**重设计中**） |
+| [../archive/design-v1-2026-07-25/](../archive/design-v1-2026-07-25/) | v1 视觉归档（hi-fi、tokens、Welcome；非权威） |
 
 ## 约定
 

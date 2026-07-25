@@ -17,7 +17,7 @@ ASCII 仅表示结构。**极简 chrome。界面英文。**
 
 ## Welcome（3 页）— 视觉优先
 
-权威设计文档：**[`docs/design/welcome.md`](../design/welcome.md)**。
+结构权威（本文件）。视觉稿：**重设计中**（[`../design/`](../design/)）；v1 对照见 [`../archive/design-v1-2026-07-25/welcome.md`](../archive/design-v1-2026-07-25/welcome.md)。
 
 仅首次启动。**3 页。** 插画/动效承载含义；**每页一句标题（英文）**。
 
@@ -42,7 +42,7 @@ ASCII 仅表示结构。**极简 chrome。界面英文。**
 └─────────────────────────────────┘
 ```
 
-备注：Welcome ≠ 设置 ≠ About。Skip 可选。Reduce Motion → 静态平静帧。完整规则见 `welcome.md`。
+备注：Welcome ≠ 设置 ≠ About。Skip 可选。Reduce Motion → 静态平静帧。v1 完整视觉规则见归档 `welcome.md`（非现行权威）。
 
 ---
 

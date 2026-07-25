@@ -19,9 +19,9 @@
 | [breakage-recovery.md](breakage-recovery.md) | 暂停、按站放行、报错 |
 | [url-filter-spike.md](url-filter-spike.md) | 系统级 URL Filter spike 清单 |
 | [work-order.md](work-order.md) | 设计先行顺序；spike 并行 |
-| [../design/welcome.md](../design/welcome.md) | 首次启动 Welcome（3 页） |
 
-线框 → [`../wireframes/`](../wireframes/) · 高保真 → [`../design/`](../design/)
+线框 → [`../wireframes/`](../wireframes/) · 高保真 → [`../design/`](../design/)（**视觉重设计中**）  
+v1 视觉归档（非权威）→ [`../archive/design-v1-2026-07-25/`](../archive/design-v1-2026-07-25/)
 
 语言约定见 [`AGENTS.md`](../../AGENTS.md) 规则 0：**PRD/开发文档中文，界面文案英文**。
 
@@ -180,7 +180,7 @@ Spike 最低成功标准：
 | 导航 | **无 Tab**；Home 为根 + **More** push（Wipr 风格） |
 | 健康态 Home | 一句状态文案（英文）；几乎无按钮 |
 | 名单更新 | 自动；Home（及 v1 UI）**无**手动 Update 控件 |
-| Welcome | 3 页、视觉优先 — [welcome.md](../design/welcome.md) |
+| Welcome | 3 页、视觉优先（内容结构见线框；视觉稿在 [`../design/`](../design/) 重设计中；v1 见 [归档 welcome](../archive/design-v1-2026-07-25/welcome.md)） |
 | 自救 | 从 Home / More 1–2 次点按可达 |
 | 文案密度 | 短英文、大留白、少控件 |
 
@@ -216,6 +216,7 @@ URL Filter spike 与设计**并行**；营销宣称「system-wide」前**必须*
 | 产品决策与 MVP（本 PRD） | **本文** |
 | 商业 / 包 / 名单 / 自救 | 文首专题表 |
 | UI 结构 | [`../wireframes/`](../wireframes/) |
-| 视觉 / Welcome | [`../design/`](../design/) |
+| 视觉 / Welcome | [`../design/`](../design/)（重设计中） |
+| 旧视觉归档 | [`../archive/design-v1-2026-07-25/`](../archive/design-v1-2026-07-25/) |
 
 决策冲突时：**`AGENTS.md` 规则 0–2 > 本 PRD > 专题文档 > 线框/设计**。线框与高保真不得与本文已对齐决策冲突。

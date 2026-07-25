@@ -7,7 +7,7 @@
 
 1. **名称 / 品牌** — 产品名、one-liner、语气 ✅（Gleem / Block Ads & Trackers）  
 2. **线框** — IA、关键流程（`docs/wireframes/`）✅ 首轮  
-3. **视觉设计** — 高保真、图标方向（`docs/design/`）✅ hi-fi HTML + tokens（图标待定）  
+3. **视觉设计** — 高保真、图标方向（`docs/design/`）🔄 **重设计中**（v1 已归档至 `docs/archive/design-v1-2026-07-25/`）  
 4. **工程** — App 壳、IAP、拦截器、名单、URL Filter  
 5. **URL Filter spike** — 可与 (2)–(3) 并行；营销宣称「system-wide」前**必须**通过  
 
