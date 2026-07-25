@@ -27,17 +27,28 @@
 重做视觉时仍须遵守（细节见 PRD / AGENTS）：
 
 - 海外用户、界面文案英文；隐私本地优先
-- 极简工具感：非警报红、非 VPN 霓虹、无广告商「可接受广告」
+- 主叙事 **C 为主**（可信安静）+ **B 为辅**（一次买断）；非促销廉价感
+- 非警报红、非 VPN 霓虹、无广告商「可接受广告」
 - 导航骨架（除非产品改决策）：无底部 Tab；Home + More
 - 名单仅自动更新；健康 Home 不堆操作
-- MVP：Safari Content Blocker + 系统级 URL Filter + 规则包 + 基础 onboarding
+- **MVP：Safari Content Blocker** + 规则包 + 基础 onboarding（**不含**系统级全 App 必达）
+- Welcome / 商店叙事以 Safari + 隐私为主，不默认卖 system-wide
+
+## 双方向对比（先出后锁）
+
+按 PRD §4.6，至少各做一套可对比稿，再锁 tokens：
+
+| 方向 | 气质关键词 | 注意 |
+|------|------------|------|
+| **A · 冷静工具** | 系统设置感、短句、中性面、功能诚实 | 易与 Wipr 过近；用 plus 与品牌细节拉开 |
+| **B · 干净生活** | 消噪、生活化、轻隐喻 | 须仍可信、成人向；忌儿童化/鸡汤 |
 
 ## 建议产出顺序
 
-1. 视觉方向 / mood + **tokens**（色、字、圆角、间距）  
-2. 核心屏高保真：Welcome → Home → Unlock / Enable → More 关键  
-3. 可选：`DESIGN.md`（agent 用完整视觉系统）或 Figma  
-4. 更新本 README 索引，并在 PRD「文档地图」中指向新权威文件  
+1. 各方向 mood + 候选 **tokens**（色、字、圆角、间距）  
+2. 同一批核心屏（Welcome → Home → Unlock / Enable Safari → More）两套对比  
+3. 评审锁定一版 → `DESIGN.md` / Figma  
+4. 更新本 README 索引  
 
 对照旧稿：
 

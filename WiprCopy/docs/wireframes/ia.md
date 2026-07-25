@@ -8,7 +8,7 @@
 1. **无 Tab bar。** 唯一主表面是 Home。其余一律从单一次级入口 **More**（Wipr 式 overflow）push 进入。  
 2. **健康态 Home 几乎为空** — 一句状态、可选安静次要信息、仅在需要时一个主操作。  
 3. **名单自动更新** — Home（及 v1 UI）永不出现手动 “Update rules”。名单过期仅以软状态/诊断文案呈现（若真有问题）。  
-4. **Welcome 共 3 页、视觉优先** — 品类 → 范围 → 信任；不是设置倾倒。结构见 [screens.md](screens.md)；v1 视觉细节见归档 [`../archive/design-v1-2026-07-25/welcome.md`](../archive/design-v1-2026-07-25/welcome.md)（非权威）。  
+4. **Welcome 视觉优先** — 品类（安静拦截）→ **Safari** → 信任；不是设置倾倒。**不以 system-wide 为主叙事**（PRD 2026-07-25）。结构见 [screens.md](screens.md)。  
 5. **文案与密度** — 短英文句、大留白、少按钮。Indie 冷静，非仪表盘。  
 
 ## 导航模型（v1）

@@ -17,14 +17,15 @@ ASCII 仅表示结构。**极简 chrome。界面英文。**
 
 ## Welcome（3 页）— 视觉优先
 
-结构权威（本文件）。视觉稿：**重设计中**（[`../design/`](../design/)）；v1 对照见 [`../archive/design-v1-2026-07-25/welcome.md`](../archive/design-v1-2026-07-25/welcome.md)。
+结构权威以 **PRD** 为准（Safari 优先，2026-07-25）。本文件待按 PRD 修订；下列为**过渡摘要**。  
+视觉稿：[`../design/`](../design/)（双方向）；v1 对照见归档 welcome。
 
-仅首次启动。**3 页。** 插画/动效承载含义；**每页一句标题（英文）**。
+仅首次启动。插画/动效承载含义；**每页一句标题（英文）**。
 
-| 页 | 视觉 | 标题（EN） | CTA（EN） |
-|----|------|------------|-----------|
-| W1 | 页面上广告/噪音消散 | Without the noise. | Continue |
-| W2 | Safari + App 格子 | Safari & Apps. | Continue |
+| 页 | 视觉（方向） | 标题（EN，待设计确认） | CTA（EN） |
+|----|--------------|------------------------|-----------|
+| W1 | 消噪 / 干净浏览 | Without the noise. | Continue |
+| W2 | **Safari** 保护（**不再默认卖** system-wide Apps） | 待改：Safari 向，非 “Safari & Apps.” | Continue |
 | | | 可选 micro: One purchase. No subscription. | |
 | W3 | 数据留在设备 | Stays on your device. | Get Started |
 

@@ -18,7 +18,7 @@
 
 ## 产品身份（摘要）
 
-**Gleem** — 面向海外的隐私广告拦截：Safari + 系统级全 App 拦截，内置规则包，一次 IAP 解锁。
+**Gleem** — 面向海外的隐私广告拦截：**Safari 优先**（v1），策展规则包，一次 IAP 解锁；系统级全 App / Mac 客户端拦截后置论证。
 
 | 字段 | 值 |
 |------|-----|
@@ -116,6 +116,8 @@
 ## 工作提示（Agent）
 
 1. **写文档用中文，写界面用英文**（规则 0）；勿混用成「中文 UI」或「英文 PRD」除非用户要求。  
-2. **设计先行**已对齐：名称 → 线框 → 视觉；URL Filter spike **并行**，上架前必须通过 — 见 [work-order](docs/product/work-order.md) 与 PRD。  
-3. 健康态 Home：极简状态句、无 Tab、无手动「更新名单」按钮 — 见 PRD 与 wireframes。  
-4. 不确定是否属于 v1 时：打开 PRD 的 MVP / 后置 / 范围外，而不是自行扩 scope。  
+2. **设计先行**：名称 → 线框（Safari 优先）→ **冷静工具 / 干净生活** 双视觉对比 → 工程 — 见 [work-order](docs/product/work-order.md) 与 PRD。  
+3. **v1 主路径是 Safari**；系统级 URL Filter / Mac 客户端拦截**后置**，勿默认写进商店宣称或 MVP 必达 — 见 PRD §4–5。  
+4. 健康态 Home：极简状态句、无 Tab、无手动「更新名单」按钮 — 见 PRD 与 wireframes。  
+5. 不确定是否属于 v1 时：打开 PRD 的 MVP / 后置 / 范围外，而不是自行扩 scope。  
+6. Plus 能力须过 PRD 克制门槛；勿整包复刻 AdGuard。  
