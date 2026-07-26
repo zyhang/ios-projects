@@ -77,7 +77,7 @@
 关键流程需覆盖自动化或可重复人工脚本：
 
 - 首次启动与 Safari 扩展开启指导。
-- `Protected`、`Action Needed`、`Paused` 三种首页状态。
+- `All Quiet`、`One Quick Step`、`Paused` 三种首页状态。
 - 开启和撤销站点 Allowlist。
 - 暂停保护并恢复。
 - 查看规则更新时间和版本。

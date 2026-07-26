@@ -13,7 +13,7 @@
 - 英文 SwiftUI 主 App。
 - iPhone/iPad，最低 iOS/iPadOS 26。
 - 首次启用引导。
-- `Protected / Action Needed / Paused` 状态。
+- `All Quiet / One Quick Step / Paused` 状态。
 - Safari 基础广告与追踪器拦截。
 - YouTube Safari 专项拦截。
 - X Safari Promoted Posts 拦截。

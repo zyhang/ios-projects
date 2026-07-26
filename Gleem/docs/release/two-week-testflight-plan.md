@@ -31,7 +31,7 @@
 - X Safari Promoted Posts 隐藏。
 - Cookie consent、Open in App、newsletter、anti-adblock 等 annoyances 的首批规则。
 - Gleem Extra Safari Web Extension，仅请求 youtube.com 与 x.com 权限。
-- 首页真实状态：`Protected`、`Action Needed`、`Paused`。
+- 首页真实状态：`All Quiet`、`One Quick Step`、`Paused`。
 - 单站点 Allowlist。
 - 临时暂停和自动恢复。
 - 签名规则更新、校验失败保留旧版本、回滚能力。
@@ -79,7 +79,7 @@ AI 编程工具可以缩短实现与排查时间，但不能替代 Apple 审核�
 
 ### Day 2：完成状态模型与开启引导
 
-- 实现 `Protected`、`Action Needed`、`Paused` 状态机。
+- 实现 `All Quiet`、`One Quick Step`、`Paused` 用户状态；内部仍由保护事实状态机推导。
 - 实现 Safari 扩展开启说明和状态刷新。
 - 建立 App Group 配置结构。
 - 完成首页低保真流程与英文核心文案。

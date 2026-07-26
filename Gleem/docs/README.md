@@ -24,7 +24,7 @@
 - YouTube Safari 专项拦截。
 - X Safari Promoted Posts 拦截。
 - Cookie consent、Open in App、Newsletter 和反广告拦截提示。
-- `Protected / Action Needed / Paused` 可信保护状态。
+- `All Quiet / One Quick Step / Paused` 可信且低负担的保护状态。
 - 网站放行、临时暂停、自动规则更新和用户主动反馈。
 
 商业正式版在 Apple 相关能力准备完成后增加：
@@ -42,7 +42,9 @@
 ### 设计
 
 - [设计原则与视觉规范](design/design-system.md)：品牌人格、视觉语言、组件、动效和无障碍要求。
-- [信息架构与用户流程](design/user-flows.md)：页面结构、首次启用、保护状态、暂停和反馈流程。
+- [App 完整流程](design/app-flow.md)：统一覆盖 TestFlight、正式付费、扩展设置、规则更新、放行、反馈和故障恢复。
+- [App 流程视觉稿](design/Gleem-App-Flows.free)：Lunacy 可编辑源文件；[PDF 预览](design/Gleem-App-Flows.pdf)。
+- [信息架构与用户流程](design/user-flows.md)：页面结构与关键流程摘要；详细逻辑以 App 完整流程为准。
 
 ### 工程
 

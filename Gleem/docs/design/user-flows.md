@@ -1,5 +1,7 @@
 # 信息架构与用户流程
 
+> 本文保留页面级摘要。完整状态分支、阶段标签和跨系统流程以 [App 完整流程](app-flow.md) 为准。
+
 ## 1. 导航结构
 
 首版建议使用简单层级，不使用多 Tab dashboard。
@@ -48,11 +50,11 @@ Free Safari Protection 说明
   ├── 未启用 → 展示具体 Settings 路径与重试
   └── 已启用
         ↓
-可选：启用 Gleem Extra
-        ├── 仅 youtube.com
-        └── 仅 x.com
-        ↓
-完成页：Protected
+进入 Overview
+  ↓
+可选：一键启用 Enhanced Protection
+  ↓
+合并检测 YouTube 与 X 必要权限
         ↓
 进入 Overview
 ```
@@ -64,7 +66,7 @@ Content Blocker：
 - 强调 Safari 负责执行规则。
 - 说明基础扩展不能查看或上报浏览内容。
 
-Gleem Extra：
+Enhanced Protection（技术实现为 Gleem Extra）：
 
 - 在请求权限前说明为什么需要页面访问。
 - 明确权限只覆盖 YouTube 和 X。
@@ -75,11 +77,11 @@ Gleem Extra：
 - 用户从 Settings 返回时自动重新检查。
 - 不循环弹出权限请求。
 - 提供 `I’ll do this later`。
-- 若系统状态无法准确判断，显示 `Check Settings`，不伪装为 `Protected`。
+- 若系统状态无法准确判断，显示 `Check Settings`，不伪装为 `All Quiet`。
 
 ## 3. Overview 状态
 
-### 3.1 Protected
+### 3.1 All Quiet
 
 条件：
 
@@ -90,16 +92,15 @@ Gleem Extra：
 
 显示：
 
-- `Protected`
+- `All Quiet`
 - `Safari is protected with the latest available rules.`
 - 次级显示 YouTube & X 是否完整启用。
 
-### 3.2 Action Needed
+### 3.2 One Quick Step
 
 可能原因：
 
 - Content Blocker 未启用。
-- Gleem Extra 权限缺失。
 - 规则包签名或哈希失败。
 - 规则长时间未更新。
 - 扩展 reload 失败。
@@ -109,7 +110,7 @@ Gleem Extra：
 
 - 只展示当前最优先的一个修复动作。
 - 详情页可列出其他次要问题。
-- 不把可选 Gleem Extra 未启用视为基础保护完全失败。
+- 不把可选 Enhanced Protection 未启用视为基础保护故障。
 
 ### 3.3 Paused
 
@@ -164,15 +165,16 @@ Gleem Extra：
 
 Overview 中显示：
 
-- `YouTube & X: Basic protection`
-- 说明开启 Extra 后可移除动态广告内容。
-- 用户点击后进入单独说明页，再触发权限请求。
+- `Enhanced Protection: Off`
+- 说明开启后可增强 YouTube 与 X 的动态广告处理。
+- 用户只看到一个开启动作，不分别理解两个域名权限。
 
 ### 6.2 已授权
 
-- 显示 `Enhanced`。
+- 只有两项必要权限都有效时才显示 `Enhanced Protection: On`。
+- 任一权限缺失时统一显示 `Setup Needed`，不显示部分开启。
 - 不显示具体浏览记录或拦截次数。
-- 提供关闭专项能力的入口。
+- 提供一次关闭整个 Enhanced Protection 的入口。
 
 ### 6.3 专项规则失效
 
@@ -206,10 +208,10 @@ StoreKit 购买
   ↓
 本地验证过滤状态
   ↓
-Protected Everywhere
+All Quiet
 ```
 
-购买成功但系统过滤未启用时，状态应为 `Action Needed`，不能显示完整保护。
+副文案说明 `Safari and supported apps are covered.`。购买成功但系统过滤未启用时，状态应为 `One Quick Step`，不能显示完整保护。
 
 ## 8. 反馈流程
 
@@ -224,18 +226,12 @@ Protected Everywhere
   ↓
 查看将发送的诊断字段
   ↓
-打开系统邮件编辑器
+用户确认后通过 App 内反馈 API 提交
 ```
 
 ### 8.2 Site Broken
 
-在发送反馈前提供：
-
-- `Pause on This Site`
-- `Try Again`
-- `Send Report`
-
-优先帮助用户恢复使用，再收集反馈。
+在发送反馈前先临时允许当前网站并自动刷新，询问网站是否恢复。恢复后再提供可选兼容性报告；未恢复时撤销测试并提交更详细结果。
 
 ### 8.3 默认诊断字段
 
@@ -257,5 +253,5 @@ Protected Everywhere
 | Allowlist 为空 | 解释通常无需放行，出现页面异常时再添加 |
 | 离线无法更新 | 继续使用上一个有效规则包，说明稍后重试 |
 | 规则损坏 | 回退内置规则并提示修复，不让用户失去全部保护 |
-| 邮件不可用 | 提供复制诊断内容，不自动上传 |
+| 反馈服务不可用 | 保存本地草稿；恢复网络后仍需用户再次确认，不自动发送 |
 | Pro 未开放 | 清楚标记 preview，不诱导购买 |
