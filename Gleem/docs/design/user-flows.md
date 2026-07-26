@@ -1,0 +1,261 @@
+# 信息架构与用户流程
+
+## 1. 导航结构
+
+首版建议使用简单层级，不使用多 Tab dashboard。
+
+```text
+App
+├── Overview
+│   ├── Protection Status
+│   ├── Safari Protection
+│   ├── YouTube & X
+│   ├── Block Annoyances
+│   └── Pro Preview
+├── Allowlist
+├── Support
+│   ├── Report Missed Ad
+│   ├── Report Broken Site
+│   ├── Export Diagnostics
+│   └── Privacy
+└── About
+    ├── Rule Version
+    ├── App Version
+    └── Acknowledgements
+```
+
+首版可以通过 NavigationStack 从 Overview 进入二级页面，不需要底部 Tab Bar。
+
+## 2. 首次启用流程
+
+### 2.1 目标
+
+- 先让 Safari 免费保护生效。
+- 在用户看到价值后再介绍 Pro。
+- 权限请求与用户理解保持同步。
+- 不一次性要求所有权限。
+
+### 2.2 推荐流程
+
+```text
+Welcome
+  ↓
+Free Safari Protection 说明
+  ↓
+引导启用 Content Blocker
+  ↓
+本地检查是否启用
+  ├── 未启用 → 展示具体 Settings 路径与重试
+  └── 已启用
+        ↓
+可选：启用 Gleem Extra
+        ├── 仅 youtube.com
+        └── 仅 x.com
+        ↓
+完成页：Protected
+        ↓
+进入 Overview
+```
+
+### 2.3 权限说明
+
+Content Blocker：
+
+- 强调 Safari 负责执行规则。
+- 说明基础扩展不能查看或上报浏览内容。
+
+Gleem Extra：
+
+- 在请求权限前说明为什么需要页面访问。
+- 明确权限只覆盖 YouTube 和 X。
+- 允许用户跳过；跳过不影响基础 Safari 保护。
+
+### 2.4 失败处理
+
+- 用户从 Settings 返回时自动重新检查。
+- 不循环弹出权限请求。
+- 提供 `I’ll do this later`。
+- 若系统状态无法准确判断，显示 `Check Settings`，不伪装为 `Protected`。
+
+## 3. Overview 状态
+
+### 3.1 Protected
+
+条件：
+
+- Content Blocker 已启用。
+- 本地规则包存在且通过完整性校验。
+- 规则未超过失效阈值。
+- 当前不在全局暂停中。
+
+显示：
+
+- `Protected`
+- `Safari is protected with the latest available rules.`
+- 次级显示 YouTube & X 是否完整启用。
+
+### 3.2 Action Needed
+
+可能原因：
+
+- Content Blocker 未启用。
+- Gleem Extra 权限缺失。
+- 规则包签名或哈希失败。
+- 规则长时间未更新。
+- 扩展 reload 失败。
+- 未来 Pro 过滤器异常或未授权。
+
+规则：
+
+- 只展示当前最优先的一个修复动作。
+- 详情页可列出其他次要问题。
+- 不把可选 Gleem Extra 未启用视为基础保护完全失败。
+
+### 3.3 Paused
+
+暂停类型：
+
+- 全局暂停。
+- 当前网站放行。
+- 定时暂停。
+
+显示：
+
+- 暂停范围。
+- 自动恢复时间。
+- `Resume Now`。
+
+暂停到期必须本地自动恢复，不能依赖服务器。
+
+## 4. 网站放行
+
+### 4.1 入口
+
+- 主 App Allowlist 页面。
+- Gleem Extra 的 Safari toolbar action。
+- 页面异常反馈流程中的快速放行建议。
+
+### 4.2 行为
+
+- 默认按 registrable domain 放行，如 `news.example.com` 归一化为 `example.com`。
+- 用户可看到并删除所有放行项。
+- 放行影响基础 Safari 与 Gleem Extra 时，需要明确说明。
+- 首版不提供复杂 URL path 级规则。
+
+## 5. 临时暂停
+
+建议选项：
+
+- 15 minutes
+- 1 hour
+- Until tomorrow
+- Until I resume
+
+原则：
+
+- 默认突出短期选项。
+- 暂停后立即更新状态。
+- 到期时间存储在本地，并能跨进程读取。
+- 系统时间变化后重新计算，不无限延长。
+
+## 6. YouTube/X 专项流程
+
+### 6.1 未授权
+
+Overview 中显示：
+
+- `YouTube & X: Basic protection`
+- 说明开启 Extra 后可移除动态广告内容。
+- 用户点击后进入单独说明页，再触发权限请求。
+
+### 6.2 已授权
+
+- 显示 `Enhanced`。
+- 不显示具体浏览记录或拦截次数。
+- 提供关闭专项能力的入口。
+
+### 6.3 专项规则失效
+
+- 远程 feature flag 可停用单个 site module。
+- 停用后降级到基础 Content Blocker。
+- 不因专项脚本异常阻塞页面主要内容。
+
+## 7. Pro 预览与未来订阅
+
+### 7.1 TestFlight
+
+- 可打开 Pro 介绍页。
+- 标注 `Preview — not available in this beta`。
+- 不触发真实购买。
+- 可以展示未来权限流程，但不能伪造已保护状态。
+
+### 7.2 正式版
+
+```text
+用户理解免费 Safari 价值
+  ↓
+打开 Pro
+  ↓
+查看跨 App 能力和限制
+  ↓
+确认 $19.99/year + 7-day trial
+  ↓
+StoreKit 购买
+  ↓
+请求 URL Filter 授权
+  ↓
+本地验证过滤状态
+  ↓
+Protected Everywhere
+```
+
+购买成功但系统过滤未启用时，状态应为 `Action Needed`，不能显示完整保护。
+
+## 8. 反馈流程
+
+### 8.1 Missed Ad
+
+```text
+选择 Missed Ad
+  ↓
+确认域名
+  ↓
+可选说明/截图
+  ↓
+查看将发送的诊断字段
+  ↓
+打开系统邮件编辑器
+```
+
+### 8.2 Site Broken
+
+在发送反馈前提供：
+
+- `Pause on This Site`
+- `Try Again`
+- `Send Report`
+
+优先帮助用户恢复使用，再收集反馈。
+
+### 8.3 默认诊断字段
+
+- 当前域名。
+- App 版本/build。
+- iOS/iPadOS 版本。
+- 设备型号类别。
+- Content Blocker 状态。
+- Gleem Extra 版本和授权状态。
+- 规则版本与生成时间。
+- 暂停/放行状态。
+
+不得包含完整浏览历史、其他域名、请求内容或设备广告标识符。
+
+## 9. 空状态与异常文案
+
+| 场景 | 文案目标 |
+| --- | --- |
+| Allowlist 为空 | 解释通常无需放行，出现页面异常时再添加 |
+| 离线无法更新 | 继续使用上一个有效规则包，说明稍后重试 |
+| 规则损坏 | 回退内置规则并提示修复，不让用户失去全部保护 |
+| 邮件不可用 | 提供复制诊断内容，不自动上传 |
+| Pro 未开放 | 清楚标记 preview，不诱导购买 |
