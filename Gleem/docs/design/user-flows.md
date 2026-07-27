@@ -40,24 +40,23 @@ App
 ### 2.2 推荐流程
 
 ```text
-Welcome
-  ↓
-Free Safari Protection 说明
-  ↓
-引导启用 Content Blocker
-  ↓
-本地检查是否启用
-  ├── 未启用 → 展示具体 Settings 路径与重试
-  └── 已启用
+A1 Welcome
+  ↓ Set Up Safari Protection
+A2 One Toggle in Settings
+  ↓ Open Settings（深链到 Safari Extensions）
+用户开启 Stillwall + All Websites
+  ↓ 返回 App，自动检测
+  ├── 未启用 → A3 仍未开启（同页状态提示，仅可再次 Open Settings）
+  └── 已启用 → A4 All Quiet → 进入 Overview / Home
         ↓
-进入 Overview
-  ↓
 可选：一键启用 Enhanced Protection
   ↓
 合并检测 YouTube 与 X 必要权限
         ↓
-进入 Overview
+Overview
 ```
+
+**门禁：** 未完成免费 Safari Protection 授权前不得进入 Home / Overview。不提供 `I'll do this later`；否则后续功能没有意义。
 
 ### 2.3 权限说明
 
@@ -65,19 +64,22 @@ Content Blocker：
 
 - 强调 Safari 负责执行规则。
 - 说明基础扩展不能查看或上报浏览内容。
+- 对用户说结果（打开 Safari Extensions、打开 Stillwall），不暴露 Shortcuts 实现细节。
 
 Enhanced Protection（技术实现为 Gleem Extra）：
 
 - 在请求权限前说明为什么需要页面访问。
 - 明确权限只覆盖 YouTube 和 X。
 - 允许用户跳过；跳过不影响基础 Safari 保护。
+- 与 Safari Protection 不同：基础授权不可跳过，Enhanced 可跳过。
 
 ### 2.4 失败处理
 
 - 用户从 Settings 返回时自动重新检查。
 - 不循环弹出权限请求。
-- 提供 `I’ll do this later`。
-- 若系统状态无法准确判断，显示 `Check Settings`，不伪装为 `All Quiet`。
+- **不提供** `I'll do this later` / `Finish Later` 跳过首次 Safari 授权。
+- 未开启时留在 One Toggle（A3 状态可见：`Still off · We'll keep checking`）。
+- 若系统状态无法准确判断，显示 `Check Settings` / 仍未开启态，不伪装为 `All Quiet`。
 
 ## 3. Overview 状态
 

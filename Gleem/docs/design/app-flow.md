@@ -14,6 +14,7 @@
 > 用户完成必要设置后，不需要持续管理 App；再次打开时，一眼确认状态即可离开。
 
 - 首次设置尽量短，先让免费 Safari Protection 生效。
+- **Safari Protection 授权是进入 Home 的门禁**；未完成不得进入主页，不提供稍后完成。
 - 不用功能轮播、统计 Dashboard、连续弹窗或通知权限制造负担。
 - 正常状态使用 `All Quiet`，只在确实需要用户处理时显示 `One Quick Step`。
 - 同时存在多个问题时，首页只展示一个最高优先级修复动作。
@@ -44,14 +45,13 @@
 ```mermaid
 flowchart LR
     A["A · 首次打开"] --> B["A · Welcome<br/>一句话价值"]
-    B --> C["A · 设置 Safari Protection"]
+    B --> C["A · One Toggle<br/>Open Settings"]
     C --> D{"A · 自动检测已启用？"}
-    D -->|"否"| E["A · One Quick Step<br/>Open Settings / Check Again"]
+    D -->|"否"| E["A · 仍未开启<br/>同页状态提示 · Open Settings"]
     E --> D
-    E -->|"Finish Later"| H["A · Home"]
     D -->|"是"| F["A · 内置规则立即生效"]
     F --> G["A · All Quiet<br/>Safari protection is on"]
-    G --> H
+    G --> H["A · Home"]
 
     H --> I["A · 后台同步最新规则"]
     H --> J["A · 一键启用 Enhanced Protection"]
@@ -74,7 +74,18 @@ flowchart LR
 
 总流程不代表所有页面同时出现。首页只显示当前状态、一个必要动作、Pro 状态卡和低频入口。
 
+**门禁：** 免费 Safari Protection 未完成授权前不得进入 Home。没有 `Finish Later` / `I'll do this later`；未启用时留在 One Toggle（仍未开启态），否则后续功能没有意义。
+
 ## 4. 首次启动与 Safari Protection
+
+### 4.1 屏结构（FLOW A）
+
+| 画板 | 名称 | 用户动作 |
+| --- | --- | --- |
+| A1 | Welcome | `Set Up Safari Protection`；次级 `Privacy` |
+| A2 | One Toggle in Settings | `Open Settings`（Shortcuts 深链到 Safari Extensions） |
+| A3 | 仍未开启（同布局 + 状态差） | `Try Open Settings Again`；无稍后完成 |
+| A4 | All Quiet | 保护已生效；自动进入 Home |
 
 Welcome 只包含：
 
@@ -85,28 +96,46 @@ Welcome 只包含：
 
 不增加三至四页功能轮播。
 
+A2 对用户只描述结果，不暴露 Shortcuts 实现细节：
+
+- 说明：`We'll open Safari Extensions for you.`
+- 步骤：Tap Open Settings → Turn on Stillwall → Allow for All Websites → Return — we check。
+
+A3 与 A2 同一任务骨架，但状态必须可感知：
+
+- 顶部：`Still off · We'll keep checking`
+- 主按钮：`Try Open Settings Again`
+- 步骤 4 警示：`Still off — try again`
+
+### 4.2 流程
+
 ```mermaid
 flowchart TD
-    A["A · Welcome"] --> B["Set Up Safari Protection"]
-    B --> C["说明 Safari 执行规则<br/>Gleem 不读取浏览内容"]
-    C --> D["Open Settings"]
-    D --> E["用户在系统设置中启用 Extension"]
-    E --> F["返回 Gleem"]
+    A["A1 · Welcome"] --> B["Set Up Safari Protection"]
+    B --> C["A2 · One Toggle in Settings"]
+    C --> D["Open Settings<br/>深链到 Safari Extensions"]
+    D --> E["用户开启 Stillwall<br/>并允许 All Websites"]
+    E --> F["返回 App"]
     F --> G["自动读取 Content Blocker 状态"]
     G --> H{"已启用？"}
     H -->|"是"| I["激活内置有效规则"]
     I --> J["请求 Extension reload"]
     J --> K{"reload 成功？"}
-    K -->|"是"| L["All Quiet"]
-    K -->|"否"| M["One Quick Step<br/>Try Again"]
-    H -->|"否"| N["One Quick Step<br/>Turn On Safari Protection"]
-    N --> O["Open Settings"]
-    O --> F
-    N -->|"Check Again"| G
-    N -->|"Finish Later"| P["进入 Home<br/>保留 One Quick Step"]
-    M -->|"Finish Later"| P
-    L --> Q["进入 Home"]
+    K -->|"是"| L["A4 · All Quiet"]
+    K -->|"否"| M["A3 · 仍未开启<br/>Try Open Settings Again"]
+    H -->|"否"| N["A3 · 仍未开启<br/>同页状态提示"]
+    N --> O["Try Open Settings Again"]
+    O --> D
+    M --> O
+    L --> P["进入 Home"]
 ```
+
+硬性规则：
+
+- **必须完成 Safari Protection 授权后才能进入 Home。**
+- 不提供 `I'll do this later` / `Finish Later` 跳过首次授权。
+- 用户从设置返回时自动检测；未开启则留在 A3（与 A2 同布局，状态可见）。
+- 杀进程或冷启动时，若仍未授权，继续停在 One Toggle，不进入 Home。
 
 App 每次启动或回到前台时重新读取保护事实：
 
