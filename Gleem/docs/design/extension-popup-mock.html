@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stillwall · Extension Popup Mock (SE01)</title>
+  <style>
+    :root {
+      --bg: #f2f2f7;
+      --card: #fff;
+      --label: #000;
+      --secondary: rgba(60, 60, 67, 0.6);
+      --sep: rgba(60, 60, 67, 0.18);
+      --brand: #2f6a58;
+      --on: #34c759;
+      --paused: #ff9f0a;
+      --pro-bg: #fff4d6;
+      --pro-text: #7a5316;
+      --pro-border: #eac97c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--label);
+      padding: 24px 16px 48px;
+    }
+    h1 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 8px;
+    }
+    .note {
+      font-size: 13px;
+      color: var(--secondary);
+      max-width: 680px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .col { display: flex; flex-direction: column; gap: 8px; }
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    .popup {
+      width: 320px;
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+    .header {
+      padding: 16px 16px 12px;
+    }
+    .host {
+      font-size: 13px;
+      color: var(--secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--on);
+      flex-shrink: 0;
+    }
+    .dot.paused { background: var(--paused); }
+    .dot.off { background: #8e8e93; }
+    .menu { border-top: 0.33px solid var(--sep); }
+    .item {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 16px;
+      font-size: 17px;
+      border-bottom: 0.33px solid var(--sep);
+      cursor: default;
+    }
+    .item:last-child { border-bottom: none; }
+    .item .title { flex: 1; }
+    .item .chev {
+      color: var(--secondary);
+      font-size: 14px;
+      margin-left: 8px;
+    }
+    .pro {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--pro-text);
+      background: var(--pro-bg);
+      border: 0.75px solid var(--pro-border);
+      border-radius: 4px;
+      padding: 2px 5px;
+      margin-right: 4px;
+    }
+    .disabled-body {
+      padding: 16px;
+    }
+    .disabled-body p {
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.4;
+      margin: 8px 0 16px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stillwall Safari Extension · Popup mock</h1>
+  <p class="note">
+    Product: exactly <strong>3</strong> actions (Pause/Resume · Tap to Block · Report issue).
+    Spec: <code>docs/design/safari-extension.md</code> · Wireframe blueprint: <code>extension-wireframes-se.md</code>.
+    Open this file in a browser for review; final art in Lunacy.
+  </p>
+
+  <div class="row">
+    <div class="col">
+      <span class="label">SE01 · Protected</span>
+      <div class="popup">
+        <div class="header">
+          <div class="host">example.com</div>
+          <div class="status"><span class="dot"></span> Protected</div>
+        </div>
+        <div class="menu">
+          <div class="item"><span class="title">Pause on this site</span><span class="chev">›</span></div>
+          <div class="item"><span class="title">Tap to Block</span><span class="pro">PRO</span><span class="chev">›</span></div>
+          <div class="item"><span class="title">Report issue</span><span class="chev">›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <span class="label">SE01a · Paused</span>
+      <div class="popup">
+        <div class="header">
+          <div class="host">example.com</div>
+          <div class="status"><span class="dot paused"></span> Paused</div>
+        </div>
+        <div class="menu">
+          <div class="item"><span class="title">Resume on this site</span><span class="chev">›</span></div>
+          <div class="item"><span class="title">Tap to Block</span><span class="pro">PRO</span><span class="chev">›</span></div>
+          <div class="item"><span class="title">Report issue</span><span class="chev">›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <span class="label">SE01c · Off in app</span>
+      <div class="popup">
+        <div class="header">
+          <div class="host">example.com</div>
+          <div class="status"><span class="dot off"></span> Off in app</div>
+        </div>
+        <div class="menu">
+          <div class="item"><span class="title">Open Stillwall</span><span class="chev">›</span></div>
+          <div class="item"><span class="title">Tap to Block</span><span class="pro">PRO</span><span class="chev">›</span></div>
+          <div class="item"><span class="title">Report issue</span><span class="chev">›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <span class="label">SE01b · Not enabled</span>
+      <div class="popup">
+        <div class="disabled-body">
+          <div class="host" style="font-size:15px;font-weight:600;color:var(--label)">Stillwall</div>
+          <div class="status" style="margin-top:4px"><span class="dot off"></span> Not enabled</div>
+          <p>Turn on Stillwall in Settings to use protection on this page.</p>
+          <button type="button" class="btn">Open Stillwall</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
