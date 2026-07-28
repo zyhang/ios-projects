@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Stillwall Hi-fi · Phone Preview</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      padding: 12px 12px 48px;
+    }
+    h1 { font-size: 18px; font-weight: 600; margin: 8px 4px 4px; }
+    p { font-size: 13px; opacity: 0.7; margin: 0 4px 16px; line-height: 1.4; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #2f6a58;
+      white-space: nowrap;
+    }
+    nav a.muted { background: #333; }
+    .screen {
+      margin: 0 auto 28px;
+      max-width: 390px;
+    }
+    .screen h2 {
+      font-size: 13px;
+      font-weight: 600;
+      opacity: 0.75;
+      margin: 0 0 8px 4px;
+    }
+    .screen img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stillwall · Hi-fi P0</h1>
+  <p>手机竖屏预览 · 源：Lunacy Depth Pass Hi-fi · 导出 2×（780×1688）</p>
+  <nav>
+    <a href="#p0">主路径</a>
+    <a class="muted" href="#dark">Dark</a>
+    <a class="muted" href="#a11y">Large Type</a>
+  </nav>
+
+  <section id="p0">
+    <div class="screen" id="s01">
+      <h2>01 Welcome</h2>
+      <img src="01-Welcome.png" alt="Welcome" loading="lazy" />
+    </div>
+    <div class="screen" id="s02">
+      <h2>02 Setup</h2>
+      <img src="02-Setup.png" alt="Setup" loading="lazy" />
+    </div>
+    <div class="screen" id="s03">
+      <h2>03 Home · On</h2>
+      <img src="03-Home-On.png" alt="Home On" loading="lazy" />
+    </div>
+    <div class="screen" id="s04">
+      <h2>04 Home · Off</h2>
+      <img src="04-Home-Off.png" alt="Home Off" loading="lazy" />
+    </div>
+    <div class="screen" id="s05">
+      <h2>05 Upgrade</h2>
+      <img src="05-Upgrade.png" alt="Upgrade" loading="lazy" />
+    </div>
+  </section>
+
+  <section id="dark">
+    <div class="screen">
+      <h2>06 Welcome · Dark</h2>
+      <img src="06-Welcome-Dark.png" alt="Welcome Dark" loading="lazy" />
+    </div>
+    <div class="screen">
+      <h2>07 Home · Dark</h2>
+      <img src="07-Home-Dark.png" alt="Home Dark" loading="lazy" />
+    </div>
+    <div class="screen">
+      <h2>08 Upgrade · Dark</h2>
+      <img src="08-Upgrade-Dark.png" alt="Upgrade Dark" loading="lazy" />
+    </div>
+  </section>
+
+  <section id="a11y">
+    <div class="screen">
+      <h2>09 Welcome · Large Type</h2>
+      <img src="09-Welcome-LargeType.png" alt="Welcome Large Type" loading="lazy" />
+    </div>
+    <div class="screen">
+      <h2>10 Setup · Large Type</h2>
+      <img src="10-Setup-LargeType.png" alt="Setup Large Type" loading="lazy" />
+    </div>
+    <div class="screen">
+      <h2>11 Home · Large Type</h2>
+      <img src="11-Home-LargeType.png" alt="Home Large Type" loading="lazy" />
+    </div>
+  </section>
+</body>
+</html>
