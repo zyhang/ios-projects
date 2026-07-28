@@ -84,6 +84,7 @@
 | D-506 | 扩展被关不得显示假保护中 | 已确认 | 模态拉回授权 |
 | D-507 | 主 App 视觉以 Lunacy Hi-fi P0 + design-system 为准 | 已确认 | 品牌主色 `#2F6A58`；暖金仅 Pro；系统字体实现；见 [design-system.md](../design/design-system.md) |
 | D-508 | 扩展 popup 无全局开关、无类别列表 | 已确认 | 全局/类别仅主 App；扩展为当前站情境 |
+| D-509 | App Store 基础元数据以 release 包为准 | 已确认 | Name Stillwall；Subtitle Ad Block for Safari；Utilities；见 [app-store-submission.md](../release/app-store-submission.md)（V-001 可整包更名） |
 
 ### 2.6 隐私
 

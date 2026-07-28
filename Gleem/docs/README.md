@@ -52,7 +52,11 @@
 ### 工程
 
 - [engineering/](engineering/)：[ios-client.md](engineering/ios-client.md) · [safari-extension.md](engineering/safari-extension.md)（App Group schema、CB/WE、实现顺序）  
-- 规则 / 隐私 / 发布 / 运营：待按总纲领继续重建。  
+
+### 发布 / App Store
+
+- [release/](release/)：[App Store 提审总览](release/app-store-submission.md) · [grilling 决策](release/grilling-decisions-2026-07-28.md) · [assets](release/app-store-assets/)  
+- 规则 / 隐私站上线 / 运营细则：随 V-001 域名与法务主体补齐。  
 
 ### 其他
 
