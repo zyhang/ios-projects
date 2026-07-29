@@ -47,10 +47,11 @@ website/
     ├── v1-calm-editorial/     # Wipr 式窄栏编辑排版
     ├── v2-product-hero/       # Hero + 手机 mock + 特性网格
     ├── v3-quiet-manifesto/    # 深色理念叙事
-    └── v4-zen-calm/           # OpenDesign zen-browser 接地
+    ├── v4-zen-calm/           # OpenDesign zen-browser 接地
+    └── v5-product-theater/    # OpenDesign apple 全宽色带
 ```
 
-后续新增版本建议：`versions/v5-<slug>/index.html`，并在根 `index.html` 卡片中登记。
+后续新增版本建议：`versions/v6-<slug>/index.html`，并在根 `index.html` 卡片中登记。
 
 ---
 
@@ -61,7 +62,8 @@ website/
 | **v1 Calm Editorial** | 窄栏、文案优先、系统字体 | [Wipr](https://kaylees.site/wipr2.html) | 想要独立开发者气质、极简可信 |
 | **v2 Product Hero** | 完整产品站模块、浅色 | [Magic Lasso](https://www.magiclasso.co/)（简化） | 信息结构最全的「传统产品站」 |
 | **v3 Quiet Manifesto** | 深色、原则叙事、氛围动效 | [Purify](https://www.purify-app.com/) 语气 + [UIBook](https://uibook.art/) | 强调品牌理念与「安静」 |
-| **v4 Zen Calm** ⭐ | 暖纸底、serif 标题、宽松节奏 | OpenDesign [`zen-browser`](https://opendesign.cc/en/sites/zen-browser)（辅 claude / replay-software） | **当前推荐方向**：隐私浏览器气质 + 品牌森绿 |
+| **v4 Zen Calm** | 暖纸底、serif 标题、宽松节奏 | OpenDesign [`zen-browser`](https://opendesign.cc/en/sites/zen-browser)（辅 claude / replay-software） | 隐私浏览器气质、编辑感 |
+| **v5 Product Theater** | 黑白灰全宽色带、大无衬线 | OpenDesign [`apple`](https://opendesign.cc/en/sites/apple) + campsite | 产品舞台感、与 v4 对比最强 |
 
 ### 各版本共同具备（App 落地页最佳实践）
 

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stillwall — Protection for Safari</title>
+  <meta name="description" content="Block ads, trackers, and annoyances in Safari. Free core protection. Pro when you need more.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" href="../../shared/assets/icon-180.png">
+  <link rel="apple-touch-icon" href="../../shared/assets/icon-180.png">
+  <!--
+    Design lineage (OpenDesign):
+    Primary: apple — full-bleed bands, cinematic restraint, bold sans display
+    Secondary: campsite — crisp light sections, tight tracking
+    Adapted: Stillwall brand #2F6A58 as the single accent (not Apple blue)
+  -->
+  <style>
+    :root {
+      /* Apple-grounded + Stillwall accent */
+      --black: #000000;
+      --ink: #1d1d1f;
+      --ink-soft: #86868b;
+      --bg-soft: #f5f5f7;
+      --white: #fbfbfd;
+      --accent: #2F6A58;
+      --accent-bright: #3d8a72;
+      --pro-gold: #E8C872;
+      --line-light: rgba(0, 0, 0, 0.08);
+      --line-dark: rgba(255, 255, 255, 0.12);
+
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+              "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+      --ease: cubic-bezier(0.4, 0, 0.6, 1);
+      --t-micro: 180ms;
+      --t-small: 240ms;
+      --t-medium: 400ms;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--black);
+      color: var(--white);
+      font-size: 17px;
+      line-height: 1.47;
+      letter-spacing: -0.2px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+    .wrap-wide {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* —— Sticky glass nav (Apple-like small type) —— */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(0, 0, 0, 0.72);
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .nav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #f5f5f7;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand img {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 980px;
+      transition: color var(--t-micro) var(--ease), opacity var(--t-micro) var(--ease);
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.cta {
+      background: var(--accent);
+      color: #fff;
+      margin-left: 6px;
+      padding: 6px 14px;
+      font-weight: 500;
+    }
+    .nav-links a.cta:hover { filter: brightness(1.08); color: #fff; }
+
+    /* —— Full-bleed band pattern —— */
+    .band {
+      text-align: center;
+      padding: 88px 0 0;
+    }
+    .band--black {
+      background: var(--black);
+      color: #f5f5f7;
+    }
+    .band--soft {
+      background: var(--bg-soft);
+      color: var(--ink);
+    }
+    .band--white {
+      background: var(--white);
+      color: var(--ink);
+    }
+    .band--forest {
+      background: #1a2e26;
+      color: #f5f5f7;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--accent-bright);
+    }
+    .band--soft .eyebrow,
+    .band--white .eyebrow {
+      color: var(--accent);
+    }
+
+    .band h1,
+    .band h2 {
+      margin: 0 auto 10px;
+      max-width: 12em;
+      font-size: clamp(2.5rem, 7vw, 3.5rem); /* ~48–56 display */
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .band h2 {
+      font-size: clamp(2.1rem, 5.5vw, 3rem);
+    }
+
+    .subhead {
+      margin: 0 auto 28px;
+      max-width: 28em;
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem); /* ~28 subtitle */
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      color: var(--ink-soft);
+    }
+    .band--black .subhead,
+    .band--forest .subhead {
+      color: #a1a1a6;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px 28px;
+      margin-bottom: 48px;
+    }
+    .link-a {
+      font-size: 17px;
+      font-weight: 400;
+      text-decoration: none;
+      color: var(--accent-bright);
+      transition: color var(--t-small) var(--ease);
+    }
+    .band--soft .link-a,
+    .band--white .link-a {
+      color: var(--accent);
+    }
+    .link-a:hover { text-decoration: underline; }
+    .link-a::after {
+      content: " ›";
+      font-weight: 500;
+    }
+
+    /* Product figure */
+    .figure {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 36px 36px 0 0;
+      box-shadow: rgba(0, 0, 0, 0.35) 0 20px 50px;
+      transition: transform var(--t-medium) var(--ease);
+    }
+    .band--soft .figure img,
+    .band--white .figure img {
+      box-shadow: rgba(0, 0, 0, 0.18) 3px 5px 30px 0;
+    }
+    .figure:hover img { transform: translateY(-6px); }
+
+    /* Feature strip on soft band */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px 88px;
+    }
+    @media (max-width: 760px) {
+      .tiles { grid-template-columns: 1fr; }
+      .band { padding-top: 64px; }
+    }
+    .tile {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 24px 32px;
+      text-align: left;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+      transition: transform var(--t-small) var(--ease), box-shadow var(--t-small) var(--ease);
+    }
+    .tile:hover {
+      transform: scale(1.015);
+      box-shadow: rgba(0, 0, 0, 0.12) 0 12px 32px;
+    }
+    .tile h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .tile p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--ink-soft);
+    }
+
+    /* Horizontal feature list */
+    .list-band {
+      padding: 80px 0;
+    }
+    .list {
+      max-width: 680px;
+      margin: 40px auto 0;
+      text-align: left;
+    }
+    .list-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-top: 1px solid var(--line-light);
+    }
+    .list-row:last-child { border-bottom: 1px solid var(--line-light); }
+    .list-row .check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+    }
+    .list-row .check svg { width: 12px; height: 12px; }
+    .list-row strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .list-row span {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    /* Pro section */
+    .pro-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      text-align: left;
+      padding-bottom: 88px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+    @media (max-width: 800px) {
+      .pro-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .pro-copy .actions { justify-content: center; }
+      .pro-copy .list { text-align: left; }
+    }
+    .pro-shot {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: rgba(0, 0, 0, 0.45) 0 24px 60px;
+    }
+    .pro-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .pro-copy h2 {
+      margin: 0 0 10px;
+      max-width: none;
+      text-align: inherit;
+    }
+    .pro-copy .subhead {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: inherit;
+    }
+    .pro-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #1d1d1f;
+      background: var(--pro-gold);
+      border-radius: 6px;
+      padding: 3px 8px;
+      vertical-align: 0.2em;
+      margin-left: 6px;
+    }
+    .price {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #a1a1a6;
+    }
+    .price strong { color: #f5f5f7; font-weight: 600; }
+
+    /* Honesty strip */
+    .honesty {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line-light);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 48px auto 0;
+      max-width: 980px;
+    }
+    @media (max-width: 700px) {
+      .honesty { grid-template-columns: 1fr; }
+    }
+    .honesty article {
+      background: var(--bg-soft);
+      padding: 28px 24px;
+      text-align: left;
+    }
+    .honesty h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .honesty p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+
+    /* Closing band */
+    .closing {
+      padding: 100px 0 110px;
+      text-align: center;
+    }
+    .closing h2 {
+      margin: 0 auto 12px;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .closing p {
+      margin: 0 auto 32px;
+      color: #a1a1a6;
+      font-size: 19px;
+      max-width: 22em;
+    }
+
+    /* Store button */
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 980px;
+      padding: 12px 22px 12px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform var(--t-small) var(--ease), opacity var(--t-micro) var(--ease);
+    }
+    .btn-store:hover {
+      transform: scale(1.03);
+      opacity: 0.92;
+    }
+    .band--soft .btn-store,
+    .band--white .btn-store {
+      background: var(--ink);
+      color: #fff;
+    }
+    .btn-store .apple { width: 16px; height: 20px; }
+    .btn-store .lines { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+    .btn-store .lines small { font-size: 9px; opacity: 0.7; font-weight: 400; }
+    .btn-store .lines strong { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
+
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--line-dark);
+      padding: 28px 0 48px;
+      font-size: 12px;
+      color: #6e6e73;
+    }
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      justify-content: space-between;
+    }
+    footer a {
+      color: #6e6e73;
+      text-decoration: none;
+      margin-right: 14px;
+      transition: color var(--t-micro) var(--ease);
+    }
+    footer a:hover { color: #f5f5f7; }
+    .version-tag {
+      display: block;
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
+    /* Reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity var(--t-medium) var(--ease),
+        transform var(--t-medium) var(--ease);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn-store, .tile, .figure img { transition: none; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="./">
+        <img src="../../shared/assets/icon-180.png" alt="" width="18" height="18">
+        Stillwall
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pro">Pro</a>
+        <a href="../../legal/support.html">Support</a>
+        <a class="cta" href="#download">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero: black theater -->
+  <section class="band band--black" id="download">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Stillwall</p>
+      <h1 data-reveal>Protection for Safari.</h1>
+      <p class="subhead" data-reveal>
+        Block ads, trackers, and annoyances—quietly.
+        Free core protection. Pro when you want more.
+      </p>
+      <div class="actions" data-reveal>
+        <a class="btn-store" href="#download" aria-label="Download on the App Store">
+          <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
+            <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
+          </svg>
+          <span class="lines">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
+        <a class="link-a" href="../../legal/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="figure" data-reveal>
+      <img
+        src="../../shared/assets/screenshots/03-Home-On.png"
+        alt="Stillwall Home with protection On"
+        width="390"
+        height="844"
+      >
+    </div>
+  </section>
+
+  <!-- Light band: three pillars -->
+  <section class="band band--soft" id="features">
+    <div class="wrap" style="padding-bottom: 48px;">
+      <p class="eyebrow" data-reveal>Free</p>
+      <h2 data-reveal>Core protection.<br>On by default.</h2>
+      <p class="subhead" data-reveal>
+        No account. No rule editor. A few steps to enable—then it works in the background.
+      </p>
+    </div>
+    <div class="tiles">
+      <article class="tile" data-reveal>
+        <h3>Ads &amp; trackers</h3>
+        <p>Block common ads and reduce advertising trackers across Safari.</p>
+      </article>
+      <article class="tile" data-reveal data-reveal-delay="60">
+        <h3>Fewer annoyances</h3>
+        <p>Quieter cookie banners and prompts that interrupt reading.</p>
+      </article>
+      <article class="tile" data-reveal data-reveal-delay="120">
+        <h3>One switch</h3>
+        <p>Global On/Off in the app. Pause a site from the Safari extension.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- White band: full feature list -->
+  <section class="band band--white list-band">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>What’s included</p>
+      <h2 data-reveal>Everything you need for everyday browsing.</h2>
+      <div class="list" data-reveal>
+        <div class="list-row">
+          <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+          <div>
+            <strong>Regional ad rules</strong>
+            <span>Applied automatically from your language</span>
+          </div>
+        </div>
+        <div class="list-row">
+          <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+          <div>
+            <strong>Automatic filter updates</strong>
+            <span>Coverage improves without your attention</span>
+          </div>
+        </div>
+        <div class="list-row">
+          <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+          <div>
+            <strong>No browsing history collected</strong>
+            <span>Filter downloads never upload where you browse</span>
+          </div>
+        </div>
+        <div class="list-row">
+          <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+          <div>
+            <strong>Honest status</strong>
+            <span>If Safari access isn’t ready, we won’t say you’re protected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forest / pro band -->
+  <section class="band band--forest" id="pro">
+    <div class="pro-layout">
+      <div class="pro-shot" data-reveal>
+        <img
+          src="../../shared/assets/screenshots/05-Upgrade.png"
+          alt="Stillwall Pro upgrade"
+          width="780"
+          height="auto"
+        >
+      </div>
+      <div class="pro-copy">
+        <p class="eyebrow" data-reveal style="color:var(--pro-gold)">Stillwall Pro <span class="pro-badge">PRO</span></p>
+        <h2 data-reveal>More control when you need it.</h2>
+        <p class="subhead" data-reveal>
+          Free stays fully useful. Pro adds Safari-only tools—without a paywall at the door.
+        </p>
+        <div class="list" style="margin-top:8px" data-reveal>
+          <div class="list-row" style="border-color:var(--line-dark)">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong style="color:#f5f5f7">YouTube &amp; X in Safari</strong>
+              <span style="color:#a1a1a6">Websites only—not the native apps</span>
+            </div>
+          </div>
+          <div class="list-row" style="border-color:var(--line-dark)">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong style="color:#f5f5f7">Battery Boost &amp; Strict Mode</strong>
+              <span style="color:#a1a1a6">Cut wasteful scripts; stronger rules on demand</span>
+            </div>
+          </div>
+          <div class="list-row" style="border-color:var(--line-dark);border-bottom:1px solid var(--line-dark)">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong style="color:#f5f5f7">Tap to Block</strong>
+              <span style="color:#a1a1a6">Hide page elements from the Safari extension</span>
+            </div>
+          </div>
+        </div>
+        <p class="price" data-reveal>
+          <strong>1 month free</strong>, then $14.99/year · Family Sharing
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft honesty -->
+  <section class="band band--soft" style="padding-bottom: 88px;">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Clear boundaries</p>
+      <h2 data-reveal>What it is. What it isn’t.</h2>
+    </div>
+    <div class="honesty wrap-wide" style="padding:0;max-width:980px">
+      <article data-reveal>
+        <h3>Safari only</h3>
+        <p>iPhone and iPad Safari. Other apps keep their own ads.</p>
+      </article>
+      <article data-reveal data-reveal-delay="60">
+        <h3>Not a VPN</h3>
+        <p>No traffic routing. No IP hiding. Content blocking, cleanly.</p>
+      </article>
+      <article data-reveal data-reveal-delay="120">
+        <h3>Private by design</h3>
+        <p>No Stillwall account. We don’t collect browsing history.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Closing black -->
+  <section class="band band--black closing">
+    <div class="wrap">
+      <h2 data-reveal>Less noise.<br>Same Safari.</h2>
+      <p data-reveal>Install once. Finish setup. Keep scrolling.</p>
+      <div class="actions" data-reveal style="margin-bottom:0">
+        <a class="btn-store" href="#download" aria-label="Download on the App Store">
+          <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
+            <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
+          </svg>
+          <span class="lines">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
+        <a class="link-a" href="../../legal/support.html">Get help</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <a href="../../legal/privacy.html">Privacy</a>
+        <a href="../../legal/support.html">Support</a>
+        <a href="../../index.html">All versions</a>
+      </nav>
+      <div>
+        <div>© 2026 &lt;LEGAL_ENTITY_NAME&gt;</div>
+        <span class="version-tag">v5 Product Theater · OpenDesign apple + campsite</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/motion.js"></script>
+</body>
+</html>
