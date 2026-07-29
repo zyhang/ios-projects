@@ -9,7 +9,7 @@
 | 5 | Keywords | 核心意图优先（adblock/blocker/tracker…） |
 | 6 | Privacy / Support URL | `https://<domain>/privacy` · `/support`；文案先写 |
 | 7 | Description 结构 | 短开场 → Free → Pro → 隐私 → 订阅 |
-| 8 | Screenshots | Home On → Welcome → Setup → 列表 → Upgrade（+可选 Off）+ 短英文标题 |
+| 8 | Screenshots | Home → Welcome → Setup → 列表 → Upgrade（+可选类别近景）+ 短英文标题 |
 | 9 | Promotional Text | Free Safari ad blocking. Pro adds YouTube & X in Safari… |
 | 10 | Age Rating | 目标 4+；非 Kids |
 | 11 | 市场 / 本地化 | 全球 + English (U.S.) only |

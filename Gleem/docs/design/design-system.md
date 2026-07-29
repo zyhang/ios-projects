@@ -61,7 +61,7 @@ HIG notes（稿内）：
 | 文案区 inset | 常 **20** 或 **32** |
 | 导航 | **无 Tab Bar**；授权通过后 **Home 为根** |
 | 列布局 | iPhone 单列；iPad 限制内容最大宽度，不拉成多列 dashboard |
-| 结构 | 顶：状态/价值 → 中：白卡片分组 → 底：单一主 CTA（Home 状态区无主按钮；类别 Switch 在列表内） |
+| 结构 | 顶：中性价值文案 → 中：白卡片分组；Home 无状态控件，类别 Switch 在列表内 |
 | 触控 | 可点目标 **≥ 44×44 pt**（稿中 More/Close 约 48×44） |
 
 ### 间距常用值
@@ -174,22 +174,15 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 
 ## 7. 核心组件
 
-### 7.1 Protection Hero（Home）
+### 7.1 Value Hero（Home）
 
 | 区 | 内容 |
 |----|------|
-| 左列 | Status pill（绿点 + On/Off，可选）→ 34 Bold 标题 → 17 双行说明 @ secondary |
-| 右 | **无控件**（状态只读；**无**全局 Toggle） |
+| 左列 | 34 Bold `A quieter Safari, on your terms.` → 17 Regular `Choose what stays out of your way.` |
+| 右 | **无状态、无控件**（**无**全局 Toggle） |
 | 右上 | **More**（`•••`），独占 ≥44×44 |
 
-文案方向：
-
-| 状态 | 标题方向 | 说明方向 |
-|------|----------|----------|
-| On | Safari Protection | Blocking ads and trackers. / Everything is working quietly. |
-| Off | Protection is off | Turn categories back on below. / Your settings are saved. |
-
-**不做：** 全局总开关、Pause 按钮、Allowed Sites 入口、15m/1h 定时（见 D-309 / D-310 / D-315）。
+文案固定，不随类别状态变化。**不做：** Home On/Off 变体、状态 pill、全局总开关、Pause 按钮、Allowed Sites 入口、15m/1h 定时（见 D-309 / D-310 / D-315 / D-316）。
 
 ### 7.2 Feature Row（能力列表）
 

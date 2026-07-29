@@ -56,15 +56,15 @@
 
 ---
 
-## 4. Protection 呈现（Home）
+## 4. Protection 运行状态
 
-| 呈现 | 条件 |
+| 派生值 | 条件 |
 |------|------|
 | `needsSetup` | CB 或 WE 未开 |
-| `protected` | 授权完成 + 任一类别开关 On（派生 `anyCategoryEnabled`） |
-| `off` | 授权完成 + 全部类别开关 Off |
+| `anyCategoryEnabled = true` | 授权完成 + 任一类别开关 On |
+| `anyCategoryEnabled = false` | 授权完成 + 全部类别开关 Off |
 
-不把「某站 paused」算作 Home off；Home 不显示 per-site 状态（避免双 UI）。**无** `protectionEnabled` 用户开关。
+该派生值用于规则管道与扩展顶栏，不映射为 Home On/Off 页面。Home 顶部文案固定；不显示 per-site 状态。**无** `protectionEnabled` 用户开关。
 
 ---
 
@@ -102,3 +102,4 @@
 |------|------|
 | 2026-07-28 | 按现行总纲领重建；去掉归档方案中的定时 Pause / App 名单 |
 | 2026-07-29 | 移除全局保护开关（D-315）；状态由类别开关派生 |
+| 2026-07-29 | 合并 Home On/Off（D-316）；派生状态不再驱动 Home 视觉 |

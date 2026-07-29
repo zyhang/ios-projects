@@ -4,12 +4,12 @@
 
 | Order | Source UI | Title | Subtitle | Store-ready files |
 |------:|-----------|-------|----------|-------------------|
-| 1 | `03-Home-On.png` | All quiet in Safari | Protection that stays out of the way | `01-…` |
+| 1 | `03-Home.png` | A quieter Safari, on your terms | Choose what stays out of your way | `01-…` |
 | 2 | `01-Welcome.png` | A quieter Safari | Ads, trackers, and annoyances blocked | `02-…` |
 | 3 | `02-Setup.png` | Enable in a few steps | Turn on Stillwall in Safari settings | `03-…` |
-| 4 | `03-Home-On.png` | Block ads, trackers, annoyances | Free core protection. Pro when you need it | `04-…` |
+| 4 | `03-Home.png` | Block ads, trackers, annoyances | Free core protection. Pro when you need it | `04-…` |
 | 5 | `05-Upgrade.png` | Pro tools when you need them | YouTube & X in Safari · Tap to Block | `05-…` |
-| 6 | `04-Home-Off.png` | Categories you control | Turn features on or off as you need | `06-…`（可选） |
+| 6 | `03-Home.png`（能力列表近景） | Categories you control | Turn features on or off as you need | `06-…`（可选） |
 
 UI 源：`docs/design/exports/phone-preview/`  
 成片目录：`docs/release/app-store-assets/screenshots/`

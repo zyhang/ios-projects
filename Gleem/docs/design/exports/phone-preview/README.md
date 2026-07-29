@@ -27,8 +27,7 @@ python3 -m http.server 8765
 |------|------|
 | 01-Welcome.png | Welcome |
 | 02-Setup.png | Setup |
-| 03-Home-On.png | Home · On |
-| 04-Home-Off.png | Home · Off |
+| 03-Home.png | Home |
 | 05-Upgrade.png | Upgrade |
 | 06-Welcome-Dark.png | Welcome · Dark |
 | 07-Home-Dark.png | Home · Dark |

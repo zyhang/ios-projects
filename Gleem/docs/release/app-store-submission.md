@@ -139,12 +139,12 @@
 
 | # | 画面 | 标题条建议 |
 |---|------|------------|
-| 1 | Home · On | `All quiet in Safari` |
+| 1 | Home | `A quieter Safari, on your terms` |
 | 2 | Welcome | `A quieter Safari` |
 | 3 | Setup | `Enable in a few steps` |
 | 4 | Home 能力列表 | `Block ads, trackers, annoyances` |
 | 5 | Upgrade | `Pro tools when you need them` |
-| 6（可选） | Home · Off | `Categories you control` |
+| 6（可选） | Home 能力列表近景 | `Categories you control` |
 
 源 UI：[design/exports/phone-preview/](../design/exports/phone-preview/)。
 

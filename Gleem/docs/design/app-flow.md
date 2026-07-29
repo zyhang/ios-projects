@@ -7,15 +7,15 @@
 
 ## 1. 目标与原则
 
-> 用户完成必要系统授权后，不需要持续管理 App；再次打开时，一眼确认状态即可离开。
+> 用户完成必要系统授权后，不需要持续管理 App；再次打开时，只在需要时调整类别开关。
 
 | 原则 | 流程含义 |
 |------|----------|
 | 少步骤 | Welcome → 一次授权引导 → Home |
 | 门禁诚实 | 未完成 Safari 拦截授权 **不得** 进入 Home |
 | 先价值后付费 | 免费核心先生效；Pro 从能力行进入 |
-| 平台分工 | **站点 Pause/Resume、Tap、Report 在 Safari 扩展 popup（仅 3 项）**；主 App 仅 **类别开关** + 只读状态（**无**全局总开关） |
-| 假保护为零 | 扩展被关、全部类别 Off 时，主 App 与扩展顶栏必须说真话 |
+| 平台分工 | **站点 Pause/Resume、Tap、Report 在 Safari 扩展 popup（仅 3 项）**；主 App 仅中性 Home + **类别开关**（**无**全局总开关） |
+| 假保护为零 | 扩展被关由 Setup 门禁处理；全部类别 Off 时扩展顶栏必须说真话 |
 
 ---
 
@@ -35,13 +35,13 @@ Cold Start
               └── Pro 行（free）→ Upgrade
 ```
 
-### 2.2 保护呈现状态（Home 顶部）
+### 2.2 运行状态（不作为 Home 页面变体）
 
-| 呈现状态 | 条件 | 用户理解 |
+| 运行状态 | 条件 | UI 去向 |
 |----------|------|----------|
 | `needsSetup` | Content Blocker 或 Web Extension 未开 | 门禁 / 模态 Setup |
-| `protected` | 授权完成 + 至少一个类别开关 On | 保护中 |
-| `off` | 授权完成 + 全部类别开关 Off | 保护已关闭 |
+| `active` | 授权完成 + 至少一个类别开关 On | Home 不显示状态；按类别生效 |
+| `inactive` | 授权完成 + 全部类别开关 Off | Home 不切页；扩展顶栏显示 `Off in app` |
 | `degraded` | 可选：无可用规则基线 | 需修复；不得假装正常 |
 
 **已移除：** 主 App `paused` 定时暂停状态、Pause 时长（15m / 1h / Until resume）、**全局保护总开关**（D-315）。
@@ -53,7 +53,7 @@ Cold Start
 | 字段 | 说明 |
 |------|------|
 | `categories.*` | 各能力独立 bool；免费默认 true，Pro 默认 false |
-| 全部 Off | 无拦截；状态区 `off` |
+| 全部 Off | 无拦截；Home 结构与文案不变 |
 | 部分/全部 On | 仅已开启类别参与规则编译 |
 | **无** `protectionEnabled` 用户开关 | 工程侧可用派生 `anyCategoryEnabled`，不作 UI 总开关 |
 
@@ -72,7 +72,7 @@ Cold Start
 ```text
 [Welcome] 长页卖点 → 主按钮 Enable Safari Blocking
     → [Setup] 一次叙事：Content Blocker + Web Extension
-    → 检测通过 → Home（免费类别默认 On → protected）
+    → 检测通过 → Home（免费类别默认 On）
 ```
 
 主按钮 **不是** Start Free Trial。
@@ -80,18 +80,18 @@ Cold Start
 ### 3.2 再次启动
 
 ```text
-已 onboarding → 检测授权 → 通过则 Home（protected 或 off）/ 失败则模态 Setup
+已 onboarding → 检测授权 → 通过则同一 Home / 失败则模态 Setup
 ```
 
 ### 3.3 Home 日常
 
 ```text
-状态区：protected | off（只读，无全局开关）
+顶部：固定中性价值文案（无 On/Off 状态）
 能力列表：Ads … Tap to Block（唯一开/关）
 More → 次级页
 
 关某类别 → 该类不参与拦截
-全部类别 Off → off
+全部类别 Off → Home 不切页；无拦截生效
 点 Pro（free）→ Upgrade
 点 Tap → 说明页（Safari 中使用；站点设置亦在扩展）
 ```
@@ -123,7 +123,7 @@ More → 次级页
 | 5–7 | YouTube & X / Battery / Strict | Switch | Pro |
 | 8 | Tap to Block | 入口行 | Pro；说明在 Safari 使用 |
 
-**无**状态区全局 Switch。全部类别 Off 时：列表仍可见；状态区 `off`。
+**无**状态区与全局 Switch。全部类别 Off 时：列表和顶部中性文案保持不变。
 
 ---
 

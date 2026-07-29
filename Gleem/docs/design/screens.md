@@ -45,16 +45,16 @@
 
 | 项 | 说明 |
 |----|------|
-| 目的 | 只读状态 + **能力类别开关** + More（**无**全局总开关） |
+| 目的 | 中性价值文案 + **能力类别开关** + More（**无**全局总开关、无 On/Off 页面变体） |
 
-### 状态区
+### 顶部文案
 
-| 呈现 | 文案方向 | 控件 |
-|------|----------|------|
-| `protected` | All quiet / 保护中 | **无开关**（只读） |
-| `off` | Protection off | **无开关**（只读） |
+```text
+A quieter Safari, on your terms.
+Choose what stays out of your way.
+```
 
-**不做：** 全局总开关、Pause 按钮、Allowed Sites 入口、15m/1h/Until resume。
+文案不随类别开关状态切换。**不做：** Home On/Off 变体、保护状态 pill、全局总开关、Pause 按钮、Allowed Sites 入口、15m/1h/Until resume。
 
 ### 能力列表（顺序固定）
 
@@ -69,7 +69,7 @@
 | 7 | Strict Mode | Switch · Pro | Off |
 | 8 | Tap to Block | Chevron 行 · Pro | → S05 |
 
-全部类别 Off 时列表仍可见；无拦截生效；状态区为 off。
+全部类别 Off 时列表与顶部文案均保持不变，仅无拦截生效；Safari 扩展顶栏负责诚实显示 `Off in app`。
 
 ### 其他
 

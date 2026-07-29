@@ -10,7 +10,7 @@
 
 | 面 | 角色 |
 |----|------|
-| 主 App | 授权门禁、**类别开关**、只读状态、订阅、Help / Feedback 完整页（**无**全局总开关） |
+| 主 App | 授权门禁、中性 Home、**类别开关**、订阅、Help / Feedback 完整页（**无**全局总开关、无 On/Off 状态区） |
 | **Safari Web Extension popup** | **当前站点**情境：放行/恢复、Tap to Block、Report |
 
 ### 原则

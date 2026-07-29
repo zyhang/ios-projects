@@ -11,7 +11,7 @@ HOW TO ENABLE (required to see protection)
 2. Complete onboarding: Welcome → enable Safari protection.
 3. When prompted, open iOS Settings → Safari → Extensions.
 4. Enable both Stillwall extensions (Content Blocker and Web Extension) and allow website access as directed in-app.
-5. Return to Stillwall. Home should show protection On (default free categories enabled).
+5. Return to Stillwall. Home should show the category controls with the default free categories enabled.
 
 FREE PATH FOR REVIEW
 All free features work without purchase: independent Ads, Privacy, Annoyances, and Regional blocking controls, plus site pause in the Safari extension popup. Home has no global protection switch.
