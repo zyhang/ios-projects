@@ -1,0 +1,16 @@
+# Secrets & local env
+.env
+.env.*
+!.env.example
+
+# Cloudflare / Wrangler local state
+.wrangler/
+**/.wrangler/
+
+# macOS
+.DS_Store
+
+# Xcode / iOS local
+DerivedData/
+*.xcuserstate
+xcuserdata/
