@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stillwall — Browse in quiet</title>
+  <meta name="description" content="Stillwall blocks ads, trackers, and annoyances in Safari. Calm by design.">
+  <meta name="theme-color" content="#121412">
+  <link rel="icon" type="image/png" href="../../shared/assets/icon-180.png">
+  <link rel="apple-touch-icon" href="../../shared/assets/icon-180.png">
+  <link rel="stylesheet" href="../../shared/css/tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: #0F120F;
+      color: #F2F4F2;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Soft ambient field */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20% -10% auto;
+      height: 70vh;
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 0%, rgba(47, 106, 88, 0.35), transparent 70%),
+        radial-gradient(ellipse 40% 50% at 80% 20%, rgba(52, 199, 89, 0.08), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+      animation: ambient 12s ease-in-out infinite alternate;
+    }
+    @keyframes ambient {
+      from { transform: translateY(0) scale(1); opacity: 0.85; }
+      to { transform: translateY(20px) scale(1.05); opacity: 1; }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top */
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 8px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #F2F4F2;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+    }
+    .top nav a {
+      color: rgba(242, 244, 242, 0.55);
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 18px;
+      transition: color 0.2s ease;
+    }
+    .top nav a:hover { color: #F2F4F2; }
+
+    /* Hero manifesto */
+    .hero {
+      padding: 72px 0 48px;
+      text-align: center;
+    }
+    .hero .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin: 0 auto 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      transition: transform 0.5s var(--ease-spring);
+    }
+    .hero .icon:hover { transform: scale(1.05) rotate(-2deg); }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 9vw, 3.8rem);
+      font-weight: 650;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #8FCBB4;
+      position: relative;
+    }
+    .tagline {
+      margin: 0 auto 32px;
+      max-width: 22em;
+      font-size: 1.2rem;
+      color: rgba(242, 244, 242, 0.68);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #F2F4F2;
+      color: #0F120F;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 12px 20px 12px 16px;
+      transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .btn-store:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+    .btn-store .apple { width: 20px; height: 24px; }
+    .btn-store .lines { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+    .btn-store .lines small { font-size: 10px; opacity: 0.7; }
+    .btn-store .lines strong { font-size: 17px; font-weight: 650; letter-spacing: -0.02em; }
+    .meta-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+    .meta-links a {
+      color: rgba(242, 244, 242, 0.5);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .meta-links a:hover {
+      color: #8FCBB4;
+      border-bottom-color: rgba(143, 203, 180, 0.4);
+    }
+
+    /* Chapter sections — Purify-like prose rhythm */
+    .chapter {
+      padding: 64px 0;
+      border-top: 1px solid rgba(242, 244, 242, 0.08);
+    }
+    .chapter .kicker {
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8FCBB4;
+      margin-bottom: 16px;
+    }
+    .chapter h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      max-width: 16em;
+    }
+    .chapter p {
+      margin: 0 0 1em;
+      color: rgba(242, 244, 242, 0.72);
+      max-width: 34em;
+    }
+    .chapter p:last-child { margin-bottom: 0; }
+    .chapter strong { color: #F2F4F2; font-weight: 600; }
+
+    /* Horizontal principles */
+    .principles {
+      display: grid;
+      gap: 1px;
+      background: rgba(242, 244, 242, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 28px;
+    }
+    .principle {
+      background: rgba(20, 24, 20, 0.9);
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: background 0.3s ease;
+    }
+    .principle:hover { background: rgba(30, 40, 32, 0.95); }
+    .principle .num {
+      font-size: 13px;
+      font-weight: 650;
+      color: #8FCBB4;
+      letter-spacing: 0.04em;
+      padding-top: 4px;
+    }
+    .principle h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .principle p {
+      margin: 0;
+      font-size: 15px;
+      color: rgba(242, 244, 242, 0.58);
+      max-width: none;
+    }
+
+    /* Device strip */
+    .devices {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 40px 0 8px;
+      perspective: 1000px;
+    }
+    .device {
+      width: min(200px, 42vw);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(242, 244, 242, 0.1);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+      background: #111;
+      transition: transform 0.5s var(--ease-out);
+    }
+    .device img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .device:nth-child(1) {
+      transform: rotate(-4deg) translateY(12px);
+      animation: sway-left 7s ease-in-out infinite;
+    }
+    .device:nth-child(2) {
+      transform: rotate(3deg) translateY(0);
+      animation: sway-right 7s ease-in-out infinite;
+      animation-delay: 0.4s;
+    }
+    @keyframes sway-left {
+      0%, 100% { transform: rotate(-4deg) translateY(12px); }
+      50% { transform: rotate(-2deg) translateY(4px); }
+    }
+    @keyframes sway-right {
+      0%, 100% { transform: rotate(3deg) translateY(0); }
+      50% { transform: rotate(5deg) translateY(-6px); }
+    }
+    @media (max-width: 480px) {
+      .devices { gap: 10px; }
+      .device { border-radius: 20px; }
+    }
+
+    /* Feature chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .chip {
+      font-size: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(242, 244, 242, 0.12);
+      background: rgba(242, 244, 242, 0.04);
+      color: rgba(242, 244, 242, 0.85);
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-spring);
+    }
+    .chip:hover {
+      border-color: rgba(143, 203, 180, 0.45);
+      background: rgba(47, 106, 88, 0.25);
+      transform: translateY(-2px);
+    }
+    .chip.pro {
+      border-color: rgba(234, 201, 124, 0.35);
+      color: #E8D5A0;
+    }
+    .chip.pro:hover {
+      border-color: rgba(234, 201, 124, 0.6);
+      background: rgba(122, 83, 22, 0.25);
+    }
+
+    /* Closing */
+    .closing {
+      text-align: center;
+      padding: 80px 0 64px;
+      border-top: 1px solid rgba(242, 244, 242, 0.08);
+    }
+    .closing h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      letter-spacing: -0.035em;
+      font-weight: 650;
+    }
+    .closing p {
+      margin: 0 auto 28px;
+      color: rgba(242, 244, 242, 0.6);
+      max-width: 24em;
+    }
+
+    footer {
+      border-top: 1px solid rgba(242, 244, 242, 0.08);
+      padding: 28px 0 48px;
+      font-size: 13px;
+      color: rgba(242, 244, 242, 0.4);
+    }
+    footer a {
+      color: rgba(242, 244, 242, 0.45);
+      text-decoration: none;
+      margin-right: 16px;
+      transition: color 0.2s ease;
+    }
+    footer a:hover { color: #8FCBB4; }
+    .version-tag {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* Reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body::before, .device:nth-child(1), .device:nth-child(2) { animation: none; }
+      .btn-store, .chip, .hero .icon { transition: none; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="./">
+        <img src="../../shared/assets/icon-180.png" alt="" width="30" height="30">
+        Stillwall
+      </a>
+      <nav>
+        <a href="#why">Why</a>
+        <a href="../../legal/support.html">Help</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <img class="icon" src="../../shared/assets/icon-512.png" alt="Stillwall" width="72" height="72" data-reveal>
+      <h1 data-reveal>Browse in <em>quiet</em>.</h1>
+      <p class="tagline" data-reveal>
+        Ads, trackers, and annoyances fall away in Safari.
+        Protection stays on—without asking for attention.
+      </p>
+      <div class="cta-stack" data-reveal>
+        <a class="btn-store" href="#download" id="download" aria-label="Download on the App Store">
+          <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
+            <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
+          </svg>
+          <span class="lines">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
+        <div class="meta-links">
+          <a href="../../legal/privacy.html">Privacy Policy</a>
+          <a href="../../legal/support.html">Support</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="devices" data-reveal aria-hidden="true">
+      <div class="device">
+        <img src="../../shared/assets/screenshots/01-Welcome.png" alt="" width="390" height="844">
+      </div>
+      <div class="device">
+        <img src="../../shared/assets/screenshots/03-Home-On.png" alt="" width="390" height="844">
+      </div>
+    </div>
+
+    <section class="chapter" id="why">
+      <div class="kicker" data-reveal>The idea</div>
+      <h2 data-reveal>The web is loud. Your browser doesn’t have to be.</h2>
+      <p data-reveal>
+        You open a page to read something. Not to negotiate with a cookie banner,
+        dodge a video ad, or wonder which script is following you to the next tab.
+      </p>
+      <p data-reveal>
+        Stillwall is a Safari content blocker for iPhone and iPad. Turn it on in a few steps—
+        then let it work. Free core protection covers ads, trackers, annoyances, and
+        regional rules. Pro tools wait until you ask for them.
+      </p>
+    </section>
+
+    <section class="chapter">
+      <div class="kicker" data-reveal>Principles</div>
+      <h2 data-reveal>Calm because it works—not busy to prove it.</h2>
+      <div class="principles" data-reveal>
+        <div class="principle">
+          <div class="num">01</div>
+          <div>
+            <h3>Simple first</h3>
+            <p>Few steps to enable. One global switch. No custom rule editor.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="num">02</div>
+          <div>
+            <h3>Default good</h3>
+            <p>Core protection is free and useful without configuration.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="num">03</div>
+          <div>
+            <h3>Honest status</h3>
+            <p>If Safari access isn’t ready, we won’t pretend you’re protected.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="num">04</div>
+          <div>
+            <h3>Private by design</h3>
+            <p>No account. We don’t collect browsing history. Not a VPN.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="kicker" data-reveal>What it does</div>
+      <h2 data-reveal>Free where it matters. Pro when you want more.</h2>
+      <p data-reveal>
+        Everyday browsing is covered without paying. Upgrade only if you need
+        YouTube &amp; X in Safari, Battery Boost, Strict Mode, or Tap to Block.
+      </p>
+      <div class="chips" data-reveal>
+        <span class="chip">Ads</span>
+        <span class="chip">Trackers</span>
+        <span class="chip">Annoyances</span>
+        <span class="chip">Regional rules</span>
+        <span class="chip">Site pause in Safari</span>
+        <span class="chip">Auto filter updates</span>
+        <span class="chip pro">YouTube &amp; X · Pro</span>
+        <span class="chip pro">Battery Boost · Pro</span>
+        <span class="chip pro">Strict Mode · Pro</span>
+        <span class="chip pro">Tap to Block · Pro</span>
+      </div>
+      <p data-reveal style="margin-top:28px;font-size:15px;color:rgba(242,244,242,0.45)">
+        Pro: 1 month free, then $14.99/year · Family Sharing · Safari only
+      </p>
+    </section>
+
+    <section class="chapter">
+      <div class="kicker" data-reveal>Boundaries</div>
+      <h2 data-reveal>Clear about the edges.</h2>
+      <p data-reveal>
+        Stillwall works in <strong>Safari</strong>. It does not block ads inside other apps,
+        and it is not a VPN. YouTube &amp; X Pro blocking is for Safari websites—not the
+        native apps. That honesty is part of the product.
+      </p>
+    </section>
+
+    <section class="closing">
+      <h2 data-reveal>Less noise. Same Safari.</h2>
+      <p data-reveal>Install once. Finish setup. Keep scrolling in peace.</p>
+      <div class="cta-stack" data-reveal>
+        <a class="btn-store" href="#download" aria-label="Download on the App Store">
+          <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
+            <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
+          </svg>
+          <span class="lines">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <nav>
+        <a href="../../legal/privacy.html">Privacy</a>
+        <a href="../../legal/support.html">Support</a>
+        <a href="../../index.html">All versions</a>
+      </nav>
+      <p>© 2026 &lt;LEGAL_ENTITY_NAME&gt;</p>
+      <span class="version-tag">Site design · v3 Quiet Manifesto</span>
+    </footer>
+  </div>
+
+  <script src="../../shared/js/motion.js"></script>
+</body>
+</html>

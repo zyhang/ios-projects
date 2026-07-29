@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stillwall Website — Version Lab</title>
+  <meta name="description" content="Stillwall marketing site design versions for comparison.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="shared/assets/icon-180.png">
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.85rem;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      margin: 0;
+      color: var(--text-secondary);
+      max-width: 40em;
+    }
+    .note {
+      background: var(--brand-soft);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--brand-deep);
+      margin-bottom: 32px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .note { color: var(--text); }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.3s ease,
+                  border-color 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: color-mix(in srgb, var(--brand) 30%, var(--border));
+    }
+    .card-preview {
+      aspect-ratio: 16 / 11;
+      background: #e8ebe8;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-preview img {
+      position: absolute;
+      width: 42%;
+      left: 50%;
+      top: 18%;
+      transform: translateX(-50%);
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .card[data-v="v1"] .card-preview { background: #fff; }
+    .card[data-v="v2"] .card-preview { background: #F2F2F7; }
+    .card[data-v="v3"] .card-preview {
+      background: linear-gradient(180deg, #1a2a22, #0F120F);
+    }
+    .card[data-v="v3"] .card-preview img {
+      width: 28%;
+      left: 36%;
+      top: 22%;
+      transform: rotate(-4deg);
+    }
+    .card[data-v="v3"] .card-preview::after {
+      content: "";
+      position: absolute;
+      width: 28%;
+      aspect-ratio: 390/844;
+      right: 18%;
+      top: 16%;
+      background: url("shared/assets/screenshots/03-Home-On.png") center top / cover no-repeat;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      transform: rotate(3deg);
+    }
+    .card-body {
+      padding: 18px 18px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 8px;
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .card p {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      flex: 1;
+    }
+    .refs {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .open {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand);
+    }
+    .card:hover .open { text-decoration: underline; }
+
+    section.legal {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    section.legal h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+    }
+    .links a {
+      display: inline-block;
+      margin-right: 16px;
+      margin-bottom: 8px;
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .links a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 48px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="shared/assets/icon-180.png" alt="">
+      <div>
+        <h1>Stillwall Website Lab</h1>
+        <p class="lead">
+          营销站多版本对比。每个版本都是独立可预览页面，共享资产与法律页。
+          选定方向后再收敛为正式上线结构。
+        </p>
+      </div>
+    </header>
+
+    <div class="note">
+      本地预览：在 <code>website/</code> 目录执行
+      <code>python3 -m http.server 8765</code>，打开
+      <code>http://127.0.0.1:8765/</code>。
+      App Store 链接与法律主体占位符待域名确认后替换。
+    </div>
+
+    <div class="grid">
+      <a class="card" data-v="v1" href="versions/v1-calm-editorial/">
+        <div class="card-preview">
+          <img src="shared/assets/screenshots/03-Home-On.png" alt="">
+        </div>
+        <div class="card-body">
+          <span class="tag">v1</span>
+          <h2>Calm Editorial</h2>
+          <p>
+            Wipr 式窄栏编辑排版：图标 + 粗标题带、长文卖点、截图嵌入。
+            极简、可读、像独立开发者主页。
+          </p>
+          <div class="refs">参考：Wipr · 系统字体 · 细节动效</div>
+          <span class="open">打开预览 →</span>
+        </div>
+      </a>
+
+      <a class="card" data-v="v2" href="versions/v2-product-hero/">
+        <div class="card-preview">
+          <img src="shared/assets/screenshots/03-Home-On.png" alt="">
+        </div>
+        <div class="card-body">
+          <span class="tag">v2</span>
+          <h2>Product Hero</h2>
+          <p>
+            产品站标准结构：Hero + 手机 mock + 特性网格 + Pro 分区。
+            模块最完整，适合作为默认上线候选。
+          </p>
+          <div class="refs">参考：Magic Lasso（简化）· 品牌森绿</div>
+          <span class="open">打开预览 →</span>
+        </div>
+      </a>
+
+      <a class="card" data-v="v3" href="versions/v3-quiet-manifesto/">
+        <div class="card-preview">
+          <img src="shared/assets/screenshots/01-Welcome.png" alt="">
+        </div>
+        <div class="card-body">
+          <span class="tag">v3</span>
+          <h2>Quiet Manifesto</h2>
+          <p>
+            深色理念叙事：章节散文、原则列表、芯片标签。
+            强调「安静 / 诚实」，动画更氛围化。
+          </p>
+          <div class="refs">参考：Purify 语气 · UIBook 克制美学</div>
+          <span class="open">打开预览 →</span>
+        </div>
+      </a>
+    </div>
+
+    <section class="legal">
+      <h2>必备页面（各版本共用）</h2>
+      <div class="links">
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <a href="legal/support.html">Support</a>
+      </div>
+      <p style="font-size:14px;color:var(--text-secondary);margin:12px 0 0">
+        与 App Store Connect 所需 Privacy / Support URL 对齐。
+        正式域名确定后，可把选定版本的首页提升为站点根，并配置
+        <code>/privacy</code> · <code>/support</code> 重写。
+      </p>
+    </section>
+
+    <footer>
+      <p>Stillwall · internal design lab · not for public SEO indexing</p>
+    </footer>
+  </div>
+</body>
+</html>

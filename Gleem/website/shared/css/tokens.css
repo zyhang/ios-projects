@@ -1,0 +1,52 @@
+/* Stillwall marketing site — design tokens (aligned with app design system) */
+:root {
+  --brand: #2F6A58;
+  --brand-deep: #244F42;
+  --brand-soft: #EAF3EF;
+  --brand-soft-alt: #E5EFEB;
+  --protection-on: #34C759;
+  --protection-on-label: #248A3D;
+  --pro-bg: #FFF4D6;
+  --pro-border: #EAC97C;
+  --pro-text: #7A5316;
+
+  --bg: #F7F6F2;
+  --bg-elevated: #FFFFFF;
+  --bg-ink: #121412;
+  --text: #1C1B19;
+  --text-secondary: rgba(60, 60, 67, 0.68);
+  --muted: #5C5A55;
+  --border: #E5E3DC;
+  --separator: rgba(60, 60, 67, 0.16);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 12px 40px rgba(28, 27, 25, 0.08);
+  --shadow-phone: 0 24px 60px rgba(28, 27, 25, 0.14);
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --max: 720px;
+  --max-wide: 1080px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F100F;
+    --bg-elevated: #1C1C1E;
+    --text: #F5F5F7;
+    --text-secondary: rgba(235, 235, 245, 0.62);
+    --muted: #A8A8AD;
+    --border: #2C2C2E;
+    --separator: rgba(235, 235, 245, 0.14);
+    --brand-soft: rgba(47, 106, 88, 0.22);
+    --brand-soft-alt: rgba(47, 106, 88, 0.18);
+    --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.35);
+    --shadow-phone: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+}
