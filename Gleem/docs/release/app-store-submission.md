@@ -144,7 +144,7 @@
 | 3 | Setup | `Enable in a few steps` |
 | 4 | Home 能力列表 | `Block ads, trackers, annoyances` |
 | 5 | Upgrade | `Pro tools when you need them` |
-| 6（可选） | Home · Off | `One switch. Full control` |
+| 6（可选） | Home · Off | `Categories you control` |
 
 源 UI：[design/exports/phone-preview/](../design/exports/phone-preview/)。
 

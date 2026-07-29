@@ -117,7 +117,7 @@
 槽 3: Report issue
 ```
 
-推荐槽 1 直接 **Open Stillwall**，避免用户以为 Pause 能在全局 Off 下单独生效。
+推荐槽 1 直接 **Open Stillwall**，避免用户以为 Pause 能在全部类别 Off 下单独生效。
 
 ---
 
@@ -178,7 +178,7 @@ Details (optional)
 
 一页并排：
 
-| Home 全局 Off | SE01 Pause 本站 |
+| Home 全部类别 Off | SE01 Pause 本站 |
 |---------------|-----------------|
 | 一切不拦 | 仅该 eTLD+1 不拦 |
 

@@ -27,7 +27,7 @@ If Home does not show On, complete the system steps above. We never show “prot
 
 ### Site is broken
 
-- Turn **off** the global switch in Stillwall, **or**  
+- Turn off the relevant **category switches** in Stillwall (for example Ads or Strict Mode), **or**  
 - Open the **Stillwall Safari extension** on that site and choose **Pause on this site**, then **Resume** when finished.  
 - If you use **Strict Mode** (Pro), try turning it off first.
 

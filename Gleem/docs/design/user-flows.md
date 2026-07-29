@@ -40,7 +40,7 @@ App
 
 ### 2.1 新用户：安装 → 保护中
 
-Welcome → Setup → Home（全局 On + 默认类别）。
+Welcome → Setup → Home（默认免费类别 On）。
 
 ### 2.2 回访：确认正常
 
@@ -53,7 +53,7 @@ Welcome → Setup → Home（全局 On + 默认类别）。
 
 ### 2.4 暂时关掉所有拦截
 
-Home → **关闭全局开关**（On/Off，无 15m/1h 选项）。
+Home → **逐个关闭** Ads / Privacy / Annoyances / Regional（及已开的 Pro 类别）。**无**全局一键总开关、无 15m/1h 选项。
 
 ### 2.5 只放行某个网站
 
@@ -78,7 +78,7 @@ Pro 行 → Upgrade（扩展内不买）。
 
 ### 2.9 关闭某一类拦截
 
-Home 关 Ads（或 Privacy 等）→ 其他类别仍可生效（全局须为 On）。
+Home 关 Ads（或 Privacy 等）→ 其他已开启类别仍可生效。
 
 ---
 
@@ -87,7 +87,7 @@ Home 关 Ads（或 Privacy 等）→ 其他类别仍可生效（全局须为 On�
 | 用户意图 | 入口 |
 |----------|------|
 | 看是否在保护 | Home 状态区；扩展顶栏（当前站） |
-| 关掉/打开全部拦截 | 主 App **全局开关** |
+| 关掉/打开某类拦截 | 主 App **对应类别开关**（无全局总开关） |
 | 放行 / 恢复某站 | 扩展 **Pause / Resume on this site** |
 | 点选屏蔽元素 | 扩展 **Tap to Block**（Pro） |
 | 报告坏站/漏拦 | 扩展 **Report issue** 或 App Feedback |
@@ -105,6 +105,6 @@ Home 关 Ads（或 Privacy 等）→ 其他类别仍可生效（全局须为 On�
 | 场景 | 语气 |
 |------|------|
 | 保护中 | 冷静、短 |
-| 全局 Off | 中性，说明已关闭 |
+| 全部类别 Off | 中性，说明当前无拦截 |
 | 需设置 | 清晰步骤 |
 | 站点例外 | Help：Go to Safari → extension… |

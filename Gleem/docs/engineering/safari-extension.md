@@ -11,7 +11,7 @@
 
 | Target | 类型 | 职责 |
 |--------|------|------|
-| **Stillwall**（主 App） | iOS App | 引导、全局/类别开关、订阅、Help/Feedback、规则更新编排、扩展状态检测 |
+| **Stillwall**（主 App） | iOS App | 引导、类别开关、订阅、Help/Feedback、规则更新编排、扩展状态检测 |
 | **Stillwall Content Blocker** | Safari Content Blocker Extension | 声明式 JSON 规则；**无 UI** |
 | **Stillwall Web Extension** | Safari Web Extension | **popup 3 项**、Tap 点选、Report 入口、YouTube/X 页面逻辑（无 popup 第四项） |
 
@@ -48,8 +48,7 @@
 
 ```json
 {
-  "schemaVersion": 1,
-  "protectionEnabled": true,
+  "schemaVersion": 2,
   "categories": {
     "ads": true,
     "privacy": true,
@@ -70,7 +69,6 @@
 
 | 字段 | 写者 | 读者 | 说明 |
 |------|------|------|------|
-| `protectionEnabled` | 主 App | CB 管道 / WE / 主 App | 全局开关 |
 | `categories.*` | 主 App | 规则编译 / WE | 免费默认 true；Pro 能力默认 false |
 | `pausedRegistrableDomains` | **Web Extension**（主） | CB 重载逻辑 / WE | eTLD+1 小写；Pause/Resume |
 | `activeRuleVersion` | 主 App RuleUpdater | 诊断 / About | 可选展示 |
@@ -112,7 +110,7 @@ SharedConfig/v1/tap-rules.json
 1. 读 → 改 → **临时文件 + replace** 原子提交。  
 2. `schemaVersion` 迁移表 + 单测。  
 3. Pause 变更后必须 **请求 Content Blocker reload**（及 WE 侧内存状态刷新）。  
-4. 主 App 改 `protectionEnabled` / categories 后同样 reload。
+4. 主 App 改 categories 后同样 reload。
 
 ---
 
@@ -168,7 +166,7 @@ site_protected | site_paused | global_off | not_enabled | permission_needed
 |------|------|
 | 当前 host | `tabs` / 扩展 API 当前页 URL → eTLD+1 |
 | 是否 paused | `pausedRegistrableDomains` |
-| 全局 | `protectionEnabled` |
+| 类别（派生） | `any(categories.*)` |
 | 扩展/CB 可用 | 主 App 写入的 `extensionHealth`（可选）或 WE 自检 + 用户打开 popup 时读配置；**not_enabled** 以「关键扩展未开」为准，与主 App Setup 一致 |
 | Pro | `subscription.tier` ∈ {trial, pro} |
 
@@ -194,7 +192,7 @@ site_protected | site_paused | global_off | not_enabled | permission_needed
 
 - **无 popup 菜单项。**  
 - content script 仅在对应域 + `categories.youtubeAndX` + 订阅允许时启用。  
-- 与 CB 规则互补；失败不导致假全局 Protected。
+- 与 CB 规则互补；失败不导致假 Protected。
 
 ### 4.6 权限（审核向）
 
@@ -265,7 +263,7 @@ Web Extension：
 | 优先级 | 用例 |
 |--------|------|
 | P0 | Pause 域后 CB 对该站不拦；Resume 恢复 |
-| P0 | 全局 Off 时 popup 不为 Protected |
+| P0 | 全部类别 Off 时 popup 不为 Protected |
 | P0 | 未订阅 Tap 不进入点选、可打开主 App |
 | P0 | config 原子写与 schema 迁移单测 |
 | P1 | Tap 成功 hide + Undo last |
@@ -281,7 +279,7 @@ Web Extension：
 1. App Group + `SharedConfig` + 域名归一化 + 单测  
 2. Content Blocker 基线规则 + reload  
 3. Web Extension popup 三态（Protected / Paused / Not enabled）+ Pause/Resume  
-4. 主 App 写 `protectionEnabled` / 订阅快照  
+4. 主 App 写 categories / 订阅快照  
 5. Report 深链或表单  
 6. Tap mode（依赖 V-005）  
 7. YouTube/X scripts  

@@ -10,7 +10,7 @@
 
 | 面 | 角色 |
 |----|------|
-| 主 App | 授权门禁、**全局** On/Off、类别开关、订阅、Help / Feedback 完整页 |
+| 主 App | 授权门禁、**类别开关**、只读状态、订阅、Help / Feedback 完整页（**无**全局总开关） |
 | **Safari Web Extension popup** | **当前站点**情境：放行/恢复、Tap to Block、Report |
 
 ### 原则
@@ -18,7 +18,7 @@
 1. **选项尽量少：常态固定 3 个可点项**（硬上限 5；v1 不凑满）。  
 2. 扩展 = 浏览中 3–10 秒完成的动作，不是第二套 Home。  
 3. **本站 Pause / Resume** 是站点控制的**唯一操作面**（主 App 无 Allowed Sites）。  
-4. 状态必须诚实：扩展未开、全局 Off 时不得显示 Protected。  
+4. 状态必须诚实：扩展未开、主 App 全部类别 Off 时不得显示 Protected。  
 5. 扩展内 **无 IAP、无订阅营销墙**（App Store 4.4）；未订阅点 Pro 能力 → 回主 App。  
 6. 不做 Custom Rules 编辑器、不做定时 Pause 时长、不做 paywall bypass。
 
@@ -57,7 +57,7 @@
 
 | 不做 | 去哪 |
 |------|------|
-| 全局 On/Off | 主 App Home |
+| 类别开关（Ads/…） | 主 App Home（**无**全局总开关） |
 | Ads / Privacy / Annoyances / Regional / Strict / Battery 列表 | 主 App Home |
 | Open Stillwall 常驻第 4 行 | 仅降级态 / 未订阅路径出现 |
 | 定时 Pause（15m / 1h） | 不做 |
@@ -73,9 +73,9 @@
 
 | 状态 ID | 条件 | 顶栏状态文案（方向） | 三项如何表现 |
 |---------|------|----------------------|--------------|
-| `site_protected` | 授权可用 + 全局 On + 本站未 Pause | Protected | ① Pause on this site · ② Tap · ③ Report |
-| `site_paused` | 授权可用 + 全局 On + 本站已 Pause | Paused | ① **Resume on this site** · ② Tap · ③ Report |
-| `global_off` | 授权可用 + 主 App 全局 Off | Off in app | ① 禁用或改为 **Open Stillwall**（仍只占槽 1）· ②③ 仍可点（Report 可用；Tap 可说明需先开保护） |
+| `site_protected` | 授权可用 + 至少一个类别 On + 本站未 Pause | Protected | ① Pause on this site · ② Tap · ③ Report |
+| `site_paused` | 授权可用 + 至少一个类别 On + 本站已 Pause | Paused | ① **Resume on this site** · ② Tap · ③ Report |
+| `all_categories_off`（原 `global_off`） | 授权可用 + 主 App **全部类别 Off** | Off in app | ① 禁用或改为 **Open Stillwall**（仍只占槽 1）· ②③ 仍可点（Report 可用；Tap 可说明需先开保护） |
 | `not_enabled` | CB 或 Web Extension 系统侧未开 / 不可用 | Not enabled | **整页降级**：主 CTA **Open Stillwall**（可视为仅 1 个操作，不展示完整 3 项） |
 | `permission_needed` | Tap 等需要额外网站权限且未授 | Needs access | 引导系统授权；成功后回 `site_protected` / `site_paused` |
 
@@ -86,7 +86,7 @@
 | 作用 | 对当前站点**停止** Stillwall 拦截（Content Blocker + 相关扩展行为对该站不生效） |
 | 作用域 | **eTLD+1**（`www.example.com` 与 `example.com` 视为同一站；工程实现须一致） |
 | 持久化 | **直到用户 Resume**（非 session-only；无 15m/1h UI） |
-| 与全局关系 | 全局 Off → 全部不拦；全局 On + 本站 Pause → 仅该站不拦 |
+| 与类别关系 | 全部类别 Off → 全部不拦；有类别 On + 本站 Pause → 仅该站不拦 |
 | 存储 | 本机（扩展 / App Group）；**不上传**浏览历史；v1 **无云同步** |
 | 主 App | **无**名单 UI；不在 Home 展示完整 allowlist |
 
@@ -94,7 +94,7 @@
 
 | 字段 | 读/写 | 说明 |
 |------|--------|------|
-| `protectionEnabled` | 扩展只读 | 全局开关 |
+| `categories` / 派生 `anyCategoryEnabled` | 扩展只读 | 类别开关；**无**用户全局开关字段 |
 | `sitePauseSet` | 扩展读写 | 已 Pause 的 eTLD+1 集合 |
 | `subscription` | 扩展只读 | free / trial / pro / expired → 是否解锁 Tap |
 | `tapRules` | 扩展读写 | 用户点选规则，仅本机 |
@@ -116,7 +116,7 @@
 
 **Resume**
 
-- 从 Pause 集合移除当前站；恢复按全局 + 类别的拦截。  
+- 从 Pause 集合移除当前站；恢复按已开启类别的拦截。  
 - 顶栏变为 Protected。
 
 **不做：** 选择时长、仅本次访问、批量管理多站列表（v1）。
@@ -194,12 +194,12 @@ popup → Tap to Block
   → 主 App 门禁 / Setup 引导系统设置
 ```
 
-### 5.5 主 App 全局 Off
+### 5.5 主 App 全部类别 Off
 
 ```text
 popup 顶栏 Off in app
   → 槽 1 引导 Open Stillwall 打开保护
-  → 或用户自行打开主 App 全局开关
+  → 或用户自行打开主 App 类别开关
 ```
 
 ---
@@ -208,8 +208,7 @@ popup 顶栏 Off in app
 
 | 能力 | 主 App | 扩展 popup |
 |------|--------|------------|
-| 全局 On/Off | ✅ 唯一开关 | 只读 / 引导回 App |
-| 类别开关 | ✅ | ❌ |
+| 类别开关（**无**全局总开关） | ✅ 唯一控制面 | 只读 / 引导回 App |
 | 本站 Pause / Resume | ❌ | ✅ 唯一操作面 |
 | Tap 说明页 | ✅（S05） | ❌ 说明可极短 |
 | Tap 点选 | ❌ | ✅ |
@@ -225,7 +224,7 @@ popup 顶栏 Off in app
 |------|----------|
 | 顶栏保护中 | Protected |
 | 顶栏本站暂停 | Paused |
-| 顶栏全局关 | Off in app |
+| 顶栏全部类别 Off | Off in app |
 | 顶栏未启用 | Not enabled |
 | 槽 1 保护中 | Pause on this site |
 | 槽 1 已暂停 | Resume on this site |
@@ -272,7 +271,7 @@ Lunacy：建议单独页「Safari Extension v1」；入库后更新 T-EXT-05。
 1. 常态 popup **可见可点主操作 ≤ 3**（Pause/Resume · Tap · Report）。  
 2. 误杀站可仅用 **Pause on this site** 恢复可用性（对照 [safari-test-sites](../quality/safari-test-sites.md) 购物/新闻站）。  
 3. Paused 后再 **Resume** 恢复拦截。  
-4. 全局 Off / 扩展未开时**不**显示 Protected。  
+4. 全部类别 Off / 扩展未开时**不**显示 Protected。  
 5. 未订阅点 Tap **不**在扩展内购买；能到达主 App。  
 6. Report 预填域名、发送前可预览、无静默浏览历史上传。  
 7. YouTube/X 无第四个菜单项；行为由 Home 开关 + 扩展脚本完成。

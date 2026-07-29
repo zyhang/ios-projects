@@ -9,7 +9,7 @@
 | 3 | `02-Setup.png` | Enable in a few steps | Turn on Stillwall in Safari settings | `03-…` |
 | 4 | `03-Home-On.png` | Block ads, trackers, annoyances | Free core protection. Pro when you need it | `04-…` |
 | 5 | `05-Upgrade.png` | Pro tools when you need them | YouTube & X in Safari · Tap to Block | `05-…` |
-| 6 | `04-Home-Off.png` | One switch. Full control | Pause everything anytime | `06-…`（可选） |
+| 6 | `04-Home-Off.png` | Categories you control | Turn features on or off as you need | `06-…`（可选） |
 
 UI 源：`docs/design/exports/phone-preview/`  
 成片目录：`docs/release/app-store-assets/screenshots/`

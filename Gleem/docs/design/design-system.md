@@ -61,7 +61,7 @@ HIG notes（稿内）：
 | 文案区 inset | 常 **20** 或 **32** |
 | 导航 | **无 Tab Bar**；授权通过后 **Home 为根** |
 | 列布局 | iPhone 单列；iPad 限制内容最大宽度，不拉成多列 dashboard |
-| 结构 | 顶：状态/价值 → 中：白卡片分组 → 底：单一主 CTA（Home 为全局 Switch，非第二主按钮） |
+| 结构 | 顶：状态/价值 → 中：白卡片分组 → 底：单一主 CTA（Home 状态区无主按钮；类别 Switch 在列表内） |
 | 触控 | 可点目标 **≥ 44×44 pt**（稿中 More/Close 约 48×44） |
 
 ### 间距常用值
@@ -178,18 +178,18 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 
 | 区 | 内容 |
 |----|------|
-| 左列 | Status pill（绿点 + On/Off）→ 34 Bold 标题 → 17 双行说明 @ secondary |
-| 右 | **原生 `Toggle` / UISwitch 样式**（全局保护） |
-| 右上 | **More**（`•••`），独占 ≥44×44；**全局开关不得压在标题正下方抢位** |
+| 左列 | Status pill（绿点 + On/Off，可选）→ 34 Bold 标题 → 17 双行说明 @ secondary |
+| 右 | **无控件**（状态只读；**无**全局 Toggle） |
+| 右上 | **More**（`•••`），独占 ≥44×44 |
 
 文案方向：
 
 | 状态 | 标题方向 | 说明方向 |
 |------|----------|----------|
 | On | Safari Protection | Blocking ads and trackers. / Everything is working quietly. |
-| Off | Protection is off | Ads and trackers aren’t active. / Your settings are saved. |
+| Off | Protection is off | Turn categories back on below. / Your settings are saved. |
 
-**不做：** Pause 按钮、Allowed Sites 入口、15m/1h 定时（见 D-309 / D-310）。
+**不做：** 全局总开关、Pause 按钮、Allowed Sites 入口、15m/1h 定时（见 D-309 / D-310 / D-315）。
 
 ### 7.2 Feature Row（能力列表）
 
@@ -209,7 +209,7 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 | 主/副文案 | 17 + 13 @ secondary |
 | Free 行 | 右侧 Switch；默认 On |
 | Pro 行 | 左 **PRO badge** + 文案 + Switch（默认 Off）或 Chevron |
-| 全局 Off | 列表仍可见；选择保留；拦截不生效 |
+| 全部类别 Off | 列表仍可见；选择保留；无拦截生效 |
 | Locked Pro | **禁止乐观切换** → 进 Upgrade；取消后控件原样 |
 | 密度 | 同一行不堆开关 + 按钮 + 徽标 + 多链接 |
 
@@ -373,7 +373,7 @@ enum StillwallColor {
 
 | 组件 | SwiftUI 方向 |
 |------|----------------|
-| 全局开关 / 能力开关 | `Toggle` + `.labelsHidden()`；样式跟系统 |
+| 能力（类别）开关 | `Toggle` + `.labelsHidden()`；样式跟系统；**无** Hero 全局 Toggle |
 | 主按钮 | 自定义 `ButtonStyle`：高 50、圆角 12、`brandPrimary`、按压 0.98/140ms |
 | 列表卡 | `List` inset grouped **或** 自定义 `VStack` + 白底圆角 18（与稿一致时优先可控自定义） |
 | More | `toolbar` / 右上按钮，命中区 ≥44 |
@@ -389,7 +389,7 @@ enum StillwallColor {
 | 3 | Pro 仅暖金徽标 | 本稿 §4 / §7.4 | 未实现 |
 | 4 | 主按钮 50h / r12 / 单主 CTA | 本稿 §7.3 | 未实现 |
 | 5 | 列表卡 r18、inset 16 | 本稿 §3 / §6 | 未实现 |
-| 6 | Home Hero + 全局 Toggle + More 44×44 | HIG notes | 未实现 |
+| 6 | Home Hero（只读）+ 类别列表 + More 44×44 | HIG notes | 未实现 |
 | 7 | 能力行顺序与 Free/Pro 默认 | 总纲领 + screens | 未实现 |
 | 8 | Locked Pro 不乐观切换 | HIG notes | 未实现 |
 | 9 | 定价文案 $14.99/年 · 1 month free | 总纲领 §4 | 未实现 |
@@ -407,7 +407,7 @@ enum StillwallColor {
 - [ ] 单屏无多个竞争主按钮  
 - [ ] Welcome CTA ≠ 强制试用  
 - [ ] Setup 门禁完整  
-- [ ] Home：全局开关；无 Pause / App 内 Allowed Sites  
+- [ ] Home：仅类别开关（无全局总开关）；无 Pause / App 内 Allowed Sites  
 - [ ] Free/Pro 边界在 paywall 前可读  
 - [ ] 无不可验证威胁统计  
 - [ ] Light / Dark、Dynamic Type、VoiceOver、Reduce Motion 真机或模拟器过主路径  

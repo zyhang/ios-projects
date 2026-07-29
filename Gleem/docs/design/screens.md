@@ -45,16 +45,16 @@
 
 | 项 | 说明 |
 |----|------|
-| 目的 | 状态 + **全局开关** + 能力列表 + More |
+| 目的 | 只读状态 + **能力类别开关** + More（**无**全局总开关） |
 
 ### 状态区
 
 | 呈现 | 文案方向 | 控件 |
 |------|----------|------|
-| `protected` | All quiet / 保护中 | **全局 Switch = On** |
-| `off` | Protection off | **全局 Switch = Off** |
+| `protected` | All quiet / 保护中 | **无开关**（只读） |
+| `off` | Protection off | **无开关**（只读） |
 
-**不做：** Pause 按钮、Allowed Sites 入口、15m/1h/Until resume。
+**不做：** 全局总开关、Pause 按钮、Allowed Sites 入口、15m/1h/Until resume。
 
 ### 能力列表（顺序固定）
 
@@ -69,7 +69,7 @@
 | 7 | Strict Mode | Switch · Pro | Off |
 | 8 | Tap to Block | Chevron 行 · Pro | → S05 |
 
-全局 Off 时列表仍可见；拦截不生效。
+全部类别 Off 时列表仍可见；无拦截生效；状态区为 off。
 
 ### 其他
 
@@ -106,7 +106,7 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 建议条目：
 
 - How to enable protection  
-- **Site broken?** Open the Stillwall extension in Safari → **Pause on this site**（或主 App 关闭全局保护）  
+- **Site broken?** Open the Stillwall extension in Safari → **Pause on this site**（或主 App 关闭相关类别开关）  
 - How to open the extension（步骤依赖 V-002，勿写死未验证图标位置）  
 - YouTube & X — Safari only  
 - How Tap to Block works（扩展三项中的第 2 项）  
@@ -180,7 +180,7 @@ App 版本 · 规则包版本 · 定位句 · Acknowledgements · Mac coming soo
 - [x] 无 Tab Bar  
 - [x] Welcome CTA ≠ 强制试用  
 - [x] Setup 门禁  
-- [x] Home：**全局开关**，无 Pause/Allow 入口  
+- [x] Home：**仅类别开关**（无全局总开关），无 Pause/Allow 入口  
 - [x] 能力顺序：Ads → Privacy → Annoyances → Regional → YT&X → Battery → Strict → Tap  
 - [x] Tap 为入口行  
 - [x] YouTube/X 含 in Safari  

@@ -64,7 +64,7 @@ Stillwall blocks ads, trackers, and annoyances in **Safari only**. It is **not a
 
 Preferences and feature data on your device (and App Group shared with Safari extensions where applicable), for example:
 
-- Global protection on/off and category toggles  
+- Category toggles (Ads, Privacy, Annoyances, Regional, Pro features)  
 - Pro entitlement state as reported by StoreKit  
 - Site pause / resume decisions in the Safari extension  
 - Tap to Block rules (on-device; not cloud-synced in the current version)  
@@ -146,7 +146,7 @@ Reasonable technical and organisational measures. No method is completely secure
 
 ## 11. Your choices and rights
 
-**Product:** global switch; site pause; cancel Pro in Apple subscriptions; delete app; system App Analytics settings.
+**Product:** category switches; site pause; cancel Pro in Apple subscriptions; delete app; system App Analytics settings.
 
 **EEA/UK:** access, correction, deletion, restriction, portability, objection, withdraw consent; complaint to supervisory authority. Contact privacy@yilinglabs.com.
 

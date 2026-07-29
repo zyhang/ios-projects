@@ -47,7 +47,7 @@
 
 ## 硬约束
 
-- 无 Tab；授权门禁；主 App **全局 On/Off**（无定时 Pause、无 App 内 Allowed Sites）  
+- 无 Tab；授权门禁；主 App **仅类别开关**（**无**全局总开关、无定时 Pause、无 App 内 Allowed Sites）  
 - Free/Pro 与开关顺序固定（改前先改总纲领）  
 - 无 Custom Rules、无系统级全 App 拦截卖点、无 paywall bypass  
 - YouTube/X 仅 Safari；Mac 仅 Coming soon  

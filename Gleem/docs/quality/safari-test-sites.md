@@ -38,7 +38,7 @@
 | CAP-BAT | Battery Boost | §5.6 | Pro |
 | CAP-STRICT | Strict Mode | §5.7 | Pro |
 | CAP-TAP | Tap to Block | §5.8 | Pro |
-| CAP-GLOBAL | 全局保护开关 | §5.9 | 免费 |
+| CAP-CAT | 类别开关（无全局总开关） | §5.9 / §5.12 | 免费 |
 | CAP-SITE | 站点放行（Safari 扩展） | §5.10 | 免费 |
 | CAP-UPDATE | 规则更新 | §5.11 | 免费 |
 | CAP-HONEST | 诚实状态 / 无假保护中 | §5.12、§10.3 | — |
@@ -54,7 +54,7 @@
 | 广告 | 明显减少 / 部分 / 否 |
 | 弹层/CMP | 改善 / 无变化 / 误伤 |
 | 功能损坏 | 无 / 图片 / 播放 / 结账 / 登录… |
-| 恢复 | 无需 · 全局关 · 扩展放行 |
+| 恢复 | 无需 · 关相关类别 · 扩展放行 |
 | 构建 / 规则版本 | — |
 | 备注 | — |
 
@@ -62,7 +62,7 @@
 
 1. 默认开启 Ads / Privacy / Annoyances / Regional 后，P0 新闻与门户站**广告或追踪干扰明显减少**（不要求 100%）。  
 2. Wikipedia、政务、公营媒体等**不应被明显破坏**。  
-3. Amazon / 购物站图片与核心路径可用；损坏时可通过**全局关或扩展放行**恢复（CAP-SITE / CAP-GLOBAL）。  
+3. Amazon / 购物站图片与核心路径可用；损坏时可通过**关相关类别或扩展放行**恢复（CAP-SITE / CAP-CAT）。  
 4. YouTube / X **仅在 Safari 网页 + Pro** 验收；文案不承诺原生 App。  
 5. 扩展或 Content Blocker 被关时，不得显示「保护中」（CAP-HONEST）。
 
@@ -282,7 +282,7 @@
 | CAP-STRICT | 对已通过新闻/门户再开 Strict，记录 breakage |
 | CAP-TAP | 任选 2 个仍有残留元素的新闻站 |
 | CAP-COMPAT | amazon.* 各区域, coupang.com, rakuten.co.jp, maps.google.com, mail.google.com |
-| CAP-SITE / CAP-GLOBAL | 故意找一处误杀 → 扩展放行 / 全局关 → 恢复 |
+| CAP-SITE / CAP-CAT | 故意找一处误杀 → 扩展放行 / 关相关类别 → 恢复 |
 | 零误伤白名单 | wikipedia.org, gov.uk, abc.net.au, nhk.or.jp, nhs.uk |
 
 ---

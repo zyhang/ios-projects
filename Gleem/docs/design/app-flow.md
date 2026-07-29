@@ -14,8 +14,8 @@
 | 少步骤 | Welcome → 一次授权引导 → Home |
 | 门禁诚实 | 未完成 Safari 拦截授权 **不得** 进入 Home |
 | 先价值后付费 | 免费核心先生效；Pro 从能力行进入 |
-| 平台分工 | **站点 Pause/Resume、Tap、Report 在 Safari 扩展 popup（仅 3 项）**；主 App 只有 **全局 On/Off** + 类别开关 |
-| 假保护为零 | 扩展被关、全局关闭时，主 App 与扩展顶栏必须说真话 |
+| 平台分工 | **站点 Pause/Resume、Tap、Report 在 Safari 扩展 popup（仅 3 项）**；主 App 仅 **类别开关** + 只读状态（**无**全局总开关） |
+| 假保护为零 | 扩展被关、全部类别 Off 时，主 App 与扩展顶栏必须说真话 |
 
 ---
 
@@ -29,8 +29,8 @@ Cold Start
   → 授权校验
         ├─ 未通过 → 模态 Setup（挡 Home）
         └─ 通过 → Home
-              ├── 全局开关 On  → 按类别开关拦截
-              ├── 全局开关 Off → 不拦截（状态 Off）
+              ├── 有类别 On   → 按已开类别拦截（protected）
+              ├── 全部类别 Off → 不拦截（状态 Off）
               ├── 系统关掉扩展 → 模态 Setup
               └── Pro 行（free）→ Upgrade
 ```
@@ -40,21 +40,22 @@ Cold Start
 | 呈现状态 | 条件 | 用户理解 |
 |----------|------|----------|
 | `needsSetup` | Content Blocker 或 Web Extension 未开 | 门禁 / 模态 Setup |
-| `protected` | 授权完成 + 全局开关 On | 保护中 |
-| `off` | 授权完成 + 全局开关 Off | 保护已关闭 |
+| `protected` | 授权完成 + 至少一个类别开关 On | 保护中 |
+| `off` | 授权完成 + 全部类别开关 Off | 保护已关闭 |
 | `degraded` | 可选：无可用规则基线 | 需修复；不得假装正常 |
 
-**已移除：** 主 App `paused` 定时暂停状态、Pause 时长（15m / 1h / Until resume）。
+**已移除：** 主 App `paused` 定时暂停状态、Pause 时长（15m / 1h / Until resume）、**全局保护总开关**（D-315）。
 
-**本站 Pause（仅扩展）：** 见 [safari-extension.md](safari-extension.md)；与全局 Off 不同——全局关一切，本站 Pause 只放行当前 eTLD+1。
+**本站 Pause（仅扩展）：** 见 [safari-extension.md](safari-extension.md)；与「全部类别 Off」不同——全部 Off 无任何拦截，本站 Pause 只放行当前 eTLD+1。
 
-### 2.3 全局开关
+### 2.3 类别开关（唯一控制面）
 
 | 字段 | 说明 |
 |------|------|
-| `protectionEnabled` | bool；默认 `true` |
-| Off 时 | 所有类别拦截不生效 |
-| On 时 | 按 Ads / Privacy / … 各自开关 |
+| `categories.*` | 各能力独立 bool；免费默认 true，Pro 默认 false |
+| 全部 Off | 无拦截；状态区 `off` |
+| 部分/全部 On | 仅已开启类别参与规则编译 |
+| **无** `protectionEnabled` 用户开关 | 工程侧可用派生 `anyCategoryEnabled`，不作 UI 总开关 |
 
 ### 2.4 订阅状态
 
@@ -71,7 +72,7 @@ Cold Start
 ```text
 [Welcome] 长页卖点 → 主按钮 Enable Safari Blocking
     → [Setup] 一次叙事：Content Blocker + Web Extension
-    → 检测通过 → Home（全局 On，免费类别默认 On）
+    → 检测通过 → Home（免费类别默认 On → protected）
 ```
 
 主按钮 **不是** Start Free Trial。
@@ -85,12 +86,12 @@ Cold Start
 ### 3.3 Home 日常
 
 ```text
-状态区：protected | off + 全局开关
-能力列表：Ads … Tap to Block
+状态区：protected | off（只读，无全局开关）
+能力列表：Ads … Tap to Block（唯一开/关）
 More → 次级页
 
-关全局 → off
-开全局 → 按类别生效
+关某类别 → 该类不参与拦截
+全部类别 Off → off
 点 Pro（free）→ Upgrade
 点 Tap → 说明页（Safari 中使用；站点设置亦在扩展）
 ```
@@ -100,7 +101,7 @@ More → 次级页
 ```text
 站点异常
   → 推荐：Safari → Stillwall 扩展 popup → Pause on this site
-  → 备选：Home 关闭全局开关（或关 Strict / 相关类别）
+  → 备选：Home 关闭相关类别（或关 Strict）
   → 可选：扩展 Report issue 或 App Feedback
   → 恢复本站：扩展 Resume on this site
 ```
@@ -118,12 +119,11 @@ More → 次级页
 
 | 顺序 | 行 | 类型 | 说明 |
 |------|-----|------|------|
-| — | 全局保护 | Switch（状态区） | On/Off |
 | 1–4 | Ads / Privacy / Annoyances / Regional | Switch | 免费，默认 On |
 | 5–7 | YouTube & X / Battery / Strict | Switch | Pro |
 | 8 | Tap to Block | 入口行 | Pro；说明在 Safari 使用 |
 
-全局 Off 时：类别开关可仍显示，但拦截不生效；状态区强提示 Off。
+**无**状态区全局 Switch。全部类别 Off 时：列表仍可见；状态区 `off`。
 
 ---
 
@@ -131,7 +131,7 @@ More → 次级页
 
 | 数据 | 位置 |
 |------|------|
-| onboarding、全局开关、类别开关 | 本机 App Group |
+| onboarding、类别开关 | 本机 App Group |
 | Tap 规则 | 本机（扩展读写） |
 | 本站 Pause 集合（eTLD+1） | **扩展侧 / App Group**；主 App 无名单 UI |
 | 订阅 | StoreKit（扩展只读权益） |

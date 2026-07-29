@@ -30,7 +30,7 @@
 | Content Blocker Extension | 声明式拦截 |
 | Safari Web Extension | popup 3 项 + Tap + YT/X |
 | Unit Tests | SharedConfig、域名、状态推导 |
-| UI Tests | 门禁、全局开关、Upgrade 入口（可选阶段） |
+| UI Tests | 门禁、类别开关、Upgrade 入口（可选阶段） |
 
 阶段 B（非 v1）：URL Filter 等见决策 S-001。
 
@@ -61,10 +61,10 @@
 | 呈现 | 条件 |
 |------|------|
 | `needsSetup` | CB 或 WE 未开 |
-| `protected` | 授权完成 + `protectionEnabled == true` |
-| `off` | 授权完成 + `protectionEnabled == false` |
+| `protected` | 授权完成 + 任一类别开关 On（派生 `anyCategoryEnabled`） |
+| `off` | 授权完成 + 全部类别开关 Off |
 
-不把「某站 paused」算作全局 off；Home 不显示 per-site 状态（避免双 UI）。
+不把「某站 paused」算作 Home off；Home 不显示 per-site 状态（避免双 UI）。**无** `protectionEnabled` 用户开关。
 
 ---
 
@@ -72,7 +72,7 @@
 
 | 主 App 动作 | 扩展侧效果 |
 |-------------|------------|
-| 切换全局 / 类别 | 写 config → reload CB |
+| 切换类别 | 写 categories → reload CB（按变更类别增量编译优先） |
 | 订阅变化 | 写 `subscription` → popup Tap 门闸变化 |
 | Setup 完成 | 用户可打开 popup 三态正常路径 |
 | 打开 `stillwall://…` | 路由到 Setup / Upgrade / Feedback |
@@ -89,7 +89,7 @@
 见 [safari-extension.md §9](safari-extension.md)。主 App 可先：
 
 1. SwiftUI 壳 + 门禁状态机  
-2. App Group 写入全局/类别  
+2. App Group 写入类别开关  
 3. Extension 状态检测  
 4. StoreKit 快照  
 5. 规则更新管道  
@@ -101,3 +101,4 @@
 | 日期 | 说明 |
 |------|------|
 | 2026-07-28 | 按现行总纲领重建；去掉归档方案中的定时 Pause / App 名单 |
+| 2026-07-29 | 移除全局保护开关（D-315）；状态由类别开关派生 |

@@ -40,7 +40,7 @@
 
 | ID | 决策 | 状态 | 说明 |
 | --- | --- | --- | --- |
-| D-201 | Safari 核心拦截永久免费 | 已确认 | Ads/Privacy/Annoyances/Regional + 全局开关；站点控制在扩展（见 D-309） |
+| D-201 | Safari 核心拦截永久免费 | 已确认 | Ads/Privacy/Annoyances/Regional（类别开关）；站点控制在扩展（见 D-309）；**无**全局总开关（D-315） |
 | D-202 | Pro：$14.99/年 | 已确认 | 仅年订 |
 | D-203 | 试用 1 个月 | 已确认 | 从升级页/Pro 入口开始，非进 Home 门禁 |
 | D-204 | 支持 Family Sharing | 已确认 | — |
@@ -54,7 +54,7 @@
 | ID | 决策 | 状态 | 说明 |
 | --- | --- | --- | --- |
 | D-301 | 免费：Ads、Privacy、Annoyances、Regional（默认开） | 已确认 | Regional 按语言全自动 |
-| D-302 | 主 App 免费：全局保护 On/Off | 已确认 | **已替代**原「Pause 时长 + App 内 Allowlist」方案；见 D-309 |
+| D-302 | 主 App 免费：全局保护 On/Off | **已替代** | 被 **D-315** 替代：移除全局总开关，仅保留类别开关 |
 | D-303 | Pro：YouTube & X 合并为一个开关 | 已确认 | 仅 Safari 网页 |
 | D-304 | Pro：Battery Boost、Strict Mode（默认关） | 已确认 | Strict 叠加更严 |
 | D-305 | Pro：Tap to Block；Home 为入口行 | 已确认 | 非纯开关；规则仅本机 |
@@ -62,11 +62,12 @@
 | D-307 | 不承诺原生 YouTube/X App 去广告 | 已确认 | 文案须限定 Safari |
 | D-308 | 规则日更自动；不做用户开关 | 已确认 | About 可展示版本 |
 | D-309 | 站点放行 / 当前站控制仅在 Safari 扩展中配置 | 已确认 | 主 App **不做** Allowed Sites 页；对齐 Safari 扩展能力，避免重复 UI |
-| D-310 | 主 App 不做定时 Pause（15m/1h/Until resume） | 已确认 | 仅全局开关；需要临时停拦：关全局或用扩展放行站点 |
+| D-310 | 主 App 不做定时 Pause（15m/1h/Until resume） | 已确认 | 需要临时停拦：关相关类别或用扩展放行站点（全局总开关见 D-315 已移除） |
 | D-311 | 扩展 popup **固定 3 项** | 已确认 | ① Pause/Resume on this site · ② Tap to Block · ③ Report issue；只读顶栏不算项；硬上限 5，v1 不凑满；见 [safari-extension.md](../design/safari-extension.md) |
 | D-312 | 本站 Pause：eTLD+1、持久至 Resume | 已确认 | 无 session-only、无 15m/1h；`www` 与裸域同一站 |
 | D-313 | 扩展内无 IAP；未订阅 Tap 回主 App | 已确认 | 符合 App Store 4.4；Open Stillwall 非常态第 4 项 |
 | D-314 | v1 不做 Paywall Bypass | 已确认 | 不集成 bypass-paywalls 类能力；非增值点 |
+| D-315 | **移除主 App 全局保护总开关** | 已确认 | 性能：整包 CB/规则重载代价过高；Home 仅类别开关 + 只读状态区；**替代 D-302**；恢复路径 = 关类别 / 扩展 Pause |
 
 ### 2.4 平台与技术
 
@@ -86,11 +87,11 @@
 | D-501 | 无 Tab；单 Home + 次级页 | 已确认 | — |
 | D-502 | Welcome 为 1 长页滚动卖点 | 已确认 | 顶标题/理念，中卖点，底主按钮 |
 | D-503 | 未完成 Safari 授权不得进 Home | 已确认 | 模态引导直至完成 |
-| D-504 | Home：上状态+全局开关、下能力列表 | 已确认 | 顺序见总纲领 |
+| D-504 | Home：上状态区（只读）、下能力列表 | 已确认 | **无**全局开关（D-315）；顺序见总纲领 |
 | D-505 | 主 App 不展示 Allowed Sites / Pause 入口 | 已确认 | **替代**原「状态区下 Pause+Allow 固定入口」；站点设置见 D-309 |
 | D-506 | 扩展被关不得显示假保护中 | 已确认 | 模态拉回授权 |
 | D-507 | 主 App 视觉以 Lunacy Hi-fi P0 + design-system 为准 | 已确认 | 品牌主色 `#2F6A58`；暖金仅 Pro；系统字体实现；见 [design-system.md](../design/design-system.md) |
-| D-508 | 扩展 popup 无全局开关、无类别列表 | 已确认 | 全局/类别仅主 App；扩展为当前站情境 |
+| D-508 | 扩展 popup 无全局开关、无类别列表 | 已确认 | 类别开关仅主 App；主 App 亦无全局总开关（D-315）；扩展为当前站情境 |
 | D-509 | App Store 基础元数据以 release 包为准 | 已确认 | Name **Stillwall for Safari**；Subtitle **Free Ad & Tracker Blocking**；Utilities；见 [app-store-submission.md](../release/app-store-submission.md) |
 
 ### 2.6 隐私
@@ -100,7 +101,7 @@
 | D-601 | 无产品账号 | 已确认 | — |
 | D-602 | 不收集浏览历史上传 | 已确认 | — |
 | D-603 | 无第三方分析/广告 SDK | 已确认 | — |
-| D-604 | 全局/类别开关与 Tap 规则仅本机；站点例外在扩展侧本地 | 已确认 | 主 App 无名单库 |
+| D-604 | 类别开关与 Tap 规则仅本机；站点例外在扩展侧本地 | 已确认 | 主 App 无名单库；无全局开关字段 |
 | D-605 | Feedback 可选手动附域名 + 发送前预览 | 已确认 | 用户主动提交 |
 | D-606 | v1 不接第三方崩溃 SDK | 已确认 | 变更须重决策 |
 
@@ -162,3 +163,4 @@
 | 2026-07-29 | D-110：营销站主骨架选定 v5 Product Theater |
 | 2026-07-29 | D-111/D-112：Yiling Labs 简称 + App id 6795497808；官网内容对齐 Wipr/ML 与产品能力 |
 | 2026-07-29 | D-113：单域名 yilinglabs.com；产品子路径/子域扩展 |
+| 2026-07-29 | **D-315**：移除主 App 全局保护总开关；D-302 已替代；Home 仅类别开关 |
