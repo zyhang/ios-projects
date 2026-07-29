@@ -1,3 +1,14 @@
-/privacy  /legal/privacy.html  200
-/support  /legal/support.html  200
-/lab      /lab/index.html      200
+# Canonical short paths (App Store / marketing)
+/privacy              /legal/privacy.html  200
+/support              /legal/support.html  200
+/lab                  /lab/index.html      200
+/lab/                 /lab/index.html      200
+
+# Product namespace under single company domain (D-113)
+# https://yilinglabs.com/stillwall/  == Stillwall marketing site
+/stillwall            /index.html          200
+/stillwall/           /index.html          200
+/stillwall/privacy    /legal/privacy.html  200
+/stillwall/support    /legal/support.html  200
+/stillwall/lab        /lab/index.html      200
+/stillwall/lab/       /lab/index.html      200

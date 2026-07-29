@@ -58,19 +58,18 @@ website/
 | 角色 | 推荐 URL | 说明 |
 |------|----------|------|
 | 公司主页（可选） | `https://yilinglabs.com/` | About / 品牌；初期可 **301 → Stillwall** |
-| **Stillwall 营销站** | `https://yilinglabs.com/stillwall/` | **推荐默认**；仓库 `website/` 部署在此路径 |
-| Privacy（ASC） | `https://yilinglabs.com/stillwall/privacy` | 或 `/privacy` 若站点独占根路径 |
-| Support（ASC） | `https://yilinglabs.com/stillwall/support` | 同上 |
-| 备选 · 子域 | `https://stillwall.yilinglabs.com/` | 产品多了、要独立部署/证书时再拆 |
+| **Stillwall 营销站** | `https://yilinglabs.com/` **与** `https://yilinglabs.com/stillwall/` | 根路径 + 产品命名空间双入口（`_redirects`） |
+| Privacy（ASC） | `https://yilinglabs.com/privacy` 或 `…/stillwall/privacy` | 两者等价 rewrite |
+| Support（ASC） | `https://yilinglabs.com/support` 或 `…/stillwall/support` | 同上 |
+| 备选 · 子域 | `https://stillwall.yilinglabs.com/` | 产品多了、要独立部署时再拆 |
 
-**优先用子路径，而不是一上来子域：**
+**推荐 ASC 填写（稳定、短）：**
 
-1. 一站点、一证书、一部署，运维简单  
-2. App Store 只要稳定 HTTPS URL，路径完全合格  
-3. 以后产品多了再拆：`/product-b/` 或 `product-b.yilinglabs.com`
+- Privacy: `https://yilinglabs.com/privacy`  
+- Support: `https://yilinglabs.com/support`  
+- Marketing: `https://yilinglabs.com/` 或 `https://yilinglabs.com/stillwall/`
 
-**初期若只有 Stillwall：** 也可把 `website/` 直接挂在根  
-`https://yilinglabs.com/` · `/privacy` · `/support`，等第二款产品再挪到 `/stillwall/`。
+以后第二款产品用 `/otherapp/`，根路径可改成公司首页，Stillwall 只保留 `/stillwall/`。
 
 ### 上线前仍须确认
 

@@ -33,7 +33,7 @@
 | D-110 | 营销站主骨架采用 **v5 Product Theater** 结构 | 已确认 | 全宽色带分区 + 大无衬线标题 + 产品舞台 + Free/Pro/边界模块；正式站 `website/index.html`；v1–v5 快照在 `website/versions/` / `lab/` |
 | D-111 | 对外主体简称 **Yiling Labs**；法律全称为 Xiamen Yiling Information Technology Co., Ltd. | 已确认 | 页脚/营销用 Yiling Labs；Privacy/合同级披露写全称并括号注明 Yiling Labs；勿用 Inc. 等错误公司形态 |
 | D-112 | App Store 链接使用 app id **6795497808** | 已确认 | `https://apps.apple.com/app/id6795497808`（上架前可能 404，格式有效） |
-| D-113 | **单公司域名**策略：计划注册 **yilinglabs.com**；产品站用子路径（推荐）或二级域名扩展 | 已确认 | 不单独买 Stillwall 产品域；Stillwall 默认 `yilinglabs.com/stillwall/` 或独占根；邮箱 `*@yilinglabs.com` |
+| D-113 | **单公司域名**策略：**yilinglabs.com**；产品用子路径扩展 | 已确认 | 不单独买产品域；Stillwall 双入口：`/` 与 `/stillwall/`（rewrite）；Privacy/Support：`/privacy`·`/support` 及 `/stillwall/*` 等价；邮箱 `*@yilinglabs.com` |
 
 ### 2.2 商业与权益
 
