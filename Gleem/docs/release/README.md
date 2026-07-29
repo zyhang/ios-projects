@@ -15,9 +15,12 @@
 - **Icon：** `app-store-assets/icon/AppIcon-1024.png`（+ 多尺寸）  
 - **Copy：** `app-store-assets/copy/*.txt` / privacy & support markdown  
 - **Screenshots（成片）：**  
-  - iPhone 6.7"：`app-store-assets/screenshots/iphone-6.7/`（1290×2796）  
-  - iPad 13"：`app-store-assets/screenshots/ipad-13/`（2064×2752）  
+  - **iPhone（ASC 合规竖屏）：**  
+    - `app-store-assets/screenshots/iphone-6.5-1242x2688/`（**1242×2688**，优先）  
+    - `app-store-assets/screenshots/iphone-6.5-1284x2778/`（**1284×2778**）  
+  - iPad：`app-store-assets/screenshots/ipad-13/`  
   - 计划：`app-store-assets/screenshot-plan.md`  
+  - 注意：`iphone-6.7/`（1290×2796）为旧尺寸，当前 ASC 槽勿用
 - **可部署站点：** `app-store-assets/site/`（`privacy.html` · `support.html` · `index.html`）  
   - 本地预览：`cd app-store-assets/site && python3 -m http.server 8765`  
 

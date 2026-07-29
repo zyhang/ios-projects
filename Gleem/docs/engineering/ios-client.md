@@ -16,7 +16,8 @@
 | 设备 | iPhone、iPad |
 | 并发 | Swift Concurrency |
 | 订阅 | StoreKit 2（正式收费阶段） |
-| 共享 | App Group（见扩展文档 schema） |
+| 共享 | App Group `group.com.lingyi.stillwall`（见 [identifiers-and-entitlements.md](identifiers-and-entitlements.md)） |
+| Bundle | `com.lingyi.stillwall`（+ `.blocker` / `.extension`） |
 | 分析 / 崩溃 SDK | v1 **不接**第三方 |
 
 ---

@@ -1,6 +1,6 @@
 # Gleem 项目文档
 
-> 内部代号 `Gleem`。对外产品名暂用 `Stillwall`（以[产品总纲领](product/product-charter.md)为准，上架前可调整）。
+> 内部代号 `Gleem`。品牌 **Stillwall** · App Store：**Stillwall for Safari** / 副标题 **Free Ad & Tracker Blocking**（见总纲领与决策 D-108/D-109）。
 
 ## 状态
 
@@ -51,7 +51,7 @@
 
 ### 工程
 
-- [engineering/](engineering/)：[ios-client.md](engineering/ios-client.md) · [safari-extension.md](engineering/safari-extension.md)（App Group schema、CB/WE、实现顺序）  
+- [engineering/](engineering/)：[ios-client.md](engineering/ios-client.md) · [safari-extension.md](engineering/safari-extension.md) · [identifiers-and-entitlements.md](engineering/identifiers-and-entitlements.md)（三 App ID / App Group / 能力勾选）
 
 ### 发布 / App Store
 

@@ -8,7 +8,8 @@
 |----|------|
 | 视觉源 | Lunacy：`Depth Pass · Hi-fi P0` / 仓库 [Stillwall-HiFi-v1.free](Stillwall-HiFi-v1.free) |
 | 线框 | [Stillwall-Wireframes-v1.free](Stillwall-Wireframes-v1.free)（结构，非视觉权威） |
-| 对外产品名 | Stillwall（内部代号 Gleem） |
+| 对外品牌 | Stillwall（内部代号 Gleem） |
+| App Store | Name `Stillwall for Safari` · Subtitle `Free Ad & Tracker Blocking` |
 | 说明语言 | 中文；**用户可见 UI 字符串：英文** |
 | 归档旧稿 | [archive/…/design-system.md](../archive/project-v1-2026-07-27/design/design-system.md) 勿作现行权威 |
 

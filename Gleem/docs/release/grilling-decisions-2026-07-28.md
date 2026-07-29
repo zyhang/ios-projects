@@ -2,8 +2,8 @@
 
 | # | 议题 | 锁定 |
 |---|------|------|
-| 1 | App Name | **Stillwall**（V-001 前暂用，可整包替换） |
-| 2 | Subtitle | **Ad Block for Safari** |
+| 1 | App Name | **Stillwall for Safari**（D-108；品牌主名 Stillwall） |
+| 2 | Subtitle | **Free Ad & Tracker Blocking**（D-109） |
 | 3 | Primary Category | **Utilities**（副类不填） |
 | 4 | Icon | 绿底 + 浅绿圆盘 + shield-check |
 | 5 | Keywords | 核心意图优先（adblock/blocker/tracker…） |

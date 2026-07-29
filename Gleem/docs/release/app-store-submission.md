@@ -1,14 +1,14 @@
 # App Store 提审资料包（v1）
 
-> **状态：** 基础资料已定稿（grilling 2026-07-28）。  
-> **对外名：** Stillwall（暂用；[V-001](../decisions/decision-log.md) 商标/重名/域名未通过前可整包替换）。  
-> **内部代号：** Gleem。  
+> **状态：** 基础资料已定稿（grilling 2026-07-28；2026-07-29 更新 Name/Subtitle）。  
+> **品牌主名：** Stillwall · **内部代号：** Gleem。  
+> **App Store Name：** `Stillwall for Safari` · **Subtitle：** `Free Ad & Tracker Blocking`（D-108/D-109）。  
 > **权威产品范围：** [product-charter.md](../product/product-charter.md)。  
 > **视觉：** [design-system.md](../design/design-system.md)。
 
 | 项 | 值 |
 |----|-----|
-| 本包版本 | 2026-07-28 |
+| 本包版本 | 2026-07-29 |
 | 商店语言 | English (U.S.) only |
 | 销售地区 | 全球可售（ASC 默认排除地区除外） |
 | 下载价格 | **Free**（功能通过 IAP 升级） |
@@ -21,7 +21,7 @@
 - [ ] V-004：规则源许可与 About 归因  
 - [ ] Privacy / Support URL **可公网访问**（host 替换占位域名）  
 - [ ] 法务主体名写入 Copyright（替换 `<LEGAL_ENTITY_NAME>`）  
-- [ ] Bundle ID 中 `<org>` 替换为真实团队段  
+- [x] Bundle ID 已定为 `com.lingyi.stillwall`（扩展 / Group 见 engineering 清单）
 - [ ] 真机：Content Blocker + Web Extension 启用路径与截图一致（V-002）  
 
 ---
@@ -30,13 +30,14 @@
 
 | 字段 | 内容 | 限制 |
 |------|------|------|
-| **App Name** | `Stillwall` | ≤30；本轮权威名 |
-| **Subtitle** | `Ad Block for Safari` | 19 字符 |
-| **CFBundleDisplayName**（主屏） | `Stillwall` | 与商店名一致 |
+| **App Name** | `Stillwall for Safari` | 20 字符；≤30；区分重名 |
+| **Subtitle** | `Free Ad & Tracker Blocking` | 26 字符；免费核心层叙事 |
+| **CFBundleDisplayName**（主屏） | `Stillwall` | 短名上主屏；与商店全名可不同 |
 | **SKU** | `stillwall-ios` | Connect 内部 |
-| **Bundle ID（主 App）** | `com.<org>.stillwall` | 上架前替换 `<org>` |
-| **Content Blocker** | `com.<org>.stillwall.blocker` | 建议 |
-| **Web Extension** | `com.<org>.stillwall.extension` | 建议 |
+| **Bundle ID（主 App）** | `com.lingyi.stillwall` | 已锁定 |
+| **Content Blocker** | `com.lingyi.stillwall.blocker` | 已锁定 |
+| **Web Extension** | `com.lingyi.stillwall.extension` | 已锁定 |
+| **App Group** | `group.com.lingyi.stillwall` | 见 [identifiers-and-entitlements.md](../engineering/identifiers-and-entitlements.md) |
 | **Copyright** | `© 2026 <LEGAL_ENTITY_NAME>` | 与 ASC 卖方主体一致 |
 | **Primary Category** | **Utilities** | 副类本轮不填 |
 | **Age Rating** | 目标 **4+**；非 Made for Kids | 以 ASC 问卷生成为准 |
@@ -53,8 +54,8 @@
 
 | 字段 | 内容 |
 |------|------|
-| **Promotional Text** | `Free Safari ad blocking. Pro adds YouTube & X in Safari, Tap to Block, and more.`（80 字符；可随时改） |
-| **Keywords** | `adblock,blocker,tracker,privacy,cookie,ads,filter,browsing,annoyance,youtube`（76 字符） |
+| **Promotional Text** | `Core blocking stays free. Pro adds YouTube & X in Safari, Tap to Block, and more.`（约 79 字符；可随时改） |
+| **Keywords** | `adblock,blocker,privacy,cookie,filter,browsing,annoyance,youtube,popup,content`（避免再堆 free/ad/tracker/safari/block） |
 | **Description** | 见 `copy/description-en-US.txt` |
 | **What’s New（1.0）** | 见 `copy/whats-new-1.0-en-US.txt` |
 
@@ -151,16 +152,19 @@
 
 | 设备 | 要求 |
 |------|------|
-| **iPhone 6.7" / 6.9"** | 首发必交（以 ASC 当前必填槽为准） |
-| **iPad 13"** | Universal 必交最小套（可用同序列适配） |
+| **iPhone 6.5"（竖屏）** | **1242×2688** 或 **1284×2778**（两套均已生成；优先前者） |
+| **iPad** | 按 ASC 槽位尺寸；见 `screenshots/ipad-13/` |
 | Dark / Large Type | 可选，不占首发主套 |
+
+**上传路径（iPhone）：**  
+`app-store-assets/screenshots/iphone-6.5-1242x2688/`（勿用旧目录 `iphone-6.7/` 的 1290×2796）
 
 ### 8.3 不做
 
 - App Preview 视频（v1）  
 - 夸大「全网/全 App 去广告」、原生 YouTube/X App 无广告画面  
 
-合成带标题条的最终 JPG/PNG 可后续用脚本从 phone-preview 生成；清单见 [screenshot-plan.md](app-store-assets/screenshot-plan.md)。
+成片与标题清单见 [screenshot-plan.md](app-store-assets/screenshot-plan.md)。
 
 ---
 
@@ -246,8 +250,9 @@
 | [app-store-submission.md](app-store-submission.md) | 本总览 |
 | [app-store-assets/copy/](app-store-assets/copy/) | 可复制商店文案 |
 | [app-store-assets/icon/](app-store-assets/icon/) | App Icon PNG |
-| [app-store-assets/screenshots/iphone-6.7/](app-store-assets/screenshots/iphone-6.7/) | 商店成片 iPhone（带标题条） |
-| [app-store-assets/screenshots/ipad-13/](app-store-assets/screenshots/ipad-13/) | 商店成片 iPad |
+| [app-store-assets/screenshots/iphone-6.5-1242x2688/](app-store-assets/screenshots/iphone-6.5-1242x2688/) | **iPhone 竖屏 1242×2688（优先上传）** |
+| [app-store-assets/screenshots/iphone-6.5-1284x2778/](app-store-assets/screenshots/iphone-6.5-1284x2778/) | iPhone 竖屏 1284×2778 |
+| [app-store-assets/screenshots/ipad-13/](app-store-assets/screenshots/ipad-13/) | 商店成片 iPad（尺寸另核 ASC） |
 | [app-store-assets/screenshot-plan.md](app-store-assets/screenshot-plan.md) | 截图规格与标题 |
 | [app-store-assets/site/](app-store-assets/site/) | Privacy / Support 静态站（可部署） |
 | [app-store-assets/asc-field-checklist.md](app-store-assets/asc-field-checklist.md) | ASC 字段速填表 |

@@ -6,10 +6,10 @@ Paste-ready values from grilling + product charter. Replace `<>` placeholders be
 
 | Field | Value |
 |-------|--------|
-| Name | Stillwall |
-| Subtitle | Ad Block for Safari |
+| Name | Stillwall for Safari |
+| Subtitle | Free Ad & Tracker Blocking |
 | Primary Language | English (U.S.) |
-| Bundle ID | com.\<org\>.stillwall |
+| Bundle ID | com.lingyi.stillwall |
 | SKU | stillwall-ios |
 | Primary Category | Utilities |
 | Secondary Category | — (empty) |
@@ -38,7 +38,7 @@ Paste-ready values from grilling + product charter. Replace `<>` placeholders be
 |-------|--------|
 | Type | Auto-Renewable Subscription |
 | Reference Name | pro_yearly_1499 |
-| Product ID | com.\<org\>.stillwall.pro.yearly |
+| Product ID | com.lingyi.stillwall.pro.yearly |
 | Duration | 1 Year |
 | Price | USD 14.99 (or ASC equivalent tier) |
 | Introductory / Free Trial | 1 Month free |

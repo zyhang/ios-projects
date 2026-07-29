@@ -6,5 +6,6 @@
 |------|------|------|
 | [ios-client.md](ios-client.md) | 主 App targets、模块、Protection 呈现 | 初版 |
 | [safari-extension.md](safari-extension.md) | Content Blocker + Web Extension、App Group schema、实现顺序 | 初版 |
+| [identifiers-and-entitlements.md](identifiers-and-entitlements.md) | 三 App ID、App Group、Capabilities、entitlements 清单 | **已锁定 Bundle** |
 
 历史归档：`docs/archive/project-v1-2026-07-27/engineering/`（勿作现行权威）。

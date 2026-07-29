@@ -26,8 +26,10 @@
 | D-103 | 产品理念：尽量不做 Custom Rules | 已确认 | 降低使用负担 |
 | D-104 | 首要用户为希望少步骤启用的普通用户 | 已确认 | 非规则玩家 |
 | D-105 | UI 与商店文案以英文为主 | 已确认 | 文档协作可用中文 |
-| D-106 | 对外名暂用 Stillwall；Gleem 为内部代号 | 已确认 | 商标/重名核查前可调整 |
+| D-106 | 品牌主名 **Stillwall**；Gleem 为内部代号 | 已确认 | 主屏显示名仍为 Stillwall |
 | D-107 | v1 明确不做清单以总纲领 §9 为准 | 已确认 | 含 Custom Rules、全 App 拦截、TV、Mac 交付等 |
+| D-108 | App Store **Name** = `Stillwall for Safari` | 已确认 | ≤30；解决与既有 Stillwall 重名；见 release 包 |
+| D-109 | App Store **Subtitle** = `Free Ad & Tracker Blocking` | 已确认 | 26 字符；强调免费核心层（Ads/Privacy 等）；Pro 在描述/截图说明 |
 
 ### 2.2 商业与权益
 
@@ -84,7 +86,7 @@
 | D-506 | 扩展被关不得显示假保护中 | 已确认 | 模态拉回授权 |
 | D-507 | 主 App 视觉以 Lunacy Hi-fi P0 + design-system 为准 | 已确认 | 品牌主色 `#2F6A58`；暖金仅 Pro；系统字体实现；见 [design-system.md](../design/design-system.md) |
 | D-508 | 扩展 popup 无全局开关、无类别列表 | 已确认 | 全局/类别仅主 App；扩展为当前站情境 |
-| D-509 | App Store 基础元数据以 release 包为准 | 已确认 | Name Stillwall；Subtitle Ad Block for Safari；Utilities；见 [app-store-submission.md](../release/app-store-submission.md)（V-001 可整包更名） |
+| D-509 | App Store 基础元数据以 release 包为准 | 已确认 | Name **Stillwall for Safari**；Subtitle **Free Ad & Tracker Blocking**；Utilities；见 [app-store-submission.md](../release/app-store-submission.md) |
 
 ### 2.6 隐私
 
@@ -103,7 +105,7 @@
 
 | ID | 事项 | 状态 | 说明 |
 | --- | --- | --- | --- |
-| V-001 | Stillwall 商标、App Store 重名、域名 | 待验证 | 不通过则更名 |
+| V-001 | Stillwall 商标、域名；商店名 `Stillwall for Safari` 是否仍冲突 | 待验证 | 主名重名已用 for Safari 规避；仍需最终 ASC 与商标核 |
 | V-002 | Content Blocker + Web Extension 在 iOS 26 上的最终权限文案与系统路径 | 待验证 | 影响引导截图与文案 |
 | V-003 | StoreKit 试用 1 个月 + $14.99 年 + Family Sharing 配置细节 | 待验证 | 以 App Store Connect 为准 |
 | V-004 | 规则源许可证与归因文案 | 待验证 | About / 开源声明 |
@@ -151,3 +153,4 @@
 | 2026-07-28 | D-311～D-314、D-508：扩展 popup 3 项、Pause 语义、无扩展 IAP、不做 paywall bypass；T-EXT-01/02 产品确认 |
 | 2026-07-28 | engineering 扩展/主 App 规格；SE 线框蓝图与 popup mock；T-EXT-05/06 推进 |
 | 2026-07-28 | Lunacy Wireframes v1 增加 ROW 4（SE01–SE03）；T-EXT-05 线框已画 |
+| 2026-07-29 | D-108/D-109：商店名 Stillwall for Safari；副标题 Free Ad & Tracker Blocking |

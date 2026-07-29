@@ -39,7 +39,7 @@
 
 | 项 | 决策 |
 |----|------|
-| App Group ID | 工程创建时锁定，形如 `group.<team>.stillwall`（以最终 Bundle 为准） |
+| App Group ID | **`group.com.lingyi.stillwall`**（已锁定，见 [identifiers-and-entitlements.md](identifiers-and-entitlements.md)） |
 | 配置文件 | 建议单一 JSON：`SharedConfig/v1/config.json`（原子写） |
 | 禁止 | UI/扩展直接散落魔法 UserDefaults key 字符串；经 `SharedConfigStore` 读写 |
 | 隐私 | **不**存完整浏览 URL path/query 作为默认；Pause 仅 **eTLD+1**；Feedback 仅用户主动提交的域名 |
@@ -255,7 +255,7 @@ Web Extension：
 | App Bundle ID | _TBD_ |
 | Content Blocker Bundle ID | _TBD_ |
 | Web Extension Bundle ID | _TBD_ |
-| App Group | _TBD_ |
+| App Group | `group.com.lingyi.stillwall` |
 | 主 App ↔ WE 关联 | Xcode Safari Extension 标准配置 |
 
 ---

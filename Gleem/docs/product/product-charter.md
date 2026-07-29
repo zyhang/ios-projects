@@ -1,9 +1,11 @@
 # Stillwall 产品总纲领
 
-> 内部代号 `Gleem`。对外产品名暂用 `Stillwall`（上架与商标核查通过前可调整）。  
+> 内部代号 `Gleem`。品牌主名 **Stillwall**。  
+> **App Store Name：** `Stillwall for Safari` · **Subtitle：** `Free Ad & Tracker Blocking`（见 D-108/D-109）。  
+> 主屏显示名：`Stillwall`。  
 > 本文是产品的**总纲领与功能说明**：后续设计稿、交互、工程实现与验收均以本文为准。若与归档方案或口头讨论冲突，以本文及后续已确认决策为准。
 
-**文档状态：** 已确认（grilling 2026-07-27；2026-07-27 修订：站点例外下沉 Safari 扩展）  
+**文档状态：** 已确认（grilling 2026-07-27；2026-07-29：商店 Name/Subtitle 锁定）  
 **适用范围：** v1（首个可上架 / TestFlight 目标版本）
 
 ---
@@ -400,6 +402,7 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 | 2026-07-27 | **简化恢复路径**：主 App 仅全局 On/Off；移除 App 内 Pause 时长与 Allowed Sites；站点控制归 Safari 扩展 |
 | 2026-07-27 | 标记 **Safari 扩展侧工作为 TODO**（§14），主 App 文档与线框优先 |
 | 2026-07-28 | **扩展 popup 固定 3 项**；规格见 [safari-extension.md](../design/safari-extension.md)；§5.8–5.10 / §14 收敛 |
+| 2026-07-29 | App Store Name `Stillwall for Safari` · Subtitle `Free Ad & Tracker Blocking`（D-108/D-109） |
 
 ---
 

@@ -4,7 +4,7 @@
 
 | Order | Source UI | Title | Subtitle | Store-ready files |
 |------:|-----------|-------|----------|-------------------|
-| 1 | `03-Home-On.png` | All quiet in Safari | Protection that stays out of the way | `screenshots/iphone-6.7/01-…` · `ipad-13/01-…` |
+| 1 | `03-Home-On.png` | All quiet in Safari | Protection that stays out of the way | `01-…` |
 | 2 | `01-Welcome.png` | A quieter Safari | Ads, trackers, and annoyances blocked | `02-…` |
 | 3 | `02-Setup.png` | Enable in a few steps | Turn on Stillwall in Safari settings | `03-…` |
 | 4 | `03-Home-On.png` | Block ads, trackers, annoyances | Free core protection. Pro when you need it | `04-…` |
@@ -14,12 +14,21 @@
 UI 源：`docs/design/exports/phone-preview/`  
 成片目录：`docs/release/app-store-assets/screenshots/`
 
-## 尺寸
+## 尺寸（以 ASC 报错/当前槽为准）
 
-| 套 | 像素 | 路径 |
-|----|------|------|
-| iPhone 6.7" | **1290 × 2796** | `screenshots/iphone-6.7/` |
-| iPad 13" | **2064 × 2752** | `screenshots/ipad-13/` |
+Connect 要求的 **iPhone 竖屏** 合法尺寸包括：
+
+| 像素 | 路径（本仓库已生成） | 建议用途 |
+|------|----------------------|----------|
+| **1242 × 2688** | `screenshots/iphone-6.5-1242x2688/` | 优先上传此套 |
+| **1284 × 2778** | `screenshots/iphone-6.5-1284x2778/` | 备选同等内容 |
+
+亦接受横屏：`2688 × 1242`、`2778 × 1284`（本包未生成横屏）。
+
+| 其它目录 | 说明 |
+|----------|------|
+| `iphone-6.7/`（1290×2796） | **旧错误尺寸**，勿再上传到当前报错槽 |
+| `ipad-13/`（2064×2752） | iPad 槽；若 ASC 对 iPad 另有尺寸要求再改 |
 
 ## Style
 
@@ -30,16 +39,7 @@ UI 源：`docs/design/exports/phone-preview/`
 
 ## App Store Connect
 
-- [x] 带标题成片已生成（脚本）  
-- [ ] 上传 iPhone 6.7"/6.9" 槽（以 ASC 当前必填为准；可用 1290×2796）  
-- [ ] 上传 iPad 13" 槽  
-- [x] 无 App Preview  
-
-## 重新生成
-
-```bash
-# 若更新了 phone-preview，重跑 compose 脚本（见会话或 release 维护脚本）
-python3 -c "print('re-run screenshot compose from docs if needed')"
-```
-
-源 UI 更新后，用同一序列重跑 compose 逻辑（品牌色与标题表见上表）。
+- [x] 带标题成片（**1242×2688** 与 **1284×2778**）  
+- [ ] 上传 `iphone-6.5-1242x2688/` 全套（或 1284×2778）  
+- [ ] iPad 槽按 ASC 要求核对尺寸后上传  
+- [x] 无 App Preview
