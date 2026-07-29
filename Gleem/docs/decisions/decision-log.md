@@ -30,6 +30,7 @@
 | D-107 | v1 明确不做清单以总纲领 §9 为准 | 已确认 | 含 Custom Rules、全 App 拦截、TV、Mac 交付等 |
 | D-108 | App Store **Name** = `Stillwall for Safari` | 已确认 | ≤30；解决与既有 Stillwall 重名；见 release 包 |
 | D-109 | App Store **Subtitle** = `Free Ad & Tracker Blocking` | 已确认 | 26 字符；强调免费核心层（Ads/Privacy 等）；Pro 在描述/截图说明 |
+| D-110 | 营销站主骨架采用 **v5 Product Theater** 结构 | 已确认 | 全宽色带分区 + 大无衬线标题 + 产品舞台 + Free/Pro/边界模块；实现路径 `website/versions/v5-product-theater/`；v1–v4 仅作对比保留 |
 
 ### 2.2 商业与权益
 
@@ -154,3 +155,4 @@
 | 2026-07-28 | engineering 扩展/主 App 规格；SE 线框蓝图与 popup mock；T-EXT-05/06 推进 |
 | 2026-07-28 | Lunacy Wireframes v1 增加 ROW 4（SE01–SE03）；T-EXT-05 线框已画 |
 | 2026-07-29 | D-108/D-109：商店名 Stillwall for Safari；副标题 Free Ad & Tracker Blocking |
+| 2026-07-29 | D-110：营销站主骨架选定 v5 Product Theater |

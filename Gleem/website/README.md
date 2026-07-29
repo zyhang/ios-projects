@@ -8,6 +8,10 @@
 
 **设计系统参考：** [OpenDesign](https://opendesign.cc/)（`skill.md` 协议）— 笔记见 [`docs/opendesign-refs.md`](docs/opendesign-refs.md)。
 
+**方向决策（2026-07-29）：** 用户选定 **v5 Product Theater 的结构** 作为营销站主骨架  
+（全宽色带分区 · 大标题 · 产品舞台 · Free / Pro / 边界模块）。  
+v1–v4 保留作对比；后续细化与上线收敛优先改 `versions/v5-product-theater/`。
+
 ---
 
 ## 本地预览
@@ -63,7 +67,7 @@ website/
 | **v2 Product Hero** | 完整产品站模块、浅色 | [Magic Lasso](https://www.magiclasso.co/)（简化） | 信息结构最全的「传统产品站」 |
 | **v3 Quiet Manifesto** | 深色、原则叙事、氛围动效 | [Purify](https://www.purify-app.com/) 语气 + [UIBook](https://uibook.art/) | 强调品牌理念与「安静」 |
 | **v4 Zen Calm** | 暖纸底、serif 标题、宽松节奏 | OpenDesign [`zen-browser`](https://opendesign.cc/en/sites/zen-browser)（辅 claude / replay-software） | 隐私浏览器气质、编辑感 |
-| **v5 Product Theater** | 黑白灰全宽色带、大无衬线 | OpenDesign [`apple`](https://opendesign.cc/en/sites/apple) + campsite | 产品舞台感、与 v4 对比最强 |
+| **v5 Product Theater** ⭐ | 黑白灰全宽色带、大无衬线 | OpenDesign [`apple`](https://opendesign.cc/en/sites/apple) + campsite | **已选结构**：正式站骨架以此为准 |
 
 ### 各版本共同具备（App 落地页最佳实践）
 

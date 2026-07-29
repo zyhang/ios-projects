@@ -54,7 +54,7 @@ type:    display serif ~60/1.0 · body sans 16/1.5
 | v2 Product Hero | 结构近 Magic Lasso |
 | v3 Quiet Manifesto | 深色理念叙事 |
 | **v4 Zen Calm** | **主接地：zen-browser 系统 + Stillwall 品牌色** |
-| **v5 Product Theater** | **主接地：apple 全宽色带 + campsite 浅色模块；accent → `#2F6A58`** |
+| **v5 Product Theater** ⭐ | **已选结构**：apple 全宽色带 + campsite 浅色模块；accent → `#2F6A58`（D-110） |
 
 拉取完整 pack：
 
