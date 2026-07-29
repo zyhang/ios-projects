@@ -61,20 +61,6 @@ body {
   outline-offset: 4px;
 }
 
-.preview-banner {
-  background: var(--forest);
-  color: var(--forest-soft);
-  border-bottom: 1px solid var(--forest-line);
-  padding: 9px 16px;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-.preview-banner strong { color: #F0F1EA; font-weight: 500; }
-
 /* —— Masthead —— */
 .masthead {
   position: sticky;
@@ -124,15 +110,19 @@ body {
 .masthead nav a.is-active { color: var(--brand); }
 .masthead nav .cta {
   margin-left: 8px;
-  color: var(--ink-soft);
-  background: var(--paper-warm);
-  border: 1px solid var(--line);
+  color: var(--paper);
+  background: var(--brand);
+  border: 0;
   border-radius: 999px;
   padding: 8px 16px;
   min-height: 36px;
   display: inline-flex;
   align-items: center;
+  transition:
+    background var(--t-micro) var(--ease),
+    transform var(--t-micro) var(--ease);
 }
+.masthead nav .cta:active { transform: scale(0.97); }
 
 .mobile-menu { display: none; }
 .mobile-menu summary {
@@ -423,14 +413,6 @@ body {
   border-bottom: 0;
   text-decoration: none;
 }
-.btn-pill.is-disabled,
-.doc .btn-pill.is-disabled {
-  background: var(--paper-warm);
-  color: var(--ink-soft);
-  border: 1px solid var(--line);
-  cursor: default;
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -491,8 +473,9 @@ footer a {
 
 @media (hover: hover) and (pointer: fine) {
   .masthead nav a:hover { color: var(--brand); }
-  .btn-pill:not(.is-disabled):hover { background: var(--brand-bright); color: var(--paper); }
-  .doc a.btn-pill:not(.is-disabled):hover { background: var(--brand-bright); }
+  .masthead nav a.cta:hover { background: var(--brand-bright); color: var(--paper); }
+  .btn-pill:hover { background: var(--brand-bright); color: var(--paper); }
+  .doc a.btn-pill:hover { background: var(--brand-bright); }
   .doc a:hover { color: var(--brand-bright); border-bottom-color: var(--brand-bright); }
   .doc .link-mono:hover { border-bottom-color: var(--brand); }
   .link-mono:hover { color: var(--brand); border-color: var(--brand); }
