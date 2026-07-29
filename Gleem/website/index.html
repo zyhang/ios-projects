@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stillwall — Free Ad &amp; Tracker Blocking for Safari</title>
-  <meta name="description" content="Effortlessly block ads, trackers, and annoyances in Safari. Free core protection. Pro tools when you need them.">
+  <meta name="description" content="Effortlessly block ads, trackers, and annoyances in Safari. Free core protection. Pro tools when you need them. No account. No browsing history collected.">
   <meta name="theme-color" content="#000000">
   <meta property="og:title" content="Stillwall — Free Ad &amp; Tracker Blocking for Safari">
   <meta property="og:description" content="Block ads, trackers, and annoyances in Safari—quietly. Free core protection. Pro when you need more.">
@@ -13,11 +13,6 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/png" href="shared/assets/icon-180.png">
   <link rel="apple-touch-icon" href="shared/assets/icon-180.png">
-  <!--
-    Production site — structure: Product Theater (D-110 / v5)
-    Design lineage: OpenDesign apple + campsite; accent Stillwall #2F6A58
-    Before go-live: set APP_STORE_URL, LEGAL_ENTITY_NAME, domain emails
-  -->
   <style>
     :root {
       --black: #000000;
@@ -36,6 +31,7 @@
       --t-micro: 180ms;
       --t-small: 240ms;
       --t-medium: 400ms;
+      --app-store: https://apps.apple.com/app/id6795497808;
     }
 
     * { box-sizing: border-box; }
@@ -69,7 +65,6 @@
       padding: 0 22px;
     }
 
-    /* Nav */
     .nav {
       position: sticky;
       top: 0;
@@ -108,7 +103,6 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -129,12 +123,10 @@
       font-weight: 500;
     }
     .nav-links a.cta:hover { filter: brightness(1.08); color: #fff; }
-    @media (max-width: 420px) {
+    @media (max-width: 480px) {
       .nav-links a:not(.cta) { padding: 6px 7px; font-size: 11px; }
-      .nav-links a.cta { padding: 6px 12px; }
     }
 
-    /* Bands */
     .band {
       text-align: center;
       padding: 96px 0 0;
@@ -157,27 +149,40 @@
     .band h1,
     .band h2 {
       margin: 0 auto 12px;
-      max-width: 14em;
-      font-size: clamp(2.6rem, 7.2vw, 3.6rem);
+      max-width: 16em;
+      font-size: clamp(2.5rem, 7vw, 3.5rem);
       font-weight: 700;
       line-height: 1.05;
       letter-spacing: -0.025em;
     }
     .band h2 {
-      font-size: clamp(2.15rem, 5.5vw, 3rem);
+      font-size: clamp(2.1rem, 5.5vw, 2.85rem);
     }
 
     .subhead {
       margin: 0 auto 32px;
-      max-width: 30em;
-      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      max-width: 32em;
+      font-size: clamp(1.12rem, 2.4vw, 1.4rem);
       font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: 0.005em;
+      line-height: 1.3;
       color: var(--ink-soft);
     }
     .band--black .subhead,
     .band--forest .subhead { color: #a1a1a6; }
+
+    .prose {
+      margin: 0 auto 1.1em;
+      max-width: 36em;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      text-align: left;
+    }
+    .band--black .prose,
+    .band--forest .prose { color: #a1a1a6; }
+    .prose strong { color: inherit; font-weight: 600; }
+    .band--soft .prose strong,
+    .band--white .prose strong { color: var(--ink); }
 
     .actions {
       display: flex;
@@ -247,7 +252,7 @@
     .tile p {
       margin: 0;
       font-size: 15px;
-      line-height: 1.4;
+      line-height: 1.45;
       color: var(--ink-soft);
     }
 
@@ -346,6 +351,7 @@
       margin-top: 22px;
       font-size: 14px;
       color: #a1a1a6;
+      line-height: 1.5;
     }
     .price strong { color: #f5f5f7; font-weight: 600; }
 
@@ -395,7 +401,7 @@
       margin: 0 auto 36px;
       color: #a1a1a6;
       font-size: 19px;
-      max-width: 22em;
+      max-width: 24em;
     }
 
     .btn-store {
@@ -443,11 +449,12 @@
       transition: color var(--t-micro) var(--ease);
     }
     footer a:hover { color: #f5f5f7; }
-    .placeholder-note {
-      margin-top: 8px;
+    .fine {
+      margin-top: 6px;
       font-size: 11px;
-      opacity: 0.7;
+      line-height: 1.45;
       max-width: 36em;
+      opacity: 0.85;
     }
 
     [data-reveal] {
@@ -474,7 +481,7 @@
 
   <nav class="nav" aria-label="Primary">
     <div class="nav-inner">
-      <a class="nav-brand" href="/">
+      <a class="nav-brand" href="./">
         <img src="shared/assets/icon-180.png" alt="" width="20" height="20">
         Stillwall
       </a>
@@ -482,23 +489,23 @@
         <a href="#features">Features</a>
         <a href="#pro">Pro</a>
         <a href="legal/support.html">Support</a>
-        <a class="cta" href="#download">Download</a>
+        <a class="cta" href="https://apps.apple.com/app/id6795497808">Download</a>
       </div>
     </div>
   </nav>
 
   <main id="main">
+    <!-- Hero — Wipr-like clarity, Magic Lasso product stage -->
     <section class="band band--black" id="download" aria-labelledby="hero-title">
       <div class="wrap">
         <p class="eyebrow" data-reveal>Stillwall for Safari</p>
-        <h1 id="hero-title" data-reveal>Protection for Safari.</h1>
+        <h1 id="hero-title" data-reveal>Block ads in Safari.<br>Stay out of the way.</h1>
         <p class="subhead" data-reveal>
-          Block ads, trackers, and annoyances—quietly.
-          Free core protection. Pro when you need more.
+          Effortlessly block ads, trackers, and annoyances in Safari—
+          with powerful Pro tools when you need them.
         </p>
         <div class="actions" data-reveal>
-          <!-- TODO: replace href with live App Store URL -->
-          <a class="btn-store" href="#download" id="app-store-link" aria-label="Download on the App Store">
+          <a class="btn-store" href="https://apps.apple.com/app/id6795497808" aria-label="Download on the App Store">
             <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
               <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
             </svg>
@@ -521,67 +528,96 @@
       </div>
     </section>
 
+    <!-- Why — Magic Lasso-style pillars, Stillwall voice -->
     <section class="band band--soft" id="features" aria-labelledby="features-title">
-      <div class="wrap" style="padding-bottom: 48px;">
-        <p class="eyebrow" data-reveal>Free</p>
-        <h2 id="features-title" data-reveal>Core protection.<br>On by default.</h2>
+      <div class="wrap" style="padding-bottom: 40px;">
+        <p class="eyebrow" data-reveal>Why Stillwall</p>
+        <h2 id="features-title" data-reveal>Cleaner Safari.<br>Less noise.</h2>
         <p class="subhead" data-reveal>
-          No account. No rule editor. A few steps to enable—then it works in the background.
+          Websites look cleaner, load lighter, and stop following you around—
+          without a dashboard full of threat counters.
         </p>
       </div>
       <div class="tiles">
         <article class="tile" data-reveal>
-          <h3>Ads &amp; trackers</h3>
-          <p>Block common ads and reduce advertising trackers in Safari.</p>
+          <h3>Block ads &amp; trackers</h3>
+          <p>Cut common ads and advertising trackers so pages stay readable in Safari.</p>
         </article>
         <article class="tile" data-reveal data-reveal-delay="60">
-          <h3>Fewer annoyances</h3>
-          <p>Quieter cookie banners and prompts that interrupt reading.</p>
+          <h3>Quiet annoyances</h3>
+          <p>Suppress cookie banners and noisy prompts that interrupt what you came to do.</p>
         </article>
         <article class="tile" data-reveal data-reveal-delay="120">
-          <h3>One switch</h3>
-          <p>Global On/Off in the app. Pause a site from the Safari extension.</p>
+          <h3>Setup in minutes</h3>
+          <p>A short guided flow. One global switch. Then protection works in the background.</p>
         </article>
       </div>
     </section>
 
-    <section class="band band--white list-band" aria-labelledby="included-title">
+    <!-- Free core — product honesty (Wipr simplicity + our free tier) -->
+    <section class="band band--white list-band" aria-labelledby="free-title">
       <div class="wrap">
-        <p class="eyebrow" data-reveal>What’s included</p>
-        <h2 id="included-title" data-reveal>Everything you need for everyday browsing.</h2>
+        <p class="eyebrow" data-reveal>Free · Core protection</p>
+        <h2 id="free-title" data-reveal>Useful on day one.<br>No account required.</h2>
+        <p class="prose" data-reveal style="text-align:center;margin-left:auto;margin-right:auto">
+          Free protection is real protection—not a demo. Turn it on, browse, and stay in control.
+          We don’t collect your browsing history.
+        </p>
         <div class="list" data-reveal>
           <div class="list-row">
             <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
             <div>
+              <strong>Ads</strong>
+              <span>Block common display ads in Safari</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong>Privacy</strong>
+              <span>Reduce advertising trackers and cross-site following</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong>Annoyances</strong>
+              <span>Quieter cookie banners and privacy prompts</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
               <strong>Regional ad rules</strong>
-              <span>Applied automatically from your language</span>
+              <span>Applied automatically from your system language—zero config</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong>One global switch</strong>
+              <span>Turn all protection On or Off in the app—simple and honest</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+            <div>
+              <strong>Pause on this site</strong>
+              <span>From the Safari extension when a page needs a pass</span>
             </div>
           </div>
           <div class="list-row">
             <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
             <div>
               <strong>Automatic filter updates</strong>
-              <span>Coverage improves without your attention</span>
-            </div>
-          </div>
-          <div class="list-row">
-            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
-            <div>
-              <strong>No browsing history collected</strong>
-              <span>Filter downloads never upload where you browse</span>
-            </div>
-          </div>
-          <div class="list-row">
-            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
-            <div>
-              <strong>Honest status</strong>
-              <span>If Safari access isn’t ready, we won’t say you’re protected</span>
+              <span>Coverage improves quietly in the background</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Pro -->
     <section class="band band--forest" id="pro" aria-labelledby="pro-title">
       <div class="pro-layout">
         <div class="pro-shot" data-reveal>
@@ -597,57 +633,93 @@
           <p class="eyebrow" data-reveal style="color:var(--pro-gold)">
             Stillwall Pro <span class="pro-badge">PRO</span>
           </p>
-          <h2 id="pro-title" data-reveal>More control when you need it.</h2>
+          <h2 id="pro-title" data-reveal>More when you ask for it.</h2>
           <p class="subhead" data-reveal>
-            Free stays fully useful. Pro adds Safari-only tools—without a paywall at the door.
+            Free stays fully useful. Pro unlocks stronger Safari-only tools—
+            without a paywall blocking the door.
           </p>
           <div class="list" style="margin-top:8px" data-reveal>
             <div class="list-row" style="border-color:var(--line-dark)">
               <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
               <div>
-                <strong style="color:#f5f5f7">YouTube &amp; X in Safari</strong>
-                <span style="color:#a1a1a6">Websites only—not the native apps</span>
+                <strong style="color:#f5f5f7">YouTube &amp; X ad block</strong>
+                <span style="color:#a1a1a6">In Safari websites only—not the native apps</span>
               </div>
             </div>
             <div class="list-row" style="border-color:var(--line-dark)">
               <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
               <div>
-                <strong style="color:#f5f5f7">Battery Boost &amp; Strict Mode</strong>
-                <span style="color:#a1a1a6">Cut wasteful scripts; stronger rules on demand</span>
+                <strong style="color:#f5f5f7">Battery Boost</strong>
+                <span style="color:#a1a1a6">Reduce wasteful scripts that drain energy while you browse</span>
+              </div>
+            </div>
+            <div class="list-row" style="border-color:var(--line-dark)">
+              <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+              <div>
+                <strong style="color:#f5f5f7">Strict Mode</strong>
+                <span style="color:#a1a1a6">Stronger blocking when you choose—off by default</span>
               </div>
             </div>
             <div class="list-row" style="border-color:var(--line-dark);border-bottom:1px solid var(--line-dark)">
               <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
               <div>
                 <strong style="color:#f5f5f7">Tap to Block</strong>
-                <span style="color:#a1a1a6">Hide page elements from the Safari extension</span>
+                <span style="color:#a1a1a6">Hide page elements from the Safari extension with a tap</span>
               </div>
             </div>
           </div>
           <p class="price" data-reveal>
-            <strong>1 month free</strong>, then $14.99/year · Family Sharing
+            <strong>1 month free</strong>, then $14.99/year<br>
+            Family Sharing supported · Manage anytime in Apple ID Subscriptions
           </p>
         </div>
       </div>
     </section>
 
-    <section class="band band--soft" style="padding-bottom: 96px;" aria-labelledby="boundaries-title">
+    <!-- How it works -->
+    <section class="band band--soft" style="padding-bottom: 96px;" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>How it works</p>
+        <h2 id="how-title" data-reveal>Three steps. Then silence.</h2>
+        <div class="tiles" style="padding-bottom:0;margin-top:40px">
+          <article class="tile" data-reveal>
+            <h3>1. Install</h3>
+            <p>Get Stillwall from the App Store on iPhone or iPad.</p>
+          </article>
+          <article class="tile" data-reveal data-reveal-delay="60">
+            <h3>2. Enable Safari</h3>
+            <p>Follow in-app setup. Turn on both Stillwall extensions and allow access.</p>
+          </article>
+          <article class="tile" data-reveal data-reveal-delay="120">
+            <h3>3. Browse</h3>
+            <p>Home shows protection On. If a site breaks, pause it in the extension—or flip the global switch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boundaries — product honesty vs Magic Lasso "everywhere" claims -->
+    <section class="band band--white" style="padding: 88px 0 96px;" aria-labelledby="boundaries-title">
       <div class="wrap">
         <p class="eyebrow" data-reveal>Clear boundaries</p>
         <h2 id="boundaries-title" data-reveal>What it is. What it isn’t.</h2>
+        <p class="prose" data-reveal style="text-align:center;margin:0 auto 8px">
+          We’d rather be precise than overpromise. Stillwall is built for Safari—
+          not a VPN, not system-wide ad blocking for every app.
+        </p>
       </div>
       <div class="honesty wrap" style="padding:0">
         <article data-reveal>
           <h3>Safari only</h3>
-          <p>iPhone and iPad Safari. Other apps keep their own ads.</p>
+          <p>Works in Safari on iPhone and iPad. Other apps keep their own ads.</p>
         </article>
         <article data-reveal data-reveal-delay="60">
           <h3>Not a VPN</h3>
-          <p>No traffic routing. No IP hiding. Content blocking, cleanly.</p>
+          <p>We don’t route your traffic or hide your IP. Content blocking, cleanly.</p>
         </article>
         <article data-reveal data-reveal-delay="120">
           <h3>Private by design</h3>
-          <p>No Stillwall account. We don’t collect browsing history.</p>
+          <p>No Stillwall account. No browsing history collected. No ad SDKs in the app.</p>
         </article>
       </div>
     </section>
@@ -655,9 +727,9 @@
     <section class="band band--black closing" aria-labelledby="closing-title">
       <div class="wrap">
         <h2 id="closing-title" data-reveal>Less noise.<br>Same Safari.</h2>
-        <p data-reveal>Install once. Finish setup. Keep scrolling.</p>
+        <p data-reveal>Install once. Finish setup. Keep scrolling in peace.</p>
         <div class="actions" data-reveal style="margin-bottom:0">
-          <a class="btn-store" href="#download" aria-label="Download on the App Store">
+          <a class="btn-store" href="https://apps.apple.com/app/id6795497808" aria-label="Download on the App Store">
             <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
               <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
             </svg>
@@ -677,12 +749,13 @@
       <nav aria-label="Footer">
         <a href="legal/privacy.html">Privacy</a>
         <a href="legal/support.html">Support</a>
-        <a href="lab/">Design lab</a>
+        <a href="https://apps.apple.com/app/id6795497808">App Store</a>
       </nav>
       <div>
-        <div>© 2026 &lt;LEGAL_ENTITY_NAME&gt;</div>
-        <p class="placeholder-note">
-          Before go-live: set App Store URL, legal entity name, and support/privacy emails.
+        <div>© 2026 Yiling Labs</div>
+        <p class="fine">
+          Stillwall is a product of Yiling Labs.
+          Safari is a trademark of Apple Inc.
         </p>
       </div>
     </div>

@@ -34,3 +34,4 @@ Safari only. Stillwall is not a VPN and does not block ads inside other apps.
 
 Privacy Policy: https://<domain>/privacy
 Support: https://<domain>/support
+App Store: https://apps.apple.com/app/id6795497808

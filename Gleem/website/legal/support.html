@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support · Stillwall</title>
-  <meta name="description" content="Help and support for Stillwall for Safari.">
+  <meta name="description" content="Help and support for Stillwall for Safari — setup, broken sites, Pro features, and subscriptions.">
   <link rel="icon" type="image/png" href="../shared/assets/icon-180.png">
   <link rel="stylesheet" href="../shared/css/tokens.css">
   <style>
@@ -67,6 +67,18 @@
       padding: 20px 22px;
       margin: 20px 0;
     }
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+    }
     footer {
       padding: 24px 20px 48px;
       font-size: 13px;
@@ -97,6 +109,10 @@
       It is not a VPN and does not block ads inside other apps.
     </p>
 
+    <p>
+      <a class="btn-store" href="https://apps.apple.com/app/id6795497808">Download on the App Store</a>
+    </p>
+
     <h2>Enable protection</h2>
     <div class="card">
       <ol>
@@ -108,6 +124,10 @@
         </li>
         <li>Return to Stillwall — Home should show protection <strong>On</strong>.</li>
       </ol>
+      <p style="margin-bottom:0;color:var(--muted);font-size:15px">
+        If Home does not show On, protection is not active yet. Complete the system steps above—
+        we never show “protected” when Safari access is missing.
+      </p>
     </div>
 
     <h2>A site looks broken</h2>
@@ -118,6 +138,9 @@
         <strong>Pause on this site</strong>, then <strong>Resume</strong> when finished.
       </li>
     </ul>
+    <p>
+      Strict Mode (Pro) is more aggressive and can break some sites—try turning it off first.
+    </p>
 
     <h2>YouTube &amp; X ads</h2>
     <p>
@@ -127,20 +150,28 @@
 
     <h2>Tap to Block</h2>
     <p>
-      Available with <strong>Stillwall Pro</strong>. Use the Safari extension →
+      Available with <strong>Stillwall Pro</strong>. In Safari, open the Stillwall extension →
       <strong>Tap to Block</strong>, then select elements on the page.
+      Rules stay on your device and are not cloud-synced in the current version.
     </p>
 
     <h2>Subscriptions</h2>
     <p>
-      Manage trials and <strong>Stillwall Pro</strong> in
+      Stillwall Pro: <strong>1 month free</strong>, then <strong>$14.99/year</strong>.
+      Family Sharing is supported.
+    </p>
+    <p>
+      Manage or cancel in
       <strong>Settings → [your name] → Subscriptions</strong>.
     </p>
 
     <h2>Contact</h2>
     <div class="card">
       <p>
-        Email: <strong>support@&lt;domain&gt;</strong><br>
+        Email: <a href="mailto:support@stillwall.app"><strong>support@stillwall.app</strong></a><br>
+        Privacy: <a href="mailto:privacy@stillwall.app">privacy@stillwall.app</a>
+      </p>
+      <p>
         Please include: iOS version, Stillwall version (About screen), and a short description.
         Optional: the site domain if something is broken.
       </p>
@@ -148,6 +179,12 @@
         We don’t need—and please don’t send—passwords or full browsing history.
       </p>
     </div>
+
+    <h2>About us</h2>
+    <p>
+      Stillwall is made by <strong>Yiling Labs</strong>
+      (legal entity: Xiamen Yiling Information Technology Co., Ltd.).
+    </p>
   </main>
   <footer>
     <nav>
@@ -155,7 +192,7 @@
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
     </nav>
-    <p>© 2026 &lt;LEGAL_ENTITY_NAME&gt;</p>
+    <p>© 2026 Yiling Labs</p>
   </footer>
 </body>
 </html>

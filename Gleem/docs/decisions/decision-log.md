@@ -30,7 +30,9 @@
 | D-107 | v1 明确不做清单以总纲领 §9 为准 | 已确认 | 含 Custom Rules、全 App 拦截、TV、Mac 交付等 |
 | D-108 | App Store **Name** = `Stillwall for Safari` | 已确认 | ≤30；解决与既有 Stillwall 重名；见 release 包 |
 | D-109 | App Store **Subtitle** = `Free Ad & Tracker Blocking` | 已确认 | 26 字符；强调免费核心层（Ads/Privacy 等）；Pro 在描述/截图说明 |
-| D-110 | 营销站主骨架采用 **v5 Product Theater** 结构 | 已确认 | 全宽色带分区 + 大无衬线标题 + 产品舞台 + Free/Pro/边界模块；实现路径 `website/versions/v5-product-theater/`；v1–v4 仅作对比保留 |
+| D-110 | 营销站主骨架采用 **v5 Product Theater** 结构 | 已确认 | 全宽色带分区 + 大无衬线标题 + 产品舞台 + Free/Pro/边界模块；正式站 `website/index.html`；v1–v5 快照在 `website/versions/` / `lab/` |
+| D-111 | 对外主体简称 **Yiling Labs**；法律全称为 Xiamen Yiling Information Technology Co., Ltd. | 已确认 | 页脚/营销用 Yiling Labs；Privacy/合同级披露写全称并括号注明 Yiling Labs；勿用 Inc. 等错误公司形态 |
+| D-112 | App Store 链接使用 app id **6795497808** | 已确认 | `https://apps.apple.com/app/id6795497808`（上架前可能 404，格式有效） |
 
 ### 2.2 商业与权益
 
@@ -156,3 +158,4 @@
 | 2026-07-28 | Lunacy Wireframes v1 增加 ROW 4（SE01–SE03）；T-EXT-05 线框已画 |
 | 2026-07-29 | D-108/D-109：商店名 Stillwall for Safari；副标题 Free Ad & Tracker Blocking |
 | 2026-07-29 | D-110：营销站主骨架选定 v5 Product Theater |
+| 2026-07-29 | D-111/D-112：Yiling Labs 简称 + App id 6795497808；官网内容对齐 Wipr/ML 与产品能力 |

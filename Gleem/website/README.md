@@ -41,14 +41,20 @@ website/
 
 ---
 
-## 上线前必改
+## 主体与链接（已填）
 
-1. **App Store URL** — `index.html` 中 `#app-store-link` 与所有 Download 按钮 `href`
-2. **法律主体** — `\<LEGAL_ENTITY_NAME\>`
-3. **联系邮箱** — `privacy@…` / `support@…`（legal 页）
-4. **域名** — 部署后把 ASC Privacy / Support URL 设为  
-   `https://<domain>/privacy` · `https://<domain>/support`  
-   （依赖 `_redirects` 或等价 rewrite）
+| 项 | 值 |
+|----|-----|
+| 法律全称 | Xiamen Yiling Information Technology Co., Ltd. |
+| 对外简称 | **Yiling Labs**（页脚/营销；Privacy 内写全称 + 简称） |
+| App Store | https://apps.apple.com/app/id6795497808 |
+| 联系邮箱（待域名落地） | `privacy@stillwall.app` · `support@stillwall.app` |
+
+### 上线前仍须确认
+
+1. **域名**与上述邮箱是否最终使用 `stillwall.app`（若否，全局替换邮箱与 README）  
+2. ASC Privacy / Support URL → `https://<domain>/privacy` · `/support`（`_redirects`）  
+3. App 上架后抽查 App Store 链接是否可打开产品页  
 
 部署：将 `website/` 作为站点根（Netlify / GitHub Pages / Cloudflare Pages）。
 
