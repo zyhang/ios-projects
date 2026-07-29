@@ -16,9 +16,11 @@ python3 -m http.server 8765
 | 页面 | URL |
 |------|-----|
 | **正式首页** | http://127.0.0.1:8765/ |
-| Privacy | http://127.0.0.1:8765/legal/privacy.html |
-| Support | http://127.0.0.1:8765/legal/support.html |
+| Privacy | http://127.0.0.1:8765/privacy （或 `/legal/privacy.html`） |
+| Support | http://127.0.0.1:8765/support （或 `/legal/support.html`） |
 | 版本 Lab | http://127.0.0.1:8765/lab/ |
+
+> 短路径在生产由 `_redirects` rewrite；本地预览靠 `privacy/`、`support/` 下的重定向桩页（`noindex`，仅服务本地）。
 
 ---
 
