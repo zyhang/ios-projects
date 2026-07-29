@@ -34,7 +34,7 @@ website/
 │   └── support.html
 ├── shared/                    # 图标、截图、tokens、motion.js
 ├── lab/                       # 多版本对比（内部）
-├── versions/                  # v1–v5 历史稿
+├── versions/                  # v1–v6 历史稿/实验稿
 └── docs/
     └── opendesign-refs.md
 ```
@@ -129,6 +129,7 @@ wrangler pages deploy . --project-name=yilinglabs --branch=main --commit-dirty=t
 | v3 Quiet Manifesto | 深色理念叙事 |
 | v4 Zen Calm | OpenDesign zen-browser |
 | **v5 Product Theater** | 已选结构 → **已提升为正式 `index.html`** |
+| **v6 Quiet Gazette** | OpenDesign thebrowser-company（2026-07-29 新增） |
 
 ---
 
