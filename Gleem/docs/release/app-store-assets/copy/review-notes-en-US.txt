@@ -14,7 +14,7 @@ HOW TO ENABLE (required to see protection)
 5. Return to Stillwall. Home should show protection On (default free categories enabled).
 
 FREE PATH FOR REVIEW
-All free features work without purchase: Ads, Privacy, Annoyances, Regional blocking, global On/Off, and site pause in the Safari extension popup.
+All free features work without purchase: independent Ads, Privacy, Annoyances, and Regional blocking controls, plus site pause in the Safari extension popup. Home has no global protection switch.
 
 PRO (OPTIONAL)
 Pro (YouTube & X in Safari, Battery Boost, Strict Mode, Tap to Block) is an auto-renewable yearly subscription with a 1-month free trial, then $14.99/year, Family Sharing supported. You may skip Pro to review free Safari blocking.

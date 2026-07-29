@@ -406,7 +406,7 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 |------|------|
 | 2026-07-27 | 首版总纲领：基于产品 grilling 共享理解落稿 |
 | 2026-07-27 | 关联决策记录与 design 流程/页面文档 |
-| 2026-07-27 | **简化恢复路径**：主 App 仅全局 On/Off；移除 App 内 Pause 时长与 Allowed Sites；站点控制归 Safari 扩展 |
+| 2026-07-27 | **当时方案（后被 D-315 替代）**：主 App 仅全局 On/Off；移除 App 内 Pause 时长与 Allowed Sites；站点控制归 Safari 扩展 |
 | 2026-07-27 | 标记 **Safari 扩展侧工作为 TODO**（§14），主 App 文档与线框优先 |
 | 2026-07-28 | **扩展 popup 固定 3 项**；规格见 [safari-extension.md](../design/safari-extension.md)；§5.8–5.10 / §14 收敛 |
 | 2026-07-29 | App Store Name `Stillwall for Safari` · Subtitle `Free Ad & Tracker Blocking`（D-108/D-109） |

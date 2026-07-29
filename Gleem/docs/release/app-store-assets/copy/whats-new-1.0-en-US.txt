@@ -2,7 +2,7 @@ Welcome to Stillwall 1.0
 
 • Free Safari ad, tracker, and annoyance blocking
 • Regional rules applied automatically
-• Global protection switch
+• Independent category controls for Ads, Privacy, Annoyances, and regional rules
 • Safari extension: pause this site, Tap to Block, report issues
 • Stillwall Pro: YouTube & X in Safari, Battery Boost, Strict Mode, Tap to Block
 • No account required — we don’t collect your browsing history

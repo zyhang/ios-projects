@@ -8,7 +8,7 @@ FREE — CORE PROTECTION
 • Reduce advertising trackers
 • Quiet cookie banners and noisy prompts
 • Regional ad rules applied automatically by language
-• One global On/Off switch in the app
+• Independent controls for Ads, Privacy, Annoyances, and regional rules
 • Pause protection on a site in the Safari extension
 • Automatic filter updates
 • No account required
