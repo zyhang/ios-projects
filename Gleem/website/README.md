@@ -83,6 +83,44 @@ website/
 
 ---
 
+## Cloudflare 部署（已接入）
+
+| 项 | 值 |
+|----|-----|
+| 账号 | Zyhang@gmail.com’s Account（wrangler OAuth） |
+| Pages 项目 | **`yilinglabs`** |
+| 生产预览 | https://yilinglabs.pages.dev |
+| 自定义域 | `yilinglabs.com` · `www.yilinglabs.com`（已在 Pages 添加；**需 DNS CNAME**） |
+
+### 一键发布（本地）
+
+```bash
+cd website
+./scripts/deploy-cloudflare.sh
+# 或
+wrangler pages deploy . --project-name=yilinglabs --branch=main --commit-dirty=true
+```
+
+### 自定义域名 DNS（需你在 Dashboard 点一次）
+
+当前 wrangler OAuth **只有 Zone 读权限**，无法代写 DNS。请在 Cloudflare → **yilinglabs.com** → **DNS** 添加（Proxy 橙色云开启）：
+
+| Type | Name | Target | Proxy |
+|------|------|--------|-------|
+| CNAME | `@` | `yilinglabs.pages.dev` | Proxied |
+| CNAME | `www` | `yilinglabs.pages.dev` | Proxied |
+
+几分钟后 https://yilinglabs.com 与 https://www.yilinglabs.com 应生效。  
+若希望我以后全自动改 DNS，可创建 API Token（权限含 **Zone → DNS → Edit**）并告诉我。
+
+### App Store URL（域名生效后）
+
+- Privacy: `https://yilinglabs.com/privacy`  
+- Support: `https://yilinglabs.com/support`  
+- Marketing: `https://yilinglabs.com/`
+
+---
+
 ## 版本对照（Lab）
 
 | 版本 | 说明 |

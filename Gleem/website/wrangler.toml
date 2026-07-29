@@ -1,0 +1,5 @@
+# Cloudflare Pages — Yiling Labs / Stillwall marketing site
+# Deploy: npm run deploy  OR  ./scripts/deploy-cloudflare.sh
+name = "yilinglabs"
+compatibility_date = "2026-07-29"
+pages_build_output_dir = "."
