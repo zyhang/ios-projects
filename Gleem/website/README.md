@@ -1,16 +1,8 @@
-# Stillwall Website Lab
+# Stillwall Website
 
-营销网站多版本工作区。目标：**简洁、理念清晰、具备 App 落地页必备模块**，并在细节处保留克制动效。
+正式营销站 + 历史版本 Lab。
 
-> 现有 App Store 合规最小站仍在  
-> `docs/release/app-store-assets/site/`（Privacy / Support 占位）。  
-> 本目录用于正式营销站探索与对比，选定方向后再合并上线结构。
-
-**设计系统参考：** [OpenDesign](https://opendesign.cc/)（`skill.md` 协议）— 笔记见 [`docs/opendesign-refs.md`](docs/opendesign-refs.md)。
-
-**方向决策（2026-07-29）：** 用户选定 **v5 Product Theater 的结构** 作为营销站主骨架  
-（全宽色带分区 · 大标题 · 产品舞台 · Free / Pro / 边界模块）。  
-v1–v4 保留作对比；后续细化与上线收敛优先改 `versions/v5-product-theater/`。
+**结构决策（D-110）：** 主站采用 **Product Theater**（原 v5）全宽色带骨架。
 
 ---
 
@@ -19,90 +11,64 @@ v1–v4 保留作对比；后续细化与上线收敛优先改 `versions/v5-prod
 ```bash
 cd website
 python3 -m http.server 8765
-# 打开 http://127.0.0.1:8765/
 ```
 
-对比入口：`index.html`  
-各版本：`versions/v1-calm-editorial/` · `v2-product-hero/` · `v3-quiet-manifesto/`
+| 页面 | URL |
+|------|-----|
+| **正式首页** | http://127.0.0.1:8765/ |
+| Privacy | http://127.0.0.1:8765/legal/privacy.html |
+| Support | http://127.0.0.1:8765/legal/support.html |
+| 版本 Lab | http://127.0.0.1:8765/lab/ |
 
 ---
 
-## 目录结构
+## 目录
 
 ```
 website/
-├── index.html                 # 版本对比入口（内部 lab，noindex）
+├── index.html                 # 正式营销首页（Product Theater）
+├── _redirects                 # Netlify：/privacy · /support
 ├── README.md
-├── legal/                     # 全版本共用法律 / 支持页
+├── legal/
 │   ├── privacy.html
 │   └── support.html
-├── shared/
-│   ├── assets/
-│   │   ├── icon-*.png
-│   │   ├── app-store-badge.svg
-│   │   └── screenshots/       # 来自 design exports
-│   ├── css/
-│   │   └── tokens.css         # 品牌色 / 间距 token
-│   └── js/
-│       └── motion.js          # 滚动显现；尊重 reduced-motion
-├── docs/
-│   └── opendesign-refs.md     # OpenDesign 选型与 token 笔记
-└── versions/
-    ├── v1-calm-editorial/     # Wipr 式窄栏编辑排版
-    ├── v2-product-hero/       # Hero + 手机 mock + 特性网格
-    ├── v3-quiet-manifesto/    # 深色理念叙事
-    ├── v4-zen-calm/           # OpenDesign zen-browser 接地
-    └── v5-product-theater/    # OpenDesign apple 全宽色带
+├── shared/                    # 图标、截图、tokens、motion.js
+├── lab/                       # 多版本对比（内部）
+├── versions/                  # v1–v5 历史稿
+└── docs/
+    └── opendesign-refs.md
 ```
-
-后续新增版本建议：`versions/v6-<slug>/index.html`，并在根 `index.html` 卡片中登记。
-
----
-
-## 版本一览
-
-| 版本 | 气质 | 主要参考 | 适合何时选 |
-|------|------|----------|------------|
-| **v1 Calm Editorial** | 窄栏、文案优先、系统字体 | [Wipr](https://kaylees.site/wipr2.html) | 想要独立开发者气质、极简可信 |
-| **v2 Product Hero** | 完整产品站模块、浅色 | [Magic Lasso](https://www.magiclasso.co/)（简化） | 信息结构最全的「传统产品站」 |
-| **v3 Quiet Manifesto** | 深色、原则叙事、氛围动效 | [Purify](https://www.purify-app.com/) 语气 + [UIBook](https://uibook.art/) | 强调品牌理念与「安静」 |
-| **v4 Zen Calm** | 暖纸底、serif 标题、宽松节奏 | OpenDesign [`zen-browser`](https://opendesign.cc/en/sites/zen-browser)（辅 claude / replay-software） | 隐私浏览器气质、编辑感 |
-| **v5 Product Theater** ⭐ | 黑白灰全宽色带、大无衬线 | OpenDesign [`apple`](https://opendesign.cc/en/sites/apple) + campsite | **已选结构**：正式站骨架以此为准 |
-
-### 各版本共同具备（App 落地页最佳实践）
-
-- 价值主张 / 一句话定位  
-- App Store 下载 CTA（占位链接，待上架后替换）  
-- 免费能力与 Pro 边界（诚实：Safari only、非 VPN）  
-- Privacy Policy · Support 链接  
-- 页脚法律主体占位  
-- 品牌色对齐 App（`#2F6A58`）  
-- 细节动效 + `prefers-reduced-motion`  
 
 ---
 
 ## 上线前必改
 
-1. 替换所有 `href="#download"` / `#app-store` 为真实 App Store URL  
-2. 替换 `\<LEGAL_ENTITY_NAME\>`、`privacy@\<domain\>`、`support@\<domain\>`  
-3. 选定单一版本作为站点根（或把其 `index.html` 提升到 `website/` 并调整相对路径）  
-4. 配置 `/privacy` · `/support` 路由（参考 `docs/release/app-store-assets/site/_redirects`）  
-5. 去掉 lab 入口的 `noindex`（若 lab 不对外则保持）  
+1. **App Store URL** — `index.html` 中 `#app-store-link` 与所有 Download 按钮 `href`
+2. **法律主体** — `\<LEGAL_ENTITY_NAME\>`
+3. **联系邮箱** — `privacy@…` / `support@…`（legal 页）
+4. **域名** — 部署后把 ASC Privacy / Support URL 设为  
+   `https://<domain>/privacy` · `https://<domain>/support`  
+   （依赖 `_redirects` 或等价 rewrite）
+
+部署：将 `website/` 作为站点根（Netlify / GitHub Pages / Cloudflare Pages）。
 
 ---
 
-## 设计约束（与产品一致）
+## 版本对照（Lab）
 
-- 文案以英文对外（商店与 UI 一致）；协作说明可用中文  
-- 不夸大「全 App 去广告」；YouTube/X 写清 **in Safari**  
-- 不做威胁计数、赛博安全视觉  
-- 动效服务状态与层次，不延迟关键反馈  
+| 版本 | 说明 |
+|------|------|
+| v1 Calm Editorial | Wipr 窄栏 |
+| v2 Product Hero | 标准产品站网格 |
+| v3 Quiet Manifesto | 深色理念叙事 |
+| v4 Zen Calm | OpenDesign zen-browser |
+| **v5 Product Theater** | 已选结构 → **已提升为正式 `index.html`** |
 
 ---
 
-## 与旧站点关系
+## 与 ASC 最小站关系
 
 | 路径 | 角色 |
 |------|------|
-| `docs/release/app-store-assets/site/` | ASC 最小合规页（可继续部署） |
-| `website/` | 营销站设计 lab + 未来正式站候选 |
+| `docs/release/app-store-assets/site/` | 早期 ASC 最小合规页（可逐步弃用） |
+| `website/` | **现行营销站 + Privacy/Support** |
