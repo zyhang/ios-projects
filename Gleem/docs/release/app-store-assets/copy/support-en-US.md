@@ -1,6 +1,6 @@
 # Support — Stillwall
 
-**Status:** Publish at `https://<domain>/support` (see `website/legal/support.html`).  
+**Status:** Publish at `https://<domain>/support` (see `website/support/index.html`).  
 **App Store:** https://apps.apple.com/app/id6795497808
 
 ---

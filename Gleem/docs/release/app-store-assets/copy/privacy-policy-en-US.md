@@ -5,7 +5,7 @@
 **Public name:** Yiling Labs  
 **Legal entity:** Xiamen Yiling Information Technology Co., Ltd.  
 **Live URL:** https://yilinglabs.com/privacy  
-**Source HTML:** `website/legal/privacy.html`
+**Source HTML:** `website/privacy/index.html`
 
 ---
 

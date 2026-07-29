@@ -1,6 +1,8 @@
 # Canonical short paths (App Store / marketing)
-/privacy              /legal/privacy.html  200
-/support              /legal/support.html  200
+# /privacy and /support are real pages (privacy/index.html, support/index.html);
+# old /legal/* paths permanently redirect to them.
+/legal/privacy.html   /privacy             301
+/legal/support.html   /support             301
 /lab                  /lab/index.html      200
 /lab/                 /lab/index.html      200
 
@@ -8,7 +10,7 @@
 # https://yilinglabs.com/stillwall/  == Stillwall marketing site
 /stillwall            /index.html          200
 /stillwall/           /index.html          200
-/stillwall/privacy    /legal/privacy.html  200
-/stillwall/support    /legal/support.html  200
+/stillwall/privacy    /privacy/            200
+/stillwall/support    /support/            200
 /stillwall/lab        /lab/index.html      200
 /stillwall/lab/       /lab/index.html      200

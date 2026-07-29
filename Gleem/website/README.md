@@ -16,11 +16,12 @@ python3 -m http.server 8765
 | 页面 | URL |
 |------|-----|
 | **正式首页** | http://127.0.0.1:8765/ |
-| Privacy | http://127.0.0.1:8765/privacy （或 `/legal/privacy.html`） |
-| Support | http://127.0.0.1:8765/support （或 `/legal/support.html`） |
+| Privacy | http://127.0.0.1:8765/privacy |
+| Support | http://127.0.0.1:8765/support |
 | 版本 Lab | http://127.0.0.1:8765/lab/ |
 
-> 短路径在生产由 `_redirects` rewrite；本地预览靠 `privacy/`、`support/` 下的重定向桩页（`noindex`，仅服务本地）。
+> `/privacy`、`/support` 是真身页面（`privacy/index.html`、`support/index.html`），本地与生产路径一致；
+> 旧 `/legal/*.html` 路径在生产由 `_redirects` 301 到短路径。
 
 ---
 
@@ -29,11 +30,12 @@ python3 -m http.server 8765
 ```
 website/
 ├── index.html                 # 正式营销首页（Product Theater）
-├── _redirects                 # Netlify：/privacy · /support
+├── _redirects                 # Cloudflare Pages：旧 /legal/* 301 · /stillwall/* rewrite
 ├── README.md
-├── legal/
-│   ├── privacy.html
-│   └── support.html
+├── privacy/
+│   └── index.html             # Privacy Policy（/privacy）
+├── support/
+│   └── index.html             # Support（/support）
 ├── shared/                    # 图标、截图、tokens、motion.js
 ├── lab/                       # 多版本对比（内部）
 ├── versions/                  # v1–v6 历史稿/实验稿
