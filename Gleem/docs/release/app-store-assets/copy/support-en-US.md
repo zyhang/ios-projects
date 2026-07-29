@@ -10,6 +10,12 @@
 **Stillwall** blocks ads, trackers, and annoyances in **Safari** on iPhone and iPad.  
 It is not a VPN and does not block ads inside other apps.
 
+### Requirements
+
+- **iPhone or iPad** on **iOS / iPadOS 26** or later  
+- **Safari** — Stillwall works through Safari extensions; other browsers are not supported  
+- Stillwall Pro is shared across your iPhone and iPad under the same **Apple ID**, at no extra charge
+
 ### Enable protection
 
 1. Open **Stillwall**.  
@@ -24,6 +30,10 @@ If Home does not show On, complete the system steps above. We never show “prot
 - Turn **off** the global switch in Stillwall, **or**  
 - Open the **Stillwall Safari extension** on that site and choose **Pause on this site**, then **Resume** when finished.  
 - If you use **Strict Mode** (Pro), try turning it off first.
+
+### Report an issue
+
+If a site still shows ads or looks broken, open the **Stillwall Safari extension** on that page and choose **Report issue**. The report is prefilled with the current site’s domain, and you can review everything before sending. Reports are used only to fix blocking—never to build a profile of your browsing.
 
 ### YouTube & X ads
 
