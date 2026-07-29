@@ -30,10 +30,11 @@
 | D-107 | v1 明确不做清单以总纲领 §9 为准 | 已确认 | 含 Custom Rules、全 App 拦截、TV、Mac 交付等 |
 | D-108 | App Store **Name** = `Stillwall for Safari` | 已确认 | ≤30；解决与既有 Stillwall 重名；见 release 包 |
 | D-109 | App Store **Subtitle** = `Free Ad & Tracker Blocking` | 已确认 | 26 字符；强调免费核心层（Ads/Privacy 等）；Pro 在描述/截图说明 |
-| D-110 | 营销站主骨架采用 **v5 Product Theater** 结构 | 已确认 | 全宽色带分区 + 大无衬线标题 + 产品舞台 + Free/Pro/边界模块；正式站 `website/index.html`；v1–v5 快照在 `website/versions/` / `lab/` |
+| D-110 | 营销站主骨架采用 **v5 Product Theater** 结构 | 已替代 | 被 **D-114** 替代；快照保留在 `website/versions/v5-product-theater/` |
 | D-111 | 对外主体简称 **Yiling Labs**；法律全称为 Xiamen Yiling Information Technology Co., Ltd. | 已确认 | 页脚/营销用 Yiling Labs；Privacy/合同级披露写全称并括号注明 Yiling Labs；勿用 Inc. 等错误公司形态 |
 | D-112 | App Store 链接使用 app id **6795497808** | 已确认 | `https://apps.apple.com/app/id6795497808`（上架前可能 404，格式有效） |
 | D-113 | **单公司域名**策略：**yilinglabs.com**；产品用子路径扩展 | 已确认 | 不单独买产品域；Stillwall 双入口：`/` 与 `/stillwall/`（rewrite）；Privacy/Support：`/privacy`·`/support` 及 `/stillwall/*` 等价；邮箱 `*@yilinglabs.com` |
+| D-114 | 营销站主骨架采用 **v6 Quiet Gazette** 结构 | 已确认 | 暖纸底 + Newsreader 斜体 serif + mono 编号目录 + 细线分栏；Pro 为深色「晚报」；正式站 `website/index.html`；替代 D-110；v1–v6 快照在 `website/versions/` / `lab/` |
 
 ### 2.2 商业与权益
 

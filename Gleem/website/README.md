@@ -2,7 +2,7 @@
 
 正式营销站 + 历史版本 Lab。
 
-**结构决策（D-110）：** 主站采用 **Product Theater**（原 v5）全宽色带骨架。
+**结构决策（D-114）：** 主站采用 **Quiet Gazette**（原 v6）报纸排版骨架；D-110 Product Theater 已替代。
 
 ---
 
@@ -29,7 +29,7 @@ python3 -m http.server 8765
 
 ```
 website/
-├── index.html                 # 正式营销首页（Product Theater）
+├── index.html                 # 正式营销首页（Quiet Gazette）
 ├── _redirects                 # Cloudflare Pages：旧 /legal/* 301 · /stillwall/* rewrite
 ├── README.md
 ├── privacy/
@@ -132,8 +132,8 @@ wrangler pages deploy . --project-name=yilinglabs --branch=main --commit-dirty=t
 | v2 Product Hero | 标准产品站网格 |
 | v3 Quiet Manifesto | 深色理念叙事 |
 | v4 Zen Calm | OpenDesign zen-browser |
-| **v5 Product Theater** | 已选结构 → **已提升为正式 `index.html`** |
-| **v6 Quiet Gazette** | OpenDesign thebrowser-company（2026-07-29 新增） |
+| v5 Product Theater | 曾选结构（D-110）→ 历史快照 |
+| **v6 Quiet Gazette** | 已选结构 → **已提升为正式 `index.html`**（D-114） |
 
 ---
 
