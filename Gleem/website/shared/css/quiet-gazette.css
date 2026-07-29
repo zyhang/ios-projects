@@ -311,9 +311,15 @@ body {
 }
 .btn-pill:hover { background: var(--brand-bright); color: var(--paper); }
 .btn-pill:active { transform: scale(0.97); }
-.btn-pill .apple { width: 13px; height: 16px; }
-.doc .btn-pill { border-bottom: 0; }
-.doc .btn-pill:hover { border-bottom: 0; }
+.btn-pill .apple { width: 13px; height: 16px; flex-shrink: 0; }
+/* Beat .doc a { color: brand } — otherwise label/icon vanish on brand fill */
+.doc a.btn-pill,
+.doc a.btn-pill:hover {
+  color: var(--paper);
+  border-bottom: 0;
+  text-decoration: none;
+}
+.doc a.btn-pill:hover { background: var(--brand-bright); }
 
 .actions {
   display: flex;
