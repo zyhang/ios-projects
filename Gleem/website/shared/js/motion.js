@@ -6,12 +6,9 @@
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const nodes = document.querySelectorAll("[data-reveal]");
 
-  if (!nodes.length) return;
+  if (!nodes.length || reduce || !("IntersectionObserver" in window)) return;
 
-  if (reduce || !("IntersectionObserver" in window)) {
-    nodes.forEach((el) => el.classList.add("is-visible"));
-    return;
-  }
+  document.documentElement.classList.add("motion-ready");
 
   const io = new IntersectionObserver(
     (entries) => {

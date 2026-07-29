@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url("/shared/fonts/newsreader-roman-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url("/shared/fonts/newsreader-italic-latin.woff2") format("woff2");
+}

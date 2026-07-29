@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · Stillwall</title>
   <meta name="description" content="Privacy Policy for Stillwall for Safari by Yiling Labs. We don’t collect your browsing history. No account required.">
-  <meta name="theme-color" content="#EDEEE7">
+  <meta name="theme-color" content="#EDEEE7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121512" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" href="/shared/assets/icon-180.png">
   <link rel="apple-touch-icon" href="/shared/assets/icon-180.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/css/fonts.css">
   <link rel="stylesheet" href="/shared/css/quiet-gazette.css">
 </head>
 <body>
@@ -27,10 +26,21 @@
         <a href="/#pro">Pro</a>
         <a class="nav-secondary" href="/support">Support</a>
         <a class="is-active" href="/privacy">Privacy</a>
-        <a class="cta" href="https://apps.apple.com/app/id6795497808">Download</a>
+        <span class="cta" aria-disabled="true">Coming soon</span>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile">
+          <a href="/#free">Free</a>
+          <a href="/#pro">Pro</a>
+          <a href="/#boundaries">Boundaries</a>
+          <a href="/support">Support</a>
+          <a href="/privacy" aria-current="page">Privacy</a>
+        </nav>
+      </details>
     </div>
   </header>
+  <div class="preview-banner"><strong>Product preview</strong> · Stillwall is coming soon</div>
 
   <main id="main" class="doc">
 
@@ -44,6 +54,7 @@
 
     <div class="note">
       <span class="note-label">In short</span>
+      This policy describes the website today and Stillwall’s intended launch behavior.
       No Stillwall account.
       We don’t collect or upload your browsing history.
       Safari content blocking uses rule lists managed by Safari—it does not give us a feed of the pages you visit.
@@ -54,7 +65,28 @@
 
     <hr class="rule">
 
-    <h2>1. Who we are</h2>
+    <details class="doc-toc">
+      <summary>On this page</summary>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#principles">Privacy principles</a></li>
+        <li><a href="#information">Information we process</a></li>
+        <li><a href="#use">How we use information</a></li>
+        <li><a href="#legal-bases">Legal bases</a></li>
+        <li><a href="#sharing">Sharing and third parties</a></li>
+        <li><a href="#transfers">International transfers</a></li>
+        <li><a href="#retention">Retention</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#choices">Your choices and rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#privacy-labels">App Store privacy labels</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </details>
+
+    <h2 id="who-we-are">1. Who we are</h2>
     <p>
       Stillwall is provided by
       <strong>Xiamen Yiling Information Technology Co., Ltd.</strong>
@@ -63,13 +95,13 @@
     </p>
     <p>
       Privacy questions and data-subject requests:<br>
-      Email: <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><br>
+      <!--email_off-->Email: <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><br>
       Support: <a href="/support">yilinglabs.com/support</a> ·
-      <a href="mailto:support@yilinglabs.com">support@yilinglabs.com</a><br>
+      <a href="mailto:support@yilinglabs.com">support@yilinglabs.com</a><!--/email_off--><br>
       Website: <a href="https://yilinglabs.com/">https://yilinglabs.com/</a>
     </p>
 
-    <h2>2. Scope</h2>
+    <h2 id="scope">2. Scope</h2>
     <p>This Privacy Policy describes how we handle information when you:</p>
     <ul>
       <li>Use the <strong>Stillwall</strong> app on iPhone or iPad</li>
@@ -83,7 +115,7 @@
       It does not block ads inside other apps.
     </p>
 
-    <h2>3. Our privacy principles</h2>
+    <h2 id="principles">3. Our privacy principles</h2>
     <p>We design Stillwall to collect as little information as possible while still providing the product:</p>
     <ul>
       <li><strong>No product account.</strong> You don’t create a Stillwall login.</li>
@@ -92,7 +124,7 @@
       <li><strong>Transparent third parties.</strong> Apple handles subscriptions and app distribution. Hosting providers may process technical logs when you visit our website.</li>
     </ul>
 
-    <h2>4. Information we process</h2>
+    <h2 id="information">4. Information we process</h2>
     <p>
       “Personal data” means information relating to an identified or identifiable person
       (including definitions under laws such as the EU/UK GDPR).
@@ -217,7 +249,7 @@
       not to track your Safari browsing inside the Stillwall app.
     </p>
 
-    <h2>5. How we use information</h2>
+    <h2 id="use">5. How we use information</h2>
     <p>We use the limited information described above to:</p>
     <ul>
       <li>Provide, maintain, and improve Stillwall’s blocking and on-device features</li>
@@ -229,7 +261,7 @@
     </ul>
     <p>We do <strong>not</strong> sell your personal data. We do not use your browsing activity to build advertising profiles.</p>
 
-    <h2>6. Legal bases (EEA / UK and similar regimes)</h2>
+    <h2 id="legal-bases">6. Legal bases (EEA / UK and similar regimes)</h2>
     <p>Where GDPR or similar laws apply, we rely on:</p>
     <ul>
       <li><strong>Contract / steps prior to contract</strong> — to provide Stillwall and related support you request</li>
@@ -238,7 +270,7 @@
       <li><strong>Legal obligation</strong> — where we must retain or disclose information under applicable law</li>
     </ul>
 
-    <h2>7. Sharing and third parties</h2>
+    <h2 id="sharing">7. Sharing and third parties</h2>
     <p>We share information only as needed to operate Stillwall:</p>
     <table>
       <thead>
@@ -271,7 +303,7 @@
       (for example Apple for payments). We require appropriate protections for processors we engage.
     </p>
 
-    <h2>8. International transfers</h2>
+    <h2 id="transfers">8. International transfers</h2>
     <p>
       We are established in China. If you use Stillwall or contact us from another country
       (including the EEA, UK, United States, Australia, and elsewhere),
@@ -280,7 +312,7 @@
       Where required, we use appropriate safeguards under applicable law.
     </p>
 
-    <h2>9. Retention</h2>
+    <h2 id="retention">9. Retention</h2>
     <ul>
       <li><strong>On-device settings and rules</strong> — until you change them, delete the app, or reset device data</li>
       <li><strong>Support / feedback messages</strong> — as long as needed to handle your request, improve blocking quality, and meet legal obligations; then deleted or anonymised</li>
@@ -288,14 +320,14 @@
       <li><strong>Subscription records</strong> — as reflected by Apple’s systems for the life of the subscription relationship</li>
     </ul>
 
-    <h2>10. Security</h2>
+    <h2 id="security">10. Security</h2>
     <p>
       We take reasonable technical and organisational measures to protect personal data against
       misuse, loss, and unauthorised access, modification, or disclosure.
       No method of transmission or storage is completely secure; we cannot guarantee absolute security.
     </p>
 
-    <h2>11. Your choices and rights</h2>
+    <h2 id="choices">11. Your choices and rights</h2>
     <h3>11.1 In the product</h3>
     <ul>
       <li>Turn protection off with the in-app global switch</li>
@@ -313,7 +345,7 @@
     </p>
     <p>
       To exercise these rights regarding data we hold (for example support emails), contact
-      <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a>.
+      <!--email_off--><a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><!--/email_off-->.
       We may need to verify your request. Because Stillwall does not maintain a browsing-history account,
       much of the product’s state exists only on your device.
     </p>
@@ -323,27 +355,27 @@
       We do not sell personal information.
       If you are a consumer under applicable US state privacy laws, you may have rights to know, delete,
       or correct certain personal information we hold, and to non-discrimination for exercising those rights.
-      Contact <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a>.
+      Contact <!--email_off--><a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><!--/email_off-->.
     </p>
 
     <h3>11.4 Australia</h3>
     <p>
       We aim to handle personal information in a way that is open, limited to what is reasonably necessary,
       and secure. If you have a privacy complaint, contact us first at
-      <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a>.
+      <!--email_off--><a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><!--/email_off-->.
       You may also contact the Office of the Australian Information Commissioner
       (<a href="https://www.oaic.gov.au/">oaic.gov.au</a>).
     </p>
 
-    <h2>12. Children</h2>
+    <h2 id="children">12. Children</h2>
     <p>
       Stillwall is not directed at children under 13, and it is not enrolled as a Kids Category app.
       We do not knowingly collect personal information from children under 13.
       If you believe a child has provided personal information to us, contact
-      <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a> and we will take appropriate steps to delete it.
+      <!--email_off--><a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><!--/email_off--> and we will take appropriate steps to delete it.
     </p>
 
-    <h2>13. App Store privacy labels</h2>
+    <h2 id="privacy-labels">13. App Store privacy labels</h2>
     <p>
       Apple requires developers to provide privacy “nutrition labels” in App Store Connect.
       Those labels describe data linked to you or used to track you, based on Apple’s definitions.
@@ -351,7 +383,7 @@
       If labels and this policy ever appear to conflict, please contact us—we intend them to be consistent.
     </p>
 
-    <h2>14. Changes to this policy</h2>
+    <h2 id="changes">14. Changes to this policy</h2>
     <p>
       We may update this Privacy Policy from time to time.
       The “Last updated” date will change when we do.
@@ -359,14 +391,15 @@
       Continued use of Stillwall after an update means you accept the revised policy, except where applicable law requires additional notice or consent.
     </p>
 
-    <h2>15. Contact</h2>
+    <h2 id="contact">15. Contact</h2>
     <p>
       <strong>Xiamen Yiling Information Technology Co., Ltd.</strong> (Yiling Labs)<br>
-      Privacy: <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><br>
+      <!--email_off-->Privacy: <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><br>
       Support: <a href="/support">Support page</a> ·
-      <a href="mailto:support@yilinglabs.com">support@yilinglabs.com</a>
+      <a href="mailto:support@yilinglabs.com">support@yilinglabs.com</a><!--/email_off-->
     </p>
 
+    <p class="back-to-top"><a class="link-mono" href="#main">Back to top</a></p>
   </main>
 
   <footer>
@@ -374,7 +407,7 @@
       <nav aria-label="Footer">
         <a href="/privacy">Privacy</a>
         <a href="/support">Support</a>
-        <a href="https://apps.apple.com/app/id6795497808">App Store</a>
+        <span>App Store · Coming soon</span>
       </nav>
       <span>© 2026 Yiling Labs</span>
       <p class="fine">

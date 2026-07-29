@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support · Stillwall</title>
-  <meta name="description" content="Help and support for Stillwall for Safari — setup, broken sites, Pro features, and subscriptions.">
-  <meta name="theme-color" content="#EDEEE7">
+  <meta name="description" content="Prelaunch help for Stillwall for Safari — planned setup, broken-site recovery, Pro features, subscriptions, and contact.">
+  <meta name="theme-color" content="#EDEEE7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121512" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" href="/shared/assets/icon-180.png">
   <link rel="apple-touch-icon" href="/shared/assets/icon-180.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/css/fonts.css">
   <link rel="stylesheet" href="/shared/css/quiet-gazette.css">
 </head>
 <body>
@@ -27,57 +26,75 @@
         <a href="/#pro">Pro</a>
         <a class="nav-secondary" href="/privacy">Privacy</a>
         <a class="is-active" href="/support">Support</a>
-        <a class="cta" href="https://apps.apple.com/app/id6795497808">Download</a>
+        <span class="cta" aria-disabled="true">Coming soon</span>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile">
+          <a href="/#free">Free</a>
+          <a href="/#pro">Pro</a>
+          <a href="/#boundaries">Boundaries</a>
+          <a href="/support" aria-current="page">Support</a>
+          <a href="/privacy">Privacy</a>
+        </nav>
+      </details>
     </div>
   </header>
+  <div class="preview-banner"><strong>Product preview</strong> · Stillwall is coming soon</div>
 
   <main id="main" class="doc">
 
     <p class="kicker">Help · Stillwall</p>
     <h1 class="doc-title">Support</h1>
     <p class="doc-lead">
-      Stillwall blocks ads, trackers, and annoyances in <strong>Safari</strong> on iPhone and iPad.
-      It is not a VPN and does not block ads inside other apps.
+      Stillwall is being built to block ads, trackers, and annoyances in <strong>Safari</strong>
+      on iPhone and iPad. It is not yet available on the App Store.
     </p>
 
     <div class="actions">
-      <a class="btn-pill" href="https://apps.apple.com/app/id6795497808" aria-label="Download on the App Store">
-        <svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
-          <path d="M19.7 14.7c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5.1 1.2s-2.7-1.2-4.4-1.1c-2.3.1-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.2 1.7 13.5 1.1 1.6 2.5 3.5 4.3 3.4 1.7-.1 2.4-1.1 4.5-1.1s2.7 1.1 4.5 1c1.9-.1 3-1.7 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.6-1.4-3.6-5.5zM16.5 5.3c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2.1-.9 1-1.6 2.6-1.4 4.1 1.5.1 3-.8 4-1.9z"/>
-        </svg>
-        Download — App Store
-      </a>
+      <!--email_off--><a class="btn-pill" href="mailto:support@yilinglabs.com">Email support</a><!--/email_off-->
       <a class="link-mono" href="/privacy">Privacy Policy</a>
     </div>
 
     <hr class="rule">
 
-    <h2>Requirements</h2>
+    <div class="quick-links">
+      <strong>Quick topics</strong>
+      <nav aria-label="Support topics">
+        <a href="#setup">Setup</a>
+        <a href="#broken-site">Broken site</a>
+        <a href="#report">Report an issue</a>
+        <a href="#subscriptions">Subscriptions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <h2 id="requirements">Planned requirements</h2>
     <ul>
       <li><strong>iPhone or iPad</strong> on <strong>iOS / iPadOS 26</strong> or later</li>
       <li><strong>Safari</strong> — Stillwall works through Safari extensions; other browsers are not supported</li>
-      <li>Stillwall Pro is shared across your iPhone and iPad under the same <strong>Apple ID</strong>, at no extra charge</li>
+      <li>Stillwall Pro is planned to work across your iPhone and iPad under the same <strong>Apple ID</strong></li>
     </ul>
 
-    <h2>Enable protection</h2>
+    <h2 id="setup">Enable protection</h2>
     <div class="panel">
       <ol>
         <li>Open <strong>Stillwall</strong>.</li>
         <li>Follow <strong>Set Up Safari Protection</strong>.</li>
         <li>
-          In <strong>Settings → Safari → Extensions</strong>, enable <strong>both</strong> Stillwall
-          extensions and allow website access as shown in the app.
+          Enable <strong>both</strong> Stillwall extensions using the exact Settings path shown
+          in the app, then allow website access as instructed.
         </li>
         <li>Return to Stillwall — Home should show protection <strong>On</strong>.</li>
       </ol>
       <p class="panel-hint">
+        The final iOS 26 Settings path is being verified before release.<br>
         If Home does not show On, protection is not active yet. Complete the system steps above—
         we never show “protected” when Safari access is missing.
       </p>
     </div>
 
-    <h2>A site looks broken</h2>
+    <h2 id="broken-site">A site looks broken</h2>
     <ul>
       <li>Turn <strong>off</strong> the global switch in Stillwall, or</li>
       <li>
@@ -89,42 +106,42 @@
       Strict Mode (Pro) is more aggressive and can break some sites—try turning it off first.
     </p>
 
-    <h2>Report an issue</h2>
+    <h2 id="report">Report an issue</h2>
     <p>
-      If a site still shows ads or looks broken, open the <strong>Stillwall Safari extension</strong>
-      on that page and choose <strong>Report issue</strong>. The report is prefilled with the
+      The planned reporting flow opens from the <strong>Stillwall Safari extension</strong>
+      on the affected page. The report is designed to be prefilled with the
       current site’s domain, and you can review everything before sending.
       Reports are used only to fix blocking—never to build a profile of your browsing.
     </p>
 
-    <h2>YouTube &amp; X ads</h2>
+    <h2 id="youtube-x">YouTube &amp; X ads</h2>
     <p>
-      Pro blocking for YouTube and X applies in <strong>Safari websites only</strong>,
-      not the native YouTube or X apps.
+      Enhanced blocking for YouTube and X is planned for <strong>Safari websites only</strong>,
+      not the native apps. Final behavior is still being validated.
     </p>
 
-    <h2>Tap to Block</h2>
+    <h2 id="tap-to-block">Tap to Block</h2>
     <p>
-      Available with <strong>Stillwall Pro</strong>. In Safari, open the Stillwall extension →
-      <strong>Tap to Block</strong>, then select elements on the page.
-      Rules stay on your device and are not cloud-synced in the current version.
+      Tap to Block is planned for <strong>Stillwall Pro</strong>. The intended flow lets you
+      select page elements from the Safari extension. Final interaction details are still being
+      validated; rules are designed to stay on your device.
     </p>
 
-    <h2>Subscriptions</h2>
+    <h2 id="subscriptions">Subscriptions</h2>
     <p>
-      Stillwall Pro: <strong>1 month free</strong>, then <strong>$14.99/year</strong>.
-      Family Sharing is supported.
+      Planned offer: <strong>1 month free</strong>, then <strong>$14.99/year</strong>.
+      Family Sharing is intended, subject to final App Store configuration.
     </p>
     <p>
       Manage or cancel in
       <strong>Settings → [your name] → Subscriptions</strong>.
     </p>
 
-    <h2>Contact</h2>
+    <h2 id="contact">Contact</h2>
     <div class="panel">
       <p>
-        Email: <a href="mailto:support@yilinglabs.com"><strong>support@yilinglabs.com</strong></a><br>
-        Privacy: <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a>
+        <!--email_off-->Email: <a href="mailto:support@yilinglabs.com"><strong>support@yilinglabs.com</strong></a><br>
+        Privacy: <a href="mailto:privacy@yilinglabs.com">privacy@yilinglabs.com</a><!--/email_off-->
       </p>
       <p>
         Please include: iOS version, Stillwall version (About screen), and a short description.
@@ -135,7 +152,7 @@
       </p>
     </div>
 
-    <h2>About us</h2>
+    <h2 id="about">About us</h2>
     <p>
       Stillwall is made by <strong>Yiling Labs</strong>
       (legal entity: Xiamen Yiling Information Technology Co., Ltd.).
@@ -148,7 +165,7 @@
       <nav aria-label="Footer">
         <a href="/privacy">Privacy</a>
         <a href="/support">Support</a>
-        <a href="https://apps.apple.com/app/id6795497808">App Store</a>
+        <span>App Store · Coming soon</span>
       </nav>
       <span>© 2026 Yiling Labs</span>
       <p class="fine">

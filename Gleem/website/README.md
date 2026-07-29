@@ -36,7 +36,7 @@ website/
 │   └── index.html             # Privacy Policy（/privacy）
 ├── support/
 │   └── index.html             # Support（/support）
-├── shared/                    # 图标、截图、tokens、motion.js
+├── shared/                    # 图标、截图、自托管字体、tokens、motion.js
 ├── lab/                       # 多版本对比（内部）
 ├── versions/                  # v1–v6 历史稿/实验稿
 └── docs/
@@ -51,7 +51,7 @@ website/
 |----|-----|
 | 法律全称 | Xiamen Yiling Information Technology Co., Ltd. |
 | 对外简称 | **Yiling Labs**（页脚/营销；Privacy 内写全称 + 简称） |
-| App Store | https://apps.apple.com/app/id6795497808 |
+| App Store | 预发布阶段不展示外链；确认产品页可正常打开后再恢复 |
 | 计划主域名 | **`yilinglabs.com`**（公司唯一域名；产品走子路径/子域） |
 | 联系邮箱 | `privacy@yilinglabs.com` · `support@yilinglabs.com` |
 
@@ -80,7 +80,9 @@ website/
 1. 在注册商购买并解析 **`yilinglabs.com`**（DNS 粗查曾显示可能空闲，以实时查询为准）  
 2. 配置邮箱 `privacy@` / `support@`（Cloudflare Email Routing / Google Workspace 等）  
 3. ASC Privacy / Support 填最终 HTTPS URL  
-4. App 上架后抽查 App Store 链接  
+4. App 上架后抽查 App Store 链接，再将三张正式页面的 `Coming soon` 恢复为下载入口
+
+Newsreader 字体已按 OFL 许可自托管在 `shared/fonts/`，正式页面不请求 Google Fonts。
 
 部署：将 `website/` 作为站点根，或挂到 `/stillwall/` 子路径（按上表二选一）。
 
