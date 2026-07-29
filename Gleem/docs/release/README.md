@@ -20,7 +20,7 @@
     - `app-store-assets/screenshots/iphone-6.5-1284x2778/`（**1284×2778**）  
   - iPad：`app-store-assets/screenshots/ipad-13/`  
   - 计划：`app-store-assets/screenshot-plan.md`  
-  - 注意：`iphone-6.7/`（1290×2796）为旧尺寸，当前 ASC 槽勿用
+  - 旧错误尺寸目录 `iphone-6.7/`（1290×2796）已删除
 - **可部署站点：** `app-store-assets/site/`（`privacy.html` · `support.html` · `index.html`）  
   - 本地预览：`cd app-store-assets/site && python3 -m http.server 8765`  
 

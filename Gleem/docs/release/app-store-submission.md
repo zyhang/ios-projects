@@ -157,7 +157,7 @@
 | Dark / Large Type | 可选，不占首发主套 |
 
 **上传路径（iPhone）：**  
-`app-store-assets/screenshots/iphone-6.5-1242x2688/`（勿用旧目录 `iphone-6.7/` 的 1290×2796）
+`app-store-assets/screenshots/iphone-6.5-1242x2688/`
 
 ### 8.3 不做
 
