@@ -4,127 +4,177 @@
 **Product:** Stillwall for Safari (iOS / iPadOS)  
 **Public name:** Yiling Labs  
 **Legal entity:** Xiamen Yiling Information Technology Co., Ltd.  
-**Host:** `https://<domain>/privacy` (see `website/legal/privacy.html`)
+**Live URL:** https://yilinglabs.com/privacy  
+**Source HTML:** `website/legal/privacy.html`
 
 ---
 
-## Who we are
+## In short
 
-Stillwall is provided by **Xiamen Yiling Information Technology Co., Ltd.** (“**Yiling Labs**”, “we”, “us”).  
-Yiling Labs is our public name; the company name above is our legal entity.
-
-Contact for privacy questions: **privacy@yilinglabs.com** (or the address published on our Support page).
+No Stillwall account. We don’t collect or upload your browsing history. Safari content blocking uses rule lists managed by Safari—it does not give us a feed of the pages you visit. Optional extension features (such as site pause and Tap to Block) work on your device. Filter updates may download over the network. Subscriptions are handled by Apple. We don’t use third-party analytics, advertising, or crash SDKs in the app.
 
 ---
 
-## Summary
+## 1. Who we are
 
-- **No Stillwall account.**  
-- **We do not collect your browsing history** or the list of websites you visit.  
-- **No third-party analytics or advertising SDKs** in the current version.  
-- **Filter list updates** may be downloaded over the network; that download does not include your browsing history.  
-- **Subscriptions** are processed by **Apple**; we do not receive your full payment card number.  
-- **Optional Feedback** you submit may include text you type and an optional domain name you attach.
+Stillwall is provided by **Xiamen Yiling Information Technology Co., Ltd.** (“**Yiling Labs**”, “we”, “us”, “our”). Yiling Labs is our public name; the company name above is our legal entity.
+
+- Privacy: privacy@yilinglabs.com  
+- Support: https://yilinglabs.com/support · support@yilinglabs.com  
+- Website: https://yilinglabs.com/
 
 ---
 
-## Data we process
+## 2. Scope
 
-### 1. Data stored on your device
+This Privacy Policy describes how we handle information when you:
 
-Stillwall stores preferences and protection settings **on your device** (and, where applicable, in an App Group shared with the Safari extensions), for example:
+- Use the **Stillwall** app on iPhone or iPad  
+- Use Stillwall’s **Safari Content Blocker** and **Safari Web Extension**  
+- Visit our websites (including yilinglabs.com)  
+- Contact us for support or privacy requests  
 
-- Global protection on/off and category toggles (Ads, Privacy, Annoyances, Regional, Pro tools)  
-- Pro entitlement state as reported by StoreKit  
-- Site pause decisions made in the Safari extension  
-- Tap to Block rules you create (on-device only; not cloud-synced in the current version)
+Stillwall blocks ads, trackers, and annoyances in **Safari only**. It is **not a VPN** and does not route your general internet traffic through our servers. It does not block ads inside other apps.
 
-We do not use this on-device data to build a cross-site advertising profile.
+---
 
-### 2. Network requests we make
+## 3. Our privacy principles
 
-Stillwall may contact our servers or content delivery infrastructure to:
+- **No product account.**  
+- **No browsing-history product** — we do not build a list of websites you visit for analytics, advertising, or profiling.  
+- **On-device first** — protection settings, site pause, and Tap to Block rules stay on your device unless you choose to send us something.  
+- **Transparent third parties** — Apple handles subscriptions; hosting providers may process technical logs for the website.  
 
-- Download **updated filter lists** and configuration needed for blocking  
-- Deliver app and extension updates via Apple’s systems  
+---
 
-These requests use standard HTTPS. They are **not** used to upload your browsing history.
+## 4. Information we process
 
-### 3. Purchases (Apple)
+“Personal data” means information relating to an identified or identifiable person (including definitions under laws such as the EU/UK GDPR). We aim to collect only what is needed to provide Stillwall and support you.
 
-If you start a free trial or subscribe to **Stillwall Pro**, payment and subscription status are handled by **Apple** under Apple’s terms and privacy policy. We receive limited subscription status information necessary to unlock Pro features (via StoreKit / Apple’s APIs).
+### 4.1 Data we do not collect in the app
 
-### 4. Feedback you choose to send
-
-If you use in-app **Feedback** or **Report issue**, you may provide:
-
-- A description of the problem  
-- An optional website domain you attach  
-- Device, app, and version context needed to understand the report  
-
-This data is used **only to respond to support requests and improve blocking quality**. It is **not** used for tracking you across apps and websites for advertising. Do not include sensitive personal data you do not want to send.
-
-### 5. Data we do not collect
-
-- Browsing history or full URLs of pages you visit (except optional domain **you** attach in Feedback)  
+- Browsing history or a list of websites you visit in Safari  
+- Full page URLs as a continuous stream or tracking log  
+- A Stillwall user account, profile, or password  
 - Advertising identifiers for third-party ads in our app  
-- Third-party analytics or crash SDK telemetry in the current version  
+- Third-party analytics, advertising, or crash-reporting SDKs in the current version  
+- Sensitive categories of data as a product feature  
+
+### 4.2 Data stored on your device
+
+Preferences and feature data on your device (and App Group shared with Safari extensions where applicable), for example:
+
+- Global protection on/off and category toggles  
+- Pro entitlement state as reported by StoreKit  
+- Site pause / resume decisions in the Safari extension  
+- Tap to Block rules (on-device; not cloud-synced in the current version)  
+
+### 4.3 How Safari blocking works
+
+- **Content Blocker:** Stillwall provides a content-blocking rule list to Safari. Safari applies those rules. This model does **not** give Stillwall access to the contents of web pages you visit or a feed of every URL you open while content blocking is installed.  
+- **Web Extension:** Optional features (pause/resume on the current site, Tap to Block, Report issue, certain Pro tools such as enhanced blocking for YouTube and X *in Safari*) may process information about the **current site or page in Safari** on your device. That processing is local. We do **not** upload your browsing history.  
+
+### 4.4 Network requests
+
+- Download updated filter lists and configuration (HTTPS)  
+- App/extension updates via Apple  
+- Information you choose to submit (Feedback / Report issue)  
+
+Technical metadata (e.g. IP, time, basic headers) may be processed to deliver the request—not to reconstruct browsing history.
+
+### 4.5 Purchases (Apple)
+
+Trials and **Stillwall Pro** are handled by Apple. We receive limited subscription status via StoreKit. We do not receive full payment card numbers. Manage in Settings → Apple ID → Subscriptions.
+
+### 4.6 Feedback and support
+
+May include: description, optional domain, device/app/version context, email if you write to us. Used only to respond, troubleshoot, and improve blocking—not for cross-app advertising tracking.
+
+### 4.7 Apple App Analytics (system, optional)
+
+iOS may record App Analytics available in App Store Connect if you opt in to share analytics with developers. Controlled by Apple; not a third-party SDK from Stillwall. See Apple HT202100.
+
+### 4.8 Website
+
+Hosting/security providers (e.g. Cloudflare) may process IP, user agent, approximate region, path, referrer, timestamps for security and operations—not to track Safari browsing inside the app.
 
 ---
 
-## Safari extensions
+## 5. How we use information
 
-Stillwall includes a **Content Blocker** and a **Web Extension** for Safari. Blocking happens under Apple’s extension model. Site-level pause and Tap to Block actions are stored for the purpose of providing the feature on your device.
-
----
-
-## What we do not do
-
-- We do not sell your personal data.  
-- We do not build advertising profiles from your browsing.  
-- Stillwall is **not a VPN** and does not route your general browsing traffic through our servers.  
-- Stillwall does not block ads inside other apps—only in Safari.
+Provide and improve Stillwall; deliver filter updates; process Pro entitlement via Apple; respond to support/privacy requests; secure services; comply with law. We do not sell personal data or build advertising profiles from browsing.
 
 ---
 
-## Children
+## 6. Legal bases (EEA / UK)
 
-Stillwall is not directed at children under 13 and is not enrolled as a Kids Category app. We do not knowingly collect personal information from children under 13.
-
----
-
-## Retention
-
-- On-device settings remain until you delete the app or reset them.  
-- Support messages you send are retained as long as needed to handle your request and meet legal obligations, then deleted or anonymized.  
+Contract; legitimate interests (security, improvement, abuse prevention, website operation); consent where required; legal obligation.
 
 ---
 
-## Your choices
+## 7. Sharing and third parties
 
-- Turn protection off with the in-app global switch.  
-- Pause a site in the Safari extension.  
-- Cancel Stillwall Pro in **Settings → Apple ID → Subscriptions**.  
-- Delete the app to remove on-device Stillwall data (subject to iOS backups you control).  
-
----
-
-## International users
-
-If you use Stillwall outside your country of residence, information you send us (for example support email) may be processed in countries where we or our service providers operate, with safeguards required by applicable law.
+| Party | Role |
+|-------|------|
+| Apple | Distribution, StoreKit, optional App Analytics |
+| Hosting / CDN (e.g. Cloudflare) | Website hosting and technical logs |
+| Filter-list / CDN infrastructure | Rule updates over HTTPS |
+| Authorities | Where required or authorised by law |
 
 ---
 
-## Changes
+## 8. International transfers
 
-We may update this policy. The “Last updated” date will change; material changes will be highlighted in the app or on this page when appropriate.
+We are established in China. Information may be processed in other countries where we or providers operate, with safeguards required by applicable law.
 
 ---
 
-## Contact
+## 9. Retention
+
+- On-device settings/rules: until changed or app deleted  
+- Support/feedback: as needed for the request and legal obligations, then deleted or anonymised  
+- Website logs: limited operational period  
+- Subscription status: as reflected by Apple  
+
+---
+
+## 10. Security
+
+Reasonable technical and organisational measures. No method is completely secure.
+
+---
+
+## 11. Your choices and rights
+
+**Product:** global switch; site pause; cancel Pro in Apple subscriptions; delete app; system App Analytics settings.
+
+**EEA/UK:** access, correction, deletion, restriction, portability, objection, withdraw consent; complaint to supervisory authority. Contact privacy@yilinglabs.com.
+
+**California / similar US laws:** we do not sell personal information; rights to know/delete/correct as applicable.
+
+**Australia:** contact us with privacy complaints; you may also contact the OAIC (oaic.gov.au).
+
+---
+
+## 12. Children
+
+Not directed at children under 13; not a Kids Category app. No knowing collection from children under 13.
+
+---
+
+## 13. App Store privacy labels
+
+Apple nutrition labels in App Store Connect should be consistent with this policy. Contact us if anything appears inconsistent.
+
+---
+
+## 14. Changes
+
+We may update this policy. The “Last updated” date will change. Material changes highlighted when appropriate.
+
+---
+
+## 15. Contact
 
 **Xiamen Yiling Information Technology Co., Ltd.** (Yiling Labs)  
-Email: privacy@yilinglabs.com  
-Support: https://yilinglabs.com/stillwall/support · support@yilinglabs.com  
-
-Planned host (single company domain): `yilinglabs.com` — product under `/stillwall/` (or site root while Stillwall is the only product).
+privacy@yilinglabs.com · support@yilinglabs.com · https://yilinglabs.com/support
