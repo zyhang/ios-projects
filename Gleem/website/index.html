@@ -57,10 +57,13 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
-    @media (max-width: 820px) {
+    @media (min-width: 1100px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 640px) {
       .grid { grid-template-columns: 1fr; }
     }
     .card {
@@ -201,6 +204,8 @@
       <code>python3 -m http.server 8765</code>，打开
       <code>http://127.0.0.1:8765/</code>。
       App Store 链接与法律主体占位符待域名确认后替换。
+      设计系统参考笔记见 <a href="docs/opendesign-refs.md">docs/opendesign-refs.md</a>
+     （<a href="https://opendesign.cc/" rel="noopener">OpenDesign</a>）。
     </div>
 
     <div class="grid">
@@ -248,6 +253,22 @@
             强调「安静 / 诚实」，动画更氛围化。
           </p>
           <div class="refs">参考：Purify 语气 · UIBook 克制美学</div>
+          <span class="open">打开预览 →</span>
+        </div>
+      </a>
+
+      <a class="card" data-v="v4" href="versions/v4-zen-calm/">
+        <div class="card-preview" style="background:#F3F1E8">
+          <img src="shared/assets/screenshots/03-Home-On.png" alt="">
+        </div>
+        <div class="card-body">
+          <span class="tag">v4 · 推荐</span>
+          <h2>Zen Calm</h2>
+          <p>
+            OpenDesign 真 tokens：暖纸底、serif 大标题、宽松节奏、软阴影。
+            隐私浏览器气质 + Stillwall 森绿 accent。
+          </p>
+          <div class="refs">主参考：zen-browser · 辅：claude / replay-software</div>
           <span class="open">打开预览 →</span>
         </div>
       </a>

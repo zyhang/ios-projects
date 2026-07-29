@@ -6,6 +6,8 @@
 > `docs/release/app-store-assets/site/`（Privacy / Support 占位）。  
 > 本目录用于正式营销站探索与对比，选定方向后再合并上线结构。
 
+**设计系统参考：** [OpenDesign](https://opendesign.cc/)（`skill.md` 协议）— 笔记见 [`docs/opendesign-refs.md`](docs/opendesign-refs.md)。
+
 ---
 
 ## 本地预览
@@ -39,13 +41,16 @@ website/
 │   │   └── tokens.css         # 品牌色 / 间距 token
 │   └── js/
 │       └── motion.js          # 滚动显现；尊重 reduced-motion
+├── docs/
+│   └── opendesign-refs.md     # OpenDesign 选型与 token 笔记
 └── versions/
     ├── v1-calm-editorial/     # Wipr 式窄栏编辑排版
     ├── v2-product-hero/       # Hero + 手机 mock + 特性网格
-    └── v3-quiet-manifesto/    # 深色理念叙事
+    ├── v3-quiet-manifesto/    # 深色理念叙事
+    └── v4-zen-calm/           # OpenDesign zen-browser 接地
 ```
 
-后续新增版本建议：`versions/v4-<slug>/index.html`，并在根 `index.html` 卡片中登记。
+后续新增版本建议：`versions/v5-<slug>/index.html`，并在根 `index.html` 卡片中登记。
 
 ---
 
@@ -54,8 +59,9 @@ website/
 | 版本 | 气质 | 主要参考 | 适合何时选 |
 |------|------|----------|------------|
 | **v1 Calm Editorial** | 窄栏、文案优先、系统字体 | [Wipr](https://kaylees.site/wipr2.html) | 想要独立开发者气质、极简可信 |
-| **v2 Product Hero** | 完整产品站模块、浅色 | [Magic Lasso](https://www.magiclasso.co/)（简化） | 默认上线候选、信息结构最全 |
-| **v3 Quiet Manifesto** | 深色、原则叙事、氛围动效 | [Purify](https://www.purify-app.com/) 语气 + [UIBook](https://uibook.art/) 克制美学 | 强调品牌理念与「安静」 |
+| **v2 Product Hero** | 完整产品站模块、浅色 | [Magic Lasso](https://www.magiclasso.co/)（简化） | 信息结构最全的「传统产品站」 |
+| **v3 Quiet Manifesto** | 深色、原则叙事、氛围动效 | [Purify](https://www.purify-app.com/) 语气 + [UIBook](https://uibook.art/) | 强调品牌理念与「安静」 |
+| **v4 Zen Calm** ⭐ | 暖纸底、serif 标题、宽松节奏 | OpenDesign [`zen-browser`](https://opendesign.cc/en/sites/zen-browser)（辅 claude / replay-software） | **当前推荐方向**：隐私浏览器气质 + 品牌森绿 |
 
 ### 各版本共同具备（App 落地页最佳实践）
 
