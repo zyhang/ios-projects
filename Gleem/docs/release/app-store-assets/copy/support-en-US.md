@@ -40,8 +40,8 @@ Manage or cancel in **Settings → [your name] → Subscriptions**.
 
 ### Contact
 
-Email: **support@stillwall.app**  
-Privacy: **privacy@stillwall.app**  
+Email: **support@yilinglabs.com**  
+Privacy: **privacy@yilinglabs.com**  
 
 Please include: iOS version, Stillwall version (About screen), and a short description. Optional: the site domain if something is broken.
 

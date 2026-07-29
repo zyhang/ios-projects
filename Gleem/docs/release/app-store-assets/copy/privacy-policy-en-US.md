@@ -13,7 +13,7 @@
 Stillwall is provided by **Xiamen Yiling Information Technology Co., Ltd.** (“**Yiling Labs**”, “we”, “us”).  
 Yiling Labs is our public name; the company name above is our legal entity.
 
-Contact for privacy questions: **privacy@stillwall.app** (or the address published on our Support page).
+Contact for privacy questions: **privacy@yilinglabs.com** (or the address published on our Support page).
 
 ---
 
@@ -124,5 +124,7 @@ We may update this policy. The “Last updated” date will change; material cha
 ## Contact
 
 **Xiamen Yiling Information Technology Co., Ltd.** (Yiling Labs)  
-Email: privacy@stillwall.app  
-Support: https://\<domain\>/support · support@stillwall.app
+Email: privacy@yilinglabs.com  
+Support: https://yilinglabs.com/stillwall/support · support@yilinglabs.com  
+
+Planned host (single company domain): `yilinglabs.com` — product under `/stillwall/` (or site root while Stillwall is the only product).

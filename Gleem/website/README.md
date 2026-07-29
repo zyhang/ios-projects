@@ -48,15 +48,38 @@ website/
 | 法律全称 | Xiamen Yiling Information Technology Co., Ltd. |
 | 对外简称 | **Yiling Labs**（页脚/营销；Privacy 内写全称 + 简称） |
 | App Store | https://apps.apple.com/app/id6795497808 |
-| 联系邮箱（待域名落地） | `privacy@stillwall.app` · `support@stillwall.app` |
+| 计划主域名 | **`yilinglabs.com`**（公司唯一域名；产品走子路径/子域） |
+| 联系邮箱 | `privacy@yilinglabs.com` · `support@yilinglabs.com` |
+
+## 域名架构（单域名 · 产品扩展）
+
+**决策：** 只注册公司域，不单独为 Stillwall 买产品域。新产品在同一域名下扩展。
+
+| 角色 | 推荐 URL | 说明 |
+|------|----------|------|
+| 公司主页（可选） | `https://yilinglabs.com/` | About / 品牌；初期可 **301 → Stillwall** |
+| **Stillwall 营销站** | `https://yilinglabs.com/stillwall/` | **推荐默认**；仓库 `website/` 部署在此路径 |
+| Privacy（ASC） | `https://yilinglabs.com/stillwall/privacy` | 或 `/privacy` 若站点独占根路径 |
+| Support（ASC） | `https://yilinglabs.com/stillwall/support` | 同上 |
+| 备选 · 子域 | `https://stillwall.yilinglabs.com/` | 产品多了、要独立部署/证书时再拆 |
+
+**优先用子路径，而不是一上来子域：**
+
+1. 一站点、一证书、一部署，运维简单  
+2. App Store 只要稳定 HTTPS URL，路径完全合格  
+3. 以后产品多了再拆：`/product-b/` 或 `product-b.yilinglabs.com`
+
+**初期若只有 Stillwall：** 也可把 `website/` 直接挂在根  
+`https://yilinglabs.com/` · `/privacy` · `/support`，等第二款产品再挪到 `/stillwall/`。
 
 ### 上线前仍须确认
 
-1. **域名**与上述邮箱是否最终使用 `stillwall.app`（若否，全局替换邮箱与 README）  
-2. ASC Privacy / Support URL → `https://<domain>/privacy` · `/support`（`_redirects`）  
-3. App 上架后抽查 App Store 链接是否可打开产品页  
+1. 在注册商购买并解析 **`yilinglabs.com`**（DNS 粗查曾显示可能空闲，以实时查询为准）  
+2. 配置邮箱 `privacy@` / `support@`（Cloudflare Email Routing / Google Workspace 等）  
+3. ASC Privacy / Support 填最终 HTTPS URL  
+4. App 上架后抽查 App Store 链接  
 
-部署：将 `website/` 作为站点根（Netlify / GitHub Pages / Cloudflare Pages）。
+部署：将 `website/` 作为站点根，或挂到 `/stillwall/` 子路径（按上表二选一）。
 
 ---
 
