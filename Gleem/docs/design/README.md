@@ -27,8 +27,10 @@
 | [extension-popup-mock.html](extension-popup-mock.html) | Popup 四态浏览器预览 mock | 已建立 |
 | [design-system.md](design-system.md) | 设计原则、色板、字号、组件、动效、SwiftUI 映射 | **已建立（Hi-fi P0）** |
 | [journey-polish-review-2026-07-31.md](journey-polish-review-2026-07-31.md) | 全漏斗 Journey polish 评审（文案/交互/视觉/商店/信任页） | **2026-07-31** |
+| [setup-first-run.md](setup-first-run.md) | Setup 首次启用认知减负（step2 名称清单） | **已确认** |
+| [secondary-screens.md](secondary-screens.md) | 次级页 + 扩展设计规格（006/009） | **已建立** |
 | [exports/phone-preview/](exports/phone-preview/) | 主路径 Hi-fi PNG（含 D-510 CTA/Setup 修正） | 现行预览 |
-| [exports/secondary-preview/](exports/secondary-preview/) | More / Help / Tap / SE 临时 HTML（006） | 工程可对稿 |
+| [exports/secondary-preview/](exports/secondary-preview/) | More / Help / Tap / SE / Setup 清单 临时 HTML | 工程可对稿 |
 | [Stillwall-Wireframes-v1.free](Stillwall-Wireframes-v1.free) | 主 App 线框 | 已保存 |
 | [Stillwall-HiFi-v1.free](Stillwall-HiFi-v1.free) | 高保真 P0 | 以仓库文件为准 |
 

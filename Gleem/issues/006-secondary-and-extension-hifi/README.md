@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | **partial**（HTML 预览已交付；Lunacy Hi-fi 仍待） |
+| 状态 | **partial**（规格 + 完整 HTML 预览已交付；Lunacy 正式画板仍待） |
 | 优先级 | P2（不阻塞主路径 001–005 开发；上架前建议有线框/说明对齐） |
 | 类型 | docs-sync / ui |
 | 影响范围 | More · Help · About · Feedback · Tap to Block 说明 · Safari 扩展 popup |
@@ -28,13 +28,18 @@
 
 ### 设计（产品/设计）
 
-1. 在 `Stillwall-HiFi-v1.free`（或后续 Depth Pass）补齐至少：  
-   - **More** 列表  
-   - **Tap to Block** 说明（含未订阅 Upgrade CTA）  
-   - **SE01** 扩展 popup 常态（Protected + 3 项）  
-2. 可选但加分：Help 一屏、SE01a Paused、SE01b Not enabled。  
-3. 导出至 `docs/design/exports/`（可新建 `phone-preview-secondary/` 或并入现有 preview）。  
-4. 视觉 **必须** 继承主路径 token：`surfaceGrouped`、r18 卡、森绿主 CTA、无 Tab、英文、无威胁仪表盘。扩展 popup **无 IAP**（D-508）。
+**已交付（仓库内，可对稿）：**
+
+1. 规格权威：[secondary-screens.md](../../docs/design/secondary-screens.md)  
+2. HTML 预览：[exports/secondary-preview/index.html](../../docs/design/exports/secondary-preview/index.html)  
+   - More · Help 列表 · Site broken 详情 · Tap · Feedback · About  
+   - SE01 / a / b / c 四态  
+   - Setup 名称清单（与 003 / D-511 共用预览）  
+
+**仍待（Lunacy）：**
+
+1. 在 `Stillwall-HiFi-v1.free` Depth Pass 补齐画板并导出 PNG（关闭本 issue 的正式条件）  
+2. 视觉 **必须** 继承主路径 token；扩展 **无 IAP**（D-508）
 
 ### 开发（在 Hi-fi 未出前）
 

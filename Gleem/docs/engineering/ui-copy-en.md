@@ -46,6 +46,14 @@ Large Type 短式（可选）：Privacy 保留 trackers 语义，例如 `Block t
 | `setup.step1.detail` | `Apps → Safari → Extensions` |
 | `setup.step2.title` | `Turn on Stillwall` |
 | `setup.step2.detail` | `Enable all 6 Content Blockers and the Web Extension` |
+| `setup.step2.checklist_lead` | `Look for names starting with Stillwall:` |
+| `setup.step2.item_ads` | `Ads` |
+| `setup.step2.item_privacy` | `Privacy` |
+| `setup.step2.item_annoyances` | `Annoyances` |
+| `setup.step2.item_social` | `Social` |
+| `setup.step2.item_other` | `Other` |
+| `setup.step2.item_security` | `Security` |
+| `setup.step2.item_web_extension` | `Web Extension` |
 | `setup.step3.title` | `Allow website access` |
 | `setup.step3.detail` | `Choose Allow on All Websites` |
 | `setup.cta` | `Open Settings` |
@@ -56,7 +64,8 @@ Large Type 短式（可选）：Privacy 保留 trackers 语义，例如 `Block t
 
 **禁止：** *both extensions* · 未完成时顶 emblem 常驻「已完成」金勾 · 恐吓式红/橙错误作为默认深链失败态  
 
-**可选增强：** step2 列出六类 CB 短名（Ads, Privacy, Annoyances, Social, Other, Security）+ Web Extension。
+**Step 2 清单（已锁定设计目标 · 见 [setup-first-run.md](../design/setup-first-run.md)）：**  
+在 step2 详情下展示静态名称列表（Ads…Security + Web Extension），降低漏开；**非** App 内可勾选任务。Large Type 可先收一行再展开。
 
 ---
 

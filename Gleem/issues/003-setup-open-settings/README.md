@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open（**文案/设计目标已更新**；深链逻辑待主 App 源码） |
+| 状态 | open（**产品/设计规格已齐**含 D-511 名称清单；实现待开发） |
 | 优先级 | P1 |
 | 类型 | behavior / copy / docs-sync |
 | 影响范围 | 主 App · Setup（Safari 授权引导） |
@@ -53,8 +53,10 @@ Settings → Apps → Safari → Extensions
 | # | 标题 | 要点 |
 |---|------|------|
 | 1 | Open Settings | Apps → Safari → Extensions |
-| 2 | Turn on Stillwall | 全部 6 个 Content Blockers + Web Extension |
+| 2 | Turn on Stillwall | 全部 6 个 Content Blockers + Web Extension；**下方静态名称清单**（D-511 / [setup-first-run.md](../../docs/design/setup-first-run.md)） |
 | 3 | Allow website access | Web Extension → Allow All Websites |
+
+预览：`docs/design/exports/secondary-preview/`（Setup 卡）。
 
 完成检测逻辑不变：未完成不得进 Home。
 

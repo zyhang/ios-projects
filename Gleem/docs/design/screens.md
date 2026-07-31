@@ -37,13 +37,14 @@
 |----|------|
 | 目的 | 一次说清并完成 Content Blocker + Web Extension |
 | 门禁 | 未完成不得进 Home；运行时丢失则模态 |
+| 认知减负 | **[setup-first-run.md](setup-first-run.md)**（step2 名称清单） |
 
 结构：标题、说明、**三步**列表、主按钮 Open Settings、手动路径 hint、等待权限提示。
 
 | # | 步骤 | 要点 |
 |---|------|------|
 | 1 | Open Settings | Apps → Safari → Extensions |
-| 2 | Turn on Stillwall | **6** 个 Content Blockers（Ads, Privacy, Annoyances, Social, Other, Security）+ Stillwall Web Extension 全开 |
+| 2 | Turn on Stillwall | **6** 个 Content Blockers（Ads, Privacy, Annoyances, Social, Other, Security）+ Stillwall Web Extension 全开；**下方静态名称清单**（见 setup-first-run） |
 | 3 | Allow website access | Web Extension → **Allow All Websites** |
 
 深链：优先尝试打开系统 Extensions；失败时展示**指导性**手动路径（非恐吓式硬错误）。详见 `issues/003-setup-open-settings`。

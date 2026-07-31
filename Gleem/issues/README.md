@@ -48,5 +48,6 @@ Stillwall（Gleem）App **开发完成后的页面 / 功能问题** 与修改说
 |------|------|
 | 2026-07-31 | Hallmark 全局 review：Hi-fi 主路径人格统一；实现漂移见 001–004；跨页与债项见 005–006 |
 | 2026-07-31 | **Journey polish**：[`docs/design/journey-polish-review-2026-07-31.md`](../docs/design/journey-polish-review-2026-07-31.md)；007–009 创建并执行文档/商店侧 |
+| 2026-07-31 | **设计续作**：D-511 Setup 名称清单、D-512 商店截图叙事、secondary-screens + secondary-preview 完整包 |
 
 新建 issue 后请更新本表。

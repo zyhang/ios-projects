@@ -274,6 +274,7 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 
 - 标题 + 说明 + **三步**权限列表 + **Open Settings**  
 - 说明须诚实：**6 Content Blockers + Web Extension** + Allow All Websites（勿写含糊 *both extensions*）  
+- **Step 2 名称清单**（静态 secondary 列表）：Ads · Privacy · Annoyances · Social · Other · Security · Web Extension——规格 [setup-first-run.md](setup-first-run.md)  
 - 未完成时顶 emblem **不要**常驻「已完成」金勾  
 - 深链失败：指导性 hint（secondary），非恐吓错误色  
 - 等待回跳提示 + `Private by design` 安心条  
@@ -298,10 +299,12 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 `Updating filters` / `Preparing blockers for Safari…`。  
 见 `issues/002-filter-progress-copy`。
 
-### 7.10 More / 次级页
+### 7.10 More / 次级页 / 扩展
 
+完整 IA、状态与画板清单见 **[secondary-screens.md](secondary-screens.md)**。  
 Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subscription。  
-无账号体系行；无 Allowed Sites 行。
+无账号体系行；无 Allowed Sites 行。  
+扩展 popup：固定 3 项 + 诚实顶栏状态（Protected / Paused / Off in app / Not enabled）。
 
 ### 7.11 跨页文案
 
