@@ -2,7 +2,7 @@
 
 > **逻辑事实源（扩展侧）。** 范围与边界以 [产品总纲领](../product/product-charter.md) 为准；主 App 流程见 [app-flow.md](app-flow.md)。  
 > **UI 文案：英文。** 本说明用中文。  
-> **文档状态：** 已确认（2026-07-28：popup 固定 3 项）
+> **文档状态：** 已确认（2026-07-28：popup 固定 3 项；**2026-07-31 D-317：改为固定 2 项，移除 Tap to Block**）
 
 ---
 
@@ -11,26 +11,26 @@
 | 面 | 角色 |
 |----|------|
 | 主 App | 授权门禁、中性 Home、**类别开关**、订阅、Help / Feedback 完整页（**无**全局总开关、无 On/Off 状态区） |
-| **Safari Web Extension popup** | **当前站点**情境：放行/恢复、Tap to Block、Report |
+| **Safari Web Extension popup** | **当前站点**情境：放行/恢复、Report |
 
 ### 原则
 
-1. **选项尽量少：常态固定 3 个可点项**（硬上限 5；v1 不凑满）。  
+1. **选项尽量少：常态固定 2 个可点项**（D-317；硬上限 5；v1 不凑满）。  
 2. 扩展 = 浏览中 3–10 秒完成的动作，不是第二套 Home。  
 3. **本站 Pause / Resume** 是站点控制的**唯一操作面**（主 App 无 Allowed Sites）。  
 4. 状态必须诚实：扩展未开、主 App 全部类别 Off 时不得显示 Protected。  
-5. 扩展内 **无 IAP、无订阅营销墙**（App Store 4.4）；未订阅点 Pro 能力 → 回主 App。  
-6. 不做 Custom Rules 编辑器、不做定时 Pause 时长、不做 paywall bypass。
+5. 扩展内 **无 IAP、无订阅营销墙**（App Store 4.4）。  
+6. 不做 Custom Rules、不做 Tap to Block（v1）、不做定时 Pause 时长、不做 paywall bypass。
 
 ### 平台入口（文案约束）
 
 - 用户从 **Safari 中的 Stillwall Web Extension** 打开 popup（具体系统入口随 iOS/iPadOS 版本变化）。  
-- 主 App Help / Tap 说明须描述「在 Safari 中打开 Stillwall 扩展」，**不得**写死未经验证的图标位置（见决策 V-002）。  
+- 主 App Help 须描述「在 Safari 中打开 Stillwall 扩展」，**不得**写死未经验证的图标位置（见决策 V-002）。  
 - **Content Blocker 无独立 UI**；用户可点的菜单属于 Web Extension。
 
 ---
 
-## 2. Popup 信息架构（固定 3 项）
+## 2. Popup 信息架构（固定 2 项 · D-317）
 
 ### 2.1 常态布局
 
@@ -40,26 +40,25 @@
 │  Protected                     │  ← 或 Paused / 其他状态文案
 ├────────────────────────────────┤
 │  1  Pause on this site         │  ← 与 Resume 同一槽位切换
-│  2  Tap to Block               │
-│  3  Report issue               │
+│  2  Report issue               │
 └────────────────────────────────┘
 ```
 
 | # | 菜单项（英文） | ID | 层级 | 说明 |
 |---|----------------|-----|------|------|
 | 1 | **Pause on this site** / **Resume on this site** | E-01 | 免费 | 本站拦截开关；同一槽位按状态切换文案 |
-| 2 | **Tap to Block** | E-02 | Pro | 进入页内点选；未订阅 → 引导 Open Stillwall |
-| 3 | **Report issue** | E-03 | 免费 | 反馈；预填当前域名 |
+| 2 | **Report issue** | E-03 | 免费 | 反馈；预填当前域名 |
 
-**只读顶栏（不算第 4 项）：** 当前 host + 状态短语。
+**只读顶栏（不算菜单项）：** 当前 host + 状态短语。
 
 ### 2.2 明确不放进 popup
 
 | 不做 | 去哪 |
 |------|------|
 | 类别开关（Ads/…） | 主 App Home（**无**全局总开关） |
-| Ads / Privacy / Annoyances / Regional / Strict / Battery 列表 | 主 App Home |
-| Open Stillwall 常驻第 4 行 | 仅降级态 / 未订阅路径出现 |
+| Ads / Privacy / Annoyances / Regional / Battery 列表 | 主 App Home |
+| **Tap to Block** | **v1 不做**（D-317） |
+| Open Stillwall 常驻第 3 行 | 仅降级态出现 |
 | 定时 Pause（15m / 1h） | 不做 |
 | 已放行站点完整名单 | v1 不做；Resume 只针对当前站 |
 | 拦截数量 / Performance Insights | 不做 |
@@ -71,13 +70,12 @@
 
 ### 3.1 Popup 呈现状态
 
-| 状态 ID | 条件 | 顶栏状态文案（方向） | 三项如何表现 |
+| 状态 ID | 条件 | 顶栏状态文案（方向） | 两项如何表现 |
 |---------|------|----------------------|--------------|
-| `site_protected` | 授权可用 + 至少一个类别 On + 本站未 Pause | Protected | ① Pause on this site · ② Tap · ③ Report |
-| `site_paused` | 授权可用 + 至少一个类别 On + 本站已 Pause | Paused | ① **Resume on this site** · ② Tap · ③ Report |
-| `all_categories_off`（原 `global_off`） | 授权可用 + 主 App **全部类别 Off** | Off in app | ① 禁用或改为 **Open Stillwall**（仍只占槽 1）· ②③ 仍可点（Report 可用；Tap 可说明需先开保护） |
-| `not_enabled` | CB 或 Web Extension 系统侧未开 / 不可用 | Not enabled | **整页降级**：主 CTA **Open Stillwall**（可视为仅 1 个操作，不展示完整 3 项） |
-| `permission_needed` | Tap 等需要额外网站权限且未授 | Needs access | 引导系统授权；成功后回 `site_protected` / `site_paused` |
+| `site_protected` | 授权可用 + 至少一个类别 On + 本站未 Pause | Protected | ① Pause on this site · ② Report |
+| `site_paused` | 授权可用 + 至少一个类别 On + 本站已 Pause | Paused | ① **Resume on this site** · ② Report |
+| `all_categories_off`（原 `global_off`） | 授权可用 + 主 App **全部类别 Off** | Off in app | ① 禁用或改为 **Open Stillwall**（仍只占槽 1）· ② Report 仍可点 |
+| `not_enabled` | CB 或 Web Extension 系统侧未开 / 不可用 | Not enabled | **整页降级**：主 CTA **Open Stillwall**（不展示完整 2 项） |
 
 ### 3.2 本站 Pause 语义（已确认）
 
@@ -96,8 +94,8 @@
 |------|--------|------|
 | `categories` / 派生 `anyCategoryEnabled` | 扩展只读 | 类别开关；**无**用户全局开关字段 |
 | `sitePauseSet` | 扩展读写 | 已 Pause 的 eTLD+1 集合 |
-| `subscription` | 扩展只读 | free / trial / pro / expired → 是否解锁 Tap |
-| `tapRules` | 扩展读写 | 用户点选规则，仅本机 |
+| `subscription` | 扩展只读 | free / trial / pro / expired（v1 popup **不**依赖订阅解锁菜单项） |
+
 | 类别开关 / Strict 等 | 扩展不展示 | 由主 App 写入；拦截管道消费 |
 
 实现细节（App Group、reload 规则）见后续工程文档；**不得**因同步延迟长期显示假 Protected。
@@ -121,23 +119,9 @@
 
 **不做：** 选择时长、仅本次访问、批量管理多站列表（v1）。
 
-### 4.2 E-02 Tap to Block（Pro）
+### 4.2 E-02 Tap to Block
 
-**已订阅（trial / pro）**
-
-1. 用户点 **Tap to Block**。  
-2. 关闭或收起 popup → 进入**当前页**点选模式。  
-3. 用户点页面元素 → 生成屏蔽规则（本机）并即时反馈。  
-4. 提供退出点选模式（Done / 系统或页内明确出口）。  
-5. 失败：无法选中或规则无效时提示，例如 *Couldn't block this element*（文案可微调）。  
-6. **Undo：** v1 至少支持撤销**上一次**成功屏蔽，或退出点选前取消；细节实现可迭代，产品要求「点坏了能收回」。
-
-**未订阅**
-
-- 不进入点选。  
-- 简短说明 + **Open Stillwall**（进主 App Upgrade / Tap 说明），**不在扩展内拉起 IAP**。
-
-**不做：** CSS 选择器编辑器、规则列表大全、云同步。
+**v1 不做**（D-317）。不实现页内点选、不占 popup 槽位。
 
 ### 4.3 E-03 Report issue（免费）
 
@@ -181,11 +165,7 @@ popup（Paused）→ Resume on this site → 拦截恢复
 
 ### 5.3 Tap to Block
 
-```text
-popup → Tap to Block
-  ├─ 未 Pro → 说明 + Open Stillwall
-  └─ 已 Pro → 页内点选 → 屏蔽 / 失败提示 / 可撤销
-```
+**v1 不做**（D-317）。
 
 ### 5.4 扩展未启用
 
@@ -228,7 +208,7 @@ popup 顶栏 Off in app
 | 顶栏未启用 | Not enabled |
 | 槽 1 保护中 | Pause on this site |
 | 槽 1 已暂停 | Resume on this site |
-| 槽 2 | Tap to Block |
+| 槽 2 | **Report issue**（D-317；无 Tap） |
 | 槽 3 | Report issue |
 | 降级主按钮 | Open Stillwall |
 | Tap 未订阅 | 短说明 + Open Stillwall |

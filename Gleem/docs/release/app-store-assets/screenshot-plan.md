@@ -10,7 +10,7 @@
 | 2 | `01-Welcome.png` | A quieter Safari | Ads, trackers, and annoyances stay out of your way | `02-Welcome.png` |
 | 3 | `02-Setup.png` | Enable in a few steps | Content blockers + extension in Safari | `03-Setup.png` |
 | 4 | `03-Home.png` | Free core protection | Ads, privacy, annoyances—yours to control | `04-Home-Features.png` |
-| 5 | `05-Upgrade.png` | Pro tools when you need them | YouTube & X in Safari · Tap to Block | `05-Upgrade.png` |
+| 5 | `05-Upgrade.png` | Pro tools when you need them | YouTube & X in Safari · Battery Boost | `05-Upgrade.png` |
 | 6 | `03-Home.png`（列表近景） | Categories you control | Turn features on or off as you need | `06-Home-Categories.png` |
 
 ### 相对旧稿的变更

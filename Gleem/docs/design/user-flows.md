@@ -13,7 +13,6 @@ App
 ├── Welcome
 ├── Setup (Safari Protection)     门禁 / 模态
 ├── Home
-│   ├── Tap to Block（说明）
 │   ├── Upgrade
 │   └── More
 │         ├── Help
@@ -24,13 +23,12 @@ App
 │         ├── Restore / Manage Subscription
 ```
 
-**主 App 无：** Allowed Sites、Pause sheet、定时暂停选项。
+**主 App 无：** Allowed Sites、Pause sheet、定时暂停、Strict Mode、Tap to Block（D-317）。
 
-**Safari 扩展 popup（非主 App 导航树；固定 3 项）：**
+**Safari 扩展 popup（非主 App 导航树；固定 2 项 · D-317）：**
 
 1. Pause / Resume on this site  
-2. Tap to Block  
-3. Report issue  
+2. Report issue  
 
 规格：[safari-extension.md](safari-extension.md)。
 
@@ -66,11 +64,11 @@ Safari → Stillwall 扩展 popup → Pause on this site
 
 ### 2.6 Tap to Block
 
-主 App S05 说明 **或** 扩展槽 2 → 已 Pro 则页内点选；未 Pro → Open Stillwall / Upgrade。
+**v1 不做**（D-317）。
 
 ### 2.7 Report / Feedback
 
-扩展槽 3 **Report issue**（预填域名）**或** More → Feedback。
+扩展槽 2 **Report issue**（预填域名）**或** More → Feedback。
 
 ### 2.8 升级 Pro
 
@@ -89,14 +87,14 @@ Home 关 Ads（或 Privacy 等）→ 其他已开启类别仍可生效。
 | 看当前站是否生效 | 扩展顶栏（当前站）；Home 只表达类别选择 |
 | 关掉/打开某类拦截 | 主 App **对应类别开关**（无全局总开关） |
 | 放行 / 恢复某站 | 扩展 **Pause / Resume on this site** |
-| 点选屏蔽元素 | 扩展 **Tap to Block**（Pro） |
 | 报告坏站/漏拦 | 扩展 **Report issue** 或 App Feedback |
 | 少广告/追踪/弹窗 | Ads / Privacy / Annoyances |
 | 地区规则 | Regional（自动） |
 | YouTube/X 网页 | YouTube & X（Pro，Home 开关） |
-| 更严 | Strict（Pro，Home） |
+| 耗电脚本 | Battery Boost（Pro，Home） |
 | 订阅 | Upgrade（主 App） |
 | 隐私/帮助 | More |
+| Strict / Tap to Block | **v1 不做**（D-317） |
 
 ---
 

@@ -61,7 +61,7 @@ Choose what stays out of your way.
 
 ### 勿误改
 
-- 类别行文案、PRO badge、Tap to Block chevron 行  
+- 类别行文案、PRO badge（**无** Tap 行 · D-317）  
 - 右上角 More  
 - 规则编译进度条（见 issue **002**）  
 - Setup 门禁与扩展状态检测（丢失授权仍应模态拉回 Setup，但 **Home 成功页本身不展示保护 pill**）

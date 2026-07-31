@@ -27,7 +27,7 @@
 | 2 | A quieter Safari | Ads, trackers, and annoyances **stay out of your way** |
 | 3 | Enable in a few steps | Content blockers + extension in Safari |
 | 4 | Free core protection | Ads, privacy, annoyances—yours to control |
-| 5 | Pro tools when you need them | YouTube & X in Safari · Tap to Block |
+| 5 | Pro tools when you need them | YouTube & X in Safari · Battery Boost |
 | 6 | Categories you control | Turn features on or off as you need |
 
 目录：`iphone-6.5-1242x2688/`、`iphone-6.5-1284x2778/`、`ipad-13/`（若上传 iPad）。

@@ -56,19 +56,20 @@
 | D-301 | 免费：Ads、Privacy、Annoyances、Regional（默认开） | 已确认 | Regional 按语言全自动 |
 | D-302 | 主 App 免费：全局保护 On/Off | **已替代** | 被 **D-315** 替代：移除全局总开关，仅保留类别开关 |
 | D-303 | Pro：YouTube & X 合并为一个开关 | 已确认 | 仅 Safari 网页 |
-| D-304 | Pro：Battery Boost、Strict Mode（默认关） | 已确认 | Strict 叠加更严 |
-| D-305 | Pro：Tap to Block；Home 为入口行 | 已确认 | 非纯开关；规则仅本机 |
+| D-304 | Pro：Battery Boost、Strict Mode（默认关） | **已替代** | **D-317**：v1 **不做** Strict；Battery 仍保留 |
+| D-305 | Pro：Tap to Block；Home 为入口行 | **已替代** | **D-317**：v1 **不做** Tap to Block |
 | D-306 | 不做 Custom Rules 编辑器 | 已确认 | 与 D-103 一致 |
 | D-307 | 不承诺原生 YouTube/X App 去广告 | 已确认 | 文案须限定 Safari |
 | D-308 | 规则日更自动；不做用户开关 | 已确认 | About 可展示版本 |
 | D-309 | 站点放行 / 当前站控制仅在 Safari 扩展中配置 | 已确认 | 主 App **不做** Allowed Sites 页；对齐 Safari 扩展能力，避免重复 UI |
 | D-310 | 主 App 不做定时 Pause（15m/1h/Until resume） | 已确认 | 需要临时停拦：关相关类别或用扩展放行站点（全局总开关见 D-315 已移除） |
-| D-311 | 扩展 popup **固定 3 项** | 已确认 | ① Pause/Resume on this site · ② Tap to Block · ③ Report issue；只读顶栏不算项；硬上限 5，v1 不凑满；见 [safari-extension.md](../design/safari-extension.md) |
+| D-311 | 扩展 popup **固定 3 项** | **已替代** | **D-317**：v1 改为 **固定 2 项**（Pause/Resume · Report）；无 Tap |
 | D-312 | 本站 Pause：eTLD+1、持久至 Resume | 已确认 | 无 session-only、无 15m/1h；`www` 与裸域同一站 |
 | D-313 | 扩展内无 IAP；未订阅 Tap 回主 App | 已确认 | 符合 App Store 4.4；Open Stillwall 非常态第 4 项 |
 | D-314 | v1 不做 Paywall Bypass | 已确认 | 不集成 bypass-paywalls 类能力；非增值点 |
 | D-315 | **移除主 App 全局保护总开关** | 已确认 | 性能：整包 CB/规则重载代价过高；**替代 D-302**；恢复路径 = 关类别 / 扩展 Pause |
 | D-316 | **Home 合并为单一页面，不做 On/Off 视觉状态** | 已确认 | 顶部为中性价值文案；类别开关直接表达选择；全部类别 Off 仅影响规则与扩展状态，不切换主 App 页面 |
+| D-317 | **v1 移除 Strict Mode 与 Tap to Block** | 已确认 | 替代 D-304（Strict）/ D-305 / D-311（3→2 项）；Home 六行；Pro = YT&X + Battery；扩展 = Pause + Report；见总纲领 |
 
 ### 2.4 平台与技术
 
@@ -94,9 +95,9 @@
 | D-507 | 主 App 视觉以 Lunacy Hi-fi P0 + design-system 为准 | 已确认 | 品牌主色 `#2F6A58`；暖金仅 Pro；系统字体实现；见 [design-system.md](../design/design-system.md) |
 | D-508 | 扩展 popup 无全局开关、无类别列表 | 已确认 | 类别开关仅主 App；主 App 亦无全局总开关（D-315）；扩展为当前站情境 |
 | D-509 | App Store 基础元数据以 release 包为准 | 已确认 | Name **Stillwall for Safari**；Subtitle **Free Ad & Tracker Blocking**；Utilities；见 [app-store-submission.md](../release/app-store-submission.md) |
-| D-510 | v1 主路径 UI 文案锁定（Hallmark 审计后） | 已确认 | Welcome CTA = **Set Up in Safari**；能力副文案与 Strict Large Type 以 [issues/005](../../issues/005-cross-screen-consistency/) 表为准；Setup 诚实写 6 CB + Web Extension；弃用 Set Up Safari Protection / Enable Safari Blocking / Strict「May affect some sites」 |
+| D-510 | v1 主路径 UI 文案锁定（Hallmark 审计后） | 已确认 | Welcome CTA = **Set Up in Safari**；能力副文案以 [issues/005](../../issues/005-cross-screen-consistency/) 为准（**D-317 后无 Strict/Tap 行**）；Setup 诚实写 6 CB + Web Extension；弃用 Set Up Safari Protection / Enable Safari Blocking |
 | D-511 | Setup Step 2 **名称清单**（认知减负） | 已确认 | 静态列出 Ads…Security + Web Extension；规格 [setup-first-run.md](../design/setup-first-run.md)；非 App 内可勾选任务；配合 D-510 诚实总述 |
-| D-512 | App Store 截图框外叙事（柔化绝对承诺） | 已确认 | 槽 2 不用 *blocked* 绝对句；槽 3 点明 blockers + extension；表见 [screenshot-plan.md](../release/app-store-assets/screenshot-plan.md) |
+| D-512 | App Store 截图框外叙事（柔化绝对承诺） | 已确认 | 槽 2 不用 *blocked* 绝对句；槽 3 点明 blockers + extension；表见 [screenshot-plan.md](../release/app-store-assets/screenshot-plan.md)；**无** Strict/Tap 卖点像素 |
 
 ### 2.6 隐私
 
@@ -119,7 +120,7 @@
 | V-002 | Content Blocker + Web Extension 在 iOS 26 上的最终权限文案与系统路径 | 待验证 | 影响引导截图与文案 |
 | V-003 | StoreKit 试用 1 个月 + $14.99 年 + Family Sharing 配置细节 | 待验证 | 以 App Store Connect 为准 |
 | V-004 | 规则源许可证与归因文案 | 待验证 | About / 开源声明 |
-| V-005 | Tap to Block 在 Safari Web Extension 的可行交互与限制 | 待验证 | 影响入口页说明；属扩展 TODO |
+| V-005 | Tap to Block 在 Safari Web Extension 的可行交互与限制 | **已替代** | **D-317** v1 不做 Tap；若未来恢复再开验证 |
 
 ---
 
@@ -129,9 +130,9 @@
 
 | ID | 事项 | 状态 |
 | --- | --- | --- |
-| T-EXT-01 | 扩展 popup / 菜单 IA（固定 3 项） | **产品已确认** |
+| T-EXT-01 | 扩展 popup / 菜单 IA（固定 **2** 项 · D-317） | **产品已确认** |
 | T-EXT-02 | 当前站 Pause / Resume（eTLD+1、持久） | **产品已确认**；工程规格已写，代码待做 |
-| T-EXT-03 | Tap to Block 扩展内流程 | 产品+工程骨架已定；**V-005** + 实现 |
+| T-EXT-03 | Tap to Block 扩展内流程 | **v1 不做**（D-317） |
 | T-EXT-04 | YouTube & X 扩展侧行为与权限 | 工程纲要已写；实现 TODO |
 | T-EXT-05 | 扩展线框 / 高保真 SE01–SE03 | **Lunacy 线框已画**（Wireframes v1 · ROW 4）；Hi-fi 可选 |
 | T-EXT-06 | 扩展 ↔ 主 App 状态同步 | **schema 已定**（engineering/safari-extension）；代码待做 |
@@ -150,6 +151,8 @@
 | S-005 | Custom Rules | 暂缓 | 产品理念反对；非「以后默认做」 |
 | S-006 | 主 App 内 Allowed Sites / 定时 Pause UI | 暂缓 | 已明确 v1 不做；站点控制在扩展（D-309/D-310） |
 | S-007 | Paywall Bypass | 暂缓/否决 | 与 D-314 一致；不做增值 |
+| S-008 | Strict Mode | 暂缓（非 v1） | D-317 从 v1 移除；未来若做须新决策 |
+| S-009 | Tap to Block | 暂缓（非 v1） | D-317 从 v1 移除；未来若做须新决策 + 重验 V-005 |
 
 ---
 
@@ -171,3 +174,4 @@
 | 2026-07-29 | **D-316**：Home On/Off 合并为单一 Home；顶部使用中性金句，不展示保护状态 |
 | 2026-07-31 | **D-510**：锁定 Welcome CTA / 能力副文案 / Setup 诚实句；issues 001–006 与 design-system 同步 |
 | 2026-07-31 | **D-511** Setup step2 名称清单；**D-512** 商店截图框外叙事；secondary-screens + secondary-preview 补齐 |
+| 2026-07-31 | **D-317**：v1 移除 Strict Mode 与 Tap to Block；扩展 2 项；替代 D-304/305/311 相关部分 |

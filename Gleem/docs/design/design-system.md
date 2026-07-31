@@ -200,8 +200,8 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 4. Regional Ad Blocking（副文案：Automatic by language）  
 5. YouTube & X · Pro  
 6. Battery Boost · Pro  
-7. Strict Mode · Pro  
-8. Tap to Block · Pro（Chevron 行 → 说明页）  
+
+**无** Strict Mode、**无** Tap to Block（D-317）。
 
 | 规则 | 说明 |
 |------|------|
@@ -249,8 +249,6 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 | 地区规则 | `languages` | Welcome Regional |
 | YouTube & X | `play`（填充三角） | Welcome / Upgrade |
 | Battery Boost | `battery-medium` | Welcome / Upgrade |
-| Strict Mode | `shield-check` | Welcome / Upgrade |
-| Tap to Block | `mouse-pointer-click` | Welcome / Upgrade |
 | Daily updates | `refresh-cw` | Welcome |
 | Open Settings | `settings` | Setup 步骤 1 |
 | 开启扩展 | `puzzle` | Setup 步骤 2 |
@@ -268,7 +266,7 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 - 主 CTA **不得**强制 Free Trial  
 - 主 CTA **锁定**：`Set Up in Safari`（旧稿 `Set Up Safari Protection` / `Enable Safari Blocking` 弃用）  
 - Pro 相关卖点须诚实：YouTube & X **in Safari** / not native apps  
-- 能力副文案锁定表：`issues/005-cross-screen-consistency`（Strict Large Type **不得**改写为 May affect some sites）
+- 能力副文案锁定表：`issues/005-cross-screen-consistency`（**无** Strict / Tap 行 · D-317）
 
 ### 7.7 Setup（门禁）
 
@@ -284,7 +282,7 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 ### 7.8 Upgrade / Paywall
 
 - 标题 *Unlock Stillwall Pro* + 一句价值  
-- 白卡利益列表（小图标；利益副文案与 Home Pro 行锁定一致）  
+- 白卡利益列表（小图标；**仅** YT&X + Battery；利益副文案与 Home Pro 行锁定一致）  
 - Offer：*1 month free* → *Then $14.99/year · Family Sharing included*（**不得** $9.99）  
 - 主 CTA *Start 1 Month Free Trial*  
 - 系统蓝 *Restore Purchases* + 法律小字  

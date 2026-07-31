@@ -87,7 +87,7 @@ Cold Start
 
 ```text
 顶部：固定中性价值文案（无 On/Off 状态）
-能力列表：Ads … Tap to Block（唯一开/关）
+能力列表：Ads … Battery Boost（唯一开/关；无 Strict / Tap）
 More → 次级页
 
 关某类别 → 该类不参与拦截
@@ -101,13 +101,13 @@ More → 次级页
 ```text
 站点异常
   → 推荐：Safari → Stillwall 扩展 popup → Pause on this site
-  → 备选：Home 关闭相关类别（或关 Strict）
+  → 备选：Home 关闭相关类别
   → 可选：扩展 Report issue 或 App Feedback
   → 恢复本站：扩展 Resume on this site
 ```
 
 **主 App 无：** Allowed Sites 页、Pause sheet、15m/1h 选项。  
-**扩展 popup 仅 3 项：** 见 [safari-extension.md](safari-extension.md)。
+**扩展 popup 仅 2 项（Pause · Report）：** 见 [safari-extension.md](safari-extension.md)（D-317）。
 
 ### 3.5 升级 / Feedback / 规则更新 / 扩展被关
 
@@ -120,8 +120,7 @@ More → 次级页
 | 顺序 | 行 | 类型 | 说明 |
 |------|-----|------|------|
 | 1–4 | Ads / Privacy / Annoyances / Regional | Switch | 免费，默认 On |
-| 5–7 | YouTube & X / Battery / Strict | Switch | Pro |
-| 8 | Tap to Block | 入口行 | Pro；说明在 Safari 使用 |
+| 5–6 | YouTube & X / Battery Boost | Switch | Pro（**无** Strict / Tap · D-317） |
 
 **无**状态区与全局 Switch。全部类别 Off 时：列表和顶部中性文案保持不变。
 

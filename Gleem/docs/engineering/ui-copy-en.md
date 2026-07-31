@@ -4,7 +4,7 @@
 > 实现：建议 `Localizable.xcstrings` / String Catalog；本文件为仓库权威对照。  
 > **本仓库当前无 Swift 源码**；接入主工程时以本文 + 产品总纲领为准。
 
-**状态：** 2026-07-31 已按 Journey polish + 001–009 锁定  
+**状态：** 2026-07-31 锁定；**D-317 已移除 Strict / Tap**  
 
 ---
 
@@ -29,8 +29,6 @@
 | Regional Ad Blocking | Automatic rules for your language |
 | YouTube & X in Safari | Pro · Not the native apps |
 | Battery Boost | Pro · Reduce wasteful browsing scripts |
-| Strict Mode | Pro · Stronger blocking · Use with care |
-| Tap to Block | Pro · Hide page elements in Safari |
 
 Large Type 短式（可选）：Privacy 保留 trackers 语义，例如 `Block trackers · No history collected`（勿只剩 history 一句）。
 
@@ -88,12 +86,9 @@ Large Type 短式（可选）：Privacy 保留 trackers 语义，例如 `Block t
 | Regional Ad Blocking | Automatic by language | Automatic by language |
 | YouTube & X | Block YouTube & X ads in Safari | YouTube & X ads in Safari |
 | Battery Boost | Reduce wasteful browsing scripts | Reduce wasteful scripts |
-| Strict Mode | Stronger blocking · Use with care | Stronger blocking · Use with care |
-| Tap to Block | Hide page elements in Safari | Hide page elements in Safari |
 
-**Strict Large Type 禁止：** `May affect some sites`
-
-Regional 与 YouTube & X 之间 **+8pt**；Free 行无领先图标；Pro 行暖金 `PRO` badge。
+Regional 与 YouTube & X 之间 **+8pt**；Free 行无领先图标；Pro 行暖金 `PRO` badge。  
+**D-317：** 无 Strict Mode、无 Tap to Block 行。
 
 ### 规则进度 · issue 002
 
@@ -120,25 +115,16 @@ Regional 与 YouTube & X 之间 **+8pt**；Free 行无领先图标；Pro 行暖�
 | `upgrade.restore` | `Restore Purchases` |
 | `upgrade.legal` | `Payment is charged to your Apple ID after the trial. Terms · Privacy` |
 
-利益行副文案 = §3 Pro 四行**标准**列（Battery 用完整句）。
+利益行副文案 = §3 Pro **两行**标准列（YouTube & X + Battery；**无** Strict / Tap）。
 
 **StoreKit：** 价格优先 Product 本地化；fallback **$14.99** 不得 $9.99。  
 **取消购买：** 静默，勿展示 `Request Canceled` / 原始 `localizedDescription`。
 
 ---
 
-## 5. Tap to Block 说明（S05）
+## 5. Tap to Block（S05）
 
-```text
-Title: Tap to Block
-Body steps:
-1. In Safari, open the Stillwall extension.
-2. Tap Tap to Block.
-3. Select page elements to hide.
-
-Footer: To pause blocking on a site, use Pause on this site in the extension.
-Free CTA: Unlock with Stillwall Pro → Upgrade
-```
+**v1 不做**（D-317）。无页面、无 Home 入口、无扩展槽。
 
 ---
 
@@ -167,7 +153,7 @@ Free CTA: Unlock with Stillwall Pro → Upgrade
 
 ```text
 Open the Stillwall extension in Safari and choose Pause on this site.
-Or turn off the related category switches (or Strict Mode) in the app.
+Or turn off the related category switches in the app.
 When you’re ready, choose Resume on this site in the extension.
 ```
 
@@ -182,13 +168,6 @@ Exact placement can vary by iOS version—follow the path shown during Setup if 
 
 ```text
 Pro blocking works on YouTube and X websites in Safari only—not the native apps.
-```
-
-### Tap to Block
-
-```text
-With Stillwall Pro, open the extension → Tap to Block, then select elements on the page.
-Rules stay on this device.
 ```
 
 ### Send feedback
@@ -222,11 +201,10 @@ Use Feedback in the app, or Report issue in the Safari extension (domain prefill
 | Off in app | `Off in app` |
 | Not enabled | `Not enabled` |
 | E-01 | `Pause on this site` / `Resume on this site` |
-| E-02 | `Tap to Block` |
 | E-03 | `Report issue` |
 | Not enabled CTA | `Open Stillwall` |
 
-无扩展内 IAP。
+**固定 2 项**（D-317）；无 E-02 Tap；无扩展内 IAP。
 
 ---
 
@@ -238,7 +216,7 @@ Use Feedback in the app, or Report issue in the Safari extension (domain prefill
 | **002** | 进度条改 §3 filter_progress；去掉中文硬编码 |
 | **003** | Setup 用 §2；深链失败 → hint 非 error |
 | **004** | ASC/StoreKit $14.99；cancel 静默 |
-| **005** | 全表单 key 引用；Strict LT 不另写 |
-| **009** | Help 用 §7 |
+| **005** | 全表单 key 引用；**无** Strict/Tap 行（D-317） |
+| **009** | Help 用 §7（无 Tap 条） |
 
 工程接入后：真机对照 `issues/*/before` 与 Hi-fi `docs/design/exports/phone-preview/` 做四屏连滑验收。

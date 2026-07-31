@@ -51,7 +51,6 @@
 | Site broken? | Pause on this site in Safari extension | 见 ui-copy §7 |
 | How to open the extension | In Safari · path may vary by iOS | V-002 中性 |
 | YouTube & X | Safari websites only | |
-| Tap to Block | Pro · extension item 2 | |
 | Send feedback | App or Report issue | |
 
 **详情页：** large title 或 inline；正文英文；底部可链 Setup / Feedback。  
@@ -59,20 +58,9 @@
 
 ---
 
-## 4. S05 — Tap to Block 说明
+## 4. S05 — Tap to Block（v1 不做 · D-317）
 
-| 用户 | 内容 |
-|------|------|
-| Free | 三步说明 + Pause 提示 + 主 CTA `Unlock with Stillwall Pro` → Upgrade |
-| Pro | 三步说明 + Pause 提示；**无**付费 CTA（可 `Open Safari` 中性 hint，可选） |
-
-三步（固定）：
-
-1. Open the Stillwall extension in Safari  
-2. Tap Tap to Block  
-3. Select page elements  
-
-Footer：`To pause blocking on a site, use Pause on this site in the extension.`
+不实现说明页；Home 无入口；扩展无槽位。
 
 ---
 
@@ -106,7 +94,7 @@ Footer：`To pause blocking on a site, use Pause on this site in the extension.`
 
 ---
 
-## 7. SE01 — Extension popup
+## 7. SE01 — Extension popup（固定 2 项 · D-317）
 
 ### 常态（Protected）
 
@@ -115,25 +103,25 @@ example.com
 ● Protected
 ────────────────
 Pause on this site
-PRO  Tap to Block
 Report issue
 ```
 
 ### 变体
 
-| ID | 顶栏 | 槽 1 |
-|----|------|------|
-| SE01 | Protected | Pause on this site |
-| SE01a | Paused | Resume on this site |
-| SE01b | Not enabled | 整页降级：说明 + **Open Stillwall** |
-| SE01c | Off in app | Open Stillwall（槽 1）· Tap · Report 仍可 |
+| ID | 顶栏 | 槽 1 | 槽 2 |
+|----|------|------|------|
+| SE01 | Protected | Pause on this site | Report issue |
+| SE01a | Paused | Resume on this site | Report issue |
+| SE01b | Not enabled | 整页降级 + Open Stillwall | — |
+| SE01c | Off in app | Open Stillwall | Report issue |
 
 **尺寸：** 宽约 320；圆角 14；项 min-height 48。  
-**禁止：** IAP、类别列表、第 4 常驻项、全局开关。
+**禁止：** Tap to Block、IAP、类别列表、全局开关。
 
-### SE02 Tap 点选 / SE03 Report
+### SE02 / SE03
 
-见 [safari-extension.md](safari-extension.md)；Hi-fi 优先级低于 SE01 四态。
+- SE02 Tap：**v1 不做**  
+- SE03 Report：见 [safari-extension.md](safari-extension.md)
 
 ---
 
@@ -143,11 +131,11 @@ Report issue
 |------|--------|
 | More | P0 |
 | Help 列表 | P0 |
-| Tap to Block 说明（Free） | P0 |
-| SE01 Protected | P0 |
+| SE01 Protected（**2 项**） | P0 |
 | SE01a Paused / SE01b Not enabled | P1 |
 | Help 详情 · Site broken（一屏） | P2 |
 | Feedback / About | P2 |
+| ~~Tap to Block 说明~~ | **不做**（D-317） |
 
 导出：`docs/design/exports/phone-preview-secondary/` 或并入 secondary-preview 截图。
 

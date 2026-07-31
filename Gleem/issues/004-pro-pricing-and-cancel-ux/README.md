@@ -61,7 +61,9 @@ Cancel anytime in Apple subscriptions.
 | 待处理 / 家长审批等 | 中性说明（英文），非红字「Request Canceled」 |
 | 真失败（网络、不可用等） | 简短可读英文错误 + 可再试；避免原始 `Request Canceled` 字面量 |
 
-主按钮文案保持：**Start 1 Month Free Trial**；次要：**Restore Purchases**。
+主按钮文案保持：**Start 1 Month Free Trial**；次要：**Restore Purchases**。  
+
+**利益列表（D-317）：** 仅 **YouTube & X in Safari**、**Battery Boost**——**不要** Strict Mode / Tap to Block。
 
 ## 修改说明（给开发）
 

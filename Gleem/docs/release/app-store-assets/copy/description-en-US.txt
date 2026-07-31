@@ -19,8 +19,6 @@ STILLWALL PRO
 Upgrade when you need more control (Safari only):
 • YouTube & X ad blocking in Safari (not the native apps)
 • Battery Boost — reduce wasteful scripts
-• Strict Mode — stronger blocking when you choose
-• Tap to Block — hide page elements in Safari
 
 PRO SUBSCRIPTION
 Stillwall Pro is an auto-renewable annual subscription.

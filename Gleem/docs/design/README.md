@@ -56,4 +56,5 @@
 - Free/Pro 与开关顺序固定（改前先改总纲领）  
 - 无 Custom Rules、无系统级全 App 拦截卖点、无 paywall bypass  
 - YouTube/X 仅 Safari；Mac 仅 Coming soon  
-- 扩展 popup **仅 3 项**：Pause/Resume · Tap to Block · Report issue  
+- 扩展 popup **仅 2 项**（D-317）：Pause/Resume · Report issue（**无** Tap to Block）  
+- **无** Strict Mode、**无** Tap to Block（Home / Upgrade / 扩展）  

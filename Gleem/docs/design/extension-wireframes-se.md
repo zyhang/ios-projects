@@ -1,3 +1,5 @@
+> **D-317（2026-07-31）：** v1 popup **仅 2 项**（Pause · Report）。下列若仍画 Tap / SE02，视为 **obsolete**，实现勿跟。
+
 # Safari 扩展线框蓝图 SE01–SE03（v1）
 
 > 供 Lunacy 绘制与实现对照。产品逻辑见 [safari-extension.md](safari-extension.md)。  

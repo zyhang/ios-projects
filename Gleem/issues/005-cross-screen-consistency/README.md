@@ -32,11 +32,8 @@ Hi-fi（Welcome / Setup / Home / Upgrade + Dark + Large Type）**整体同属一
 | 能力 | Welcome | Home（标准） | Home Large Type | Upgrade |
 |------|---------|--------------|-----------------|---------|
 | Battery | Pro · Reduce wasteful browsing scripts | Reduce wasteful scripts | 同左 | Reduce wasteful browsing scripts |
-| Strict | （列表下方） | Stronger blocking · Use with care | **May affect some sites** | Stronger blocking · Use with care |
 | Tap | （列表下方） | Hide page elements in Safari | 同左 | Hide page elements in Safari |
 | Privacy | Block trackers. We don’t collect history. | Block common advertising trackers | Block common trackers | — |
-
-Large Type 为省行高改写可以，但 **Strict 的「可能影响站点」** 与标准稿「更强拦截·慎用」语义重心不同，应锁定一版主句，Large Type 只做省略而非改意。
 
 ### B. Setup 设计稿措辞偏「两个扩展」
 
@@ -67,7 +64,7 @@ Hi-fi Setup 副文案 / 步骤 2 使用 *both extensions*，与产品真实形�
 
 ### 1. 文案锁定表（v1 源语言 en · **已确认**）
 
-开发与文案**必须**以本表为准。Large Type **仅**可使用「短式」列；**禁止**另造语义（尤其 Strict）。
+开发与文案**必须**以本表为准。Large Type **仅**可使用「短式」列。
 
 | 行 | 主标题 | 副文案（标准） | 副文案（Large Type 短式） |
 |----|--------|----------------|---------------------------|
@@ -77,12 +74,9 @@ Hi-fi Setup 副文案 / 步骤 2 使用 *both extensions*，与产品真实形�
 | Regional | Regional Ad Blocking | Automatic by language | Automatic by language |
 | YouTube & X | YouTube & X | Block YouTube & X ads in Safari | YouTube & X ads in Safari |
 | Battery Boost | Battery Boost | Reduce wasteful browsing scripts | Reduce wasteful scripts |
-| Strict Mode | Strict Mode | Stronger blocking · Use with care | Stronger blocking · Use with care |
-| Tap to Block | Tap to Block | Hide page elements in Safari | Hide page elements in Safari |
+~~Strict Mode / Tap to Block~~ | — | **v1 不做（D-317）** | — |
 
-**Strict Large Type 禁止：** `May affect some sites`（旧稿分叉，语义偏离，已否决）。
-
-**Upgrade 利益行**副文案 = 上表 Pro 四行**标准**列（Battery 用完整句）。
+**Upgrade 利益行**副文案 = 上表 Pro **两行**标准列（YouTube & X + Battery only）。
 
 **Welcome 卖点行**可略营销化，但 Pro 边界必须诚实：
 
@@ -142,12 +136,13 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 ### 文档
 
 - `design-system.md` / `screens.md` / `app-flow.md` 已同步权威 CTA。  
-- Lunacy `Stillwall-HiFi-v1.free`：下次 Depth Pass 回写 Welcome CTA、Setup 诚实文案、Strict Large Type（工程可先按本文上线）。
+- Lunacy `Stillwall-HiFi-v1.free`：下次 Depth Pass 回写 Welcome CTA、Setup 诚实文案、D-317 范围（工程可先按本文上线）。
 
 ## 验收标准
 
 - [ ] 工程存在单一 string catalog，且与 `ui-copy-en.md` 主路径 key 对齐  
-- [ ] Home / Upgrade 副文案符合锁定表；Large Type Strict **不是** May affect some sites  
+- [ ] Home / Upgrade 副文案符合锁定表（**仅** YT&X + Battery 为 Pro 行）  
+- [ ] **无**用户可见 Strict Mode / Tap to Block（D-317 / **011**）  
 - [ ] Setup 不再出现 both extensions；与 6 CB + Web Extension 一致（清单实现见 **003**）  
 - [ ] Welcome CTA **仅** `Set Up in Safari`，全项目无第三种主 CTA 说法  
 - [ ] 主色 / 圆角 / 单主 CTA / PRO 仅暖金 四屏抽检通过  

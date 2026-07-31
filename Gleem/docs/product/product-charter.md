@@ -5,7 +5,7 @@
 > 主屏显示名：`Stillwall`。  
 > 本文是产品的**总纲领与功能说明**：后续设计稿、交互、工程实现与验收均以本文为准。若与归档方案或口头讨论冲突，以本文及后续已确认决策为准。
 
-**文档状态：** 已确认（grilling 2026-07-27；2026-07-29：商店 Name/Subtitle 锁定）  
+**文档状态：** 已确认（grilling 2026-07-27；2026-07-29：商店 Name/Subtitle；**2026-07-31：v1 移除 Strict Mode / Tap to Block** · D-317）  
 **适用范围：** v1（首个可上架 / TestFlight 目标版本）
 
 ---
@@ -42,11 +42,11 @@
 - 地区广告规则（Regional Ad Blocking，按语言自动）
 - YouTube & X（**仅 Safari 网页**）专项拦截（Pro）
 - Battery Boost（Pro）
-- Strict Mode（Pro）
-- Tap to Block（Pro；在 Safari 中使用）— **扩展侧交互细节：TODO，后续完善**
-- **按能力类别的独立开关**（Ads / Privacy / Annoyances / Regional 及各 Pro 能力；**无**全局一键总开关）
-- **站点级放行 / 当前站临时关闭：仅在 Safari 扩展中配置**（不在主 App 做名单与定时暂停 UI）— **扩展 UI/流程：TODO，后续完善**
+- **按能力类别的独立开关**（Ads / Privacy / Annoyances / Regional 及 Pro 能力；**无**全局一键总开关）
+- **站点级放行 / 当前站临时关闭：仅在 Safari 扩展中配置**（不在主 App 做名单与定时暂停 UI）
 - 规则自动更新
+
+**v1 明确不做（原 Pro 候选项，已砍）：** Strict Mode · Tap to Block（见 D-317、§9）
 
 ### 2.3 产品理念
 
@@ -57,7 +57,7 @@
 | 平台分工 | 遵循 Safari / 扩展能力：Content Blocker 与 Web Extension 的站点相关控制放在 **Safari 扩展侧**；主 App 负责启用、状态、能力类别与订阅 |
 | 默认真香 | 免费核心能力默认开启；用户不配置也能受益 |
 | 诚实状态 | 未完成系统授权或扩展被关时，不得显示「保护中」 |
-| 可恢复 | 误杀时：关闭相关**类别开关**（或 Strict），或在 **Safari 扩展**中放行站点；Help 指向该路径 |
+| 可恢复 | 误杀时：关闭相关**类别开关**，或在 **Safari 扩展**中放行站点；Help 指向该路径 |
 | 性能友好 | **不做**主 App 全局总开关（一键全开/全关会重载整套 blocker，代价过高）；仅按类别开关驱动规则编译 |
 
 ---
@@ -103,8 +103,8 @@
 | Mac | 路线图 | — | **Coming soon**；不另售设备授权；**非 v1 交付** |
 | YouTube & X Ad Block | **Pro** | 关（未订阅） | **一个合并开关**；仅 Safari 网页 |
 | Battery Boost | **Pro** | 关（未订阅） | 见功能说明 |
-| Strict Mode | **Pro** | **关** | 更激进；可能影响站点 |
-| Tap to Block | **Pro** | — | Home 为**入口行**（说明如何在 Safari 使用） |
+| ~~Strict Mode~~ | — | — | **v1 不做**（D-317） |
+| ~~Tap to Block~~ | — | — | **v1 不做**（D-317）；扩展无页内点选 |
 | ~~全局保护开关~~ | — | — | **v1 不做**（性能：整包重载代价过高；见 D-315） |
 
 ### 4.3 多设备与 Pro 的表述（防挖坑）
@@ -156,30 +156,22 @@
 - **做什么：** 拦截加密挖矿脚本、明显不必要的耗电后台脚本等，以改善浏览能效。  
 - **不做什么：** 不是 iOS 系统省电模式；不承诺具体续航百分比。
 
-### 5.7 Strict Mode（Pro）
+### 5.7 Strict Mode · Tap to Block（v1 不做）
 
-- **做什么：** 在用户已开启的拦截类别之上，**叠加**更激进的规则集。  
-- **默认：** 关闭。  
-- **风险：** 可能造成个别站点异常；恢复路径见 §5.9 / §5.10（关 Strict 或相关类别，或在 Safari 扩展中放行站点）。  
-- **不做什么：** 不是自定义规则编辑器，不是开发者模式。
+> **D-317（2026-07-31）：** v1 **不交付** Strict Mode 与 Tap to Block。  
+> 不出现在 Home 列表、Upgrade 卖点、扩展 popup、商店主描述能力清单。  
+> 若未来版本恢复，须新决策 + 修订本文后再进设计/工程。
 
-### 5.8 Tap to Block（Pro）
+### 5.8 （预留编号）
 
-> **交互规格：** [design/safari-extension.md](../design/safari-extension.md)（popup 第 2 项；页内点选）。主 App 仅保留说明入口（S05）。
-
-- **做什么：** 用户在 Safari 扩展中点 **Tap to Block**，在当前页点选元素进行屏蔽。  
-- **Home 形态：** **入口行**——说明能力 + 如何在 Safari 打开扩展使用；不是仅一个无解释的 Switch。  
-- **未订阅：** 扩展内不拉起 IAP；引导 **Open Stillwall** 至主 App 升级页。  
-- **数据：** 用户点选产生的规则 **仅存本机**；无云同步；卸装/清数据可能丢失。  
-- **与理念关系：** 允许「点一下屏蔽」的轻量个性化，**仍不提供**通用 Custom Rules 编辑器。  
-- **待验证：** 点选交互与系统限制见 V-005。
+（原 Tap to Block 专节已并入 §5.7「v1 不做」。）
 
 ### 5.9 无全局保护开关（主 App；v1 明确不做）
 
 - **不提供** Home 顶部「一键开/关全部拦截」的全局 Switch。  
 - **原因：** 全局切换会触发整套 Content Blocker / 规则管道重载，**性能代价过高**；细粒度类别开关更可控。  
 - **用户如何停拦：**  
-  1. 关闭相关**类别开关**（Ads / Privacy / … / Strict 等）；或  
+  1. 关闭相关**类别开关**（Ads / Privacy / Annoyances / Regional / YouTube & X / Battery Boost 等）；或  
   2. 在 **Safari 扩展**对本站 **Pause on this site**。  
 - **不做**「暂停 15 分钟 / 1 小时 / 直到手动恢复」等定时 Pause UI（主 App）。  
 - **Home：** 不展示保护中 / 已关闭状态；顶部仅用中性价值文案，类别开关直接表达用户选择。
@@ -193,8 +185,8 @@
 - **作用域：** eTLD+1（`www` 与裸域同一站）。  
 - **持久化：** 直到用户 Resume（无时长选项）。  
 - **主 App：** **不提供** Allowed Sites 列表页、不提供 App 内「Allow this site」管理、不提供定时 Pause。  
-- **扩展 popup 常态仅 3 项：** ① Pause/Resume this site · ② Tap to Block · ③ Report issue（只读顶栏不算项）。  
-- **Help / Tap 说明：** 指向 Safari 中打开 Stillwall 扩展；系统入口路径以 V-002 验证后文案为准。  
+- **扩展 popup 常态仅 2 项（D-317）：** ① Pause/Resume this site · ② Report issue（只读顶栏不算项）。**无** Tap to Block。  
+- **Help：** 指向 Safari 中打开 Stillwall 扩展做本站 Pause；系统入口路径以 V-002 验证后文案为准。  
 - **数据：** 扩展侧本地；不上传浏览历史。
 
 ### 5.11 规则更新（免费，自动）
@@ -211,9 +203,9 @@
    - `anyCategoryEnabled = true`：至少一个会参与拦截的类别开关为 On。
    - `anyCategoryEnabled = false`：所有类别开关均为 Off（无有效拦截）；用于规则管道与扩展顶栏诚实呈现。
    - Home 始终使用同一页面、同一中性标题，不切换 `On / Off` 版本。
-4. **Strict Mode：** 叠加在当前已开启类别上，不替换 Ads/Privacy 等开关。  
-5. **站点例外：** 仅扩展侧；主 App 不维护名单 UI。  
-6. **YouTube & X / 扩展能力：** 依赖系统中 Content Blocker 与 Web Extension 处于可用状态；被系统关闭时必须可被发现并引导恢复。
+4. **站点例外：** 仅扩展侧；主 App 不维护名单 UI。  
+5. **YouTube & X / 扩展能力：** 依赖系统中 Content Blocker 与 Web Extension 处于可用状态；被系统关闭时必须可被发现并引导恢复。  
+6. **无 Strict / 无 Tap 规则层（v1）。**
 
 ---
 
@@ -225,7 +217,7 @@
 | 最低系统 | **iOS / iPadOS 26** |
 | 浏览器 | **仅 Safari** |
 | 拦截形态 | **Safari Content Blocker（必做）** + **Safari Web Extension（必做）** |
-| Web Extension 用途 | YouTube & X 行为、**popup 3 项**（本站 Pause/Resume、Tap to Block、Report issue）等；规格见 [design/safari-extension.md](../design/safari-extension.md) |
+| Web Extension 用途 | YouTube & X 行为、**popup 2 项**（本站 Pause/Resume、Report issue）等；规格见 [design/safari-extension.md](../design/safari-extension.md) |
 | 主 App 职责 | 引导授权、能力类别开关、状态呈现、订阅、帮助/反馈/关于 |
 | VPN | **不使用** |
 | 系统级跨 App 过滤 | **v1 不做**；若未来做，走 **iOS 系统提供的 Filter 方案（非 VPN）** |
@@ -249,7 +241,7 @@ App
 ├── Safari 授权引导（门禁；未完成则模态拦截）
 ├── Home
 │   ├── 中性价值文案（无状态、无全局开关）
-│   ├── 能力列表（类别开关 + Tap 入口行）
+│   ├── 能力列表（类别开关；无 Tap 入口行）
 │   └── 其他入口
 ├── 升级 / 订阅页（从 Pro 能力进入）
 └── 其他
@@ -292,8 +284,8 @@ App
 4. Regional Ad Blocking  
 5. YouTube & X（Pro）  
 6. Battery Boost（Pro）  
-7. Strict Mode（Pro）  
-8. Tap to Block（Pro，**入口行**）
+
+**无** Strict Mode 行、**无** Tap to Block 入口行（D-317）。
 
 未订阅时 Pro 行 → 升级页。  
 扩展或 Content Blocker 被关：不得显示保护中；模态拉回授权。
@@ -313,7 +305,7 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 | 浏览历史 / 访问 URL | **不收集、不上传**（Feedback 用户可选域名除外） |
 | 第三方分析 / 广告 SDK | **不使用** |
 | 规则更新 | 允许联网下载；不上传访问记录 |
-| 类别开关 / Tap 规则 | **仅本机** |
+| 类别开关 | **仅本机** |
 | 站点例外 | 扩展侧本地；主 App 不维护名单库 |
 | 订阅 | StoreKit；依赖 Apple ID |
 | 崩溃统计 | v1 不接第三方崩溃 SDK |
@@ -331,6 +323,8 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 | **主 App 内 Allowed Sites / 网站名单管理** | 站点控制在 Safari 扩展 |
 | **主 App 定时 Pause（15m / 1h / Until resume）** | 需要临时放行时用扩展 Pause 本站，或关闭相关类别开关 |
 | **主 App 全局保护总开关** | 性能：整包 blocker 重载代价过高；仅保留类别级开关（D-315） |
+| **Strict Mode** | v1 不做（D-317）；降低误杀与复杂度 |
+| **Tap to Block** | v1 不做（D-317）；扩展不做页内点选；主 App 无入口行 |
 | Custom Rules 编辑器 | 与简单理念冲突 |
 | 系统级 / 全 App 广告拦截 | 含 VPN；v1 仅 Safari |
 | Apple TV 客户端 | — |
@@ -376,7 +370,7 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 |------|------|
 | 主 App | 用户打开的 SwiftUI 应用 |
 | Content Blocker | Safari 内容拦截扩展（声明式规则） |
-| Web Extension | Safari 网页扩展（YouTube/X、Tap to Block、站点控制等） |
+| Web Extension | Safari 网页扩展（YouTube/X 增强、本站 Pause、Report 等） |
 | Safari 保护 | 上述扩展共同提供的 Safari 内拦截能力 |
 | 类别开关 | 主 App Home 能力列表中的 Ads / Privacy / … 独立开关（**无**全局总开关） |
 | Pro | 订阅解锁的能力集合 |
@@ -395,7 +389,7 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 | [design/app-flow.md](../design/app-flow.md) | 完整流程与状态机 | 已建立 |
 | [design/user-flows.md](../design/user-flows.md) | IA 与关键用户流程 | 已建立 |
 | [design/screens.md](../design/screens.md) | 分屏说明（主 App + SE 扩展） | 已建立 |
-| [design/safari-extension.md](../design/safari-extension.md) | Safari 扩展 popup / 状态 / 3 项规格 | **已建立** |
+| [design/safari-extension.md](../design/safari-extension.md) | Safari 扩展 popup / 状态 / **2 项**规格（D-317） | **已建立** |
 | Lunacy 高保真 / 线框 | 见 `docs/design/*.free` | 以仓库文件为准；扩展画板待补 |
 | `docs/engineering/*` | Targets、规则管道、StoreKit | 待建 |
 
@@ -413,6 +407,7 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 | 2026-07-29 | App Store Name `Stillwall for Safari` · Subtitle `Free Ad & Tracker Blocking`（D-108/D-109） |
 | 2026-07-29 | **移除主 App 全局保护开关**（D-315，当时保留的只读状态区后被 D-316 替代）：恢复路径 = 关类别 / 扩展 Pause |
 | 2026-07-29 | **合并 Home On/Off**（D-316）：Home 使用中性价值文案；全部类别 Off 不形成独立页面 |
+| 2026-07-31 | **D-317：v1 移除 Strict Mode 与 Tap to Block**；扩展 popup 改为 **2 项**；Home Pro 仅 YT&X + Battery |
 
 ---
 
@@ -420,24 +415,23 @@ Feedback：用户主动；可选手动附域名；发送前预览。
 
 **产品规格（已确认）：** [design/safari-extension.md](../design/safari-extension.md)
 
-| 常态菜单（仅 3 项） | 说明 |
-|--------------------|------|
+| 常态菜单（仅 **2** 项 · D-317） | 说明 |
+|--------------------------------|------|
 | Pause / Resume on this site | 免费；eTLD+1；持久至 Resume |
-| Tap to Block | Pro；页内点选 |
 | Report issue | 免费；预填域名 |
 
 | ID | 事项 | 状态 | 备注 |
 |----|------|------|------|
-| T-EXT-01 | 扩展 popup / 菜单 IA | **已确认** | 固定 3 项；见专项文档 |
+| T-EXT-01 | 扩展 popup / 菜单 IA | **已确认** | 固定 **2** 项（D-317 替代原 3 项） |
 | T-EXT-02 | 当前站 Pause / Resume | **已确认（产品）** | 实现与 CB 同步待工程 |
-| T-EXT-03 | Tap to Block 扩展内流程 | 产品已定骨架 | 点选/撤销/失败；**V-005** |
-| T-EXT-04 | YouTube & X 扩展侧行为与权限 | TODO | 与 Content Blocker 分工；**无** popup 第四项 |
-| T-EXT-05 | 扩展线框 / 高保真 | **线框已画** | Lunacy `Stillwall-Wireframes-v1.free` ROW 4；蓝图见 [extension-wireframes-se.md](../design/extension-wireframes-se.md) |
+| T-EXT-03 | Tap to Block 扩展内流程 | **已替代 / v1 不做** | D-317；原 V-005 不阻塞 v1 |
+| T-EXT-04 | YouTube & X 扩展侧行为与权限 | TODO | 与 Content Blocker 分工；**无** popup 营销项 |
+| T-EXT-05 | 扩展线框 / 高保真 | **线框待按 2 项修订** | 去掉 Tap 槽；蓝图见 [extension-wireframes-se.md](../design/extension-wireframes-se.md) |
 | T-EXT-06 | 扩展 ↔ 主 App 状态同步（App Group 等） | schema 已定 | [engineering/safari-extension.md](../engineering/safari-extension.md)；代码待做 |
-| T-EXT-07 | Help「去 Safari 扩展」完整引导 | TODO | 依赖 **V-002** 系统路径 |
+| T-EXT-07 | Help「去 Safari 扩展」完整引导 | TODO | 依赖 **V-002**；仅 Pause / Report |
 
 **已决边界（摘要）：**
 
-- 主 App：中性 Home + 类别开关 + 订阅 + 引导门禁（**无**全局总开关、无 On/Off 状态区）。
-- 扩展 popup：仅 3 项；无全局开关、无类别列表、无 IAP。  
-- 不做：主 App 全局总开关、主 App 定时 Pause、主 App Allowed Sites、paywall bypass。
+- 主 App：中性 Home + 类别开关（6 行）+ 订阅 + 引导门禁（**无**全局总开关、无 Strict、无 Tap）。
+- 扩展 popup：仅 **2** 项；无全局开关、无类别列表、无 IAP、无 Tap。  
+- 不做：主 App 全局总开关、主 App 定时 Pause、主 App Allowed Sites、Strict Mode、Tap to Block、paywall bypass。

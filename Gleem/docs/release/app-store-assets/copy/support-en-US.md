@@ -27,9 +27,10 @@ Home does **not** show an On/Off protection badge—your choices are the categor
 
 ### Site is broken
 
-- Turn off the relevant **category switches** in Stillwall (for example Ads or Strict Mode), **or**  
+- Turn off the relevant **category switches** in Stillwall (for example Ads or Annoyances), **or**  
 - Open the **Stillwall Safari extension** on that site and choose **Pause on this site**, then **Resume** when finished.  
-- If you use **Strict Mode** (Pro), try turning it off first.
+
+The Safari extension is the place for a temporary pass on one site—not a global protection badge in Home.
 
 ### Report an issue
 
@@ -39,9 +40,9 @@ If a site still shows ads or looks broken, open the **Stillwall Safari extension
 
 Pro blocking for YouTube and X applies in **Safari websites only**, not the native YouTube or X apps.
 
-### Tap to Block
+### Battery Boost
 
-Available with **Stillwall Pro**. Use the Safari extension → **Tap to Block**, then select elements on the page. Rules stay on your device (not cloud-synced in the current version).
+Available with **Stillwall Pro**. Reduces crypto miners and other wasteful browsing scripts so pages waste less power in Safari.
 
 ### Subscriptions
 

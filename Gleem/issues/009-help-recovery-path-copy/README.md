@@ -33,11 +33,12 @@
 | 条目标题（建议） | 正文必须包含的语义 |
 |------------------|-------------------|
 | How to enable protection | 指向 Setup / `Set Up in Safari`；**6 CB + Web Extension** + Allow All Websites；**不要**写 Home 显示 On |
-| Site broken? | **优先：** Safari → Stillwall extension → **Pause on this site**；备选：关闭相关类别或 Strict；需要时 Resume |
+| Site broken? | **优先：** Safari → Stillwall extension → **Pause on this site**；备选：关闭相关类别开关；需要时 Resume（**不**提 Strict） |
 | How to open the extension | 「In Safari, open the Stillwall extension」+ **以 App 内 Setup/系统说明为准**；路径细节依赖 V-002，未验证前用中性描述 |
 | YouTube & X | **Safari websites only**，非原生 App |
-| Tap to Block | Pro；扩展第 2 项；规则本机 |
-| Send feedback | App Feedback 或扩展 **Report issue** |
+| Send feedback | App Feedback 或扩展 **Report issue**（popup 第 2 项） |
+
+**无** Tap to Block 帮助条（D-317）。
 
 ### 2. 禁止句（App 内任何 Help/空状态）
 
@@ -70,7 +71,7 @@ Tip: If a site looks wrong, open the Stillwall extension in Safari and choose Pa
 
 1. 实现 S07 时使用上表语义；字符串进 Localizable，与 005 单一源策略一致。  
 2. 自查：工程内搜索 `Safari Protection`、`protection On`、`both extensions`。  
-3. Tap 说明页（S05）已有「Pause in extension」一句要求（screens）——实现时勿删。  
+3. **无** S05 Tap 说明页（D-317）。  
 4. V-002 完成后：只更新「如何打开扩展」的路径句，不改 Pause 产品语义。
 
 ## 验收标准

@@ -11,7 +11,7 @@
 
 ## In short
 
-No Stillwall account. We don’t collect or upload your browsing history. Safari content blocking uses rule lists managed by Safari—it does not give us a feed of the pages you visit. Optional extension features (such as site pause and Tap to Block) work on your device. Filter updates may download over the network. Subscriptions are handled by Apple. We don’t use third-party analytics, advertising, or crash SDKs in the app.
+No Stillwall account. We don’t collect or upload your browsing history. Safari content blocking uses rule lists managed by Safari—it does not give us a feed of the pages you visit. Optional extension features (such as site pause) work on your device. Filter updates may download over the network. Subscriptions are handled by Apple. We don’t use third-party analytics, advertising, or crash SDKs in the app.
 
 ---
 
@@ -42,7 +42,7 @@ Stillwall blocks ads, trackers, and annoyances in **Safari only**. It is **not a
 
 - **No product account.**  
 - **No browsing-history product** — we do not build a list of websites you visit for analytics, advertising, or profiling.  
-- **On-device first** — protection settings, site pause, and Tap to Block rules stay on your device unless you choose to send us something.  
+- **On-device first** — protection settings and site pause decisions stay on your device unless you choose to send us something.  
 - **Transparent third parties** — Apple handles subscriptions; hosting providers may process technical logs for the website.  
 
 ---

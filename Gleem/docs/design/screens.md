@@ -76,8 +76,7 @@ Choose what stays out of your way.
 | 4 | Regional Ad Blocking | Switch | On（副文案：auto by language） |
 | 5 | YouTube & X | Switch · Pro | Off |
 | 6 | Battery Boost | Switch · Pro | Off |
-| 7 | Strict Mode | Switch · Pro | Off |
-| 8 | Tap to Block | Chevron 行 · Pro | → S05 |
+**无** Strict Mode、**无** Tap to Block（**D-317**）。
 
 全部类别 Off 时列表与顶部文案均保持不变，仅无拦截生效；Safari 扩展顶栏负责诚实显示 `Off in app`。
 
@@ -96,13 +95,9 @@ Choose what stays out of your way.
 
 ---
 
-## S05 — Tap to Block（说明）
+## S05 — （已移除 · D-317）
 
-| 项 | 说明 |
-|----|------|
-| 内容 | 1–3 步：在 Safari 打开 Stillwall 扩展 → 点 **Tap to Block** → 点选页面元素 |
-| 补充 | 一句：To pause blocking on a site, use **Pause on this site** in the extension |
-| 未订阅 | 预览 + Upgrade CTA |
+原 **Tap to Block 说明页** v1 **不做**。线框/Hi-fi 相关画板标 obsolete；勿实现。
 
 ---
 
@@ -120,10 +115,9 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 | 条目标题 | 语义要点 |
 |----------|----------|
 | How to enable protection | `Set Up in Safari`；**6 CB + Web Extension** + Allow All Websites；Home **无** On badge |
-| Site broken? | 优先扩展 **Pause on this site**；备选关类别/Strict；Resume 恢复 |
+| Site broken? | 优先扩展 **Pause on this site**；备选关相关类别开关；Resume 恢复 |
 | How to open the extension | 中性「在 Safari 打开 Stillwall 扩展」；**勿**写死未验证图标路径（V-002） |
 | YouTube & X | Safari websites only |
-| Tap to Block | 扩展第 2 项；Pro；规则本机 |
 | Send feedback | App Feedback 或扩展 **Report issue** |
 
 **禁止：** Home shows On · `Set Up Safari Protection` · *both extensions* 作为唯一描述  
@@ -132,7 +126,7 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 
 ## S08 — Upgrade / Paywall
 
-利益：YouTube & X in Safari、Battery Boost、Strict Mode、Tap to Block。  
+利益：**仅** YouTube & X in Safari、Battery Boost（**无** Strict / Tap · D-317）。  
 价格：`One month free, then $14.99/year` + Family Sharing（优先 StoreKit 本地化价；**不得**展示 $9.99）。  
 主按钮：Start 1 Month Free Trial。  
 用户**取消**系统购买表：不展示错误（勿露出 `Request Canceled`）。  
@@ -149,8 +143,8 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 | 项 | 说明 |
 |----|------|
 | 顶栏 | 当前 host + 状态（Protected / Paused / …），只读 |
-| **仅 3 个可点项** | ① Pause on this site **或** Resume on this site · ② Tap to Block · ③ Report issue |
-| 禁止 | 全局开关、类别列表、第 4 个常驻项、IAP |
+| **仅 2 个可点项（D-317）** | ① Pause on this site **或** Resume on this site · ② Report issue |
+| 禁止 | Tap to Block、全局开关、类别列表、第 3 个常驻项、IAP |
 
 变体：
 
@@ -160,9 +154,9 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 | SE01a | Paused → 槽 1 = Resume on this site |
 | SE01b | Not enabled → 降级单 CTA：Open Stillwall |
 
-### SE02 — Tap to Block（页内点选）
+### SE02 — （已移除 · D-317）
 
-Pro；从 SE01 槽 2 进入。失败提示、可撤销上一次。未订阅不进入本页，走 Open Stillwall。
+原 Tap to Block 页内点选 **v1 不做**。
 
 ### SE03 — Report issue
 
@@ -187,8 +181,8 @@ App 版本 · 规则包版本 · 定位句 · Acknowledgements · Mac coming soo
 | 优先级 | 屏幕 |
 |--------|------|
 | P0 | S01、S02、S03、S08 |
-| P1 | S05、S06、S07、S09、S10 |
-| — | S04 主 App 页面取消 |
+| P1 | S06、S07、S09、S10 |
+| — | S04、S05 主 App 页面取消（D-317 含 Tap） |
 
 ---
 
@@ -198,8 +192,7 @@ App 版本 · 规则包版本 · 定位句 · Acknowledgements · Mac coming soo
 - [x] Welcome CTA ≠ 强制试用  
 - [x] Setup 门禁  
 - [x] Home：**仅类别开关**（无全局总开关），无 Pause/Allow 入口  
-- [x] 能力顺序：Ads → Privacy → Annoyances → Regional → YT&X → Battery → Strict → Tap  
-- [x] Tap 为入口行  
+- [x] 能力顺序：Ads → Privacy → Annoyances → Regional → YT&X → Battery（**无** Strict / Tap · D-317）  
 - [x] YouTube/X 含 in Safari  
 - [x] 无 Custom Rules / 全 App 拦截卖点  
 - [x] $14.99/年 · 1 月试用 · Family Sharing  

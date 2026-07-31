@@ -5,7 +5,7 @@
 | 状态 | **open**（规格/HTML 已齐 · **App 次级页+扩展 UI 待开发**；Lunacy 正式板可选） |
 | 优先级 | **P1**（主路径后应实现；勿因标题含 Hi-fi 而只当设计债） |
 | 类型 | ui / copy / docs-sync |
-| 影响范围 | More · About · Feedback · Tap to Block 说明 · Safari 扩展 popup（Help 见 **009**） |
+| 影响范围 | More · About · Feedback · Safari 扩展 popup（Help 见 **009**；**无** Tap · D-317） |
 | 相关文档 | `docs/design/secondary-screens.md`；`docs/design/safari-extension.md`；`docs/engineering/ui-copy-en.md` |
 | 创建日期 | 2026-07-31 |
 | 来源 | Hallmark 全局审计 + 设计续作审计 |
@@ -18,9 +18,9 @@
 |----|------|
 | More（S06） | 列表结构在 screens；无 phone-preview 成片 |
 | Help（S07） | 条目建议有；无高保真 |
-| Tap to Block 说明（S05） | 文字规格；无高保真 |
+| Tap to Block 说明（S05） | **v1 不做**（D-317） |
 | Feedback / About（S09–S10） | 文字规格 |
-| Safari 扩展 popup（SE01–SE03） | 有线框 / mock HTML；**Lunacy Hi-fi 待画**（safari-extension.md） |
+| Safari 扩展 popup（SE01 **2 项**） | 规格已改 2 项；线框/mock 待去 Tap |
 
 风险：实现时各自「自由发挥」，破坏主路径已统一的 quiet Settings 人格。
 
@@ -49,10 +49,10 @@
 | 屏 | 必须实现 |
 |----|----------|
 | **S06 More** | Help / Feedback / About / Privacy / Website / Restore / Manage（无账号、无 Allowed Sites） |
-| **S05 Tap 说明** | 三步 + Pause 提示；Free → Upgrade CTA |
+| **S05 Tap** | **不实现**（D-317 / **011**） |
 | **S09 Feedback** | 类型 · 描述 · 可选域名 · **发送前预览** |
 | **S10 About** | 版本 · 定位句 · Acknowledgements 入口 · Mac coming soon 可选 |
-| **SE01 popup** | 仅 3 项；顶栏 Protected / Paused / Off in app / Not enabled；无 IAP |
+| **SE01 popup** | **仅 2 项**（Pause · Report）；顶栏 Protected / Paused / Off in app / Not enabled；无 IAP；**无** Tap |
 | **Help** | 归 **009**（勿在本 issue 重复关） |
 
 视觉：`surfaceGrouped` + r18 + 森绿主 CTA + PRO 仅暖金；与 **001** 一致：主 App 无保护 pill。
@@ -75,10 +75,10 @@
 ### 开发实现（**未完成**）
 
 - [ ] More 列表齐全且无违禁行  
-- [ ] Tap 说明页 + Free Upgrade 路径  
+- [ ] **无** Tap 说明页 / 扩展 Tap 槽（D-317）  
 - [ ] Feedback 发送前预览  
 - [ ] About 基础信息  
-- [ ] 扩展 popup 四态（至少 Protected + Not enabled；Paused / Off in app 逻辑正确）  
+- [ ] 扩展 popup **2 项** + 四态（至少 Protected + Not enabled）  
 - [ ] 无第二套主色/威胁仪表盘；无扩展内 IAP  
 
 ### 可选

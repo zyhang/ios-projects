@@ -55,7 +55,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| **Promotional Text** | `Free Safari ad blocking you control. Pro adds YouTube & X in Safari, Tap to Block, and more.`（见 copy/promotional-text；D-512 叙事） |
+| **Promotional Text** | `Free Safari ad blocking you control. Pro adds YouTube & X in Safari and Battery Boost.`（见 copy；D-317 无 Tap） |
 | **Keywords** | `adblock,blocker,privacy,cookie,filter,browsing,annoyance,youtube,popup,content`（避免再堆 free/ad/tracker/safari/block） |
 | **Description** | 见 `copy/description-en-US.txt` |
 | **What’s New（1.0）** | 见 `copy/whats-new-1.0-en-US.txt` |
