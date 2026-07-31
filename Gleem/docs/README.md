@@ -37,6 +37,7 @@
 ### 设计
 
 - [设计目录说明](design/README.md)  
+- [Journey polish 评审 2026-07-31](design/journey-polish-review-2026-07-31.md)：全漏斗体验/文案/商店/信任页  
 - [App 完整流程](design/app-flow.md)：状态机、门禁、主路径、错误边界  
 - [信息架构与用户流程](design/user-flows.md)  
 - [页面说明](design/screens.md)：Welcome / Setup / Home / More 等（主 App）+ SE 扩展页  

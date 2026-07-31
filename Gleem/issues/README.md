@@ -16,13 +16,19 @@ Stillwall（Gleem）App **开发完成后的页面 / 功能问题** 与修改说
 | 004 | [004-pro-pricing-and-cancel-ux](./004-pro-pricing-and-cancel-ux/) | Pro 定价 $14.99 + 取消购买静默 + 付费墙调性 | open | P0/P1 |
 | 005 | [005-cross-screen-consistency](./005-cross-screen-consistency/) | 跨页文案锁定与视觉一致性（**D-510 已确认**） | open | P2 |
 | 006 | [006-secondary-and-extension-hifi](./006-secondary-and-extension-hifi/) | 次级页与 Safari 扩展 Hi-fi 债 | open | P2 |
+| 007 | [007-support-trust-copy-d316](./007-support-trust-copy-d316/) | Support 废除「Home = On」/ both extensions / 旧 CTA | open | **P0** |
+| 008 | [008-store-packaging-cta-domain](./008-store-packaging-cta-domain/) | 商店截图 CTA + 域名占位 → yilinglabs.com | open | P1 |
+| 009 | [009-help-recovery-path-copy](./009-help-recovery-path-copy/) | App Help 恢复路径文案（扩展 Pause；禁 Home On） | open | P1 |
 
 ## 建议开发顺序
 
 1. **001**、**004**（与已确认产品决策直接冲突）  
-2. **002**、**003**（体验与文案一致性）  
-3. **005**（跨页文案源；可与上两项并行）  
-4. **006**（设计补画板；开发先跟文字规格）
+2. **007**（对外 Support 信任口径；可与代码并行改文案）  
+3. **002**、**003**（体验与文案一致性）  
+4. **005**（跨页文案源；可与上两项并行）  
+5. **008**（上架前重导出截图 + ASC URL）  
+6. **009**（Help 实现文案；主路径稳定后）  
+7. **006**（设计补画板；开发先跟文字规格）
 
 ## 已锁定文案（D-510 · 2026-07-31）
 
@@ -35,6 +41,9 @@ Stillwall（Gleem）App **开发完成后的页面 / 功能问题** 与修改说
 
 ## 设计审计
 
-2026-07-31 Hallmark 全局 review：Hi-fi 主路径人格统一；实现漂移见 001–004；跨页与债项见 005–006。
+| 日期 | 说明 |
+|------|------|
+| 2026-07-31 | Hallmark 全局 review：Hi-fi 主路径人格统一；实现漂移见 001–004；跨页与债项见 005–006 |
+| 2026-07-31 | **Journey polish**（首次用户漏斗）：报告 [`docs/design/journey-polish-review-2026-07-31.md`](../docs/design/journey-polish-review-2026-07-31.md)；新建 **007–009** |
 
 新建 issue 后请更新本表。
