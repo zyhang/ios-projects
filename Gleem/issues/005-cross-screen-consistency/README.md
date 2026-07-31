@@ -74,6 +74,9 @@ Hi-fi Setup 副文案 / 步骤 2 使用 *both extensions*，与产品真实形�
 | Regional | Regional Ad Blocking | Automatic by language | Automatic by language |
 | YouTube & X | YouTube & X | Block YouTube & X ads in Safari | YouTube & X ads in Safari |
 | Battery Boost | Battery Boost | Reduce wasteful browsing scripts | Reduce wasteful scripts |
+
+**Battery 禁止：** 实机常见的 *Block mining & wasteful scripts* / *mining* 口径（不可验证、偏恐吓）；统一上表。  
+
 ~~Strict Mode / Tap to Block~~ | — | **v1 不做（D-317）** | — |
 
 **Upgrade 利益行**副文案 = 上表 Pro **两行**标准列（YouTube & X + Battery only）。
@@ -130,7 +133,7 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 3. Setup 字符串按锁定块与 **003** 对齐（含 D-511 checklist keys）；去掉 both extensions。  
 4. Welcome CTA **固定** `Set Up in Safari`。  
 5. Home：Pro 区前 **+8pt**；其余 token 对齐 design-system。  
-6. Strict：标准与 Large Type **同一句** `Stronger blocking · Use with care`。  
+6. **无** Strict/Tap（D-317 / **011**）。  
 7. 与 **001–004** 一起验收时做 **四屏连滑**（Welcome→Setup→Home→Upgrade）。  
 
 ### 文档
@@ -142,6 +145,7 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 
 - [ ] 工程存在单一 string catalog，且与 `ui-copy-en.md` 主路径 key 对齐  
 - [ ] Home / Upgrade 副文案符合锁定表（**仅** YT&X + Battery 为 Pro 行）  
+- [ ] Battery 副文案为 *Reduce wasteful browsing scripts*（**禁止** *mining* / *Block mining…*）  
 - [ ] **无**用户可见 Strict Mode / Tap to Block（D-317 / **011**）  
 - [ ] Setup 不再出现 both extensions；与 6 CB + Web Extension 一致（清单实现见 **003**）  
 - [ ] Welcome CTA **仅** `Set Up in Safari`，全项目无第三种主 CTA 说法  

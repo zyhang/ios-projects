@@ -1,100 +1,115 @@
-# Issue 006：次级页与 Safari 扩展 Hi-fi 债（设计补齐）
+# Issue 006：次级页（More 等）与 Safari 扩展 UI
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | **open**（规格/HTML 已齐 · **App 次级页+扩展 UI 待开发**；Lunacy 正式板可选） |
-| 优先级 | **P1**（主路径后应实现；勿因标题含 Hi-fi 而只当设计债） |
-| 类型 | ui / copy / docs-sync |
+| 状态 | **open** |
+| 优先级 | **P1** |
+| 类型 | ui / copy / behavior |
 | 影响范围 | More · About · Feedback · Safari 扩展 popup（Help 见 **009**；**无** Tap · D-317） |
 | 相关文档 | `docs/design/secondary-screens.md`；`docs/design/safari-extension.md`；`docs/engineering/ui-copy-en.md` |
 | 创建日期 | 2026-07-31 |
-| 来源 | Hallmark 全局审计 + 设计续作审计 |
+| 更新 | 2026-07-31：实机 More 审查后**钉死锁定表与禁止项** |
 
 ## 问题现象
 
-主路径 Hi-fi（Welcome / Setup / Home / Upgrade）已齐；下列仍 **缺 Hi-fi 画板** 或仅有线框/文字规格：
+### More（实机 · 2026-07-31）
+
+与 `secondary-screens` / 线框目标严重不符：
+
+![当前 · More](before/more-status-request-canceled.png)
+
+| 实机 | 问题 |
+|------|------|
+| **Send Feedback**（蓝字链样式） | 应为行名 **Feedback** + chevron 进 S09 |
+| **Support** 行 | 规格 **无** 此行（Support 走站外 URL，不在 More 列表） |
+| **Upgrade to Pro** | Pro 从 Home Pro 行进入；More **无**升级入口 |
+| **Status · Free** | 调试/权益展示，规格 **禁止** |
+| 红字 **Request Canceled** | StoreKit 取消残留；见 **004**（全 App 禁显） |
+| 多组分隔、蓝链堆叠 | 偏离 quiet Settings 列表人格 |
+
+### 其他
 
 | 面 | 现状 |
 |----|------|
-| More（S06） | 列表结构在 screens；无 phone-preview 成片 |
-| Help（S07） | 条目建议有；无高保真 |
-| Tap to Block 说明（S05） | **v1 不做**（D-317） |
-| Feedback / About（S09–S10） | 文字规格 |
-| Safari 扩展 popup（SE01 **2 项**） | 规格已改 2 项；线框/mock 待去 Tap |
-
-风险：实现时各自「自由发挥」，破坏主路径已统一的 quiet Settings 人格。
+| Help / Feedback / About | 实现不齐或风格漂移 |
+| 扩展 popup | 须 **2 项**（D-317）；无 Tap |
+| S05 Tap | **v1 不做** |
 
 ## 期望结果
 
-### 设计（产品/设计）
+### S06 More — 锁定行表（开发必须按此）
 
-**已交付（仓库内，可对稿）：**
+权威：[`secondary-screens.md` §2](../../docs/design/secondary-screens.md) · [`ui-copy-en.md` §6](../../docs/engineering/ui-copy-en.md)
 
-1. 规格权威：[secondary-screens.md](../../docs/design/secondary-screens.md)  
-2. HTML 预览：[exports/secondary-preview/index.html](../../docs/design/exports/secondary-preview/index.html)  
-   - More · Help 列表 · Site broken 详情 · Tap · Feedback · About  
-   - SE01 / a / b / c 四态  
-   - Setup 名称清单（与 003 / D-511 共用预览）  
+| 顺序 | 行标题（en） | 控件 | 行为 |
+|------|--------------|------|------|
+| 1 | `Help` | Chevron | → S07 |
+| 2 | `Feedback` | Chevron | → S09（**不是** `Send Feedback` 蓝链） |
+| 3 | `About` | Chevron | → S10 |
+| 4 | `Privacy Policy` | Chevron 或系统外链样式 | → yilinglabs.com/privacy |
+| 5 | `Website` | 同上 | → yilinglabs.com |
+| 6 | `Restore Purchases` | 行 / 链 | StoreKit restore；结果 **inline/toast 英文**，不落红字常驻 |
+| 7 | `Manage Subscription` | 行 | 系统订阅管理 |
 
-**仍待（Lunacy）：**
+可选：1–3 一组，4–5 一组，6–7 一组（最多两组/三组，勿再加调试组）。
 
-1. 在 `Stillwall-HiFi-v1.free` Depth Pass 补齐画板并导出 PNG（关闭本 issue 的正式条件）  
-2. 视觉 **必须** 继承主路径 token；扩展 **无 IAP**（D-508）
+### 禁止（More 及次级页）
 
-### 开发（**本 issue 主要关闭条件**）
-
-权威：[`secondary-screens.md`](../../docs/design/secondary-screens.md) + [`ui-copy-en.md`](../../docs/engineering/ui-copy-en.md) + 预览 HTML。  
-**不要**等 Lunacy 才开工；HTML 即可对稿。
-
-| 屏 | 必须实现 |
-|----|----------|
-| **S06 More** | Help / Feedback / About / Privacy / Website / Restore / Manage（无账号、无 Allowed Sites） |
-| **S05 Tap** | **不实现**（D-317 / **011**） |
-| **S09 Feedback** | 类型 · 描述 · 可选域名 · **发送前预览** |
-| **S10 About** | 版本 · 定位句 · Acknowledgements 入口 · Mac coming soon 可选 |
-| **SE01 popup** | **仅 2 项**（Pause · Report）；顶栏 Protected / Paused / Off in app / Not enabled；无 IAP；**无** Tap |
-| **Help** | 归 **009**（勿在本 issue 重复关） |
-
-视觉：`surfaceGrouped` + r18 + 森绿主 CTA + PRO 仅暖金；与 **001** 一致：主 App 无保护 pill。
-
-## 修改说明
-
-| 角色 | 动作 |
+| 禁止 | 说明 |
 |------|------|
-| **开发** | 按上表实现次级页 + 扩展 popup；字符串走 `ui-copy-en` / 005 catalog |
-| 设计 | 可选：Lunacy 正式板 → PNG（增强对稿，**非**开发开工阻塞） |
-| 产品 | 关闭本 issue = **App 实现验收通过**（不是仅有 HTML） |
+| `Support` 行 | 不在 v1 More IA |
+| `Upgrade to Pro` / 任何 More 内付费主推入口 | Pro 仅 Home Pro 行 / 既有 Upgrade 流 |
+| `Status` / `Free` / `Pro` 权益状态行 | 非 Settings 人格 |
+| 常驻 `Request Canceled` 或任何 StoreKit `localizedDescription` | 与 **004** 一致 |
+| 账号、Allowed Sites、调试开关 | 总纲领不做 |
+| Tap to Block 入口 | D-317 |
+
+### 其他屏
+
+| 屏 | 必须 |
+|----|------|
+| **S09 Feedback** | 类型 · 描述 · 可选域名 · **发送前预览**；主按钮 `Send`（森绿） |
+| **S10 About** | 版本 · 定位句 · Acknowledgements · Mac coming soon 可选 |
+| **SE01 popup** | **仅 2 项**：Pause/Resume · Report；无 IAP、无 Tap |
+| **S05** | **不实现**（**011**） |
+| **Help** | **009** |
+
+视觉：`surfaceGrouped` + r18 卡 + 系统列表字色；主 CTA 仅 Feedback 发送等动作用森绿；外链可用系统蓝，但 **Feedback / Help / About 勿整行做成蓝按钮文字**。
+
+## 修改说明（给开发）
+
+1. 重写 More：删 Support、Upgrade to Pro、Status、Request Canceled；Feedback 用标准 NavigationLink 行。  
+2. Restore / Manage：restore 取消或失败勿把原始错误钉在列表底部。  
+3. 扩展 popup 跟 `safari-extension.md`（2 项）。  
+4. 对稿：[`exports/secondary-preview/png/`](../../docs/design/exports/secondary-preview/png/)（S06 / SE01* 等）。
 
 ## 验收标准
 
-### 规格 / 设计预览（已完成）
+### More（硬验收 · 实机对照）
 
-- [x] secondary-screens 规格 + secondary-preview HTML  
-- [x] 扩展 3 项 / 无 IAP 写进规格  
+- [ ] 仅允许上表 7 行（分组可拆，**不得多出行**）  
+- [ ] **无** `Support`、`Upgrade to Pro`、`Status`、`Free` 权益行  
+- [ ] **无** `Send Feedback` 文案；为 `Feedback` + chevron  
+- [ ] **无** 红字 `Request Canceled` 或其它 StoreKit 原文常驻  
+- [ ] 布局接近 `secondary-preview/png/S06-More.png` 气质（Settings 列表，非调试页）  
 
-### 开发实现（**未完成**）
+### 其它
 
-- [ ] More 列表齐全且无违禁行  
-- [ ] **无** Tap 说明页 / 扩展 Tap 槽（D-317）  
 - [ ] Feedback 发送前预览  
 - [ ] About 基础信息  
 - [ ] 扩展 popup **2 项** + 四态（至少 Protected + Not enabled）  
+- [ ] **无** Tap 说明页 / 扩展 Tap 槽（D-317 / **011**）  
 - [ ] 无第二套主色/威胁仪表盘；无扩展内 IAP  
 
-### Lunacy 导出（2026-07-31 · 已执行）
+### 设计资产
 
-- [x] Wireframes 去 Tap（SE 2 项、Help 去 Tap 条、Home 去 Strict/Tap、Upgrade 去 Strict/Tap 文案）  
-- [x] 导出 PNG → [`docs/design/exports/secondary-preview/png/`](../../docs/design/exports/secondary-preview/png/)  
-- [x] **勿**导出 S05 / SE02 Tap 作权威（已删画板）  
-- [ ] **用户须 Ctrl+S 保存** `Stillwall-Wireframes-v1.free`  
+- [x] secondary-screens + secondary-preview HTML/PNG  
+- [ ] 可选：Hi-fi 正式次级画板  
 
 ## 附件
 
-- 临时视觉：[`docs/design/exports/secondary-preview/index.html`](../../docs/design/exports/secondary-preview/index.html)  
-- 既有 mock：`docs/design/extension-popup-mock.html`  
-
-逻辑参考（已有）：
-
-- `docs/design/safari-extension.md`  
-- `docs/design/extension-wireframes-se.md`  
-- `docs/engineering/ui-copy-en.md`  
+| 文件 | 说明 |
+|------|------|
+| `before/more-status-request-canceled.png` | 实机 More：Support / Upgrade / Status / Request Canceled |
+| `docs/design/exports/secondary-preview/png/S06-More.png` | 线框目标 |
+| `docs/design/exports/secondary-preview/png/SE01-*.png` | 扩展 2 项目标 |

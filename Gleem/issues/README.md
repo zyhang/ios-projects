@@ -51,5 +51,6 @@ Stillwall（Gleem）**App / 扩展开发任务入口**。产品/设计优化必�
 |------|------|
 | 2026-07-31 | 建立 001–011（含 journey polish / D-317） |
 | 2026-07-31 | **删除** 007 / 008 / 010（网站 Support、App Store 包装与截图 — 非 App/扩展开发 issue） |
+| 2026-07-31 | 实机审查：强化 **006** More 锁定/禁止项、**004** 全 App 禁 Request Canceled、**005** Battery 口径 |
 
 新建 issue 后请更新本表。
