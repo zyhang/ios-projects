@@ -81,11 +81,12 @@
 - [ ] 扩展 popup **2 项** + 四态（至少 Protected + Not enabled）  
 - [ ] 无第二套主色/威胁仪表盘；无扩展内 IAP  
 
-### 可选 · Lunacy 导出
+### Lunacy 导出（2026-07-31 · 已执行）
 
-- [ ] Wireframes 在 **Automation 已连接的 Lunacy 窗口**中打开后，导出 More / Help / Feedback / About / SE01 四态 → `docs/design/exports/secondary-preview/png/`  
-- [ ] **勿**导出 S05 Tap 作权威（D-317）  
-- 进度：2026-07-31 主路径已从 Hi-fi 导出；**次级/SE 因文档未切换 MCP 会话未导出**（见 `docs/design/exports/lunacy-export-log-2026-07-31.md`）  
+- [x] Wireframes 去 Tap（SE 2 项、Help 去 Tap 条、Home 去 Strict/Tap、Upgrade 去 Strict/Tap 文案）  
+- [x] 导出 PNG → [`docs/design/exports/secondary-preview/png/`](../../docs/design/exports/secondary-preview/png/)  
+- [x] **勿**导出 S05 / SE02 Tap 作权威（已删画板）  
+- [ ] **用户须 Ctrl+S 保存** `Stillwall-Wireframes-v1.free`  
 
 ## 附件
 

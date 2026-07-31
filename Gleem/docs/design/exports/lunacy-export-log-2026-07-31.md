@@ -48,25 +48,15 @@
 
 各 6 张（01–06）。
 
-### C. 次级 / 扩展（issue **006**）— 未完成
+### C. 次级 / 扩展（issue **006**）— **已完成**
 
-Wireframes 中已有画板（文件内 ID）：
+在 Wireframes live 文档中：
 
-| 画板 | ID |
-|------|-----|
-| S06 More | `jmk8dgF9VE2M4oF5lI1P7Q` |
-| S07 Help | `8JhMceJgTUKhDrKaqiUt5g` |
-| S09 Feedback | `vJHM5TsHZk-b1lRL-YfEPg` |
-| S10 About | `nqkiVOCNkkevzWFDJ4Jo9Q` |
-| SE01 Protected | `SE01PopupCard0000000AA` |
-| SE01a Paused | `SE01aPopupCard000000AA` |
-| SE01b Not enabled | `SE01bPopupCard000000AA` |
-| SE01c Off in app | `SE01cPopupCard000000AA` |
-| S05 Tap | `geuBCIzFHUqdVhe2sxvvCA`（**D-317 obsolete，勿导出作权威**） |
+1. 删除 SE Tap 行、S05、SE02、Help「How Tap to Block」、Home Strict/Tap、Upgrade Strict/Tap 文案  
+2. 重建 SE01 Protected 为 **2 项**（Pause · Report）  
+3. 导出 2× PNG → `exports/secondary-preview/png/`（见该目录 README）
 
-**阻塞：** Lunacy Automation 当前会话绑定 **Hi-fi** 文档（viewport 未切换）。在系统中双击打开 Wireframes 后 MCP 仍连旧文档，导出 SE/More 返回 InternalServerError。
-
-**请你：** 在 **已连接 Automation 的那一个** Lunacy 窗口中打开 `Stillwall-Wireframes-v1.free`（或合并画板到 Hi-fi），告知后可再跑一轮导出到 `exports/secondary-preview/png/`。
+**请用户 Ctrl+S 保存** `Stillwall-Wireframes-v1.free`。
 
 ## D-317 改稿 + 重导（同日续）
 
