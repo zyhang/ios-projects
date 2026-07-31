@@ -51,7 +51,7 @@
 1. 删除/隐藏任何 Strict、Tap 的 model 字段、开关 UI、导航。  
 2. 扩展菜单改 2 项；同步 App Group 若曾为 Tap 预留可保留字段但不暴露 UI。  
 3. 与 **005** 文案表、**006** 次级/扩展、**009** Help 一并验收。  
-4. 商店/截图若仍写 Tap 或 Strict → 见 **010** / 描述文案（文档侧已改 description）。  
+4. 商店/营销素材中的 Strict/Tap 字样不在本 issue 范围（见 docs/release/，非开发 issue）。  
 5. **网站（对外）：** 营销首页 Pro 目录、`website/support`、`website/privacy` 与 ASC 镜像文案不得再卖 Strict / Tap；Home 成片截图仅 6 行。
 
 ## 验收标准
