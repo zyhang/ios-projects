@@ -37,7 +37,15 @@
 | 目的 | 一次说清并完成 Content Blocker + Web Extension |
 | 门禁 | 未完成不得进 Home；运行时丢失则模态 |
 
-结构：标题、说明、两步列表、Open Settings、Need help、等待权限提示。
+结构：标题、说明、**三步**列表、主按钮 Open Settings、手动路径 hint、等待权限提示。
+
+| # | 步骤 | 要点 |
+|---|------|------|
+| 1 | Open Settings | Apps → Safari → Extensions |
+| 2 | Turn on Stillwall | **6** 个 Content Blockers（Ads, Privacy, Annoyances, Social, Other, Security）+ Stillwall Web Extension 全开 |
+| 3 | Allow website access | Web Extension → **Allow All Websites** |
+
+深链：优先尝试打开系统 Extensions；失败时展示**指导性**手动路径（非恐吓式硬错误）。详见 `issues/003-setup-open-settings`。
 
 ---
 
@@ -70,6 +78,8 @@ Choose what stays out of your way.
 | 8 | Tap to Block | Chevron 行 · Pro | → S05 |
 
 全部类别 Off 时列表与顶部文案均保持不变，仅无拦截生效；Safari 扩展顶栏负责诚实显示 `Off in app`。
+
+规则重编译时可用底部非阻塞进度（**英文**）：`Updating filters` / `Preparing blockers for Safari…`（见 `issues/002-filter-progress-copy`）。
 
 ### 其他
 
@@ -117,9 +127,10 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 ## S08 — Upgrade / Paywall
 
 利益：YouTube & X in Safari、Battery Boost、Strict Mode、Tap to Block。  
-价格：`One month free, then $14.99/year` + Family Sharing。  
+价格：`One month free, then $14.99/year` + Family Sharing（优先 StoreKit 本地化价；**不得**展示 $9.99）。  
 主按钮：Start 1 Month Free Trial。  
-非首次进 Home 门禁。
+用户**取消**系统购买表：不展示错误（勿露出 `Request Canceled`）。  
+非首次进 Home 门禁。详见 `issues/004-pro-pricing-and-cancel-ux`。
 
 ---
 
