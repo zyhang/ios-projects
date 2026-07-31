@@ -67,7 +67,14 @@ Settings → Apps → Safari → Extensions
    - `user cancelled` / 无法打开 → hint  
    - 真异常（极少）→ 可短 toast，仍附手动路径  
 3. 可选增强（P2，非必须）：检测权限已满足时自动 dismiss Setup / 进入 Home（若已有则保持）。  
-4. 勿弱化「必须全开」的说明；误开不全会导致「以为开了但不拦」。
+4. 勿弱化「必须全开」的说明；误开不全会导致「以为开了但不拦」。  
+5. **D-511 名称清单（必做，非可选）：**  
+   - Step 2 下方展示静态列表（key 见 `ui-copy-en.md`：`setup.step2.checklist_*`）  
+   - 文案 lead：`Look for names starting with Stillwall:`  
+   - 项：Ads · Privacy · Annoyances · Social · Other · Security · **Web Extension**  
+   - **不要**做成可勾选任务或本地完成态；仅说明  
+   - 规格全文：`docs/design/setup-first-run.md`  
+   - 布局参考：`docs/design/exports/secondary-preview/` Setup 卡  
 
 ### 产品文档
 
@@ -111,6 +118,7 @@ Setup 是全 App **唯一允许略「任务感」** 的屏，但仍须：单主 
 - [ ] 深链失败时用户仍能靠页面文案完成手动设置  
 - [ ] 失败提示不表现为刺眼硬错误（或仅短暂出现后变为常驻 hint）  
 - [ ] 三步说明完整且诚实：Settings、**6 CB** + Web Extension、Allow All Websites  
+- [ ] **D-511：** Step 2 下方可见静态名称清单（6 CB 名 + Web Extension + lead 句）  
 - [ ] 未完成时顶图**无**「已完成」金勾误导（或仅完成态显示）  
 - [ ] 未完成授权不能进入 Home  
 - [ ] 英文 UI；副文案与步骤 2 不再写含糊的 “both extensions”  

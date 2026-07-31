@@ -1,53 +1,69 @@
 # Issues
 
-Stillwall（Gleem）App **开发完成后的页面 / 功能问题** 与修改说明。
+Stillwall（Gleem）**开发任务入口**。产品/设计优化必须落到本目录 issue，开发才按此改。
 
-- **规则（Agent 与协作者必读）：** [AGENTS.md](./AGENTS.md)
-- **组织方式：** `NNN-short-slug/` 子文件夹，一 issue 一目录，序号递增
-- **读者：** 主要给开发人员——现象、期望、怎么改、截图与验收
-- **英文 UI 源：** [`docs/engineering/ui-copy-en.md`](../docs/engineering/ui-copy-en.md)
+- **规则：** [AGENTS.md](./AGENTS.md)  
+- **英文 UI 源：** [`docs/engineering/ui-copy-en.md`](../docs/engineering/ui-copy-en.md)  
+- **原则：** 只写在 design/decision 文档、**未** open issue 的项 = **不触发开发**
 
 ## 索引
 
-| 序号 | 目录 | 标题 | 状态 | 优先级 |
-|------|------|------|------|--------|
-| 001 | [001-home-neutral-hero](./001-home-neutral-hero/) | Home 去掉 On/Safari Protection 状态区，改为中性价值文案 | open · 规格就绪 | P0 |
-| 002 | [002-filter-progress-copy](./002-filter-progress-copy/) | 规则编译进度条：英文 + 品牌软提示视觉 | open · 规格就绪 | P1 |
-| 003 | [003-setup-open-settings](./003-setup-open-settings/) | Setup 深链失败体验 + 三步诚实文案 + 去误导金勾 | open · 规格/设计目标就绪 | P1 |
-| 004 | [004-pro-pricing-and-cancel-ux](./004-pro-pricing-and-cancel-ux/) | Pro 定价 $14.99 + 取消购买静默 + 付费墙调性 | open · 规格就绪 | P0/P1 |
-| 005 | [005-cross-screen-consistency](./005-cross-screen-consistency/) | 跨页文案锁定与视觉一致性（**D-510 已确认**） | open · 资产已刷 | P2 |
-| 006 | [006-secondary-and-extension-hifi](./006-secondary-and-extension-hifi/) | 次级页与 Safari 扩展 Hi-fi 债 | **partial** · HTML 预览 | P2 |
-| 007 | [007-support-trust-copy-d316](./007-support-trust-copy-d316/) | Support 废除「Home = On」/ both extensions / 旧 CTA | **done** | P0 |
-| 008 | [008-store-packaging-cta-domain](./008-store-packaging-cta-domain/) | 商店截图 CTA + 域名占位 → yilinglabs.com | **done** | P1 |
-| 009 | [009-help-recovery-path-copy](./009-help-recovery-path-copy/) | App Help 恢复路径文案（扩展 Pause；禁 Home On） | **done** · 规格 | P1 |
+| 序号 | 目录 | 标题 | 状态 | 优先级 | 谁做 |
+|------|------|------|------|--------|------|
+| 001 | [001-home-neutral-hero](./001-home-neutral-hero/) | Home 中性 Value Hero（去 On pill） | **open** | P0 | 开发 |
+| 002 | [002-filter-progress-copy](./002-filter-progress-copy/) | 规则进度条英文 + 品牌软提示 | **open** | P1 | 开发 |
+| 003 | [003-setup-open-settings](./003-setup-open-settings/) | Setup 深链 hint + 诚实三步 + **D-511 名称清单** | **open** | P1 | 开发 |
+| 004 | [004-pro-pricing-and-cancel-ux](./004-pro-pricing-and-cancel-ux/) | Pro $14.99 + 取消购买静默 | **open** | P0/P1 | 开发 |
+| 005 | [005-cross-screen-consistency](./005-cross-screen-consistency/) | 跨页文案 / `ui-copy-en` 单一源 | **open** | P2 | 开发 |
+| 006 | [006-secondary-and-extension-hifi](./006-secondary-and-extension-hifi/) | **次级页 + 扩展 UI 实现**（More/Tap/Feedback/About/SE） | **open** | P1 | 开发（Lunacy 可选） |
+| 007 | [007-support-trust-copy-d316](./007-support-trust-copy-d316/) | Support 信任文案（禁 Home=On） | **done** | P0 | 文档已完成 |
+| 008 | [008-store-packaging-cta-domain](./008-store-packaging-cta-domain/) | 商店框内 CTA + 域名 URL | **done** | P1 | 素材/文档已完成 |
+| 009 | [009-help-recovery-path-copy](./009-help-recovery-path-copy/) | **App Help 实现**（Pause 路径；禁 Home On） | **open** | P1 | 开发（规格已锁） |
+| 010 | [010-store-screenshot-titles-d512](./010-store-screenshot-titles-d512/) | 商店截图**框外** Title/Subtitle（D-512） | **open** | P1 | 设计/发布 |
 
 ## 建议开发顺序
 
-1. **主工程合入后：** **001**、**004**（与已确认产品决策直接冲突）  
-2. **002**、**003**（体验与文案一致性）  
-3. **005**（跨页 string catalog）  
-4. **009** 的 SwiftUI Help 页（文案已锁）  
-5. **006** Lunacy 正式 Hi-fi（HTML 预览可先开发）  
+1. **001**、**004**（与决策直接冲突）  
+2. **003**（含 D-511 清单）、**002**  
+3. **005**（string catalog）  
+4. **009** Help、**006** 次级页 + 扩展  
+5. **010** 上架前重出截图顶栏  
 
-**文档/上架侧已完成：** 007、008（Support + 商店 URL/截图）。
+**无需开发：** 007、008（已 done）。
 
-> **说明（2026-07-31）：** 本 monorepo `Gleem/` 当前**无** Swift/Xcode 源码。001–005 的实现动作需在主 App 工程中落地；仓库已提供 `ui-copy-en.md` + 更新后的 Hi-fi/商店像素目标。
+## 优化 → Issue 覆盖表（审计 2026-07-31）
 
-## 已锁定文案（D-510 · 2026-07-31）
+| 优化 / 决策 | 应触发谁 | Issue | 此前缺口 | 现状态 |
+|-------------|----------|-------|----------|--------|
+| Home 中性 hero / 去状态 pill | 开发 | **001** | — | open ✓ |
+| 进度条英文 | 开发 | **002** | — | open ✓ |
+| Setup 深链 + 诚实 6+1 + **名称清单 D-511** | 开发 | **003** | 清单仅一句带过 | **已写入修改说明+验收** ✓ |
+| $14.99 / 取消静默 | 开发 | **004** | — | open ✓ |
+| 跨页文案 + ui-copy 单一源 | 开发 | **005** | ui-copy 未钉进验收 | **已钉入** ✓ |
+| Welcome CTA D-510 | 开发 | **005**（+001 联验） | — | open ✓ |
+| More / Tap / Feedback / About / 扩展 UI | 开发 | **006** | 像「仅 Hi-fi 设计债」 | **改为 open 开发任务** ✓ |
+| Support 对外文案 | 文档 | **007** | — | done ✓ |
+| 商店框内 CTA + yilinglabs URL | 发布 | **008** | — | done ✓ |
+| Help 恢复路径 **App 页** | 开发 | **009** | 误标 done | **改回 open** ✓ |
+| 商店框外叙事 D-512 | 设计/发布 | **010** | 只在 screenshot-plan | **新建 010** ✓ |
+| 可选首次 Home tip | — | 009 可选 | 未产品确认 | 不强制 ✓ |
+| Lunacy 正式次级画板 | 设计 | 006 可选验收 | — | 不阻塞开发 ✓ |
+
+## 已锁定文案（摘录）
 
 | 项 | 权威 |
 |----|------|
-| Welcome CTA | `Set Up in Safari` |
-| Strict（含 Large Type） | `Stronger blocking · Use with care` |
-| Setup 能力描述 | 6 Content Blockers + Web Extension（勿 both extensions） |
-| 完整副文案表 | [005](./005-cross-screen-consistency/) · [ui-copy-en.md](../docs/engineering/ui-copy-en.md) |
+| Welcome CTA | `Set Up in Safari`（D-510） |
+| Strict | `Stronger blocking · Use with care` |
+| Setup | 6 CB + Web Extension + **D-511 名称清单** |
+| 完整表 | [005](./005-cross-screen-consistency/) · [ui-copy-en.md](../docs/engineering/ui-copy-en.md) |
 
-## 设计审计
+## 设计审计日志
 
 | 日期 | 说明 |
 |------|------|
-| 2026-07-31 | Hallmark 全局 review：Hi-fi 主路径人格统一；实现漂移见 001–004；跨页与债项见 005–006 |
-| 2026-07-31 | **Journey polish**：[`docs/design/journey-polish-review-2026-07-31.md`](../docs/design/journey-polish-review-2026-07-31.md)；007–009 创建并执行文档/商店侧 |
-| 2026-07-31 | **设计续作**：D-511 Setup 名称清单、D-512 商店截图叙事、secondary-screens + secondary-preview 完整包 |
+| 2026-07-31 | Hallmark + Journey polish；001–009 |
+| 2026-07-31 | D-511 / D-512 / secondary 规格 |
+| 2026-07-31 | **覆盖审计**：009 重开、003/005/006 补强、新建 **010** |
 
-新建 issue 后请更新本表。
+新建 issue 后请更新本表与覆盖表。

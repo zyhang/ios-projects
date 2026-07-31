@@ -131,12 +131,13 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 
 ## 修改说明（给开发）
 
-1. 建立单一文案源（`Localizable` / 常量表），Welcome / Home / Upgrade / Large Type 引用同一 key；短式用独立 `*.large` key，禁止手写分叉。  
-2. Setup 字符串按锁定块与 **003** 对齐；去掉 both extensions。  
-3. Welcome CTA **固定** `Set Up in Safari`；工程与下次设计导出、商店截图一并改掉旧串。  
-4. Home：Pro 区前 **+8pt**；其余 token 对齐 design-system。  
-5. Strict：标准与 Large Type **同一句** `Stronger blocking · Use with care`。  
-6. 与 **001–004** 一起验收时做 **四屏连滑**（Welcome→Setup→Home→Upgrade）。
+1. 建立单一文案源（`Localizable` / 常量表），**以仓库** [`docs/engineering/ui-copy-en.md`](../../docs/engineering/ui-copy-en.md) **为权威表**（含 Welcome/Setup/Home/Upgrade/**Setup D-511 清单**/Help/扩展）。  
+2. Welcome / Home / Upgrade / Large Type 引用同一 key；短式用独立 `*.large` key，禁止手写分叉。  
+3. Setup 字符串按锁定块与 **003** 对齐（含 D-511 checklist keys）；去掉 both extensions。  
+4. Welcome CTA **固定** `Set Up in Safari`。  
+5. Home：Pro 区前 **+8pt**；其余 token 对齐 design-system。  
+6. Strict：标准与 Large Type **同一句** `Stronger blocking · Use with care`。  
+7. 与 **001–004** 一起验收时做 **四屏连滑**（Welcome→Setup→Home→Upgrade）。  
 
 ### 文档
 
@@ -145,8 +146,9 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 
 ## 验收标准
 
+- [ ] 工程存在单一 string catalog，且与 `ui-copy-en.md` 主路径 key 对齐  
 - [ ] Home / Upgrade 副文案符合锁定表；Large Type Strict **不是** May affect some sites  
-- [ ] Setup 不再出现 both extensions；与 6 CB + Web Extension 一致  
+- [ ] Setup 不再出现 both extensions；与 6 CB + Web Extension 一致（清单实现见 **003**）  
 - [ ] Welcome CTA **仅** `Set Up in Safari`，全项目无第三种主 CTA 说法  
 - [ ] 主色 / 圆角 / 单主 CTA / PRO 仅暖金 四屏抽检通过  
 - [ ] Home Free 行无多余领先图标；Pro 区前 +8pt；Pro 仅金 badge  

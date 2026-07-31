@@ -2,13 +2,14 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | **done**（文案/规格锁定；App 接入见 `ui-copy-en.md`） |
+| 状态 | **open**（规格已锁 · **App Help 页仍待开发实现**） |
 | 优先级 | **P1**（首次用户误杀时的可发现性；主路径 001–004 之后尽快） |
 | 类型 | copy / ui / docs-sync |
 | 影响范围 | 主 App · Help（S07）· 可选首次 Home 提示 · 与扩展入口说明 |
-| 相关文档 | charter §5.9–5.10；screens S07；T-EXT-07；V-002；`docs/design/journey-polish-review-2026-07-31.md` |
+| 相关文档 | charter §5.9–5.10；screens S07；T-EXT-07；V-002；`docs/engineering/ui-copy-en.md` §7；`docs/design/secondary-screens.md` |
 | 创建日期 | 2026-07-31 |
 | 来源 | Journey polish review 2026-07-31 |
+| 说明 | 2026-07-31 曾误标 done（仅规格完成）。**仅 issue open 才会触发开发**——已改回 open。 |
 
 ## 问题现象
 
@@ -74,18 +75,25 @@ Tip: If a site looks wrong, open the Stillwall extension in Safari and choose Pa
 
 ## 验收标准
 
-- [x] Help 含 Site broken → 扩展 Pause（及类别备选）— **文案已写**  
-- [x] 全文无「Home shows On」类成功标准 — **规格禁止**  
-- [x] CTA / 扩展数量表述与 D-510 一致  
-- [x] 打开扩展说明不依赖未验证死路径  
-- [ ] （可选 tip）产品确认后实现 — 非必须  
+### 规格（产品/设计 · 已完成）
 
-## 完成说明（2026-07-31）
+- [x] 正文锁定于 `ui-copy-en.md` §7  
+- [x] screens S07 / secondary-screens 已对齐  
+- [x] secondary-preview 有 Help 列表 + Site broken 详情  
+
+### 开发实现（**未完成 · 本 issue 关闭条件**）
+
+- [ ] App 内存在 Help 列表页（S07），含上表全部条目  
+- [ ] Site broken 详情（或等价展开）优先写扩展 **Pause on this site**  
+- [ ] 全文搜索无 Home protection On、无 `Set Up Safari Protection`、无含糊 *both extensions*  
+- [ ] 打开扩展说明不依赖未验证死路径  
+- [ ] （可选 tip）产品确认后再做 — 非本 issue 关闭条件  
+
+## 规格交付说明（2026-07-31）
 
 - 权威正文：`docs/engineering/ui-copy-en.md` §7  
-- `docs/design/screens.md` S07 已对齐  
-- 视觉临时稿：`docs/design/exports/secondary-preview/`（Help 列表）  
-- **App 内 SwiftUI Help 页**待主工程接入（本仓库无 iOS 源码）  
+- 视觉临时稿：`docs/design/exports/secondary-preview/`  
+- **关闭本 issue = App 内 Help 已实现并通过验收**，不是「文档写完」  
 
 ## 附件
 

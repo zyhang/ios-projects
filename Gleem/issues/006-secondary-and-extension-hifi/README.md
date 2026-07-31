@@ -2,13 +2,13 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | **partial**（规格 + 完整 HTML 预览已交付；Lunacy 正式画板仍待） |
-| 优先级 | P2（不阻塞主路径 001–005 开发；上架前建议有线框/说明对齐） |
-| 类型 | docs-sync / ui |
-| 影响范围 | More · Help · About · Feedback · Tap to Block 说明 · Safari 扩展 popup |
-| 相关文档 | `docs/design/screens.md` S05–S10；`docs/design/safari-extension.md`；`docs/design/extension-wireframes-se.md` |
+| 状态 | **open**（规格/HTML 已齐 · **App 次级页+扩展 UI 待开发**；Lunacy 正式板可选） |
+| 优先级 | **P1**（主路径后应实现；勿因标题含 Hi-fi 而只当设计债） |
+| 类型 | ui / copy / docs-sync |
+| 影响范围 | More · About · Feedback · Tap to Block 说明 · Safari 扩展 popup（Help 见 **009**） |
+| 相关文档 | `docs/design/secondary-screens.md`；`docs/design/safari-extension.md`；`docs/engineering/ui-copy-en.md` |
 | 创建日期 | 2026-07-31 |
-| 来源 | Hallmark 全局审计后续（产品确认登记债项） |
+| 来源 | Hallmark 全局审计 + 设计续作审计 |
 
 ## 问题现象
 
@@ -41,26 +41,49 @@
 1. 在 `Stillwall-HiFi-v1.free` Depth Pass 补齐画板并导出 PNG（关闭本 issue 的正式条件）  
 2. 视觉 **必须** 继承主路径 token；扩展 **无 IAP**（D-508）
 
-### 开发（在 Hi-fi 未出前）
+### 开发（**本 issue 主要关闭条件**）
 
-- 严格按 `screens.md` + `safari-extension.md` + `design-system.md` 实现，**不要**自创第二套风格。  
-- 扩展顶栏状态文案诚实：Protected / Paused / Off in app 等（见扩展规格）。  
-- 与主 App Home **001** 对齐：主 App 无保护 pill；扩展可表达站点状态。
+权威：[`secondary-screens.md`](../../docs/design/secondary-screens.md) + [`ui-copy-en.md`](../../docs/engineering/ui-copy-en.md) + 预览 HTML。  
+**不要**等 Lunacy 才开工；HTML 即可对稿。
+
+| 屏 | 必须实现 |
+|----|----------|
+| **S06 More** | Help / Feedback / About / Privacy / Website / Restore / Manage（无账号、无 Allowed Sites） |
+| **S05 Tap 说明** | 三步 + Pause 提示；Free → Upgrade CTA |
+| **S09 Feedback** | 类型 · 描述 · 可选域名 · **发送前预览** |
+| **S10 About** | 版本 · 定位句 · Acknowledgements 入口 · Mac coming soon 可选 |
+| **SE01 popup** | 仅 3 项；顶栏 Protected / Paused / Off in app / Not enabled；无 IAP |
+| **Help** | 归 **009**（勿在本 issue 重复关） |
+
+视觉：`surfaceGrouped` + r18 + 森绿主 CTA + PRO 仅暖金；与 **001** 一致：主 App 无保护 pill。
 
 ## 修改说明
 
 | 角色 | 动作 |
 |------|------|
-| 设计 | 补画板 → 导出 → 更新 `design/exports` 与 screens 链接 |
-| 开发 | 次级页与扩展跟规格；Hi-fi 到达后做视觉 diff |
-| 产品 | 本 issue 关闭条件：至少 More + SE01 + Tap 说明有可对稿图像 |
+| **开发** | 按上表实现次级页 + 扩展 popup；字符串走 `ui-copy-en` / 005 catalog |
+| 设计 | 可选：Lunacy 正式板 → PNG（增强对稿，**非**开发开工阻塞） |
+| 产品 | 关闭本 issue = **App 实现验收通过**（不是仅有 HTML） |
 
 ## 验收标准
 
-- [x] More / Tap 说明 / SE01 有与主路径 token 一致的视觉稿或导出 — **HTML：** `docs/design/exports/secondary-preview/`  
-- [ ] Lunacy Hi-fi 正式画板（仍建议补）  
-- [x] 扩展 popup 固定 3 项、无 IAP、无类别列表（预览 + 规格）  
-- [x] 文档索引链到 secondary-preview  
+### 规格 / 设计预览（已完成）
+
+- [x] secondary-screens 规格 + secondary-preview HTML  
+- [x] 扩展 3 项 / 无 IAP 写进规格  
+
+### 开发实现（**未完成**）
+
+- [ ] More 列表齐全且无违禁行  
+- [ ] Tap 说明页 + Free Upgrade 路径  
+- [ ] Feedback 发送前预览  
+- [ ] About 基础信息  
+- [ ] 扩展 popup 四态（至少 Protected + Not enabled；Paused / Off in app 逻辑正确）  
+- [ ] 无第二套主色/威胁仪表盘；无扩展内 IAP  
+
+### 可选
+
+- [ ] Lunacy Hi-fi 正式画板导出  
 
 ## 附件
 
