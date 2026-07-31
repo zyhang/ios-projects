@@ -114,14 +114,18 @@ Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subs
 
 ## S07 — Help
 
-建议条目：
+> **权威英文正文：** [engineering/ui-copy-en.md](../engineering/ui-copy-en.md) §7 · issue **009**。
 
-- How to enable protection  
-- **Site broken?** Open the Stillwall extension in Safari → **Pause on this site**（或主 App 关闭相关类别开关）  
-- How to open the extension（步骤依赖 V-002，勿写死未验证图标位置）  
-- YouTube & X — Safari only  
-- How Tap to Block works（扩展三项中的第 2 项）  
-- Send feedback / Report issue（扩展第 3 项或 App Feedback）  
+| 条目标题 | 语义要点 |
+|----------|----------|
+| How to enable protection | `Set Up in Safari`；**6 CB + Web Extension** + Allow All Websites；Home **无** On badge |
+| Site broken? | 优先扩展 **Pause on this site**；备选关类别/Strict；Resume 恢复 |
+| How to open the extension | 中性「在 Safari 打开 Stillwall 扩展」；**勿**写死未验证图标路径（V-002） |
+| YouTube & X | Safari websites only |
+| Tap to Block | 扩展第 2 项；Pro；规则本机 |
+| Send feedback | App Feedback 或扩展 **Report issue** |
+
+**禁止：** Home shows On · `Set Up Safari Protection` · *both extensions* 作为唯一描述  
 
 ---
 

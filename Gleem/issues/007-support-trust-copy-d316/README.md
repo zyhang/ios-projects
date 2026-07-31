@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | **done**（2026-07-31 已改 support md / website / site 包） |
 | 优先级 | **P0**（对外教错成功标准；与已确认产品决策冲突） |
 | 类型 | copy / docs-sync |
 | 影响范围 | Support 页 · App Store Support URL 正文 · 站内 support HTML |
@@ -70,11 +70,15 @@
 
 ## 验收标准
 
-- [ ] `support-en-US.md` / `website/support` / site 包均无 Home **On** 成功判据  
-- [ ] 无弃用 CTA `Set Up Safari Protection`（或明确标注为历史）  
-- [ ] 启用步骤体现 Content Blockers（多）+ Web Extension + 网站访问  
-- [ ] Site broken 仍指向类别开关或扩展 **Pause on this site**  
-- [ ] 与 D-316、D-510、journey-polish 报告 §2.8 一致  
+- [x] `support-en-US.md` / `website/support` / site 包均无 Home **On** 成功判据  
+- [x] 无弃用 CTA `Set Up Safari Protection`（或明确标注为历史）  
+- [x] 启用步骤体现 Content Blockers（多）+ Web Extension + 网站访问  
+- [x] Site broken 仍指向类别开关或扩展 **Pause on this site**  
+- [x] 与 D-316、D-510、journey-polish 报告 §2.8 一致  
+
+## 完成说明（2026-07-31）
+
+已更新：`docs/release/app-store-assets/copy/support-en-US.md`、`website/support/index.html`、`docs/release/app-store-assets/site/support.html`。  
 
 ## 附件
 

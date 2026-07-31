@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | open（**文案表 + 导出资产已对齐**；待主 App 单一 string catalog） |
 | 优先级 | P2（体验与调性；不阻塞 001/004 的 P0） |
 | 类型 | ui / copy / docs-sync |
 | 影响范围 | Welcome · Setup · Home · Upgrade ·（Large Type / Dark） |

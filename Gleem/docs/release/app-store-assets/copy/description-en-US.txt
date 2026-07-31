@@ -32,6 +32,6 @@ Stillwall Pro is an auto-renewable annual subscription.
 
 Safari only. Stillwall is not a VPN and does not block ads inside other apps.
 
-Privacy Policy: https://<domain>/privacy
-Support: https://<domain>/support
+Privacy Policy: https://yilinglabs.com/privacy
+Support: https://yilinglabs.com/support
 App Store: https://apps.apple.com/app/id6795497808

@@ -36,4 +36,14 @@ python3 -m http.server 8765
 | 10-Setup-LargeType.png | Setup · Large Type |
 | 11-Home-LargeType.png | Home · Large Type |
 
-扩展 popup（SE）目前仅在线框稿；未包含在本批 Hi-fi 导出中。
+扩展 popup（SE）目前仅在线框稿；未包含在本批 Hi-fi 导出中。次级预览见 [`../secondary-preview/`](../secondary-preview/)。
+
+## D-510 像素修正（2026-07-31）
+
+| 文件 | 修正 |
+|------|------|
+| `01` / `06` / `09` Welcome | 主 CTA → **Set Up in Safari**（`scripts/patch_welcome_cta.py`） |
+| `02` / `10` Setup | 诚实 6 CB + Web Extension；去掉完成金勾 |
+| `11` Home Large Type | Strict → `Stronger blocking · Use with care` |
+
+正式权威仍建议下次 Lunacy Depth Pass 整页重导出。

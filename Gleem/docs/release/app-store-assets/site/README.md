@@ -4,9 +4,9 @@ Deploy this folder to your host so App Store URLs resolve:
 
 | ASC field | Suggested public URL | File |
 |-----------|----------------------|------|
-| Privacy Policy | `https://<domain>/privacy` | `privacy.html` (or rewrite) |
-| Support | `https://<domain>/support` | `support.html` |
-| Marketing (optional) | `https://<domain>/` | `index.html` |
+| Privacy Policy | `https://yilinglabs.com/privacy` | `privacy.html` (or rewrite); prefer live `website/privacy/` |
+| Support | `https://yilinglabs.com/support` | `support.html`; prefer live `website/support/` |
+| Marketing (optional) | `https://yilinglabs.com/` | `index.html` / `website/` |
 
 ## Local preview
 
@@ -30,6 +30,7 @@ python3 -m http.server 8765
 
 ## Before go-live
 
-1. Replace `<LEGAL_ENTITY_NAME>` and `<domain>` / email addresses in the HTML (or regenerate from `../copy/*.md`).
-2. Confirm HTTPS.
-3. Paste final URLs into App Store Connect.
+1. Prefer deploying `website/` (canonical). This `site/` folder is a fallback ASC mirror.
+2. Support copy must match `../copy/support-en-US.md` (no Home “On” badge; `Set Up in Safari`; 6 CB + Web Extension).
+3. Confirm HTTPS on yilinglabs.com.
+4. Paste final URLs into App Store Connect.

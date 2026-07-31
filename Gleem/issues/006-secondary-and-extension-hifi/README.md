@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | **partial**（HTML 预览已交付；Lunacy Hi-fi 仍待） |
 | 优先级 | P2（不阻塞主路径 001–005 开发；上架前建议有线框/说明对齐） |
 | 类型 | docs-sync / ui |
 | 影响范围 | More · Help · About · Feedback · Tap to Block 说明 · Safari 扩展 popup |
@@ -52,17 +52,18 @@
 
 ## 验收标准
 
-- [ ] More / Tap 说明 / SE01 有与主路径 token 一致的视觉稿或导出  
-- [ ] 实现侧无第二套主色/圆角/字体  
-- [ ] 扩展 popup 固定 3 项、无 IAP、无类别列表  
-- [ ] 文档索引（design README / screens）链到新导出  
+- [x] More / Tap 说明 / SE01 有与主路径 token 一致的视觉稿或导出 — **HTML：** `docs/design/exports/secondary-preview/`  
+- [ ] Lunacy Hi-fi 正式画板（仍建议补）  
+- [x] 扩展 popup 固定 3 项、无 IAP、无类别列表（预览 + 规格）  
+- [x] 文档索引链到 secondary-preview  
 
 ## 附件
 
-（待设计导出后放入 `after/`）
+- 临时视觉：[`docs/design/exports/secondary-preview/index.html`](../../docs/design/exports/secondary-preview/index.html)  
+- 既有 mock：`docs/design/extension-popup-mock.html`  
 
 逻辑参考（已有）：
 
 - `docs/design/safari-extension.md`  
 - `docs/design/extension-wireframes-se.md`  
-- `docs/design/extension-popup-mock.html`  
+- `docs/engineering/ui-copy-en.md`  

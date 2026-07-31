@@ -1,6 +1,6 @@
 # Support — Stillwall
 
-**Status:** Publish at `https://<domain>/support` (see `website/support/index.html`).  
+**Status:** Publish at `https://yilinglabs.com/support` (see `website/support/index.html`).  
 **App Store:** https://apps.apple.com/app/id6795497808
 
 ---
@@ -19,11 +19,11 @@ It is not a VPN and does not block ads inside other apps.
 ### Enable protection
 
 1. Open **Stillwall**.  
-2. Follow **Set Up Safari Protection**.  
-3. In **Settings → Safari → Extensions**, enable **both** Stillwall extensions and allow website access as shown in the app.  
-4. Return to Stillwall — Home should show protection **On**.
+2. Tap **Set Up in Safari** (or complete Setup if the app asks you to).  
+3. In **Settings**, turn on **all Stillwall Content Blockers** and the **Stillwall Web Extension**, then allow website access (**Allow All Websites**) as shown in the app.  
+4. Return to Stillwall. When setup is complete, you should reach **Home** with category controls (Ads, Privacy, Annoyances, Regional, and optional Pro tools).  
 
-If Home does not show On, complete the system steps above. We never show “protected” when Safari access is missing.
+Home does **not** show an On/Off protection badge—your choices are the category switches. If setup is incomplete, Stillwall will ask you to finish enabling Safari access. We never claim protection is active when Safari access is missing.
 
 ### Site is broken
 

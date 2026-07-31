@@ -8,10 +8,10 @@ Stillwall is a Safari content blocker + Safari web extension for ads, trackers, 
 
 HOW TO ENABLE (required to see protection)
 1. Install and open Stillwall.
-2. Complete onboarding: Welcome → enable Safari protection.
-3. When prompted, open iOS Settings → Safari → Extensions.
-4. Enable both Stillwall extensions (Content Blocker and Web Extension) and allow website access as directed in-app.
-5. Return to Stillwall. Home should show the category controls with the default free categories enabled.
+2. Complete onboarding: Welcome → Set Up in Safari.
+3. When prompted, open iOS Settings → Apps → Safari → Extensions (path may vary slightly by iOS version).
+4. Enable all Stillwall Content Blockers and the Stillwall Web Extension, then allow website access (Allow All Websites) as directed in-app.
+5. Return to Stillwall. When setup is complete, Home shows category controls with default free categories enabled. Home does not show a global On/Off protection badge.
 
 FREE PATH FOR REVIEW
 All free features work without purchase: independent Ads, Privacy, Annoyances, and Regional blocking controls, plus site pause in the Safari extension popup. Home has no global protection switch.
@@ -28,4 +28,6 @@ FILTER LISTS
 Third-party filter lists are used under their licenses. Attributions are listed in-app (About / Acknowledgements) once finalized (see product V-004).
 
 CONTACT
-Use the Support URL on the App Store listing once the public site is live: https://<domain>/support
+Support: https://yilinglabs.com/support
+Privacy: https://yilinglabs.com/privacy
+Email: support@yilinglabs.com

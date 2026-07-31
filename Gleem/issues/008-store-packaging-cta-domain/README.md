@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | **done**（2026-07-31 文案 URL + Welcome/Setup 成片已刷） |
 | 优先级 | **P1**（上架前；不阻塞 001/004 代码，但阻塞「商店像素与 URL 诚实」） |
 | 类型 | store / copy / docs-sync |
 | 影响范围 | App Store 截图 · description · review notes · ASC URL 字段 |
@@ -59,11 +59,18 @@ Privacy 政策正文已写死 yilinglabs.com，与 description 占位**不一致
 
 ## 验收标准
 
-- [ ] 全套商店 Welcome 截图像素 CTA = `Set Up in Safari`  
-- [ ] Setup 成片无 *both extensions* 含糊句；无误导完成金勾  
-- [ ] description / review-notes 无 `<domain>` 占位  
-- [ ] ASC Privacy/Support URL 与 `yilinglabs.com` 一致且可打开  
-- [ ] screenshot-plan 备注与成片状态一致（可更新 checklist 勾选）  
+- [x] 全套商店 Welcome 截图像素 CTA = `Set Up in Safari`  
+- [x] Setup 成片无 *both extensions* 含糊句；无误导完成金勾  
+- [x] description / review-notes 无 `<domain>` 占位  
+- [x] ASC Privacy/Support URL 文档定为 `yilinglabs.com`（公网 DNS 仍属运维/V-001）  
+- [x] screenshot-plan / submission 已同步  
+
+## 完成说明（2026-07-31）
+
+- description / review-notes / submission 链接 → `yilinglabs.com`  
+- Welcome CTA 批量补丁：`docs/design/exports/scripts/patch_welcome_cta.py`  
+- Setup 诚实文案：phone-preview + 商店 `03-Setup` 三尺寸  
+- 建议后续仍从 Lunacy 正式 Depth Pass 再导出一次，作为像素权威  
 
 ## 附件
 

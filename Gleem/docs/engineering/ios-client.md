@@ -48,6 +48,8 @@
 | `SubscriptionStore` | StoreKit → `subscription` 快照 |
 | `Feedback` | 用户主动反馈 + 预览 |
 
+**UI 文案：** 一律以 [ui-copy-en.md](ui-copy-en.md) 为英文源（D-510 / issues 001–005、009）。
+
 **原则：**
 
 - 视图不直接拼 UserDefaults key。  

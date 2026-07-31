@@ -14,7 +14,7 @@
 UI 源：`docs/design/exports/phone-preview/`  
 成片目录：`docs/release/app-store-assets/screenshots/`
 
-**文案（D-510）：** Welcome 主 CTA 权威为 **Set Up in Safari**。若导出/成片仍显示 `Set Up Safari Protection`，下次重导出时替换；商店框外 Title/Subtitle 不受影响。
+**文案（D-510 / issue 008）：** Welcome 主 CTA 权威为 **Set Up in Safari**。导出与成片须替换弃用串 `Set Up Safari Protection`；Setup 须诚实 **6 Content Blockers + Web Extension**（勿 *both extensions*）；商店框外 Title/Subtitle 不受影响。URL 尾部用 `yilinglabs.com`（见 description）。
 
 ## 尺寸（以 ASC 报错/当前槽为准）
 
@@ -42,6 +42,7 @@ Connect 要求的 **iPhone 竖屏** 合法尺寸包括：
 ## App Store Connect
 
 - [x] 带标题成片（**1242×2688** 与 **1284×2778**）  
+- [x] Welcome CTA / Setup 诚实文案像素已于 2026-07-31 刷新（issue **008**）  
 - [ ] 上传 `iphone-6.5-1242x2688/` 全套（或 1284×2778）  
 - [ ] iPad 槽按 ASC 要求核对尺寸后上传  
 - [x] 无 App Preview

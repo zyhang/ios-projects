@@ -55,17 +55,9 @@ h2 {
 h2:first-child { margin-top: 0; }
 h3 { margin: 1.2em 0 0.4em; font-size: 1.05rem; }
 p { margin: 0.65em 0; color: var(--text); }
-ul { margin: 0.5em 0 0.8em; padding-left: 1.25em; }
+ul, ol { margin: 0.5em 0 0.8em; padding-left: 1.25em; }
 li { margin: 0.35em 0; }
-hr { border: none; border-top: 1px solid var(--border); margin: 1.5em 0; }
 a { color: var(--link); }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.9em;
-  background: var(--brand-soft);
-  padding: 0.1em 0.35em;
-  border-radius: 4px;
-}
 .note {
   background: var(--brand-soft);
   border-radius: 12px;
@@ -94,42 +86,69 @@ footer nav a { margin-right: 14px; color: var(--muted); }
   </header>
   <main>
     <div class="card">
-      <div class="note">Draft for App Store hosting. Replace <code>&lt;domain&gt;</code> and <code>&lt;LEGAL_ENTITY_NAME&gt;</code> before go-live (V-001).</div>
-      <p><strong>Status:</strong> Draft for App Store Support URL. Publish at <code><a href="https://&lt;domain&gt;/support">https://&lt;domain&gt;/support</a></code>.</p>
-<hr>
-<h2>Get help</h2>
-<p><strong>Stillwall</strong> blocks ads, trackers, and annoyances in <strong>Safari</strong> on iPhone and iPad.</p>
-<h3>Enable protection</h3>
-<p>1. Open <strong>Stillwall</strong>.  </p>
-<p>2. Follow <strong>Set Up Safari Protection</strong>.  </p>
-<p>3. In <strong>Settings → Safari → Extensions</strong>, enable <strong>both</strong> Stillwall extensions and allow website access as shown in the app.  </p>
-<p>4. Return to Stillwall — Home should show protection <strong>On</strong>.</p>
-<h3>Site is broken</h3>
-<ul>
-<li>Turn off the relevant <strong>category switches</strong> in Stillwall (for example Ads or Strict Mode), <strong>or</strong>  </li>
-<li>Open the <strong>Stillwall Safari extension</strong> on that site and choose <strong>Pause on this site</strong>, then <strong>Resume</strong> when finished.</li>
-</ul>
-<h3>YouTube &amp; X ads</h3>
-<p>Pro blocking for YouTube and X applies in <strong>Safari websites only</strong>, not the native YouTube or X apps.</p>
-<h3>Tap to Block</h3>
-<p>Available with <strong>Stillwall Pro</strong>. Use the Safari extension → <strong>Tap to Block</strong>, then select elements on the page.</p>
-<h3>Subscriptions</h3>
-<p>Manage trials and <strong>Stillwall Pro</strong> in  </p>
-<p><strong>Settings → [your name] → Subscriptions</strong>.</p>
-<h3>Contact</h3>
-<p>Email: <strong>support@\&lt;domain\&gt;</strong>  </p>
-<p>Please include: iOS version, Stillwall version (About screen), and a short description. Optional: the site domain if something is broken.</p>
-<p>We don’t need—and please don’t send—passwords or full browsing history.</p>
+      <div class="note">
+        Canonical public URL: <a href="https://yilinglabs.com/support">https://yilinglabs.com/support</a>
+        · Prefer the live site under <code>website/support/</code> when deploying the marketing host.
+      </div>
+
+      <h2>Get help</h2>
+      <p><strong>Stillwall</strong> blocks ads, trackers, and annoyances in <strong>Safari</strong> on iPhone and iPad. It is not a VPN and does not block ads inside other apps.</p>
+
+      <h3>Requirements</h3>
+      <ul>
+        <li><strong>iPhone or iPad</strong> on <strong>iOS / iPadOS 26</strong> or later</li>
+        <li><strong>Safari</strong> — other browsers are not supported</li>
+        <li>Stillwall Pro is shared under the same <strong>Apple ID</strong> at no extra device fee</li>
+      </ul>
+
+      <h3>Enable protection</h3>
+      <ol>
+        <li>Open <strong>Stillwall</strong>.</li>
+        <li>Tap <strong>Set Up in Safari</strong> (or complete Setup if the app asks you to).</li>
+        <li>In <strong>Settings</strong>, turn on <strong>all Stillwall Content Blockers</strong> and the <strong>Stillwall Web Extension</strong>, then allow website access (<strong>Allow All Websites</strong>) as shown in the app.</li>
+        <li>Return to Stillwall. When setup is complete, you should reach <strong>Home</strong> with category controls (Ads, Privacy, and more).</li>
+      </ol>
+      <p class="note">
+        Home does <strong>not</strong> show an On/Off protection badge—your choices are the category switches.
+        If setup is incomplete, Stillwall will ask you to finish enabling Safari access.
+      </p>
+
+      <h3>Site is broken</h3>
+      <ul>
+        <li>Turn off the relevant <strong>category switches</strong> in Stillwall (for example Ads or Strict Mode), <strong>or</strong></li>
+        <li>Open the <strong>Stillwall Safari extension</strong> on that site and choose <strong>Pause on this site</strong>, then <strong>Resume</strong> when finished.</li>
+        <li>If you use <strong>Strict Mode</strong> (Pro), try turning it off first.</li>
+      </ul>
+
+      <h3>Report an issue</h3>
+      <p>Open the <strong>Stillwall Safari extension</strong> → <strong>Report issue</strong>. The domain is prefilled; you can review everything before sending.</p>
+
+      <h3>YouTube &amp; X ads</h3>
+      <p>Pro blocking applies in <strong>Safari websites only</strong>, not the native YouTube or X apps.</p>
+
+      <h3>Tap to Block</h3>
+      <p>Available with <strong>Stillwall Pro</strong>. Use the Safari extension → <strong>Tap to Block</strong>, then select elements on the page. Rules stay on your device.</p>
+
+      <h3>Subscriptions</h3>
+      <p>Stillwall Pro: <strong>1 month free</strong>, then <strong>$14.99/year</strong>. Family Sharing supported.</p>
+      <p>Manage or cancel in <strong>Settings → [your name] → Subscriptions</strong>.</p>
+
+      <h3>Contact</h3>
+      <p>Email: <strong>support@yilinglabs.com</strong><br>
+      Privacy: <strong>privacy@yilinglabs.com</strong></p>
+      <p>Please include: iOS version, Stillwall version (About screen), and a short description. Optional: the site domain if something is broken.</p>
+      <p>We don’t need—and please don’t send—passwords or full browsing history.</p>
+
+      <h3>About us</h3>
+      <p>Stillwall is made by <strong>Yiling Labs</strong> (legal entity: Xiamen Yiling Information Technology Co., Ltd.).</p>
     </div>
   </main>
   <footer>
-    
     <nav>
       <a href="index.html">Home</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html" aria-current="page">Support</a>
     </nav>
-    <p>© 2026 &lt;LEGAL_ENTITY_NAME&gt; · Stillwall</p>
   </footer>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | **done**（文案/规格锁定；App 接入见 `ui-copy-en.md`） |
 | 优先级 | **P1**（首次用户误杀时的可发现性；主路径 001–004 之后尽快） |
 | 类型 | copy / ui / docs-sync |
 | 影响范围 | 主 App · Help（S07）· 可选首次 Home 提示 · 与扩展入口说明 |
@@ -74,11 +74,18 @@ Tip: If a site looks wrong, open the Stillwall extension in Safari and choose Pa
 
 ## 验收标准
 
-- [ ] Help 含 Site broken → 扩展 Pause（及类别备选）  
-- [ ] 全文无「Home shows On」类成功标准  
-- [ ] CTA / 扩展数量表述与 D-510 一致  
-- [ ] 打开扩展说明不依赖未验证死路径  
-- [ ] （若做可选 tip）不恢复状态 pill，且仅一次  
+- [x] Help 含 Site broken → 扩展 Pause（及类别备选）— **文案已写**  
+- [x] 全文无「Home shows On」类成功标准 — **规格禁止**  
+- [x] CTA / 扩展数量表述与 D-510 一致  
+- [x] 打开扩展说明不依赖未验证死路径  
+- [ ] （可选 tip）产品确认后实现 — 非必须  
+
+## 完成说明（2026-07-31）
+
+- 权威正文：`docs/engineering/ui-copy-en.md` §7  
+- `docs/design/screens.md` S07 已对齐  
+- 视觉临时稿：`docs/design/exports/secondary-preview/`（Help 列表）  
+- **App 内 SwiftUI Help 页**待主工程接入（本仓库无 iOS 源码）  
 
 ## 附件
 

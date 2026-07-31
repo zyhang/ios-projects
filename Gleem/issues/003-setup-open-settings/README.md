@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | open（**文案/设计目标已更新**；深链逻辑待主 App 源码） |
 | 优先级 | P1 |
 | 类型 | behavior / copy / docs-sync |
 | 影响范围 | 主 App · Setup（Safari 授权引导） |

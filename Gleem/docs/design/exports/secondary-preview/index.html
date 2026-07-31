@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stillwall · Secondary + Extension previews (006)</title>
+  <style>
+    :root {
+      --brand: #2F6A58;
+      --brand-soft: #EAF3EF;
+      --grouped: #F2F2F7;
+      --elevated: #fff;
+      --text: #000;
+      --secondary: rgba(60, 60, 67, 0.62);
+      --sep: rgba(60, 60, 67, 0.18);
+      --pro-bg: #FFF4D6;
+      --pro-text: #7A5316;
+      --pro-border: #EAC97C;
+      --on: #34C759;
+      --paused: #FF9F0A;
+      --link: #007AFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: #E8E6E1;
+      color: var(--text);
+      padding: 24px 16px 64px;
+    }
+    h1 { font-size: 20px; margin: 0 0 8px; }
+    .meta { color: var(--secondary); font-size: 14px; max-width: 720px; line-height: 1.45; margin-bottom: 28px; }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .phone {
+      width: 320px;
+      background: var(--grouped);
+      border-radius: 36px;
+      padding: 12px 0 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+    .phone-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin: 0 0 10px 4px;
+    }
+    .status-bar {
+      height: 20px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0.45;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 16px 10px;
+      min-height: 36px;
+    }
+    .nav .back { color: var(--brand); font-size: 17px; }
+    .nav .title { font-size: 17px; font-weight: 600; }
+    .nav .spacer { width: 48px; }
+    .hero {
+      padding: 8px 20px 16px;
+    }
+    .hero h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 8px 0 0;
+      font-size: 15px;
+      color: var(--secondary);
+      line-height: 1.35;
+    }
+    .card {
+      margin: 0 16px;
+      background: var(--elevated);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 10px 16px;
+      border-bottom: 0.33px solid var(--sep);
+      font-size: 17px;
+    }
+    .row:last-child { border-bottom: none; }
+    .row .chev { color: var(--secondary); margin-left: auto; font-size: 14px; }
+    .row .sub {
+      display: block;
+      font-size: 13px;
+      color: var(--secondary);
+      margin-top: 2px;
+    }
+    .stack { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+    .step {
+      display: flex;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 0.33px solid var(--sep);
+    }
+    .step:last-child { border-bottom: none; }
+    .num {
+      width: 28px; height: 28px; border-radius: 10px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cta {
+      display: block;
+      margin: 16px 16px 0;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      width: calc(100% - 32px);
+    }
+    .popup {
+      width: 300px;
+      background: var(--elevated);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+      overflow: hidden;
+    }
+    .popup .hdr { padding: 16px 16px 12px; }
+    .popup .host { font-size: 13px; color: var(--secondary); }
+    .popup .st {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 4px; font-size: 15px; font-weight: 500;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--on); }
+    .dot.paused { background: var(--paused); }
+    .dot.off { background: #8e8e93; }
+    .item {
+      min-height: 48px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      border-top: 0.33px solid var(--sep);
+      font-size: 17px;
+    }
+    .pro {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--pro-text);
+      background: var(--pro-bg);
+      border: 0.75px solid var(--pro-border);
+      border-radius: 4px;
+      padding: 2px 5px;
+      margin-right: 6px;
+    }
+    .disabled { padding: 20px 16px; text-align: center; }
+    .disabled p { color: var(--secondary); font-size: 14px; margin: 0 0 14px; line-height: 1.4; }
+    .footer-note {
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--secondary);
+      max-width: 720px;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+  <h1>Secondary screens + Extension popup</h1>
+  <p class="meta">
+    Issue <strong>006</strong> interim visual target — inherits main-path tokens
+    (grouped gray, r18 cards, brand green, PRO gold only). Not a replacement for Lunacy Hi-fi;
+    use for engineering alignment until <code>Stillwall-HiFi-v1.free</code> Depth Pass adds boards.
+  </p>
+
+  <div class="grid">
+    <div>
+      <div class="phone-label">S06 · More</div>
+      <div class="phone">
+        <div class="status-bar">9:41</div>
+        <div class="nav">
+          <span class="back">‹ Home</span>
+          <span class="title">More</span>
+          <span class="spacer"></span>
+        </div>
+        <div class="card">
+          <div class="row">Help <span class="chev">›</span></div>
+          <div class="row">Feedback <span class="chev">›</span></div>
+          <div class="row">About <span class="chev">›</span></div>
+          <div class="row">Privacy Policy <span class="chev">›</span></div>
+          <div class="row">Website <span class="chev">›</span></div>
+          <div class="row">Restore Purchases <span class="chev">›</span></div>
+          <div class="row">Manage Subscription <span class="chev">›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone-label">S07 · Help</div>
+      <div class="phone">
+        <div class="status-bar">9:41</div>
+        <div class="nav">
+          <span class="back">‹ More</span>
+          <span class="title">Help</span>
+          <span class="spacer"></span>
+        </div>
+        <div class="card">
+          <div class="row"><div class="stack">How to enable protection<span class="sub">Set Up in Safari · 6 blockers + extension</span></div><span class="chev">›</span></div>
+          <div class="row"><div class="stack">Site broken?<span class="sub">Pause on this site in Safari extension</span></div><span class="chev">›</span></div>
+          <div class="row"><div class="stack">How to open the extension<span class="sub">In Safari · path may vary by iOS</span></div><span class="chev">›</span></div>
+          <div class="row"><div class="stack">YouTube &amp; X<span class="sub">Safari websites only</span></div><span class="chev">›</span></div>
+          <div class="row"><div class="stack">Tap to Block<span class="sub">Pro · extension item 2</span></div><span class="chev">›</span></div>
+          <div class="row"><div class="stack">Send feedback<span class="sub">App or Report issue</span></div><span class="chev">›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone-label">S05 · Tap to Block (free)</div>
+      <div class="phone">
+        <div class="status-bar">9:41</div>
+        <div class="nav">
+          <span class="back">‹ Home</span>
+          <span class="title">Tap to Block</span>
+          <span class="spacer"></span>
+        </div>
+        <div class="hero">
+          <h2>Hide elements in Safari</h2>
+          <p>Pro feature. Use the Stillwall extension on the page you want to clean up.</p>
+        </div>
+        <div class="card">
+          <div class="step"><div class="num">1</div><div class="stack">Open the Stillwall extension in Safari<span class="sub">From Safari’s extensions controls</span></div></div>
+          <div class="step"><div class="num">2</div><div class="stack">Tap Tap to Block<span class="sub">Starts page selection</span></div></div>
+          <div class="step"><div class="num">3</div><div class="stack">Select page elements<span class="sub">Rules stay on this device</span></div></div>
+        </div>
+        <p style="margin:12px 20px 0;font-size:13px;color:var(--secondary);line-height:1.35;">
+          To pause blocking on a site, use <strong>Pause on this site</strong> in the extension.
+        </p>
+        <button class="cta" type="button">Unlock with Stillwall Pro</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone-label">SE01 · Protected</div>
+      <div class="popup">
+        <div class="hdr">
+          <div class="host">example.com</div>
+          <div class="st"><span class="dot"></span> Protected</div>
+        </div>
+        <div class="item">Pause on this site</div>
+        <div class="item"><span class="pro">PRO</span> Tap to Block</div>
+        <div class="item">Report issue</div>
+      </div>
+      <div class="phone-label" style="margin-top:20px">SE01a · Paused</div>
+      <div class="popup">
+        <div class="hdr">
+          <div class="host">example.com</div>
+          <div class="st"><span class="dot paused"></span> Paused</div>
+        </div>
+        <div class="item">Resume on this site</div>
+        <div class="item"><span class="pro">PRO</span> Tap to Block</div>
+        <div class="item">Report issue</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone-label">SE01b · Not enabled</div>
+      <div class="popup">
+        <div class="hdr">
+          <div class="host">example.com</div>
+          <div class="st"><span class="dot off"></span> Not enabled</div>
+        </div>
+        <div class="disabled">
+          <p>Turn on Stillwall in the app to use Pause, Tap to Block, and Report on this site.</p>
+          <button class="cta" type="button" style="margin:0;width:100%">Open Stillwall</button>
+        </div>
+      </div>
+      <div class="phone-label" style="margin-top:20px">All categories off</div>
+      <div class="popup">
+        <div class="hdr">
+          <div class="host">example.com</div>
+          <div class="st"><span class="dot off"></span> Off in app</div>
+        </div>
+        <div class="item">Open Stillwall</div>
+        <div class="item"><span class="pro">PRO</span> Tap to Block</div>
+        <div class="item">Report issue</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    Copy source: <code>docs/engineering/ui-copy-en.md</code>.
+    Extension product rules: <code>docs/design/safari-extension.md</code>.
+    When Lunacy boards land, export into <code>phone-preview/</code> or a sibling folder and update issue 006.
+  </p>
+</body>
+</html>

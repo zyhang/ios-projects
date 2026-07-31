@@ -20,7 +20,8 @@
 - [ ] V-003：StoreKit 试用 1 个月 + $14.99 年 + Family Sharing 在 ASC 配通  
 - [ ] V-004：规则源许可与 About 归因  
 - [ ] Privacy / Support URL **可公网访问**（host 替换占位域名）  
-- [ ] 法务主体名写入 Copyright（替换 `<LEGAL_ENTITY_NAME>`）  
+- [x] 法务主体写入 Copyright（D-111 全称）  
+- [x] Privacy / Support URL 定为 yilinglabs.com（文案与 submission 已替换占位）  
 - [x] Bundle ID 已定为 `com.lingyi.stillwall`（扩展 / Group 见 engineering 清单）
 - [ ] 真机：Content Blocker + Web Extension 启用路径与截图一致（V-002）  
 
@@ -38,7 +39,7 @@
 | **Content Blocker** | `com.lingyi.stillwall.blocker` | 已锁定 |
 | **Web Extension** | `com.lingyi.stillwall.extension` | 已锁定 |
 | **App Group** | `group.com.lingyi.stillwall` | 见 [identifiers-and-entitlements.md](../engineering/identifiers-and-entitlements.md) |
-| **Copyright** | `© 2026 <LEGAL_ENTITY_NAME>` | 与 ASC 卖方主体一致 |
+| **Copyright** | `© 2026 Xiamen Yiling Information Technology Co., Ltd.` | D-111；对外简称 Yiling Labs |
 | **Primary Category** | **Utilities** | 副类本轮不填 |
 | **Age Rating** | 目标 **4+**；非 Made for Kids | 以 ASC 问卷生成为准 |
 
@@ -67,9 +68,9 @@
 
 | 用途 | URL 约定 | 本轮状态 |
 |------|----------|----------|
-| **Privacy Policy** | `https://<domain>/privacy` | 文案见 `copy/privacy-policy-en-US.md`；host 待 V-001 |
-| **Support** | `https://<domain>/support` | 文案见 `copy/support-en-US.md` |
-| **Marketing**（可选） | `https://<domain>/` 或 `/product` | **域名未定时 Connect 可先留空** |
+| **Privacy Policy** | `https://yilinglabs.com/privacy` | 文案见 `copy/privacy-policy-en-US.md`；D-113 |
+| **Support** | `https://yilinglabs.com/support` | 文案见 `copy/support-en-US.md`（**007** 已对齐 D-316） |
+| **Marketing**（可选） | `https://yilinglabs.com/` 或 `/stillwall/` | 正式站 `website/` |
 
 提交前三条（Privacy 必填、Support 强烈建议）必须 **HTTPS 可打开**。
 

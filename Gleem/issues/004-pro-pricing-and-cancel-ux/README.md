@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | open |
+| 状态 | open（**定价/取消 UX 规格已锁**；待 StoreKit 主 App + ASC） |
 | 优先级 | P0（定价错误）/ P1（取消态文案） |
 | 类型 | behavior / copy |
 | 影响范围 | 主 App · Upgrade / Paywall（StoreKit） |
