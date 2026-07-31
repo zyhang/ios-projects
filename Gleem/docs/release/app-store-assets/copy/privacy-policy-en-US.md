@@ -1,6 +1,6 @@
 # Privacy Policy — Stillwall
 
-**Last updated:** 2026-07-29  
+**Last updated:** 2026-07-31  
 **Product:** Stillwall for Safari (iOS / iPadOS)  
 **Public name:** Yiling Labs  
 **Legal entity:** Xiamen Yiling Information Technology Co., Ltd.  
@@ -30,7 +30,7 @@ Stillwall is provided by **Xiamen Yiling Information Technology Co., Ltd.** (“
 This Privacy Policy describes how we handle information when you:
 
 - Use the **Stillwall** app on iPhone or iPad  
-- Use Stillwall’s **Safari Content Blocker** and **Safari Web Extension**  
+- Use Stillwall’s **Safari Content Blockers** and **Safari Web Extension**  
 - Visit our websites (including yilinglabs.com)  
 - Contact us for support or privacy requests  
 
@@ -71,7 +71,7 @@ Preferences and feature data on your device (and App Group shared with Safari ex
 
 ### 4.3 How Safari blocking works
 
-- **Content Blocker:** Stillwall provides a content-blocking rule list to Safari. Safari applies those rules. This model does **not** give Stillwall access to the contents of web pages you visit or a feed of every URL you open while content blocking is installed.  
+- **Content Blockers:** Stillwall provides content-blocking rule lists to Safari (multiple Stillwall Content Blockers plus related configuration). Safari applies those rules. This model does **not** give Stillwall access to the contents of web pages you visit or a feed of every URL you open while content blocking is installed.  
 - **Web Extension:** Optional features (pause/resume on the current site, Tap to Block, Report issue, certain Pro tools such as enhanced blocking for YouTube and X *in Safari*) may process information about the **current site or page in Safari** on your device. That processing is local. We do **not** upload your browsing history.  
 
 ### 4.4 Network requests

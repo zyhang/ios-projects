@@ -78,7 +78,9 @@
 
 ## 完成说明（2026-07-31）
 
-已更新：`docs/release/app-store-assets/copy/support-en-US.md`、`website/support/index.html`、`docs/release/app-store-assets/site/support.html`。  
+已更新：`docs/release/app-store-assets/copy/support-en-US.md`、`website/support/index.html`、`docs/release/app-store-assets/site/support.html`。
+
+**补充（同日）：** 营销首页 `website/index.html` 仍残留 *two Safari extensions* / *on by default · nothing to configure*，已按同一口径改为 **6 Content Blockers + Web Extension + website access**，并去掉 Home 全局 On/Off badge 叙事；`website/privacy` 与 privacy-policy 源文同步 Content Blockers 复数。`versions/*` 历史稿未改。  
 
 ## 附件
 
