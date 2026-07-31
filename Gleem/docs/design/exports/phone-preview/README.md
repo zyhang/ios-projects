@@ -1,6 +1,7 @@
 # 手机预览导出（Hi-fi P0）
 
-从 Lunacy `Stillwall-HiFi-v1.free` · **Depth Pass · Hi-fi P0** 导出。
+从 Lunacy `Stillwall-HiFi-v1.free` · **Depth Pass · Hi-fi P0** 导出。  
+**最近同步：** 2026-07-31 — D-510 文案、Setup 诚实说明/深链 hint、去完成金勾、Home 进度条与 Pro 区间距；逻辑 390×844 导出并放大 **2× → 780×1688**。
 
 | 项 | 说明 |
 |----|------|
