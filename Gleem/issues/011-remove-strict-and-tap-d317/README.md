@@ -5,7 +5,7 @@
 | 状态 | **open** |
 | 优先级 | **P0**（范围变更；与旧实现/旧稿冲突时必须改） |
 | 类型 | product-scope / ui / copy |
-| 影响范围 | 主 App Home / Upgrade / Welcome · Help · 扩展 popup · 商店卖点 |
+| 影响范围 | 主 App Home / Upgrade / Welcome · Help · 扩展 popup · 商店卖点 · **营销站 / Support / Privacy** |
 | 相关文档 | 总纲领 D-317；`product-charter` §2.2 / §4.2 / §5.7 / §7.3 / §9 / §14 |
 | 创建日期 | 2026-07-31 |
 | 来源 | 产品确认 v1 砍掉 Strict + Tap（路径 B） |
@@ -51,7 +51,8 @@
 1. 删除/隐藏任何 Strict、Tap 的 model 字段、开关 UI、导航。  
 2. 扩展菜单改 2 项；同步 App Group 若曾为 Tap 预留可保留字段但不暴露 UI。  
 3. 与 **005** 文案表、**006** 次级/扩展、**009** Help 一并验收。  
-4. 商店/截图若仍写 Tap 或 Strict → 见 **010** / 描述文案（文档侧已改 description）。
+4. 商店/截图若仍写 Tap 或 Strict → 见 **010** / 描述文案（文档侧已改 description）。  
+5. **网站（对外）：** 营销首页 Pro 目录、`website/support`、`website/privacy` 与 ASC 镜像文案不得再卖 Strict / Tap；Home 成片截图仅 6 行。
 
 ## 验收标准
 
@@ -60,6 +61,7 @@
 - [ ] 扩展 popup 仅 Pause + Report  
 - [ ] 工程字符串搜索无用户可见 `Strict Mode` / `Tap to Block`（About/历史注释除外）  
 - [ ] Help 无 Tap 路径；恢复路径 = 关类别或 Pause  
+- [x] **网站（2026-07-31）：** `website/index.html` Pro 仅 YT&X + Battery；Support/Privacy/support-en-US 去掉 Strict·Tap；站内 `03-Home` / `05-Upgrade` 截图已裁掉两行（`01-Welcome` 列表仍可能在 CTA 下透出旧行，lab 用，正式首页未引用）  
 
 ## 附件
 

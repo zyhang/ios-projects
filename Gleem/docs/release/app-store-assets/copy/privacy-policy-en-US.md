@@ -64,15 +64,14 @@ Stillwall blocks ads, trackers, and annoyances in **Safari only**. It is **not a
 
 Preferences and feature data on your device (and App Group shared with Safari extensions where applicable), for example:
 
-- Category toggles (Ads, Privacy, Annoyances, Regional, Pro features)  
+- Category toggles (Ads, Privacy, Annoyances, Regional, and Pro tools such as YouTube & X and Battery Boost)  
 - Pro entitlement state as reported by StoreKit  
 - Site pause / resume decisions in the Safari extension  
-- Tap to Block rules (on-device; not cloud-synced in the current version)  
 
 ### 4.3 How Safari blocking works
 
 - **Content Blockers:** Stillwall provides content-blocking rule lists to Safari (multiple Stillwall Content Blockers plus related configuration). Safari applies those rules. This model does **not** give Stillwall access to the contents of web pages you visit or a feed of every URL you open while content blocking is installed.  
-- **Web Extension:** Optional features (pause/resume on the current site, Tap to Block, Report issue, certain Pro tools such as enhanced blocking for YouTube and X *in Safari*) may process information about the **current site or page in Safari** on your device. That processing is local. We do **not** upload your browsing history.  
+- **Web Extension:** Optional features (pause/resume on the current site, Report issue, certain Pro tools such as enhanced blocking for YouTube and X *in Safari*) may process information about the **current site or page in Safari** on your device. That processing is local. We do **not** upload your browsing history.  
 
 ### 4.4 Network requests
 
