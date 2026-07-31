@@ -35,3 +35,11 @@ This repository is for iOS product work under `Gleem/` (Stillwall) and related d
 
 - Collaboration docs: Chinese (except identifiers, API names, and user-facing English UI/store copy).
 - Do not invent “已完成 / 已验证” for work that was not actually delivered or tested.
+
+## Post-dev issues (screens / behavior)
+
+After the app is built, page and feature fix requests (especially from screenshots) go under **`Gleem/issues/`**:
+
+- Rules: `Gleem/issues/AGENTS.md`
+- One issue per folder: `NNN-short-slug/` (incrementing), with README + screenshots for developers
+- Create/update issues there; do not leave fix instructions only in chat
