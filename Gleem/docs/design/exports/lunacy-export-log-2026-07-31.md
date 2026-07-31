@@ -68,14 +68,20 @@ Wireframes 中已有画板（文件内 ID）：
 
 **请你：** 在 **已连接 Automation 的那一个** Lunacy 窗口中打开 `Stillwall-Wireframes-v1.free`（或合并画板到 Hi-fi），告知后可再跑一轮导出到 `exports/secondary-preview/png/`。
 
-## 设计债（导出后仍须改稿）
+## D-317 改稿 + 重导（同日续）
 
-Hi-fi 当前像素与 **D-317** 不一致：
+**已在 Lunacy live 文档删除** Strict / Tap 相关行（Home ×3、Upgrade ×2、Welcome ×3 共 26 层）。
 
-- Home 仍有 Strict + Tap  
-- Upgrade 仍有四利益（含 Strict/Tap）  
+| 画板 | 结果（live 数据） |
+|------|-------------------|
+| Home / Dark | `list.complete` 高约 311.65，**6 行**至 Battery |
+| Home · Large Type | 列表收短，无 Strict/Tap 子层 |
+| Upgrade / Dark | `Pro benefits` 高约 128.33，**仅 YT&X + Battery**；Offer/CTA 上移 |
+| Welcome 系列 | Strict/Tap 卖点行已删；Daily updates 上移 |
 
-**011** 要求：Lunacy 改稿后再执行一次主路径导出，才可作为开发对稿权威。
+**请用户在 Lunacy 中 Ctrl+S 保存** `Stillwall-HiFi-v1.free`，否则磁盘 `.free` 与 live 不一致。
+
+已重导 2× PNG → `phone-preview/` + issue `after/` + 商店成片合成。
 
 ## 复现命令（Hi-fi 已打开时）
 

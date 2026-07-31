@@ -61,13 +61,14 @@
 - [x] 总纲领 + decision D-317  
 - [x] design / ui-copy / issues 对齐  
 
-### 设计稿 · Lunacy（**未完成**）
+### 设计稿 · Lunacy
 
-- [ ] Hi-fi Home 去掉 Strict / Tap 行后 **重导出** `03-Home`（及 Dark / LT）  
-- [ ] Hi-fi Upgrade 仅两利益后 **重导出** `05-Upgrade`  
-- [ ] Welcome 卖点去掉 Strict/Tap（若有）后重导  
-- [ ] Wireframes 扩展改为 2 项并导出 SE01*  
-- [ ] 同步 issue after/ 与商店合成图  
+- [x] Hi-fi Home 去掉 Strict / Tap 并 **重导出**（含 Dark / LT）  
+- [x] Hi-fi Upgrade 仅 YT&X + Battery 并 **重导出**  
+- [x] Welcome 卖点去掉 Strict/Tap 并重导  
+- [ ] **用户须在 Lunacy 中保存** `Stillwall-HiFi-v1.free`（Ctrl+S）  
+- [ ] Wireframes 扩展改为 2 项并导出 SE01*（006）  
+- [x] 同步 issue after/ 与商店合成图（本轮已做）  
 
 ### 开发实现
 
