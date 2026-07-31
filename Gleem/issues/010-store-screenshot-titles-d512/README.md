@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 |------|------|
-| 状态 | **open** |
+| 状态 | **done**（2026-07-31：已按 D-512 合成全套顶栏；源 UI 为最新 Hi-fi 导出） |
 | 优先级 | **P1**（上架上传前；不阻塞主 App 代码） |
 | 类型 | store / design / docs-sync |
 | 影响范围 | App Store 截图成片顶栏文案 · ASC 上传素材 |
@@ -44,10 +44,15 @@
 
 ## 验收标准
 
-- [ ] 三套尺寸（或实际上传套）顶栏与上表一致  
-- [ ] 无 *annoyances blocked* 等已否决绝对句  
-- [ ] 框内 Welcome CTA 仍为 `Set Up in Safari`  
-- [ ] screenshot-plan Connect 清单「按新 Title/Subtitle 重生成顶栏」已勾  
+- [x] 三套尺寸顶栏与上表一致（`iphone-6.5-1242x2688` / `1284x2778` / `ipad-13`）  
+- [x] 无 *annoyances blocked* 等已否决绝对句  
+- [ ] 框内 UI 与 D-317 一致（**Hi-fi 仍含 Strict/Tap → 改稿后重导再合成** · 见 **011**）  
+- [x] 顶栏文案已按 D-512 重生成  
+
+## 完成说明（2026-07-31）
+
+从 `phone-preview`（Lunacy 2× 导出）+ D-512 顶栏合成商店成片。  
+**注意：** 框内仍反映旧 Hi-fi（含 Strict/Tap）；**011 改稿后须重导+重合成**。  
 
 ## 附件
 

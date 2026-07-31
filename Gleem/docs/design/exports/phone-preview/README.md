@@ -39,12 +39,15 @@ python3 -m http.server 8765
 
 扩展 popup（SE）目前仅在线框稿；未包含在本批 Hi-fi 导出中。次级预览见 [`../secondary-preview/`](../secondary-preview/)。
 
-## D-510 像素修正（2026-07-31）
+## Lunacy 导出（2026-07-31）
 
-| 文件 | 修正 |
+从 **`Stillwall-HiFi-v1.free` · Depth Pass · Hi-fi P0** 经 Automation `export` **scale=2** 写入本目录（780×1688）。  
+日志：[`../lunacy-export-log-2026-07-31.md`](../lunacy-export-log-2026-07-31.md)。
+
+| 注意 | 说明 |
 |------|------|
-| `01` / `06` / `09` Welcome | 主 CTA → **Set Up in Safari**（`scripts/patch_welcome_cta.py`） |
-| `02` / `10` Setup | 诚实 6 CB + Web Extension；去掉完成金勾 |
-| `11` Home Large Type | Strict → `Stronger blocking · Use with care` |
+| **D-317** | 当前 Hi-fi 画板 **仍含** Strict / Tap；改稿前导出**不能**当 D-317 终稿 |
+| Welcome CTA | 以稿面为准；若仍为旧串须改稿后重导 |
+| 次级/扩展 | 在 Wireframes；须在 MCP 当前文档中打开后再导 |
 
-正式权威仍建议下次 Lunacy Depth Pass 整页重导出。
+Issue after 目标图已从本目录同步：001 / 003 / 004 / 005。

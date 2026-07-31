@@ -20,7 +20,7 @@ Stillwall（Gleem）**开发任务入口**。产品/设计优化必须落到本�
 | 007 | [007-support-trust-copy-d316](./007-support-trust-copy-d316/) | Support 信任文案 | **done** | P0 | 文档 |
 | 008 | [008-store-packaging-cta-domain](./008-store-packaging-cta-domain/) | 商店框内 CTA + 域名 | **done** | P1 | 文档/素材 |
 | 009 | [009-help-recovery-path-copy](./009-help-recovery-path-copy/) | App Help（**无 Tap**） | **open** | P1 | 开发 |
-| 010 | [010-store-screenshot-titles-d512](./010-store-screenshot-titles-d512/) | 商店框外 Title/Subtitle | **open** | P1 | 设计/发布 |
+| 010 | [010-store-screenshot-titles-d512](./010-store-screenshot-titles-d512/) | 商店框外 Title/Subtitle | **done**（框内待 011 改稿重导） | P1 | 设计/发布 |
 | 011 | [011-remove-strict-and-tap-d317](./011-remove-strict-and-tap-d317/) | **v1 移除 Strict + Tap（D-317）** | **open** | **P0** | 开发 |
 
 ## 建议开发顺序

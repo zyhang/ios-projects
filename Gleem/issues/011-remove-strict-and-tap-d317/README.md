@@ -56,11 +56,28 @@
 
 ## 验收标准
 
+### 产品 / 文档（已完成）
+
+- [x] 总纲领 + decision D-317  
+- [x] design / ui-copy / issues 对齐  
+
+### 设计稿 · Lunacy（**未完成**）
+
+- [ ] Hi-fi Home 去掉 Strict / Tap 行后 **重导出** `03-Home`（及 Dark / LT）  
+- [ ] Hi-fi Upgrade 仅两利益后 **重导出** `05-Upgrade`  
+- [ ] Welcome 卖点去掉 Strict/Tap（若有）后重导  
+- [ ] Wireframes 扩展改为 2 项并导出 SE01*  
+- [ ] 同步 issue after/ 与商店合成图  
+
+### 开发实现
+
 - [ ] Home 仅 6 能力行，无 Strict / Tap  
 - [ ] Upgrade 仅 YT&X + Battery  
 - [ ] 扩展 popup 仅 Pause + Report  
-- [ ] 工程字符串搜索无用户可见 `Strict Mode` / `Tap to Block`（About/历史注释除外）  
+- [ ] 工程字符串搜索无用户可见 `Strict Mode` / `Tap to Block`  
 - [ ] Help 无 Tap 路径；恢复路径 = 关类别或 Pause  
+
+**导出日志：** `docs/design/exports/lunacy-export-log-2026-07-31.md`（主路径已导，**仍含旧 Strict/Tap 像素**）  
 - [x] **网站（2026-07-31）：** `website/index.html` Pro 仅 YT&X + Battery；Support/Privacy/support-en-US 去掉 Strict·Tap；站内 `03-Home` / `05-Upgrade` 截图已裁掉两行（`01-Welcome` 列表仍可能在 CTA 下透出旧行，lab 用，正式首页未引用）  
 
 ## 附件

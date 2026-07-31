@@ -65,7 +65,7 @@ UI 源：`docs/design/exports/phone-preview/`
 - [x] 带标题成片尺寸就绪  
 - [x] Welcome CTA / Setup 诚实文案像素（008）  
 - [x] 框外叙事表修订（本文件）  
-- [ ] 按新 Title/Subtitle **重生成顶栏**（上传前）  
+- [x] 按新 Title/Subtitle **重生成顶栏**（2026-07-31 合成；框内仍待 D-317 改稿）  
 - [ ] 上传 iPhone 套  
 - [ ] iPad 槽核对后上传  
 - [x] 无 App Preview  
