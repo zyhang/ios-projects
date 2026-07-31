@@ -1,0 +1,68 @@
+# Issue 006：次级页与 Safari 扩展 Hi-fi 债（设计补齐）
+
+| 字段 | 内容 |
+|------|------|
+| 状态 | open |
+| 优先级 | P2（不阻塞主路径 001–005 开发；上架前建议有线框/说明对齐） |
+| 类型 | docs-sync / ui |
+| 影响范围 | More · Help · About · Feedback · Tap to Block 说明 · Safari 扩展 popup |
+| 相关文档 | `docs/design/screens.md` S05–S10；`docs/design/safari-extension.md`；`docs/design/extension-wireframes-se.md` |
+| 创建日期 | 2026-07-31 |
+| 来源 | Hallmark 全局审计后续（产品确认登记债项） |
+
+## 问题现象
+
+主路径 Hi-fi（Welcome / Setup / Home / Upgrade）已齐；下列仍 **缺 Hi-fi 画板** 或仅有线框/文字规格：
+
+| 面 | 现状 |
+|----|------|
+| More（S06） | 列表结构在 screens；无 phone-preview 成片 |
+| Help（S07） | 条目建议有；无高保真 |
+| Tap to Block 说明（S05） | 文字规格；无高保真 |
+| Feedback / About（S09–S10） | 文字规格 |
+| Safari 扩展 popup（SE01–SE03） | 有线框 / mock HTML；**Lunacy Hi-fi 待画**（safari-extension.md） |
+
+风险：实现时各自「自由发挥」，破坏主路径已统一的 quiet Settings 人格。
+
+## 期望结果
+
+### 设计（产品/设计）
+
+1. 在 `Stillwall-HiFi-v1.free`（或后续 Depth Pass）补齐至少：  
+   - **More** 列表  
+   - **Tap to Block** 说明（含未订阅 Upgrade CTA）  
+   - **SE01** 扩展 popup 常态（Protected + 3 项）  
+2. 可选但加分：Help 一屏、SE01a Paused、SE01b Not enabled。  
+3. 导出至 `docs/design/exports/`（可新建 `phone-preview-secondary/` 或并入现有 preview）。  
+4. 视觉 **必须** 继承主路径 token：`surfaceGrouped`、r18 卡、森绿主 CTA、无 Tab、英文、无威胁仪表盘。扩展 popup **无 IAP**（D-508）。
+
+### 开发（在 Hi-fi 未出前）
+
+- 严格按 `screens.md` + `safari-extension.md` + `design-system.md` 实现，**不要**自创第二套风格。  
+- 扩展顶栏状态文案诚实：Protected / Paused / Off in app 等（见扩展规格）。  
+- 与主 App Home **001** 对齐：主 App 无保护 pill；扩展可表达站点状态。
+
+## 修改说明
+
+| 角色 | 动作 |
+|------|------|
+| 设计 | 补画板 → 导出 → 更新 `design/exports` 与 screens 链接 |
+| 开发 | 次级页与扩展跟规格；Hi-fi 到达后做视觉 diff |
+| 产品 | 本 issue 关闭条件：至少 More + SE01 + Tap 说明有可对稿图像 |
+
+## 验收标准
+
+- [ ] More / Tap 说明 / SE01 有与主路径 token 一致的视觉稿或导出  
+- [ ] 实现侧无第二套主色/圆角/字体  
+- [ ] 扩展 popup 固定 3 项、无 IAP、无类别列表  
+- [ ] 文档索引（design README / screens）链到新导出  
+
+## 附件
+
+（待设计导出后放入 `after/`）
+
+逻辑参考（已有）：
+
+- `docs/design/safari-extension.md`  
+- `docs/design/extension-wireframes-se.md`  
+- `docs/design/extension-popup-mock.html`  

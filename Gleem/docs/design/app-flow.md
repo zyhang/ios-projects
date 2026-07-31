@@ -70,7 +70,7 @@ Cold Start
 ### 3.1 首次启动
 
 ```text
-[Welcome] 长页卖点 → 主按钮 Enable Safari Blocking
+[Welcome] 长页卖点 → 主按钮 Set Up in Safari
     → [Setup] 一次叙事：Content Blocker + Web Extension
     → 检测通过 → Home（免费类别默认 On）
 ```

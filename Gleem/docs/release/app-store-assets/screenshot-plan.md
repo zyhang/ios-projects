@@ -14,6 +14,8 @@
 UI 源：`docs/design/exports/phone-preview/`  
 成片目录：`docs/release/app-store-assets/screenshots/`
 
+**文案（D-510）：** Welcome 主 CTA 权威为 **Set Up in Safari**。若导出/成片仍显示 `Set Up Safari Protection`，下次重导出时替换；商店框外 Title/Subtitle 不受影响。
+
 ## 尺寸（以 ASC 报错/当前槽为准）
 
 Connect 要求的 **iPhone 竖屏** 合法尺寸包括：

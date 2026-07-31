@@ -217,7 +217,8 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 - 尺寸 **358 × 50**（水平 inset 16），圆角 **12**  
 - 底 `brandPrimary`，字白 SemiBold 17  
 - **单屏最多一个**视觉主按钮  
-- 文案用动作结果：`Set Up Safari Protection` / `Open Settings` / `Start 1 Month Free Trial`  
+- 文案用动作结果：`Set Up in Safari` / `Open Settings` / `Start 1 Month Free Trial`  
+- 弃用：`Set Up Safari Protection`、`Enable Safari Blocking`（见 `issues/005-cross-screen-consistency`）
 - 避免模糊 `Continue`（除非结果已完全明确）  
 
 ### 7.4 Pro Badge
@@ -265,8 +266,9 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 - 中：白卡可滚动卖点列表（行高约 70）  
 - 底：固定主 CTA + fade；footer：*No account required · Core Safari protection is free*  
 - 主 CTA **不得**强制 Free Trial  
-- 主 CTA 推荐文案：`Set Up in Safari`（与 quiet 人格一致；旧稿 `Set Up Safari Protection` 可弃用）  
+- 主 CTA **锁定**：`Set Up in Safari`（旧稿 `Set Up Safari Protection` / `Enable Safari Blocking` 弃用）  
 - Pro 相关卖点须诚实：YouTube & X **in Safari** / not native apps  
+- 能力副文案锁定表：`issues/005-cross-screen-consistency`（Strict Large Type **不得**改写为 May affect some sites）
 
 ### 7.7 Setup（门禁）
 
@@ -421,7 +423,7 @@ enum StillwallColor {
 
 - [ ] 类别开关开/关状态可辨（Switch + a11y），**非**依赖 Home 顶栏状态 pill  
 - [ ] 单屏无多个竞争主按钮  
-- [ ] Welcome CTA ≠ 强制试用；推荐 *Set Up in Safari*  
+- [ ] Welcome CTA = *Set Up in Safari*（≠ 强制试用）
 - [ ] Setup 门禁完整；文案含 6 CB + Web Extension；失败为 hint 非恐吓  
 - [ ] Home：中性价值文案 + 仅类别开关（无全局总开关）；无 Pause / App 内 Allowed Sites  
 - [ ] Free/Pro 边界在 paywall 前可读；暖金仅 Pro  

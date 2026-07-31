@@ -94,6 +94,7 @@
 | D-507 | 主 App 视觉以 Lunacy Hi-fi P0 + design-system 为准 | 已确认 | 品牌主色 `#2F6A58`；暖金仅 Pro；系统字体实现；见 [design-system.md](../design/design-system.md) |
 | D-508 | 扩展 popup 无全局开关、无类别列表 | 已确认 | 类别开关仅主 App；主 App 亦无全局总开关（D-315）；扩展为当前站情境 |
 | D-509 | App Store 基础元数据以 release 包为准 | 已确认 | Name **Stillwall for Safari**；Subtitle **Free Ad & Tracker Blocking**；Utilities；见 [app-store-submission.md](../release/app-store-submission.md) |
+| D-510 | v1 主路径 UI 文案锁定（Hallmark 审计后） | 已确认 | Welcome CTA = **Set Up in Safari**；能力副文案与 Strict Large Type 以 [issues/005](../../issues/005-cross-screen-consistency/) 表为准；Setup 诚实写 6 CB + Web Extension；弃用 Set Up Safari Protection / Enable Safari Blocking / Strict「May affect some sites」 |
 
 ### 2.6 隐私
 
@@ -166,3 +167,4 @@
 | 2026-07-29 | D-113：单域名 yilinglabs.com；产品子路径/子域扩展 |
 | 2026-07-29 | **D-315**：移除主 App 全局保护总开关；D-302 已替代；Home 仅类别开关 |
 | 2026-07-29 | **D-316**：Home On/Off 合并为单一 Home；顶部使用中性金句，不展示保护状态 |
+| 2026-07-31 | **D-510**：锁定 Welcome CTA / 能力副文案 / Setup 诚实句；issues 001–006 与 design-system 同步 |

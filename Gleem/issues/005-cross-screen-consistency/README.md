@@ -9,6 +9,7 @@
 | 相关文档 | `docs/design/design-system.md`；`docs/design/screens.md`；Hi-fi `phone-preview/*` |
 | 创建日期 | 2026-07-31 |
 | 审计 | Hallmark 全局 review · 设计稿 + issue 001–004 |
+| 文案锁定 | **2026-07-31 产品已确认**（下列字符串为 v1 权威，不再「推荐/可选」） |
 
 ## 背景（审计结论摘要）
 
@@ -41,57 +42,60 @@ Large Type 为省行高改写可以，但 **Strict 的「可能影响站点」**
 
 Hi-fi Setup 副文案 / 步骤 2 使用 *both extensions*，与产品真实形态（**6 Content Blockers + 1 Web Extension**）不符；实现版更诚实。以诚实版为权威（与 **003** 一致），设计导出应回对齐。
 
-### C. Welcome 主 CTA 用词「Protection」与 Home 中性人格轻微拉扯
+### C. Welcome 主 CTA（已锁定）
 
-- Welcome CTA：`Set Up Safari Protection`  
-- Home 价值句：`A quieter Safari, on your terms.`（刻意去「保护中」监控感）
+| 状态 | 文案 |
+|------|------|
+| **权威** | `Set Up in Safari` |
+| 弃用 | `Set Up Safari Protection` · `Enable Safari Blocking` |
 
-品牌仍可用 Protection，但主路径 CTA 更宜动作化、少「安防产品腔」。
+与 Home 中性人格一致：动作化，少安防腔。商店成片若仍含旧 CTA，重导出时改掉（见 screenshot-plan 备注）。
 
-### D. Home Free / Pro 列表节奏
+### D. Home Free / Pro 列表节奏（已锁定）
 
-Hi-fi 正确：Free 行无领先图标（降噪），Pro 行暖金 `PRO` badge。  
-可再提升一点「分区感」而不破坏安静：在首个 Pro 行前增加 **约 8pt 额外间距**（或 0.33 分隔已足够时保持现状）。**不要**加「PRO FEATURES」大写分区标题（廉价订阅模板感）。
+- Free 行：**无**领先图标  
+- Pro 行：暖金 `PRO` badge  
+- **Regional 与 YouTube & X 之间 +8pt** 额外间距  
+- **禁止**「PRO FEATURES」等大写分区标题  
 
 ### E. 缺失画板
 
-- 规则编译进度（**002** 已补视觉规格）  
-- Open Settings 失败 hint（**003**）  
-- More / Help / Tap 说明 / 扩展 popup 仍无 Hi-fi（P2 文档债，本 issue 不强制出图）
+- 规则编译进度（**002**）· Open Settings 失败 hint（**003**）— 有文字规格即可  
+- More / Help / Tap 说明 / 扩展 popup Hi-fi → **006**
 
 ## 期望结果
 
-### 1. 文案锁定表（v1 源语言 en）
+### 1. 文案锁定表（v1 源语言 en · **已确认**）
 
-开发与文案以本表为准；Large Type 仅允许括号内「短式」。
+开发与文案**必须**以本表为准。Large Type **仅**可使用「短式」列；**禁止**另造语义（尤其 Strict）。
 
-| 行 | 主标题 | 副文案（标准） | 副文案（Large Type 可选短式） |
-|----|--------|----------------|------------------------------|
-| Ads | Ads | Reduce ads and visual clutter | （可同） |
+| 行 | 主标题 | 副文案（标准） | 副文案（Large Type 短式） |
+|----|--------|----------------|---------------------------|
+| Ads | Ads | Reduce ads and visual clutter | Reduce ads and visual clutter |
 | Privacy | Privacy | Block common advertising trackers | Block common trackers |
 | Annoyances | Annoyances | Hide cookie banners and noisy prompts | Hide cookie banners and prompts |
-| Regional | Regional Ad Blocking | Automatic by language | （可同） |
+| Regional | Regional Ad Blocking | Automatic by language | Automatic by language |
 | YouTube & X | YouTube & X | Block YouTube & X ads in Safari | YouTube & X ads in Safari |
 | Battery Boost | Battery Boost | Reduce wasteful browsing scripts | Reduce wasteful scripts |
-| Strict Mode | Strict Mode | Stronger blocking · Use with care | Stronger blocking · Use with care（**不要**改成无关语义） |
-| Tap to Block | Tap to Block | Hide page elements in Safari | （可同） |
+| Strict Mode | Strict Mode | Stronger blocking · Use with care | Stronger blocking · Use with care |
+| Tap to Block | Tap to Block | Hide page elements in Safari | Hide page elements in Safari |
 
-**Upgrade 利益行**副文案与上表 Pro 四行对齐（Battery 用完整句 `Reduce wasteful browsing scripts`）。
+**Strict Large Type 禁止：** `May affect some sites`（旧稿分叉，语义偏离，已否决）。
 
-**Welcome 卖点行**可保留略营销化写法，但 Pro 边界必须诚实：
+**Upgrade 利益行**副文案 = 上表 Pro 四行**标准**列（Battery 用完整句）。
 
-- YouTube & X：须含 **in Safari** / **Not the native apps** 之一  
+**Welcome 卖点行**可略营销化，但 Pro 边界必须诚实：
+
+- YouTube & X：须含 **in Safari** 或 **Not the native apps**  
 - 勿承诺未交付能力  
 
-**Welcome 主 CTA（建议）：**
+**Welcome 主 CTA（已锁定）：**
 
 ```text
 Set Up in Safari
 ```
 
-或保留 `Set Up Safari Protection` 若商店/截图已锁定——若改，需同步 App Store 截图计划。**推荐改为 `Set Up in Safari`**，与 quiet 人格一致。
-
-**Setup 页（与 003 一致）：**
+**Setup 页（与 003 一致 · 已锁定）：**
 
 ```text
 Title: Enable Stillwall in Safari
@@ -112,10 +116,9 @@ Step2 subtitle: Enable all 6 Content Blockers and the Web Extension
 | 链接触控 | Restore 等用系统蓝；主行动用森绿 |
 | 无 | 多主按钮、霓虹、威胁大数字、玻璃拟态整页 |
 
-### 3. Home Pro 区微节奏（推荐）
+### 3. Home Pro 区微节奏（已锁定）
 
-- 在 **Regional** 与 **YouTube & X** 之间增加额外 **8pt** 间距（或保持单卡连续——二选一，全 App 统一）。  
-- 推荐：**+8pt**，无分区标题。  
+Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 
 ### 4. 顶图 emblem 语义
 
@@ -128,25 +131,26 @@ Step2 subtitle: Enable all 6 Content Blockers and the Web Extension
 
 ## 修改说明（给开发）
 
-1. 建立单一文案源（`Localizable` / 常量表），Welcome / Home / Upgrade / Large Type 引用同一 key；短式用独立 key，禁止手写分叉。  
-2. Setup 字符串按上表与 **003** 对齐；去掉 both extensions。  
-3. Welcome CTA：按产品确认采用 `Set Up in Safari`（推荐）并回归测试截图。  
-4. Home：Pro 区前 +8pt（若采用）；其余 token 对齐 design-system。  
-5. 与 **001–004** 一起验收时做一次 **四屏连滑**（Welcome→Setup→Home→Upgrade），检查色、圆角、字体、按钮是否像同一产品。
+1. 建立单一文案源（`Localizable` / 常量表），Welcome / Home / Upgrade / Large Type 引用同一 key；短式用独立 `*.large` key，禁止手写分叉。  
+2. Setup 字符串按锁定块与 **003** 对齐；去掉 both extensions。  
+3. Welcome CTA **固定** `Set Up in Safari`；工程与下次设计导出、商店截图一并改掉旧串。  
+4. Home：Pro 区前 **+8pt**；其余 token 对齐 design-system。  
+5. Strict：标准与 Large Type **同一句** `Stronger blocking · Use with care`。  
+6. 与 **001–004** 一起验收时做 **四屏连滑**（Welcome→Setup→Home→Upgrade）。
 
 ### 文档
 
-- `design-system.md` 已去除与 D-316 冲突的「Home 必须 On pill」叙述（同批）。  
-- 设计文件 `Stillwall-HiFi-v1.free`：Setup 文案与 Welcome CTA 建议下次 Depth Pass 回写（工程可先按本文上线）。
+- `design-system.md` / `screens.md` / `app-flow.md` 已同步权威 CTA。  
+- Lunacy `Stillwall-HiFi-v1.free`：下次 Depth Pass 回写 Welcome CTA、Setup 诚实文案、Strict Large Type（工程可先按本文上线）。
 
 ## 验收标准
 
-- [ ] Home / Upgrade /（Welcome Pro 相关）副文案符合锁定表；Large Type 不改变 Strict 语义  
-- [ ] Setup 不再出现含糊的 both extensions；与 6 CB + Web Extension 一致  
-- [ ] Welcome CTA 与产品确认的最终文案一致，且全项目无第三种说法  
+- [ ] Home / Upgrade 副文案符合锁定表；Large Type Strict **不是** May affect some sites  
+- [ ] Setup 不再出现 both extensions；与 6 CB + Web Extension 一致  
+- [ ] Welcome CTA **仅** `Set Up in Safari`，全项目无第三种主 CTA 说法  
 - [ ] 主色 / 圆角 / 单主 CTA / PRO 仅暖金 四屏抽检通过  
-- [ ] Home Free 行无多余领先图标；Pro 仅金 badge  
-- [ ] 与 001 完成后的 Home 连看：无状态 pill、中性 hero、安静列表  
+- [ ] Home Free 行无多余领先图标；Pro 区前 +8pt；Pro 仅金 badge  
+- [ ] 与 001 完成后的 Home 连看：无状态 pill、中性 hero、安静列表
 
 ## 附件
 
