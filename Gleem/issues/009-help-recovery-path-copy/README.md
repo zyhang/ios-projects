@@ -19,7 +19,7 @@
 
 1. Home 中性文案**不会**教他去扩展（符合 D-316，但发现性弱）。  
 2. Help 在 screens 仅有条目建议，**无**锁定英文正文，实现易抄错 Support 旧句。  
-3. Support 曾写「Home shows On」（见 **007**）——若 Help 同源复制会再次污染 App。  
+3. 对外 Support 文案曾写「Home shows On」——App 内 Help **禁止**同源复制该错误。  
 4. T-EXT-07 / V-002：打开扩展的系统路径未最终验证，**禁止**写死未验证图标位置。
 
 结果：站点坏了 → 用户只会拨类别开关或卸载，而找不到 3 秒 Pause。
@@ -59,12 +59,11 @@ Tip: If a site looks wrong, open the Stillwall extension in Safari and choose Pa
 - 可关闭 / 仅显示一次  
 - 文案需产品确认后写入 005 或本 issue
 
-### 4. 与 006 / 007 的关系
+### 4. 与 006 的关系
 
 | Issue | 分工 |
 |-------|------|
-| **006** | Help / 扩展 **视觉** Hi-fi |
-| **007** | **对外 Support** 信任口径 |
+| **006** | 次级页 / 扩展视觉与实现 |
 | **009** | **App 内 Help** 文案与恢复路径（本 issue） |
 
 ## 修改说明（给开发）
