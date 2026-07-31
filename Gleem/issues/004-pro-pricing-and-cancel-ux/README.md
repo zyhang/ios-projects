@@ -103,9 +103,11 @@ Upgrade 在 Hi-fi 中已是全 App **最干净的一屏**：利益列表 + Offer
 | 取消 | 清空 error state；无横幅、无 toast |
 | 处理中 | CTA → `Processing…` + disabled（§7.8） |
 | Restore | 保持系统蓝链接，不与主 CTA 抢绿色 |
-| 利益行图标 | 小圆角井 + 品牌软绿底（对齐 Hi-fi）；与 Home 的 PRO 金徽标职责分离——**墙内不必再贴 PRO badge** |
-| 利益副文案 | 与 Home / Welcome 锁定表一致（见 **005**），避免 Battery/Tap 各页各写一版 |
+| 利益行图标 | **30×30** 圆角 **8** + 品牌软绿底（对齐 Hi-fi / `design-system` §7.5）；语义 **YouTube & X → `play`**、**Battery → `battery-medium`**（SF 等价可）；与 Home 的 PRO 金徽标职责分离——**墙内不必再贴 PRO badge、不把金当图标主色** |
+| 利益副文案 | 与 Home / Welcome 锁定表一致（见 **005**），避免 Battery 各页各写一版（**无** Strict / Tap · D-317） |
 | 法律行 | 小字 secondary；Terms · Privacy 可点 |
+
+跨屏图标总表与禁止项见 **005** §5。
 
 **品味红线：** 不要为提高转化加假倒计时、假「仅剩 N 席」、多计划比价表、全屏粒子。Stillwall 的 Pro 是「需要时更强」，不是「你不安全快付钱」。
 
@@ -117,6 +119,7 @@ Upgrade 在 Hi-fi 中已是全 App **最干净的一屏**：利益列表 + Offer
 - [ ] 真实购买失败仍有友好英文提示（inline，非原始 error 字符串）  
 - [ ] 试用 CTA 与 Restore 行为正常；Processing 态可用  
 - [ ] 布局/层级接近 Hi-fi：利益卡 → Offer → 单主 CTA（利益仅两行）  
+- [ ] 利益行图标：30×30 r8 软井；语义 `play` + `battery-medium`（或 SF 等价）；无 PRO 金标贴图标、无夸张安防插画（§7.5 / **005** §5）  
 - [ ] 与 charter §4.1、screens S08、**006** More 禁止项一致  
 
 ## 附件

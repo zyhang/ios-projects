@@ -109,7 +109,7 @@ Step2 subtitle: Enable all 6 Content Blockers and the Web Extension
 | 主 CTA | `#2F6A58`（Dark 可用略提亮绿以保证对比），h**50** r**12**，单屏一个 |
 | Switch On | 系统绿 |
 | PRO badge | 暖金系，**仅** Pro 权益 |
-| 图标井 | Welcome/Upgrade/Setup 步骤用软底图标；**Home Free 行不加**领先图标 |
+| 图标井 | Welcome/Upgrade/Setup 步骤用软底图标；**Home Free 行不加**领先图标（详见 §5） |
 | 链接触控 | Restore 等用系统蓝；主行动用森绿 |
 | 无 | 多主按钮、霓虹、威胁大数字、玻璃拟态整页 |
 
@@ -121,10 +121,31 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 
 | 屏 | Emblem | 注意 |
 |----|--------|------|
-| Welcome | 圆 + shield-check | 价值「就绪」OK |
-| Setup | 圆角方 + settings | **完成前无金勾**（见 003） |
+| Welcome | 正圆 + `shield-check`（保护就绪） | 底 `#EAF3EF` / `brandSoft`；**非**威胁盾牌插画 |
+| Setup | 圆角方 + `settings` | **完成前无金勾**（见 **003**） |
 | Home | 无大 emblem | 正确 |
 | Upgrade | 无大 emblem | 正确 |
+
+### 5. 图标集（Hi-fi 已优化 · 实现必须对齐）
+
+权威规格：**[`design-system.md` §7.5 Icon treatment](../../docs/design/design-system.md)** + Hi-fi `phone-preview/*`。  
+本 issue 收口**跨屏用法**；Setup emblem 细节见 **003**，Upgrade 利益行井见 **004**。
+
+| 规则 | 标准 |
+|------|------|
+| 库 | Hi-fi 现行 **Lucide** v0.469；工程优先 **SF Symbols** 语义等价，无等价再打包 Lucide SVG |
+| 线宽 / 端点 | 约 1.75–2.0，圆角端点；禁粗描边、禁自定义夸张安防插画 |
+| 色 | Light `#2F6A58` / `#4A504D`；Dark `#67C7A5`；Pro 金仅 badge `#7A5316` 系，**不**把金当列表主图标色 |
+| Welcome emblem | 72 正圆，`brandSoft` 底 + `shield-check` |
+| Welcome / Upgrade 列表小图标 | **30×30**，圆角 **8**，软绿底（如 `#E5EFEB` / `#EAF3EF`） |
+| Setup 步骤图标 | **40×40**，圆角 **10**，中性灰绿底；语义 `settings` / `puzzle` / `globe`（见 §7.5 表） |
+| Setup 安心条 | `lock`（Private by design） |
+| Welcome 卖点语义（对照 §7.5） | Ads `megaphone-off` · Privacy `eye-off` · Annoyances `bell-off` · Regional `languages` · YT&X `play` · Battery `battery-medium` · Daily updates `refresh-cw` |
+| Upgrade 利益行 | 与上表 Pro 两行一致（YT&X `play` · Battery `battery-medium`）；软井，**墙内无 PRO 金标贴图标** |
+| Home Free 行 | **禁止**领先图标（密度留给 Welcome） |
+| Home Pro | 仅暖金 `PRO` **文字 badge**，不加第二套领先图标系统 |
+
+**禁止：** 与系统语义冲突的自定义符号；整页玻璃拟态图标；为「更安全感」换威胁/警报风格图标。
 
 ## 修改说明（给开发）
 
@@ -133,8 +154,9 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 3. Setup 字符串按锁定块与 **003** 对齐（含 D-511 checklist keys）；去掉 both extensions。  
 4. Welcome CTA **固定** `Set Up in Safari`。  
 5. Home：Pro 区前 **+8pt**；其余 token 对齐 design-system。  
-6. **无** Strict/Tap（D-317 / **011**）。  
-7. 与 **001–004** 一起验收时做 **四屏连滑**（Welcome→Setup→Home→Upgrade）。  
+6. **图标：** 按 §5 + `design-system` §7.5 落 SF Symbols / Lucide；四屏图标井尺寸与语义与 Hi-fi 一致。  
+7. **无** Strict/Tap（D-317 / **011**）。  
+8. 与 **001–004** 一起验收时做 **四屏连滑**（Welcome→Setup→Home→Upgrade）。  
 
 ### 文档
 
@@ -151,6 +173,8 @@ Regional 与 YouTube & X 之间 **+8pt**，无分区标题。
 - [ ] Welcome CTA **仅** `Set Up in Safari`，全项目无第三种主 CTA 说法  
 - [ ] 主色 / 圆角 / 单主 CTA / PRO 仅暖金 四屏抽检通过  
 - [ ] Home Free 行无多余领先图标；Pro 区前 +8pt；Pro 仅金 badge  
+- [ ] **图标（§5 / design-system §7.5）：** Welcome/Upgrade 列表 **30×30 r8** 软井；Setup 步骤 **40×40 r10**；Welcome emblem 72 圆 `shield-check`；语义与 §7.5 Lucide 表一致（SF 等价可）  
+- [ ] 无自定义夸张安防插画；Pro 金不用于列表主图标色；四屏连滑图标气质一致  
 - [ ] 与 001 完成后的 Home 连看：无状态 pill、中性 hero、安静列表
 
 ## 附件

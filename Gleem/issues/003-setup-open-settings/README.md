@@ -89,7 +89,18 @@ Settings → Apps → Safari → Extensions
 |------|----------|------------|
 | 页副文案 | 设计稿 *Turn on both extensions…* 像只有 2 个扩展 | 点明 **Content Blockers + Web Extension**（与步骤 2 的 6 个 CB 一致） |
 | 步骤 2 副文案 | 设计：*Enable both Stillwall extensions*；实现已更细 | 统一为列出 **6 Content Blockers + Web Extension**（可短写：`Enable all 6 Content Blockers and the Web Extension`） |
-| 顶 emblem 金勾 | 齿轮 + 金色 check **始终出现**，易读成「已完成」 | **未完成授权时不要用「完成」角标**；完成后再出现 check，或去掉常驻 check，改用中性 settings 图标 |
+| 顶 emblem 金勾 | 齿轮 + 金色 check **始终出现**，易读成「已完成」 | **未完成授权时不要用「完成」角标**；完成后再出现 check，或去掉常驻 check，改用中性 `settings` 图标 |
+
+#### 1b. 图标（对齐 Hi-fi · design-system §7.5）
+
+跨屏总表见 **005** §5；Setup 本页须落实：
+
+| 元素 | 规格 |
+|------|------|
+| 顶 emblem | 圆角方（约 r18）+ 中性底 `#EEF0EF` + **`settings`**（SF `gearshape` 等价）；**未完成授权无金 `check` 角标** |
+| 步骤 1 / 2 / 3 | **40×40** 圆角 **10** 软井；语义 **`settings` / `puzzle` / `globe`**（Lucide 名；SF 等价可） |
+| 安心条 | **`lock`** + *Private by design*；线宽克制，非警报锁 |
+| 实现 | 优先 SF Symbols；无等价再打包 Lucide SVG；**禁止**自定义夸张安防插画 |
 
 建议页级副文案：
 
@@ -120,6 +131,7 @@ Setup 是全 App **唯一允许略「任务感」** 的屏，但仍须：单主 
 - [ ] 三步说明完整且诚实：Settings、**6 CB** + Web Extension、Allow All Websites  
 - [ ] **D-511：** Step 2 下方可见静态名称清单（6 CB 名 + Web Extension + lead 句）  
 - [ ] 未完成时顶图**无**「已完成」金勾误导（或仅完成态显示）  
+- [ ] 图标对齐 §7.5 / Hi-fi：emblem `settings`；三步 `settings`·`puzzle`·`globe` 软井 40×40；安心条 `lock`（SF 等价可）  
 - [ ] 未完成授权不能进入 Home  
 - [ ] 英文 UI；副文案与步骤 2 不再写含糊的 “both extensions”  
 
