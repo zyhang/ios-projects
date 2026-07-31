@@ -19,11 +19,13 @@
 
 体验差异不来自更多卡片、图表或开关，而来自用户在几秒内确认：
 
-1. 我现在是否受到保护。  
-2. 如果没有生效，下一步该做什么。  
-3. 如果页面异常，如何快速恢复。
+1. **我能按自己的意愿选择拦什么**（Home 用类别开关表达，**不是**顶部 On/Off 监控台）。  
+2. 如果 Safari 侧未生效，**下一步该做什么**（Setup 门禁 / 扩展）。  
+3. 如果页面异常，**如何快速恢复**（关类别或扩展内 Pause）。
 
 > Stillwall should feel calm because it is working—not busy because it wants to prove it.
+
+**诚实状态放在对的地方：** 扩展顶栏可表达 Protected / Paused / Off in app；**主 App Home 使用中性价值文案**（D-315 / D-316），不为了「证明它在工作」而做状态仪表盘。
 
 ### 应呈现
 
@@ -31,14 +33,17 @@
 - 现代但不追逐装饰潮流；轻量、反应迅速  
 - 隐私透明，不制造恐惧  
 - 默认设置经过判断，不把复杂度推给用户  
+- 全屏同一套 token：森绿主 CTA、系统绿 Switch、暖金仅 Pro  
 
 ### 应避免
 
 - 大面积盾牌、锁、雷达、警报符号  
 - 威胁计数、「已阻止 N 个威胁」等不可验证数字  
 - 密集 dashboard、环形图、霓虹/赛博安全风  
+- Home 顶部保护状态 pill / Safari Protection 状态标题（与 D-316 冲突）  
 - 为展示动效而延迟状态反馈  
 - 单屏多个竞争主按钮  
+- 为转化加假紧迫感（倒计时、假席位）  
 
 ---
 
@@ -48,7 +53,7 @@
 
 HIG notes（稿内）：
 
-> Brand `#2F6A58` identifies primary action and protection; warm gold is reserved for Pro.
+> Brand `#2F6A58` identifies primary action; warm gold is reserved for Pro. Protection state is not a Home chrome pattern.
 
 ---
 
@@ -88,9 +93,9 @@ HIG notes（稿内）：
 | `brandSoft` | `#EAF3EF` | 深底上略提亮的绿灰 | Header emblem 底、轻量强调面 |
 | `brandSoftAlt` | `#E9F2EE` / `#E5EFEB` / `#DDECE5` | 对应压暗 | 隐私条、Pro 行图标底、步骤附属 |
 | `brandDeepText` | `#244F42` | 浅绿灰字 | 「Private by design」等品牌正文 |
-| `protectionOn` | `#34C759` | `#34C759` | UISwitch On、状态 pill 圆点 |
-| `protectionOnLabel` | `#248A3D` | 浅绿 | Status pill「On」文字 |
-| `protectionOnPillBg` | `#34C759` @ ~14% | 同色低透明 | On 状态胶囊底 |
+| `protectionOn` | `#34C759` | `#34C759` | **UISwitch On**（及扩展等非 Home 场景的状态点，若需要） |
+| `protectionOnLabel` | `#248A3D` | 浅绿 | **非 Home**：若扩展/次级 UI 需 On 文案；**主 App Home 不使用状态 pill**（D-316） |
+| `protectionOnPillBg` | `#34C759` @ ~14% | 同色低透明 | **非 Home** 状态胶囊；**禁止**作为 Home Value Hero 部件 |
 | `proBadgeBg` | `#FFF4D6` | `#3A301C` | PRO 徽标底 |
 | `proBadgeBorder` | `#EAC97C` | `#8A6A2D` | PRO 边 0.75pt |
 | `proBadgeText` | `#7A5316` | `#F4D58B` | PRO 字 |
@@ -117,7 +122,8 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 ### 4.4 对比与无障碍
 
 - 支持 Light / Dark；对比目标 **WCAG AA**  
-- 状态不得只靠颜色：On/Off 同时有 pill 文案 + Switch + 标题语义  
+- 类别开/关：靠 **Switch 位置 + 可访问性标签**，不靠 Home 顶栏颜色 pill  
+- 扩展等场景若展示状态：不得只靠颜色（文案或图标 + 色）  
 - Reduce Transparency 下边界仍可辨（依赖表面色差，非仅靠模糊）
 
 ---
@@ -259,28 +265,45 @@ Lunacy 画布底 `#E8E6E1`；章节标题 `#1C1B19` 等——**不要**写进 Ap
 - 中：白卡可滚动卖点列表（行高约 70）  
 - 底：固定主 CTA + fade；footer：*No account required · Core Safari protection is free*  
 - 主 CTA **不得**强制 Free Trial  
+- 主 CTA 推荐文案：`Set Up in Safari`（与 quiet 人格一致；旧稿 `Set Up Safari Protection` 可弃用）  
+- Pro 相关卖点须诚实：YouTube & X **in Safari** / not native apps  
 
 ### 7.7 Setup（门禁）
 
-- 标题 + 说明 + 三步权限列表 + **Open Settings**  
+- 标题 + 说明 + **三步**权限列表 + **Open Settings**  
+- 说明须诚实：**6 Content Blockers + Web Extension** + Allow All Websites（勿写含糊 *both extensions*）  
+- 未完成时顶 emblem **不要**常驻「已完成」金勾  
+- 深链失败：指导性 hint（secondary），非恐吓错误色  
 - 等待回跳提示 + `Private by design` 安心条  
 - 未完成授权 **不得进 Home**  
+- 详见 `issues/003-setup-open-settings`  
 
 ### 7.8 Upgrade / Paywall
 
 - 标题 *Unlock Stillwall Pro* + 一句价值  
-- 白卡利益列表（小图标）  
-- Offer：*1 month free* → *Then $14.99/year · Family Sharing included*  
+- 白卡利益列表（小图标；利益副文案与 Home Pro 行锁定一致）  
+- Offer：*1 month free* → *Then $14.99/year · Family Sharing included*（**不得** $9.99）  
 - 主 CTA *Start 1 Month Free Trial*  
 - 系统蓝 *Restore Purchases* + 法律小字  
-- 购买：CTA → `Processing…`（disabled）；取消静默；失败 **inline** 于 CTA 下  
+- 购买：CTA → `Processing…`（disabled）；**取消静默**；失败 **inline** 于 CTA 下（勿 StoreKit 原文如 Request Canceled）  
 - Restore：`Restoring…`；成功 inline「Pro restored」；**无**独立交易页  
 - 非首次进 Home 门禁  
+- 详见 `issues/004-pro-pricing-and-cancel-ux`  
 
-### 7.9 More / 次级页
+### 7.9 Home 规则进度（可选组件）
+
+类别开关触发规则重编译时：底部品牌软提示条（`brandSoft` 气质），英文  
+`Updating filters` / `Preparing blockers for Safari…`。  
+见 `issues/002-filter-progress-copy`。
+
+### 7.10 More / 次级页
 
 Help · Feedback · About · Privacy Policy · Website · Restore · Manage Subscription。  
 无账号体系行；无 Allowed Sites 行。
+
+### 7.11 跨页文案
+
+能力副文案以 `issues/005-cross-screen-consistency` 锁定表为 v1 源；Large Type 只允许省略，不改语义。
 
 ---
 
@@ -396,15 +419,17 @@ enum StillwallColor {
 
 ## 12. 设计验收清单
 
-- [ ] 用户不读帮助也能识别 On / Off  
+- [ ] 类别开关开/关状态可辨（Switch + a11y），**非**依赖 Home 顶栏状态 pill  
 - [ ] 单屏无多个竞争主按钮  
-- [ ] Welcome CTA ≠ 强制试用  
-- [ ] Setup 门禁完整  
-- [ ] Home：仅类别开关（无全局总开关）；无 Pause / App 内 Allowed Sites  
-- [ ] Free/Pro 边界在 paywall 前可读  
+- [ ] Welcome CTA ≠ 强制试用；推荐 *Set Up in Safari*  
+- [ ] Setup 门禁完整；文案含 6 CB + Web Extension；失败为 hint 非恐吓  
+- [ ] Home：中性价值文案 + 仅类别开关（无全局总开关）；无 Pause / App 内 Allowed Sites  
+- [ ] Free/Pro 边界在 paywall 前可读；暖金仅 Pro  
 - [ ] 无不可验证威胁统计  
 - [ ] Light / Dark、Dynamic Type、VoiceOver、Reduce Motion 真机或模拟器过主路径  
 - [ ] 文案与总纲领一致（Safari-only YouTube/X、$14.99、Family Sharing）  
+- [ ] 四屏连滑 token 一致（Welcome → Setup → Home → Upgrade）  
+
 
 ---
 

@@ -23,10 +23,11 @@
 | 项 | 说明 |
 |----|------|
 | 布局 | 单长页：顶标题/理念 · 中滚动卖点 · 底主按钮 |
-| 主 CTA | Enable Safari Blocking → S02 |
+| 主 CTA | **Set Up in Safari** → S02（旧稿 *Set Up Safari Protection* / *Enable Safari Blocking* 弃用，与 quiet 人格一致） |
 | 禁止 | 主 CTA 为强制 Free Trial；未交付能力卖点 |
 
-卖点池：Safari Ad Blocking、Privacy、Annoyances、Regional、YouTube & X（Pro/in Safari）、Battery/Tap（Pro）、Daily updates、Devices（Mac coming soon）。
+卖点池：Safari Ad Blocking、Privacy、Annoyances、Regional、YouTube & X（Pro/in Safari）、Battery/Tap（Pro）、Daily updates、Devices（Mac coming soon）。  
+跨页副文案锁定见 `issues/005-cross-screen-consistency`。
 
 ---
 

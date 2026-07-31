@@ -72,17 +72,50 @@ Settings → Apps → Safari → Extensions
 - `docs/design/screens.md` S02 已改为三步结构（本 issue 配套）。  
 - 实现与文档冲突时以 **三步 + 门禁** 为准。
 
+### Hallmark 增补（设计稿与实现共同问题）
+
+#### 1. 文案诚实度（Hi-fi 也偏弱）
+
+| 位置 | 现状问题 | 期望（en） |
+|------|----------|------------|
+| 页副文案 | 设计稿 *Turn on both extensions…* 像只有 2 个扩展 | 点明 **Content Blockers + Web Extension**（与步骤 2 的 6 个 CB 一致） |
+| 步骤 2 副文案 | 设计：*Enable both Stillwall extensions*；实现已更细 | 统一为列出 **6 Content Blockers + Web Extension**（可短写：`Enable all 6 Content Blockers and the Web Extension`） |
+| 顶 emblem 金勾 | 齿轮 + 金色 check **始终出现**，易读成「已完成」 | **未完成授权时不要用「完成」角标**；完成后再出现 check，或去掉常驻 check，改用中性 settings 图标 |
+
+建议页级副文案：
+
+```text
+Safari needs six Stillwall Content Blockers plus the Web Extension.
+Turn them all on, then allow website access.
+```
+
+（实现截图已接近此句，**以诚实版为准**，回写设计稿时同步。）
+
+#### 2. 失败 hint 的视觉
+
+| 项 | 规范 |
+|----|------|
+| 色 | `textSecondary` 或弱品牌色；**勿**默认用告警橙/红（除非连续失败 2+ 次可略强调） |
+| 位 | 主按钮与 “Come back when you’re done” 之间；或替换该行下方的错误位 |
+| 字重 | Regular，多行可左对齐，路径用 `→` 保持与步骤副文案一致 |
+| 与安心条 | 底部 `Private by design` 条保留；失败 hint **不要**挤掉安心条 |
+
+#### 3. 与全局人格
+
+Setup 是全 App **唯一允许略「任务感」** 的屏，但仍须：单主 CTA、森绿按钮、无恐吓、无假进度。深链失败时语气是「帮你指路」，不是「你做错了」。
+
 ## 验收标准
 
 - [ ] 深链失败时用户仍能靠页面文案完成手动设置  
 - [ ] 失败提示不表现为刺眼硬错误（或仅短暂出现后变为常驻 hint）  
-- [ ] 三步说明完整：Settings、6 CB + Web Extension、Allow All Websites  
+- [ ] 三步说明完整且诚实：Settings、**6 CB** + Web Extension、Allow All Websites  
+- [ ] 未完成时顶图**无**「已完成」金勾误导（或仅完成态显示）  
 - [ ] 未完成授权不能进入 Home  
-- [ ] 英文 UI  
+- [ ] 英文 UI；副文案与步骤 2 不再写含糊的 “both extensions”  
 
 ## 附件
 
 | 文件 | 说明 |
 |------|------|
 | `before/setup-open-settings-failed.jpg` | 实机：Open Settings 失败橙字 |
-| `after/setup-design-target.png` | Hi-fi Setup 布局参考 |
+| `after/setup-design-target.png` | Hi-fi Setup 布局参考（成功态；文案以本 issue 诚实版为准） |

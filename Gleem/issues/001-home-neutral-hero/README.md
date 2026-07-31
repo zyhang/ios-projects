@@ -68,7 +68,27 @@ Choose what stays out of your way.
 
 ### 深色模式 / 动态字体
 
-- 中性文案需同时检查 Dark 与 Large Type（设计导出有对应画板可参考）。
+- 中性文案需同时检查 Dark 与 Large Type（设计导出：`07-Home-Dark`、`11-Home-LargeType`）。
+- Large Type：标题可折行，**行高随文字增高、列表可滚**，勿裁切；副文案可略缩短（见 issue **005** 文案锁定表），但**主标题句式不得改回状态叙事**。
+
+### Hallmark 增补（2026-07-31 全局设计审计）
+
+**设计理念对齐：** Hi-fi 已统一为「安静的 Settings 列表 + 中性价值文案」；实机 On pill 把产品重新拉回「监控台 / 安全中控」，与人格 *calm because it is working* 冲突。本 issue 是人格级修复，不只是换标题。
+
+| 做 | 不做 |
+|----|------|
+| 对齐 `after/home-design-target.png` 的 Value Hero 留白与字阶 | 用仪表盘、盾牌大图、威胁计数填空白 |
+| More 保持弱圆形 `…` 控件 | 把全局开关或 Pause 塞回顶栏 |
+| 类别列表 r18 白卡、系统绿 Switch、暖金 PRO | Free 行再堆一排领先图标（密度留给 Welcome） |
+| 列表下方留白可保留（克制） | 为填满屏幕加统计卡 / 环形图 |
+
+**视觉细节（对齐 design-system §3 / §7.1）：**
+
+- 水平 inset **16**；Large Title **34 Bold**；副文案 **17** + `textSecondary`（约 0.65 opacity）
+- Hero 与列表卡之间保持呼吸感（稿面约一段舒适 gap，勿贴死）
+- 右上 More ≥ **44×44**；Dark 下 hero 字为近白，卡为 elevated 深灰
+
+跨页 Free/Pro 节奏与文案统一见 **005**。
 
 ## 验收标准
 
@@ -77,6 +97,8 @@ Choose what stays out of your way.
 - [ ] 无「Safari Protection」作为 Home 主标题  
 - [ ] 全部类别 Off 时页面结构与顶部文案不变  
 - [ ] 与 `screens.md` S03 / charter §7.3 一致  
+- [ ] Light / Dark / Large Type 顶栏均无状态 pill，且不裁切标题  
+- [ ] 观感接近 Hi-fi：Settings 列表气质，非安全 dashboard  
 
 ## 附件
 
